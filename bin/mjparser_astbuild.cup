@@ -8,6 +8,8 @@ import rs.ac.bg.etf.pp1.ast.*;
 
 parser code {:
 
+	boolean errorDetected;
+	
 	Logger log = Logger.getLogger(getClass());
    
    
@@ -27,6 +29,7 @@ parser code {:
     }
 
     public void report_error(String message, Object info) {
+    	errorDetected = true;
     	StringBuilder msg = new StringBuilder(message); 
     	if (info instanceof Symbol)
             msg.append (" na liniji ").append(((Symbol)info).left);
@@ -36,6 +39,9 @@ parser code {:
 
 :}
 
+init with {:
+	errorDetected = false;
+:}
 
 scan with {:
 	Symbol s = this.getScanner().next_token();
@@ -49,28 +55,26 @@ terminal Integer NUMBER;
 terminal String IDENT;
 terminal IF, ELSE;
 
-nonterminal Program Program;
 nonterminal VarDeclList VarDeclList;
 nonterminal MethodDeclList MethodDeclList;
 nonterminal VarDecl VarDecl;
-nonterminal Type Type;
-nonterminal MethodDecl MethodDecl;
 nonterminal FormPars FormPars;
 nonterminal StatementList StatementList;
 nonterminal FormalParamList FormalParamList;
 nonterminal FormalParamDecl FormalParamDecl;
 nonterminal Statement Statement;
-nonterminal Designator Designator;
-nonterminal Expr Expr;
-nonterminal Term Term;
 nonterminal Addop Addop;
-nonterminal Factor Factor;
 nonterminal ActualPars ActualPars;
 nonterminal ActualParamList ActualParamList;
 nonterminal Matched Matched;
 nonterminal Unmatched Unmatched;
 
-Program ::= (Program) PROG IDENT:I1 VarDeclList:V2 LBRACE MethodDeclList:M3 RBRACE {: RESULT=new Program(I1, V2, M3); RESULT.setLine(I1left); :};
+nonterminal rs.etf.pp1.symboltable.concepts.Obj ProgName, Program, MethodDecl, MethodTypeName, Designator;
+nonterminal rs.etf.pp1.symboltable.concepts.Struct Type, Term, Factor, Expr;
+
+Program ::= (Program) PROG ProgName:p VarDeclList:V1 LBRACE MethodDeclList:M2 RBRACE {: RESULT=new Program(p, V1, M2); RESULT.setLine(pleft); :};
+
+ProgName ::= (ProgName) IDENT:progName {: RESULT=new ProgName(progName); RESULT.setLine(progNameleft); :};
 
 VarDeclList ::= (VarDeclarations) VarDeclList:V1 VarDecl:V2 {: RESULT=new VarDeclarations(V1, V2); RESULT.setLine(V1left); :}
 			|
@@ -86,8 +90,9 @@ MethodDeclList ::= (MethodDeclarations) MethodDeclList:M1 MethodDecl:M2 {: RESUL
 				(NoMethodDecl) {: RESULT=new NoMethodDecl(); :} /* epsilon */
 				;
 				
-MethodDecl ::= (MethodDecl) Type:retType IDENT:methName LPAREN FormPars:F1 RPAREN VarDeclList:V2 LBRACE StatementList:S3 RBRACE {: RESULT=new MethodDecl(retType, methName, F1, V2, S3); RESULT.setLine(retTypeleft); :};
+MethodDecl ::= (MethodDecl) MethodTypeName:M1 LPAREN FormPars:F2 RPAREN VarDeclList:V3 LBRACE StatementList:S4 RBRACE {: RESULT=new MethodDecl(M1, F2, V3, S4); RESULT.setLine(M1left); :};
 
+MethodTypeName ::= (MethodTypeName) Type:retType IDENT:methName {: RESULT=new MethodTypeName(retType, methName); RESULT.setLine(retTypeleft); :};
 
 FormPars ::= (FormParams) FormalParamList:F1 {: RESULT=new FormParams(F1); RESULT.setLine(F1left); :}
 		  |
@@ -127,7 +132,9 @@ Matched ::= (Assignment) Designator:dest EQUAL Expr:e SEMI {: RESULT=new Assignm
 		   (ReturnNoExpr) RETURN SEMI {: RESULT=new ReturnNoExpr(); :}
 		   |
 		   (MatchedStatement) IF Expr:E1 Matched:M2 ELSE Matched:M3 {: RESULT=new MatchedStatement(E1, M2, M3); RESULT.setLine(E1left); :}
-		   ;
+		   |
+		   (ProcCall) Designator:func LPAREN ActualPars:A1 RPAREN SEMI {: RESULT=new ProcCall(func, A1); RESULT.setLine(funcleft); :}
+			;
 			
 Expr ::= (AddExpr) Expr:te Addop:A1 Term:t {: RESULT=new AddExpr(te, A1, t); RESULT.setLine(teleft); :}
 	 |

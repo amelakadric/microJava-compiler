@@ -49,5 +49,7 @@
         <SOURCES />
       </library>
     </orderEntry>
+    <orderEntry type="library" name="mj-runtime" level="project" />
+    <orderEntry type="library" name="symboltable" level="project" />
   </component>
 </module>

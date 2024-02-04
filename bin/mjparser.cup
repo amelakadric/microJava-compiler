@@ -8,6 +8,8 @@ import rs.ac.bg.etf.pp1.ast.*;
 
 parser code {:
 
+	boolean errorDetected;
+	
 	Logger log = Logger.getLogger(getClass());
    
    
@@ -27,6 +29,7 @@ parser code {:
     }
 
     public void report_error(String message, Object info) {
+    	errorDetected = true;
     	StringBuilder msg = new StringBuilder(message); 
     	if (info instanceof Symbol)
             msg.append (" na liniji ").append(((Symbol)info).left);
@@ -36,6 +39,9 @@ parser code {:
 
 :}
 
+init with {:
+	errorDetected = false;
+:}
 
 scan with {:
 	Symbol s = this.getScanner().next_token();
@@ -49,12 +55,17 @@ terminal Integer NUMBER;
 terminal String IDENT;
 terminal IF, ELSE;
 
-nonterminal Program, VarDeclList, MethodDeclList, VarDecl, Type, MethodDecl;
+nonterminal VarDeclList, MethodDeclList, VarDecl;
 nonterminal FormPars, StatementList, FormalParamList, FormalParamDecl, Statement;
-nonterminal Designator, Expr, Term, Addop, Factor, ActualPars, ActualParamList;
+nonterminal Addop, ActualPars, ActualParamList;
 nonterminal Matched, Unmatched;
 
-Program ::= (Program) PROG IDENT VarDeclList LBRACE MethodDeclList RBRACE;
+nonterminal rs.etf.pp1.symboltable.concepts.Obj ProgName, Program, MethodDecl, MethodTypeName, Designator;
+nonterminal rs.etf.pp1.symboltable.concepts.Struct Type, Term, Factor, Expr;
+
+Program ::= (Program) PROG ProgName:p VarDeclList LBRACE MethodDeclList RBRACE;
+
+ProgName ::= (ProgName) IDENT:progName;
 
 VarDeclList ::= (VarDeclarations) VarDeclList VarDecl
 			|
@@ -70,8 +81,9 @@ MethodDeclList ::= (MethodDeclarations) MethodDeclList MethodDecl
 				(NoMethodDecl) /* epsilon */
 				;
 				
-MethodDecl ::= (MethodDecl) Type:retType IDENT:methName LPAREN FormPars RPAREN VarDeclList LBRACE StatementList RBRACE;
+MethodDecl ::= (MethodDecl) MethodTypeName LPAREN FormPars RPAREN VarDeclList LBRACE StatementList RBRACE;
 
+MethodTypeName ::= (MethodTypeName) Type:retType IDENT:methName;
 
 FormPars ::= (FormParams) FormalParamList
 		  |
@@ -111,7 +123,9 @@ Matched ::= (Assignment) Designator:dest EQUAL Expr:e SEMI
 		   (ReturnNoExpr) RETURN SEMI
 		   |
 		   (MatchedStatement) IF Expr Matched ELSE Matched
-		   ;
+		   |
+		   (ProcCall) Designator:func LPAREN ActualPars RPAREN SEMI
+			;
 			
 Expr ::= (AddExpr) Expr:te Addop Term:t
 	 |
