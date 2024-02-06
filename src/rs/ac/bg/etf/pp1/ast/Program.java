@@ -1,6 +1,6 @@
 // generated with ast extension for cup
 // version 0.8
-// 4/1/2024 1:56:38
+// 5/1/2024 21:55:54
 
 
 package rs.ac.bg.etf.pp1.ast;
@@ -9,17 +9,18 @@ public class Program implements SyntaxNode {
 
     private SyntaxNode parent;
     private int line;
-    public rs.etf.pp1.symboltable.concepts.Obj obj = null;
-
     private ProgName ProgName;
-    private VarDeclList VarDeclList;
+    private NamespaceList NamespaceList;
+    private DeclOptionsList DeclOptionsList;
     private MethodDeclList MethodDeclList;
 
-    public Program (ProgName ProgName, VarDeclList VarDeclList, MethodDeclList MethodDeclList) {
+    public Program (ProgName ProgName, NamespaceList NamespaceList, DeclOptionsList DeclOptionsList, MethodDeclList MethodDeclList) {
         this.ProgName=ProgName;
         if(ProgName!=null) ProgName.setParent(this);
-        this.VarDeclList=VarDeclList;
-        if(VarDeclList!=null) VarDeclList.setParent(this);
+        this.NamespaceList=NamespaceList;
+        if(NamespaceList!=null) NamespaceList.setParent(this);
+        this.DeclOptionsList=DeclOptionsList;
+        if(DeclOptionsList!=null) DeclOptionsList.setParent(this);
         this.MethodDeclList=MethodDeclList;
         if(MethodDeclList!=null) MethodDeclList.setParent(this);
     }
@@ -32,12 +33,20 @@ public class Program implements SyntaxNode {
         this.ProgName=ProgName;
     }
 
-    public VarDeclList getVarDeclList() {
-        return VarDeclList;
+    public NamespaceList getNamespaceList() {
+        return NamespaceList;
     }
 
-    public void setVarDeclList(VarDeclList VarDeclList) {
-        this.VarDeclList=VarDeclList;
+    public void setNamespaceList(NamespaceList NamespaceList) {
+        this.NamespaceList=NamespaceList;
+    }
+
+    public DeclOptionsList getDeclOptionsList() {
+        return DeclOptionsList;
+    }
+
+    public void setDeclOptionsList(DeclOptionsList DeclOptionsList) {
+        this.DeclOptionsList=DeclOptionsList;
     }
 
     public MethodDeclList getMethodDeclList() {
@@ -70,20 +79,23 @@ public class Program implements SyntaxNode {
 
     public void childrenAccept(Visitor visitor) {
         if(ProgName!=null) ProgName.accept(visitor);
-        if(VarDeclList!=null) VarDeclList.accept(visitor);
+        if(NamespaceList!=null) NamespaceList.accept(visitor);
+        if(DeclOptionsList!=null) DeclOptionsList.accept(visitor);
         if(MethodDeclList!=null) MethodDeclList.accept(visitor);
     }
 
     public void traverseTopDown(Visitor visitor) {
         accept(visitor);
         if(ProgName!=null) ProgName.traverseTopDown(visitor);
-        if(VarDeclList!=null) VarDeclList.traverseTopDown(visitor);
+        if(NamespaceList!=null) NamespaceList.traverseTopDown(visitor);
+        if(DeclOptionsList!=null) DeclOptionsList.traverseTopDown(visitor);
         if(MethodDeclList!=null) MethodDeclList.traverseTopDown(visitor);
     }
 
     public void traverseBottomUp(Visitor visitor) {
         if(ProgName!=null) ProgName.traverseBottomUp(visitor);
-        if(VarDeclList!=null) VarDeclList.traverseBottomUp(visitor);
+        if(NamespaceList!=null) NamespaceList.traverseBottomUp(visitor);
+        if(DeclOptionsList!=null) DeclOptionsList.traverseBottomUp(visitor);
         if(MethodDeclList!=null) MethodDeclList.traverseBottomUp(visitor);
         accept(visitor);
     }
@@ -99,8 +111,14 @@ public class Program implements SyntaxNode {
             buffer.append(tab+"  null");
         buffer.append("\n");
 
-        if(VarDeclList!=null)
-            buffer.append(VarDeclList.toString("  "+tab));
+        if(NamespaceList!=null)
+            buffer.append(NamespaceList.toString("  "+tab));
+        else
+            buffer.append(tab+"  null");
+        buffer.append("\n");
+
+        if(DeclOptionsList!=null)
+            buffer.append(DeclOptionsList.toString("  "+tab));
         else
             buffer.append(tab+"  null");
         buffer.append("\n");

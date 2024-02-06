@@ -1,0 +1,43 @@
+INFO  21:25:08,040 - Compiling source file: C:\Users\sejo9\Desktop\noviProjekat\Izvorni kod\MJCompiler\test\program.mj
+INFO  21:25:08,121 - #2 program
+INFO  21:25:08,121 - #24 test302
+INFO  21:25:08,121 - #27 namespace
+INFO  21:25:08,123 - #24 Addition
+INFO  21:25:08,123 - #3 {
+INFO  21:25:08,123 - #3 {
+INFO  21:25:08,124 - #24 int
+INFO  21:25:08,125 - #24 sum
+INFO  21:25:08,125 - #6 (
+INFO  21:25:08,125 - #24 int
+INFO  21:25:08,126 - #24 z
+INFO  21:25:08,126 - #12 ,
+INFO  21:25:08,126 - #24 int
+INFO  21:25:08,126 - #24 d
+INFO  21:25:08,127 - #7 )
+INFO  21:25:08,127 - #3 {
+INFO  21:25:08,128 - #9 return
+INFO  21:25:08,129 - #24 z
+INFO  21:25:08,129 - #10 +
+INFO  21:25:08,132 - #24 d
+INFO  21:25:08,135 - #5 ;
+INFO  21:25:08,136 - #4 }
+INFO  21:25:08,136 - #24 int
+INFO  21:25:08,137 - #24 inkrement
+INFO  21:25:08,137 - #6 (
+INFO  21:25:08,138 - #24 int
+INFO  21:25:08,138 - #24 a
+INFO  21:25:08,138 - #12 ,
+INFO  21:25:08,138 - #24 int
+INFO  21:25:08,138 - #24 inc
+INFO  21:25:08,138 - #7 )
+INFO  21:25:08,138 - #24 int
+INFO  21:25:08,138 - #24 pom
+INFO  21:25:08,138 - #5 ;
+INFO  21:25:08,139 - #3 {
+INFO  21:25:08,139 - #24 if
+INFO  21:25:08,139 - #6 (
+INFO  21:25:08,139 - #24 inc
+INFO  21:25:08,139 - #38 ==
+ERROR 21:25:08,139 - 
+Sintaksna greska na liniji 18
+ERROR 21:25:08,140 - Fatalna greska, parsiranje se ne moze nastaviti na liniji 18

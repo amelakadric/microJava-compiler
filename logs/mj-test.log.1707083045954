@@ -1,0 +1,13 @@
+INFO  22:42:45,958 - Compiling source file: C:\Users\sejo9\Desktop\noviProjekat\Izvorni kod\MJCompiler\test\program.mj
+INFO  22:42:45,980 - #2 program
+INFO  22:42:45,981 - #19 MJProgram
+INFO  22:42:45,981 - #3 {
+INFO  22:42:45,982 - #4 }
+INFO  22:42:45,984 - Program(
+  ProgName(
+   MJProgram
+  ) [ProgName]
+  NoVarDecl(
+  ) [NoVarDecl]
+) [Program]
+INFO  22:42:45,984 - ===================================

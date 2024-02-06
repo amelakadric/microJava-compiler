@@ -1,0 +1,36 @@
+INFO  04:02:24,766 - Compiling source file: C:\Users\sejo9\Desktop\noviProjekat\Izvorni kod\MJCompiler\test\program.mj
+INFO  04:02:24,806 - #2 program
+INFO  04:02:24,806 - #25 test301
+INFO  04:02:24,806 - #28 namespace
+INFO  04:02:24,807 - #25 Konstante
+INFO  04:02:24,808 - #3 {
+INFO  04:02:24,808 - #31 const
+INFO  04:02:24,808 - #25 int
+INFO  04:02:24,809 - #25 nula
+INFO  04:02:24,809 - #9 =
+INFO  04:02:24,809 - #24 0
+INFO  04:02:24,809 - #6 ;
+INFO  04:02:24,810 - #31 const
+INFO  04:02:24,810 - #25 int
+INFO  04:02:24,810 - #25 jedan
+INFO  04:02:24,810 - #9 =
+INFO  04:02:24,810 - #24 1
+INFO  04:02:24,810 - #6 ;
+INFO  04:02:24,810 - #31 const
+INFO  04:02:24,811 - #25 int
+INFO  04:02:24,811 - #25 pet
+INFO  04:02:24,838 - #9 =
+INFO  04:02:24,838 - #24 5
+INFO  04:02:24,838 - #6 ;
+INFO  04:02:24,838 - #3 {
+INFO  04:02:24,838 - #4 }
+INFO  04:02:24,839 - #4 }
+INFO  04:02:24,839 - #28 namespace
+INFO  04:02:24,839 - #25 Nizovi
+INFO  04:02:24,839 - #3 {
+INFO  04:02:24,839 - #25 int
+INFO  04:02:24,839 - #25 niz
+INFO  04:02:24,840 - #17 [
+ERROR 04:02:24,840 - 
+Sintaksna greska na liniji 14
+ERROR 04:02:24,840 - Fatalna greska, parsiranje se ne moze nastaviti na liniji 14

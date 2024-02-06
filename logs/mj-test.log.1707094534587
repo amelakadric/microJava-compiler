@@ -1,0 +1,12 @@
+INFO  01:53:09,518 - Compiling source file: C:\Users\sejo9\Desktop\noviProjekat\Izvorni kod\MJCompiler\test\program.mj
+INFO  01:53:09,599 - #2 program
+INFO  01:53:09,600 - #25 test301
+INFO  01:53:09,600 - #28 namespace
+INFO  01:53:09,602 - #25 Konstante
+INFO  01:53:09,602 - #3 {
+INFO  01:53:09,602 - #25 const
+INFO  01:53:09,604 - #25 int
+INFO  01:53:09,604 - #25 nula
+ERROR 01:53:09,605 - 
+Sintaksna greska na liniji 6
+ERROR 01:53:09,605 - Fatalna greska, parsiranje se ne moze nastaviti na liniji 6

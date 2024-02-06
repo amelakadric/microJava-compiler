@@ -1,0 +1,29 @@
+INFO  02:55:07,710 - Compiling source file: C:\Users\sejo9\Desktop\noviProjekat\Izvorni kod\MJCompiler\test\program.mj
+INFO  02:55:07,769 - #2 program
+INFO  02:55:07,770 - #25 test301
+INFO  02:55:07,770 - #28 namespace
+INFO  02:55:07,771 - #25 Konstante
+INFO  02:55:07,771 - #3 {
+INFO  02:55:07,772 - #31 const
+INFO  02:55:07,773 - #25 int
+INFO  02:55:07,773 - #25 nula
+INFO  02:55:07,774 - #9 =
+INFO  02:55:07,774 - #24 0
+INFO  02:55:07,774 - #6 ;
+INFO  02:55:07,775 - #31 const
+INFO  02:55:07,776 - #25 int
+INFO  02:55:07,776 - #25 jedan
+INFO  02:55:07,776 - #9 =
+INFO  02:55:07,776 - #24 1
+INFO  02:55:07,777 - #6 ;
+INFO  02:55:07,777 - #31 const
+INFO  02:55:07,777 - #25 int
+INFO  02:55:07,777 - #25 pet
+INFO  02:55:07,810 - #9 =
+INFO  02:55:07,810 - #24 5
+INFO  02:55:07,810 - #6 ;
+INFO  02:55:07,811 - #3 {
+INFO  02:55:07,811 - #4 }
+ERROR 02:55:07,811 - 
+Sintaksna greska na liniji 10
+ERROR 02:55:07,811 - Fatalna greska, parsiranje se ne moze nastaviti na liniji 10
