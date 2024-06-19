@@ -1,6 +1,6 @@
 // generated with ast extension for cup
 // version 0.8
-// 5/1/2024 21:55:54
+// 19/5/2024 16:51:6
 
 
 package rs.ac.bg.etf.pp1.ast;
@@ -10,13 +10,13 @@ public class Term implements SyntaxNode {
     private SyntaxNode parent;
     private int line;
     private Factor Factor;
-    private MulopFactorList MulopFactorList;
+    private MulopFactorListExists MulopFactorListExists;
 
-    public Term (Factor Factor, MulopFactorList MulopFactorList) {
+    public Term (Factor Factor, MulopFactorListExists MulopFactorListExists) {
         this.Factor=Factor;
         if(Factor!=null) Factor.setParent(this);
-        this.MulopFactorList=MulopFactorList;
-        if(MulopFactorList!=null) MulopFactorList.setParent(this);
+        this.MulopFactorListExists=MulopFactorListExists;
+        if(MulopFactorListExists!=null) MulopFactorListExists.setParent(this);
     }
 
     public Factor getFactor() {
@@ -27,12 +27,12 @@ public class Term implements SyntaxNode {
         this.Factor=Factor;
     }
 
-    public MulopFactorList getMulopFactorList() {
-        return MulopFactorList;
+    public MulopFactorListExists getMulopFactorListExists() {
+        return MulopFactorListExists;
     }
 
-    public void setMulopFactorList(MulopFactorList MulopFactorList) {
-        this.MulopFactorList=MulopFactorList;
+    public void setMulopFactorListExists(MulopFactorListExists MulopFactorListExists) {
+        this.MulopFactorListExists=MulopFactorListExists;
     }
 
     public SyntaxNode getParent() {
@@ -57,18 +57,18 @@ public class Term implements SyntaxNode {
 
     public void childrenAccept(Visitor visitor) {
         if(Factor!=null) Factor.accept(visitor);
-        if(MulopFactorList!=null) MulopFactorList.accept(visitor);
+        if(MulopFactorListExists!=null) MulopFactorListExists.accept(visitor);
     }
 
     public void traverseTopDown(Visitor visitor) {
         accept(visitor);
         if(Factor!=null) Factor.traverseTopDown(visitor);
-        if(MulopFactorList!=null) MulopFactorList.traverseTopDown(visitor);
+        if(MulopFactorListExists!=null) MulopFactorListExists.traverseTopDown(visitor);
     }
 
     public void traverseBottomUp(Visitor visitor) {
         if(Factor!=null) Factor.traverseBottomUp(visitor);
-        if(MulopFactorList!=null) MulopFactorList.traverseBottomUp(visitor);
+        if(MulopFactorListExists!=null) MulopFactorListExists.traverseBottomUp(visitor);
         accept(visitor);
     }
 
@@ -83,8 +83,8 @@ public class Term implements SyntaxNode {
             buffer.append(tab+"  null");
         buffer.append("\n");
 
-        if(MulopFactorList!=null)
-            buffer.append(MulopFactorList.toString("  "+tab));
+        if(MulopFactorListExists!=null)
+            buffer.append(MulopFactorListExists.toString("  "+tab));
         else
             buffer.append(tab+"  null");
         buffer.append("\n");

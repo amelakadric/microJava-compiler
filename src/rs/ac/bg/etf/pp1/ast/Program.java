@@ -1,6 +1,6 @@
 // generated with ast extension for cup
 // version 0.8
-// 5/1/2024 21:55:54
+// 19/5/2024 16:51:6
 
 
 package rs.ac.bg.etf.pp1.ast;
@@ -9,52 +9,51 @@ public class Program implements SyntaxNode {
 
     private SyntaxNode parent;
     private int line;
-    private ProgName ProgName;
-    private NamespaceList NamespaceList;
-    private DeclOptionsList DeclOptionsList;
-    private MethodDeclList MethodDeclList;
+    private String I1;
+    private ConstDeclList ConstDeclList;
+    private VarDeclList VarDeclList;
+    private MethodDeclListExists MethodDeclListExists;
 
-    public Program (ProgName ProgName, NamespaceList NamespaceList, DeclOptionsList DeclOptionsList, MethodDeclList MethodDeclList) {
-        this.ProgName=ProgName;
-        if(ProgName!=null) ProgName.setParent(this);
-        this.NamespaceList=NamespaceList;
-        if(NamespaceList!=null) NamespaceList.setParent(this);
-        this.DeclOptionsList=DeclOptionsList;
-        if(DeclOptionsList!=null) DeclOptionsList.setParent(this);
-        this.MethodDeclList=MethodDeclList;
-        if(MethodDeclList!=null) MethodDeclList.setParent(this);
+    public Program (String I1, ConstDeclList ConstDeclList, VarDeclList VarDeclList, MethodDeclListExists MethodDeclListExists) {
+        this.I1=I1;
+        this.ConstDeclList=ConstDeclList;
+        if(ConstDeclList!=null) ConstDeclList.setParent(this);
+        this.VarDeclList=VarDeclList;
+        if(VarDeclList!=null) VarDeclList.setParent(this);
+        this.MethodDeclListExists=MethodDeclListExists;
+        if(MethodDeclListExists!=null) MethodDeclListExists.setParent(this);
     }
 
-    public ProgName getProgName() {
-        return ProgName;
+    public String getI1() {
+        return I1;
     }
 
-    public void setProgName(ProgName ProgName) {
-        this.ProgName=ProgName;
+    public void setI1(String I1) {
+        this.I1=I1;
     }
 
-    public NamespaceList getNamespaceList() {
-        return NamespaceList;
+    public ConstDeclList getConstDeclList() {
+        return ConstDeclList;
     }
 
-    public void setNamespaceList(NamespaceList NamespaceList) {
-        this.NamespaceList=NamespaceList;
+    public void setConstDeclList(ConstDeclList ConstDeclList) {
+        this.ConstDeclList=ConstDeclList;
     }
 
-    public DeclOptionsList getDeclOptionsList() {
-        return DeclOptionsList;
+    public VarDeclList getVarDeclList() {
+        return VarDeclList;
     }
 
-    public void setDeclOptionsList(DeclOptionsList DeclOptionsList) {
-        this.DeclOptionsList=DeclOptionsList;
+    public void setVarDeclList(VarDeclList VarDeclList) {
+        this.VarDeclList=VarDeclList;
     }
 
-    public MethodDeclList getMethodDeclList() {
-        return MethodDeclList;
+    public MethodDeclListExists getMethodDeclListExists() {
+        return MethodDeclListExists;
     }
 
-    public void setMethodDeclList(MethodDeclList MethodDeclList) {
-        this.MethodDeclList=MethodDeclList;
+    public void setMethodDeclListExists(MethodDeclListExists MethodDeclListExists) {
+        this.MethodDeclListExists=MethodDeclListExists;
     }
 
     public SyntaxNode getParent() {
@@ -78,25 +77,22 @@ public class Program implements SyntaxNode {
     }
 
     public void childrenAccept(Visitor visitor) {
-        if(ProgName!=null) ProgName.accept(visitor);
-        if(NamespaceList!=null) NamespaceList.accept(visitor);
-        if(DeclOptionsList!=null) DeclOptionsList.accept(visitor);
-        if(MethodDeclList!=null) MethodDeclList.accept(visitor);
+        if(ConstDeclList!=null) ConstDeclList.accept(visitor);
+        if(VarDeclList!=null) VarDeclList.accept(visitor);
+        if(MethodDeclListExists!=null) MethodDeclListExists.accept(visitor);
     }
 
     public void traverseTopDown(Visitor visitor) {
         accept(visitor);
-        if(ProgName!=null) ProgName.traverseTopDown(visitor);
-        if(NamespaceList!=null) NamespaceList.traverseTopDown(visitor);
-        if(DeclOptionsList!=null) DeclOptionsList.traverseTopDown(visitor);
-        if(MethodDeclList!=null) MethodDeclList.traverseTopDown(visitor);
+        if(ConstDeclList!=null) ConstDeclList.traverseTopDown(visitor);
+        if(VarDeclList!=null) VarDeclList.traverseTopDown(visitor);
+        if(MethodDeclListExists!=null) MethodDeclListExists.traverseTopDown(visitor);
     }
 
     public void traverseBottomUp(Visitor visitor) {
-        if(ProgName!=null) ProgName.traverseBottomUp(visitor);
-        if(NamespaceList!=null) NamespaceList.traverseBottomUp(visitor);
-        if(DeclOptionsList!=null) DeclOptionsList.traverseBottomUp(visitor);
-        if(MethodDeclList!=null) MethodDeclList.traverseBottomUp(visitor);
+        if(ConstDeclList!=null) ConstDeclList.traverseBottomUp(visitor);
+        if(VarDeclList!=null) VarDeclList.traverseBottomUp(visitor);
+        if(MethodDeclListExists!=null) MethodDeclListExists.traverseBottomUp(visitor);
         accept(visitor);
     }
 
@@ -105,26 +101,23 @@ public class Program implements SyntaxNode {
         buffer.append(tab);
         buffer.append("Program(\n");
 
-        if(ProgName!=null)
-            buffer.append(ProgName.toString("  "+tab));
+        buffer.append(" "+tab+I1);
+        buffer.append("\n");
+
+        if(ConstDeclList!=null)
+            buffer.append(ConstDeclList.toString("  "+tab));
         else
             buffer.append(tab+"  null");
         buffer.append("\n");
 
-        if(NamespaceList!=null)
-            buffer.append(NamespaceList.toString("  "+tab));
+        if(VarDeclList!=null)
+            buffer.append(VarDeclList.toString("  "+tab));
         else
             buffer.append(tab+"  null");
         buffer.append("\n");
 
-        if(DeclOptionsList!=null)
-            buffer.append(DeclOptionsList.toString("  "+tab));
-        else
-            buffer.append(tab+"  null");
-        buffer.append("\n");
-
-        if(MethodDeclList!=null)
-            buffer.append(MethodDeclList.toString("  "+tab));
+        if(MethodDeclListExists!=null)
+            buffer.append(MethodDeclListExists.toString("  "+tab));
         else
             buffer.append(tab+"  null");
         buffer.append("\n");

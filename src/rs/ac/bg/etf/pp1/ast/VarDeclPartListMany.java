@@ -1,28 +1,38 @@
 // generated with ast extension for cup
 // version 0.8
-// 5/1/2024 21:55:54
+// 19/5/2024 16:51:6
 
 
 package rs.ac.bg.etf.pp1.ast;
 
 public class VarDeclPartListMany extends VarDeclPartList {
 
-    private VarDeclPart VarDeclPart;
+    private String I1;
+    private SqBracesOption SqBracesOption;
     private VarDeclPartList VarDeclPartList;
 
-    public VarDeclPartListMany (VarDeclPart VarDeclPart, VarDeclPartList VarDeclPartList) {
-        this.VarDeclPart=VarDeclPart;
-        if(VarDeclPart!=null) VarDeclPart.setParent(this);
+    public VarDeclPartListMany (String I1, SqBracesOption SqBracesOption, VarDeclPartList VarDeclPartList) {
+        this.I1=I1;
+        this.SqBracesOption=SqBracesOption;
+        if(SqBracesOption!=null) SqBracesOption.setParent(this);
         this.VarDeclPartList=VarDeclPartList;
         if(VarDeclPartList!=null) VarDeclPartList.setParent(this);
     }
 
-    public VarDeclPart getVarDeclPart() {
-        return VarDeclPart;
+    public String getI1() {
+        return I1;
     }
 
-    public void setVarDeclPart(VarDeclPart VarDeclPart) {
-        this.VarDeclPart=VarDeclPart;
+    public void setI1(String I1) {
+        this.I1=I1;
+    }
+
+    public SqBracesOption getSqBracesOption() {
+        return SqBracesOption;
+    }
+
+    public void setSqBracesOption(SqBracesOption SqBracesOption) {
+        this.SqBracesOption=SqBracesOption;
     }
 
     public VarDeclPartList getVarDeclPartList() {
@@ -38,18 +48,18 @@ public class VarDeclPartListMany extends VarDeclPartList {
     }
 
     public void childrenAccept(Visitor visitor) {
-        if(VarDeclPart!=null) VarDeclPart.accept(visitor);
+        if(SqBracesOption!=null) SqBracesOption.accept(visitor);
         if(VarDeclPartList!=null) VarDeclPartList.accept(visitor);
     }
 
     public void traverseTopDown(Visitor visitor) {
         accept(visitor);
-        if(VarDeclPart!=null) VarDeclPart.traverseTopDown(visitor);
+        if(SqBracesOption!=null) SqBracesOption.traverseTopDown(visitor);
         if(VarDeclPartList!=null) VarDeclPartList.traverseTopDown(visitor);
     }
 
     public void traverseBottomUp(Visitor visitor) {
-        if(VarDeclPart!=null) VarDeclPart.traverseBottomUp(visitor);
+        if(SqBracesOption!=null) SqBracesOption.traverseBottomUp(visitor);
         if(VarDeclPartList!=null) VarDeclPartList.traverseBottomUp(visitor);
         accept(visitor);
     }
@@ -59,8 +69,11 @@ public class VarDeclPartListMany extends VarDeclPartList {
         buffer.append(tab);
         buffer.append("VarDeclPartListMany(\n");
 
-        if(VarDeclPart!=null)
-            buffer.append(VarDeclPart.toString("  "+tab));
+        buffer.append(" "+tab+I1);
+        buffer.append("\n");
+
+        if(SqBracesOption!=null)
+            buffer.append(SqBracesOption.toString("  "+tab));
         else
             buffer.append(tab+"  null");
         buffer.append("\n");

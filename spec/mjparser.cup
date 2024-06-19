@@ -1,5 +1,3 @@
-
-
 package rs.ac.bg.etf.pp1;
 
 import java_cup.runtime.*;
@@ -8,6 +6,8 @@ import rs.ac.bg.etf.pp1.ast.*;
 
 parser code {:
 
+	boolean errorDetected;
+	
 	Logger log = Logger.getLogger(getClass());
    
    
@@ -27,6 +27,7 @@ parser code {:
     }
 
     public void report_error(String message, Object info) {
+    	errorDetected = true;
     	StringBuilder msg = new StringBuilder(message); 
     	if (info instanceof Symbol)
             msg.append (" na liniji ").append(((Symbol)info).left);
@@ -36,6 +37,9 @@ parser code {:
 
 :}
 
+init with {:
+	errorDetected = false;
+:}
 
 scan with {:
 	Symbol s = this.getScanner().next_token();
@@ -44,277 +48,139 @@ scan with {:
 	return s;
 :}
 
-terminal PROG, LBRACE, RBRACE, SEMI, LPAREN, RPAREN, EQUAL, RETURN, PLUS, MINUS, COMMA, PRINT, VOID, DBLCOL, LSQBRACE, RSQBRACE;
-terminal MUL, DIV, MOD, INC, DEC;
+
+terminal PROG, PRINT, RETURN, VOID, NEW, READ, CONST, BREAK, CONTINUE, FOR, RANGE;
+terminal PLUS, MINUS, MUL, DIV, MOD, INC, DEC, OR, AND, EQUALITY, NOTEQUAL, GT, GTE, LT, LTE;
+terminal EQUAL, SEMI, COMMA, COLUMN, LPAREN, RPAREN, LBRACE, RBRACE, LSQBRACE, RSQBRACE, DBLCOL;
+terminal  COMMENT, CHARCONST, BOOLCONST;
 terminal Integer NUMBER;
 terminal String IDENT;
-terminal IF, ELSE, NAMESPACE, NEW, READ, BREAK, CONTINUE;
-terminal CONST, CHARCONST, BOOLCONST, OR, AND, FOR, EQUALITY, NOTEQUAL, GT, GTE, LT, LTE;
 
-nonterminal Program, ProgName, NamespaceList, Names, DeclOptionsList, DeclOptions, ConstDecl, ConstDeclList, ConstDeclOne;
-nonterminal ConstOptions, MethodDeclList, MethodDecl, FormParsOpt, FormParsList, FormPars, MethodDeclOpt, StatementList, Statement, ForPart;
-nonterminal DesignatorStatementList, Designator, DesignatorStatement, NumConst, ExprOpt, Expr, Condition, CondTermList, CondTerm, CondFactList;
-nonterminal CondFact, Term, Factor, ActPars, DesignatorPart, DesignatorList;
-nonterminal ExprList, MulopFactorList, AddopTermList, VarList, VarDecl, Type, Addop, Mulop, Relop, ActParsParen, VarDeclPart, VarDeclPartList, Braces;
-precedence left ELSE;
+nonterminal Program, DeclList, ConstDeclList, ConstOptions, ConstDeclOptionsListExists, ConstDeclOptionsList, VarDeclList, SqBracesOption, VarDeclPartListExists, VarDeclPartList, MethodDeclListExists, MethodDeclList, MethodDecl, TypeOptions, FormParsExists, FormPars, StatementList, Statement, PrintOptions, DesignatorStatement, Designator, DesignatorOptions, Expr, AddopTermListExists, AddopTermList, MinusOption, Term, MulopFactorListExists, MulopFactorList, Factor, Type, Label, AssignOp, Relop, Addop, Mulop;
+Program ::= (Program) PROG IDENT ConstDeclList VarDeclList LBRACE MethodDeclListExists RBRACE;
 
+DeclList::= (ConstDeclarations) ConstDeclList
+            |(VarDeclarations)   VarDeclList 
+            |(NoDeclList) ;
 
-Program ::= (Program) PROG ProgName:p NamespaceList DeclOptionsList LBRACE MethodDeclList RBRACE;
-
-ProgName ::= (ProgName) IDENT;
-
-NamespaceList ::= (NamespaceListOpt) NamespaceList Names
-					|
-					(NoNameSpaceList) /* epsilon */
-					;
+ConstDeclList::= (ConstDeclListOne) CONST Type IDENT EQUAL ConstOptions ConstDeclOptionsListExists SEMI
+    | (ConstDeclListMany) CONST Type IDENT EQUAL ConstOptions ConstDeclOptionsListExists SEMI ConstDeclList;
 
 
-Names ::= (NamespaceClass) NAMESPACE IDENT LBRACE DeclOptionsList LBRACE MethodDeclList RBRACE RBRACE
-			;
-				
-DeclOptionsList ::= (DeclOptionsListMany) DeclOptionsList DeclOptions
-					|
-					(NoDeclOptionsList) /* epsilon */
-					;
+ConstOptions ::= (NumConst) NUMBER 
+    | (CharConst) CHARCONST
+    | (BoolConst) BOOLCONST; 
 
-DeclOptions ::= (DeclConst) ConstDecl
-				|
-				(DeclVar) VarDecl
-				;
+ConstDeclOptionsListExists ::= (ConstDeclOptionsListExist) ConstDeclOptionsList 
+                            | (NoConstDeclOptions);
 
-ConstDecl ::= (ConstDecll) CONST Type ConstDeclOne ConstDeclList SEMI;
+ConstDeclOptionsList ::= (ConstDeclOptionsListMany) ConstDeclOptionsList COMMA IDENT EQUAL ConstOptions 
+    | (ConstDeclOptionsListOne)COMMA IDENT EQUAL ConstOptions;
 
-ConstDeclList ::= (ConstDeclListMany) ConstDeclList COMMA ConstDeclOne  
-					|
-					(NoConstDeclList) /* epsilon */
-					;
+VarDeclList ::= (VarDeclListOne) Type IDENT SqBracesOption VarDeclPartListExists SEMI
+    | (VarDeclListMany) Type IDENT SqBracesOption VarDeclPartListExists SEMI VarDeclList
+    |error COMMA:l
+    {: parser.report_error("Izvrsen oporavak do , u liniji " +lleft, null); :}
+    | error SEMI:l
+    {: parser.report_error("Izvrsen oporavak do ; u liniji " +lleft, null); :};
 
-ConstDeclOne ::= (ConstDeclOnee) IDENT EQUAL ConstOptions;
 
-ConstOptions ::= (NumConstOpt) NUMBER 
-				 |
-				 (CharConstOpt) CHARCONST
-				 |
-				 (BoolConstOpt) BOOLCONST
-				 ;
+SqBracesOption ::= (SqBraces) LSQBRACE RSQBRACE 
+        | (NoSqBraces);
+
+VarDeclPartListExists ::= (VarDeclPartListExist) VarDeclPartList 
+            | (NoVarDeclPartList);
+
+VarDeclPartList ::= (VarDeclPartListMany) COMMA IDENT SqBracesOption VarDeclPartList
+    | (VarDeclPartListOne) COMMA IDENT SqBracesOption;
+
+MethodDeclListExists ::= (MethodDeclListExist) MethodDeclList 
+    | (NoMethodDeclList);
 
 MethodDeclList ::= (MethodDeclListMany) MethodDeclList MethodDecl
-					|
-					(NoMethodDeclList) /* epsilon */
-					;
-					
-MethodDecl ::= (MethodDecl) MethodDeclOpt IDENT LPAREN FormParsOpt RPAREN VarList LBRACE StatementList RBRACE
-				;
-				
-FormParsOpt ::= (FormParsOpt1) FormParsList
-				|
-				(NoFormPars) /* epsilon */
-				;
-				
-FormParsList ::= (FormParsListOpt) FormParsList COMMA FormPars
-				|
-				(FormParsListOne) FormPars
-				;
+    | (MethodDeclListOne) MethodDecl;
+
+MethodDecl ::= (MethodDecl) TypeOptions IDENT LPAREN FormParsExists RPAREN VarDeclList LBRACE StatementList RBRACE;
+
+TypeOptions ::= (TypeOption) Type 
+    | (VoidOption) VOID;
 
 
-FormPars ::= (FormParsBrace) Type IDENT LSQBRACE RSQBRACE
-			|
-			(FormParsNoBrace) Type IDENT
-			;
-				
+FormParsExists ::= (FormParsExist) FormPars 
+    | (NoFormPars);
 
-MethodDeclOpt ::= (MethodDeclOpt1) Type
-				|
-				(MethodDeclOpt2) VOID
-				;
-				
-StatementList ::= (StatementListOpt) StatementList Statement
-					|
-					(NoStatementList) /* epsilon */
-					;
-					
-Statement ::= (StatementDesignator) DesignatorStatement SEMI
-			|
-			(StatementRead) READ LPAREN Designator RPAREN SEMI
-			|
-			(StatementPrint) PRINT LPAREN Expr NumConst RPAREN SEMI
-			|
-			(StatementReturn) RETURN ExprOpt SEMI
-			|
-			(StatementBreak)  BREAK SEMI
-			|
-			(StatementContinue) CONTINUE SEMI
-			|
-			(StatementIf) IF LPAREN Condition RPAREN Statement 
-			|
-			(StatementIfElse) IF LPAREN Condition RPAREN Statement ELSE Statement
-			|
-			(StatementListStatement) LBRACE StatementList RBRACE
-			|
-			(StatementFor) FOR LPAREN ForPart SEMI CondFact SEMI ForPart RPAREN Statement
-			;
-			
+FormPars ::= (FormParsMany) Type IDENT SqBracesOption FormPars
+    | (FormParsOne) Type IDENT SqBracesOption;
 
-ForPart ::= (ForPartExists) DesignatorStatement DesignatorStatementList
-			|
-			(NoForPart) 
-			;
+StatementList ::= (StatementListMany) StatementList Statement
+    | (NoStatementList);
 
-DesignatorStatementList ::= DesignatorStatementList COMMA DesignatorStatement
-						|
-						(NoDesignatorStatementList)
-						;
+Statement ::= 
+    (DesignatorStatementOp) DesignatorStatement SEMI
+    | (ReadStatement) READ LPAREN Designator RPAREN SEMI 
+    | (PrintStatement) PRINT LPAREN Expr PrintOptions RPAREN SEMI
+    | error SEMI:l
+    {: parser.report_error("Izvrsen oporavak do ; u liniji " +lleft, null); :};
 
-			
-Designator ::= (DesignatorExpr) Type LSQBRACE Expr RSQBRACE
-				|
-				(DesignatorNoExpr) Type
-				;
-				
-DesignatorList ::= (DesignatorListMany) DesignatorList DesignatorPart
-					|
-					(NoDesignatorList)
-					;
-					
-DesignatorPart ::= (DesignatorPartExists) Designator COMMA
-					|
-					(NoDesignatorPart) COMMA
-					;
-			
-DesignatorStatement ::= (DesignatorStatementExpr) Designator EQUAL Expr
-						|
-						(DesignatorStatementInc) Designator INC
-						|
-						(DesignatorStatementDec) Designator DEC
-						|
-						(DesignatorStatementParen) Designator LPAREN ActPars RPAREN
-						|
-						(DesignatorStatementMul) LSQBRACE DesignatorList MUL Designator RSQBRACE EQUAL Designator 
-						;
+PrintOptions ::= (PrintOption) COMMA NUMBER
+    | (NoPrintOptions);
+    
+DesignatorStatement ::= 
+    (DesignatorAssignopExpr) Designator AssignOp Expr|
+    (DesignatorInc) Designator INC |
+    (DesignatorDec) Designator DEC;
 
-NumConst ::= (NumConsExist) COMMA NUMBER
-				|
-				(NoNumConst) /* epsilon */
-				;
+Designator ::= (Designator) Type DesignatorOptions;
 
-ExprOpt ::= (ExprExists) Expr
-			|
-			(NoExpr) /* epsilon */
-			;
+DesignatorOptions ::= (DesignatorOption) LSQBRACE Expr RSQBRACE
+    | (NoDesignatorOptions);
 
-Expr ::= (ExprMinus) MINUS Term AddopTermList
-			|
-			(ExprPlain) Term AddopTermList
-			;
-			
-Condition ::= (Condition) CondTerm CondTermList;	
+Expr ::= (Expr) MinusOption Term AddopTermListExists;
 
-CondTermList ::= (CondTermListMore) CondTermList OR CondTerm
-				|
-				(CondTermListOne)
-				;
+AddopTermListExists ::= (AddopTermListExist) AddopTermList 
+    | (NoAddopTermList);
 
-CondTerm ::= (CondTerm) CondFact CondFactList;
+AddopTermList ::= (AddopTermListMany) Addop Term AddopTermList
+    | (AddopTermListOne) Addop Term;
 
-CondFactList ::= (CondFactListMore) CondFactList AND CondFact
-				|
-				(CondFactListOne)
-				;
+MinusOption ::= (Minus) MINUS
+    | (NoMinus);
 
-CondFact ::= (CondFactOption1) Expr
-			|
-			(CondFactOption2) Expr Relop Expr
-			;			
+Term ::= (Term) Factor MulopFactorListExists;
+
+MulopFactorListExists::= (MulopFactorListExist) MulopFactorList 
+    | (NoMulopFactorList);
+
+MulopFactorList ::= (MulopFactorListMany) Mulop Factor MulopFactorList
+    | (MulopFactorListOne) Mulop Factor;
 
 
-Term ::= (Term) Factor MulopFactorList;
+Factor ::= 
+    (DesignatorFactor) Designator |
+    (NumConstFactor) NUMBER |
+    (CharConstFactor) CHARCONST |
+    (BoolConstFactor) BOOLCONST |
+    (NewFactor) NEW Type LSQBRACE Expr RSQBRACE|
+    (ExprFactor) LPAREN Expr RPAREN|
+    (RangeFactor) RANGE LPAREN Expr RPAREN;
 
-Factor ::= (FactorNum) NUMBER
-			|
-			(FactorChar) CHARCONST
-			|
-			(FactorExpr) LPAREN Expr RPAREN
-			|
-			(FactorBool) BOOLCONST
-			|
-			(FactorDesignator) Designator ActParsParen
-			|
-			(FactorNewType) NEW Type LSQBRACE Expr RSQBRACE
-			;
-			
-ActParsParen ::= (ActParsParenOpt) LPAREN ActPars RPAREN
-				|
-				(NoActParsFactor)
-				;
+Type ::= (TypeScope) IDENT DBLCOL IDENT 
+    | (TypeIdent) IDENT;
 
-ActPars ::= (ActParsExist) Expr ExprList 
-			|
-			(NoActPars) /* epsilon */
-			;
+Label ::= (Label) IDENT;
 
-ExprList ::= (ExprListMany) ExprList COMMA Expr
-			|
-			(NoExprList)
-			;
+AssignOp ::=  (AssignOp) EQUAL;
+Relop ::= 
+        (EqualityOp)EQUALITY 
+        | (NotEqualOp) NOTEQUAL 
+        | (GOp) GT 
+        | (GTEOp) GTE 
+        | (LTOp) LT 
+        | (LTEOp) LTE;
 
-MulopFactorList ::= (MulopFactorListExist) MulopFactorList Mulop Factor
-					|
-					(NoMulopFactorList)
-					;
-
-AddopTermList ::= (AddopTermListExist) AddopTermList Addop Term
-				|
-				(NoAddopTermList)
-				;
+Addop ::= (PlusOp) PLUS 
+        |(MinusOp) MINUS;
+Mulop ::= (MulOpMul) MUL |  (DivOp) DIV | (ModOp) MOD;
 
 
-VarList ::= (VarListMany) VarList VarDecl
-			|
-			(NoVarList)
-			;
-			
-VarDecl ::= (VarBrace) Type IDENT Braces VarDeclPartList SEMI
-			;
 
-Braces ::= (BracesExists) LSQBRACE RSQBRACE
-				|
-				(NoBraces)
-				;
-
-VarDeclPartList ::= (VarDeclPartListMany) VarDeclPart  VarDeclPartList
-					|
-					(NoVarDeclPartList)
-					;
-					
-VarDeclPart ::=(VarDeclPart) COMMA IDENT Braces;
-			
-
-Type ::= (TypeScope) IDENT DBLCOL IDENT
-		|
-		(TypeBasic) IDENT
-		;
-		
-Addop ::=(Plus) PLUS
-		|
-		(Minus) MINUS
-		;
-		
-Mulop ::=(Mul) MUL
-		|
-		(Div) DIV
-		|
-		(Mod) MOD
-		;
-
-Relop ::= (Equality) EQUALITY
-			|
-			(NotEqual) NOTEQUAL
-			|
-			(Greater) GT 
-			|
-			(GreaterEqual) GTE
-			|
-			(Less) LT
-			|
-			(LessEqual) LTE
-			;	

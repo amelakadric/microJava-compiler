@@ -1,0 +1,1443 @@
+INFO  03:12:52,411 - Compiling source file: C:\Users\sejo9\Desktop\noviProjekat\Izvorni kod\MJCompiler\test\program.mj
+INFO  03:12:52,521 - #2 program
+INFO  03:12:52,521 - #24 test301
+INFO  03:12:52,522 - #27 namespace
+INFO  03:12:52,524 - #24 Konstante
+INFO  03:12:52,524 - #3 {
+INFO  03:12:52,525 - #32 const
+INFO  03:12:52,526 - #24 int
+INFO  03:12:52,527 - #24 nula
+INFO  03:12:52,527 - #8 =
+INFO  03:12:52,527 - #23 0
+INFO  03:12:52,527 - #5 ;
+INFO  03:12:52,529 - #32 const
+INFO  03:12:52,530 - #24 int
+INFO  03:12:52,530 - #24 jedan
+INFO  03:12:52,530 - #8 =
+INFO  03:12:52,530 - #23 1
+INFO  03:12:52,530 - #5 ;
+INFO  03:12:52,530 - #32 const
+INFO  03:12:52,531 - #24 int
+INFO  03:12:52,531 - #24 pet
+INFO  03:12:52,531 - #8 =
+INFO  03:12:52,531 - #23 5
+INFO  03:12:52,531 - #5 ;
+INFO  03:12:52,532 - #3 {
+INFO  03:12:52,532 - #4 }
+INFO  03:12:52,533 - #4 }
+INFO  03:12:52,533 - #27 namespace
+INFO  03:12:52,534 - #24 Nizovi
+INFO  03:12:52,534 - #3 {
+INFO  03:12:52,534 - #24 int
+INFO  03:12:52,534 - #24 niz
+INFO  03:12:52,534 - #16 [
+INFO  03:12:52,534 - #17 ]
+INFO  03:12:52,534 - #5 ;
+INFO  03:12:52,537 - #24 char
+INFO  03:12:52,538 - #24 nizch
+INFO  03:12:52,538 - #16 [
+INFO  03:12:52,539 - #17 ]
+INFO  03:12:52,539 - #5 ;
+INFO  03:12:52,539 - #3 {
+INFO  03:12:52,539 - #4 }
+INFO  03:12:52,539 - #4 }
+INFO  03:12:52,539 - #24 int
+INFO  03:12:52,539 - #24 a
+INFO  03:12:52,539 - #5 ;
+INFO  03:12:52,540 - #3 {
+INFO  03:12:52,541 - #14 void
+INFO  03:12:52,541 - #24 main
+INFO  03:12:52,542 - #6 (
+INFO  03:12:52,542 - #7 )
+INFO  03:12:52,543 - #24 int
+INFO  03:12:52,544 - #24 bodovi
+INFO  03:12:52,544 - #5 ;
+INFO  03:12:52,545 - #24 bool
+INFO  03:12:52,545 - #24 bt
+INFO  03:12:52,545 - #5 ;
+INFO  03:12:52,545 - #3 {
+INFO  03:12:52,545 - #24 bodovi
+INFO  03:12:52,546 - #8 =
+INFO  03:12:52,546 - #23 0
+INFO  03:12:52,546 - #5 ;
+INFO  03:12:52,549 - #24 bodovi
+INFO  03:12:52,549 - #21 ++
+INFO  03:12:52,549 - #5 ;
+INFO  03:12:52,549 - #24 bodovi
+INFO  03:12:52,550 - #8 =
+INFO  03:12:52,550 - #24 bodovi
+INFO  03:12:52,550 - #10 +
+INFO  03:12:52,551 - #24 Konstante
+INFO  03:12:52,552 - #15 ::
+INFO  03:12:52,553 - #24 jedan
+INFO  03:12:52,553 - #5 ;
+INFO  03:12:52,553 - #24 bodovi
+INFO  03:12:52,553 - #8 =
+INFO  03:12:52,553 - #24 bodovi
+INFO  03:12:52,553 - #18 *
+INFO  03:12:52,553 - #24 Konstante
+INFO  03:12:52,555 - #15 ::
+INFO  03:12:52,555 - #24 pet
+INFO  03:12:52,555 - #5 ;
+INFO  03:12:52,555 - #24 bodovi
+INFO  03:12:52,555 - #22 --
+INFO  03:12:52,555 - #5 ;
+INFO  03:12:52,556 - #13 print
+INFO  03:12:52,556 - #6 (
+INFO  03:12:52,556 - #24 bodovi
+INFO  03:12:52,556 - #7 )
+INFO  03:12:52,557 - #5 ;
+INFO  03:12:52,557 - #24 Nizovi
+INFO  03:12:52,557 - #15 ::
+INFO  03:12:52,557 - #24 niz
+INFO  03:12:52,557 - #8 =
+INFO  03:12:52,557 - #28 new
+INFO  03:12:52,557 - #24 int
+INFO  03:12:52,557 - #16 [
+INFO  03:12:52,558 - #23 3
+INFO  03:12:52,558 - #17 ]
+INFO  03:12:52,558 - #5 ;
+INFO  03:12:52,558 - #24 Nizovi
+INFO  03:12:52,558 - #15 ::
+INFO  03:12:52,558 - #24 niz
+INFO  03:12:52,558 - #16 [
+INFO  03:12:52,558 - #24 Konstante
+INFO  03:12:52,558 - #15 ::
+INFO  03:12:52,558 - #24 nula
+INFO  03:12:52,558 - #17 ]
+INFO  03:12:52,559 - #8 =
+INFO  03:12:52,559 - #24 Konstante
+INFO  03:12:52,559 - #15 ::
+INFO  03:12:52,559 - #24 jedan
+INFO  03:12:52,559 - #5 ;
+INFO  03:12:52,559 - #24 Nizovi
+INFO  03:12:52,559 - #15 ::
+INFO  03:12:52,559 - #24 niz
+INFO  03:12:52,559 - #16 [
+INFO  03:12:52,559 - #23 1
+INFO  03:12:52,559 - #17 ]
+INFO  03:12:52,560 - #8 =
+INFO  03:12:52,560 - #23 2
+INFO  03:12:52,560 - #5 ;
+INFO  03:12:52,560 - #24 Nizovi
+INFO  03:12:52,560 - #15 ::
+INFO  03:12:52,560 - #24 niz
+INFO  03:12:52,560 - #16 [
+INFO  03:12:52,560 - #24 Nizovi
+INFO  03:12:52,560 - #15 ::
+INFO  03:12:52,560 - #24 niz
+INFO  03:12:52,560 - #16 [
+INFO  03:12:52,561 - #24 Konstante
+INFO  03:12:52,561 - #15 ::
+INFO  03:12:52,561 - #24 jedan
+INFO  03:12:52,561 - #17 ]
+INFO  03:12:52,561 - #17 ]
+INFO  03:12:52,561 - #8 =
+INFO  03:12:52,561 - #24 Nizovi
+INFO  03:12:52,561 - #15 ::
+INFO  03:12:52,561 - #24 niz
+INFO  03:12:52,561 - #16 [
+INFO  03:12:52,561 - #24 Nizovi
+INFO  03:12:52,562 - #15 ::
+INFO  03:12:52,562 - #24 niz
+INFO  03:12:52,562 - #16 [
+INFO  03:12:52,562 - #23 0
+INFO  03:12:52,562 - #17 ]
+INFO  03:12:52,562 - #17 ]
+INFO  03:12:52,562 - #18 *
+INFO  03:12:52,562 - #23 3
+INFO  03:12:52,562 - #5 ;
+INFO  03:12:52,562 - #24 bodovi
+INFO  03:12:52,562 - #8 =
+INFO  03:12:52,562 - #24 Nizovi
+INFO  03:12:52,563 - #15 ::
+INFO  03:12:52,563 - #24 niz
+INFO  03:12:52,563 - #16 [
+INFO  03:12:52,563 - #23 2
+INFO  03:12:52,563 - #17 ]
+INFO  03:12:52,563 - #19 /
+INFO  03:12:52,563 - #24 Nizovi
+INFO  03:12:52,564 - #15 ::
+INFO  03:12:52,564 - #24 niz
+INFO  03:12:52,564 - #16 [
+INFO  03:12:52,564 - #23 0
+INFO  03:12:52,564 - #17 ]
+INFO  03:12:52,565 - #5 ;
+INFO  03:12:52,565 - #13 print
+INFO  03:12:52,565 - #6 (
+INFO  03:12:52,565 - #24 bodovi
+INFO  03:12:52,565 - #7 )
+INFO  03:12:52,565 - #5 ;
+INFO  03:12:52,565 - #13 print
+INFO  03:12:52,565 - #6 (
+INFO  03:12:52,566 - #24 Nizovi
+INFO  03:12:52,566 - #15 ::
+INFO  03:12:52,566 - #24 niz
+INFO  03:12:52,566 - #16 [
+INFO  03:12:52,566 - #23 2
+INFO  03:12:52,566 - #17 ]
+INFO  03:12:52,566 - #7 )
+INFO  03:12:52,566 - #5 ;
+INFO  03:12:52,566 - #24 Nizovi
+INFO  03:12:52,566 - #15 ::
+INFO  03:12:52,566 - #24 nizch
+INFO  03:12:52,566 - #8 =
+INFO  03:12:52,567 - #28 new
+INFO  03:12:52,567 - #24 char
+INFO  03:12:52,567 - #16 [
+INFO  03:12:52,567 - #23 3
+INFO  03:12:52,567 - #17 ]
+INFO  03:12:52,567 - #5 ;
+INFO  03:12:52,567 - #24 Nizovi
+INFO  03:12:52,567 - #15 ::
+INFO  03:12:52,567 - #24 nizch
+INFO  03:12:52,567 - #16 [
+INFO  03:12:52,567 - #23 0
+INFO  03:12:52,567 - #17 ]
+INFO  03:12:52,568 - #8 =
+INFO  03:12:52,568 - #33 a
+INFO  03:12:52,568 - #5 ;
+INFO  03:12:52,569 - #24 Nizovi
+INFO  03:12:52,569 - #15 ::
+INFO  03:12:52,569 - #24 nizch
+INFO  03:12:52,569 - #16 [
+INFO  03:12:52,569 - #24 Konstante
+INFO  03:12:52,569 - #15 ::
+INFO  03:12:52,569 - #24 jedan
+INFO  03:12:52,570 - #17 ]
+INFO  03:12:52,570 - #8 =
+INFO  03:12:52,570 - #33 b
+INFO  03:12:52,570 - #5 ;
+INFO  03:12:52,570 - #24 Nizovi
+INFO  03:12:52,570 - #15 ::
+INFO  03:12:52,570 - #24 nizch
+INFO  03:12:52,570 - #16 [
+INFO  03:12:52,570 - #24 Konstante
+INFO  03:12:52,570 - #15 ::
+INFO  03:12:52,570 - #24 pet
+INFO  03:12:52,570 - #11 -
+INFO  03:12:52,570 - #23 3
+INFO  03:12:52,571 - #17 ]
+INFO  03:12:52,572 - #8 =
+INFO  03:12:52,572 - #33 c
+INFO  03:12:52,572 - #5 ;
+INFO  03:12:52,572 - #13 print
+INFO  03:12:52,572 - #6 (
+INFO  03:12:52,572 - #24 Nizovi
+INFO  03:12:52,572 - #15 ::
+INFO  03:12:52,572 - #24 nizch
+INFO  03:12:52,572 - #16 [
+INFO  03:12:52,572 - #23 1
+INFO  03:12:52,572 - #17 ]
+INFO  03:12:52,572 - #7 )
+INFO  03:12:52,573 - #5 ;
+INFO  03:12:52,573 - #13 print
+INFO  03:12:52,573 - #6 (
+INFO  03:12:52,573 - #24 Nizovi
+INFO  03:12:52,573 - #15 ::
+INFO  03:12:52,573 - #24 nizch
+INFO  03:12:52,573 - #16 [
+INFO  03:12:52,573 - #24 Konstante
+INFO  03:12:52,573 - #15 ::
+INFO  03:12:52,573 - #24 jedan
+INFO  03:12:52,573 - #18 *
+INFO  03:12:52,573 - #23 2
+INFO  03:12:52,573 - #17 ]
+INFO  03:12:52,573 - #7 )
+INFO  03:12:52,573 - #5 ;
+INFO  03:12:52,573 - #24 a
+INFO  03:12:52,573 - #8 =
+INFO  03:12:52,574 - #23 1
+INFO  03:12:52,574 - #5 ;
+INFO  03:12:52,574 - #29 read
+INFO  03:12:52,574 - #6 (
+INFO  03:12:52,574 - #24 bodovi
+INFO  03:12:52,574 - #7 )
+INFO  03:12:52,574 - #5 ;
+INFO  03:12:52,574 - #24 bodovi
+INFO  03:12:52,574 - #8 =
+INFO  03:12:52,574 - #11 -
+INFO  03:12:52,574 - #24 bodovi
+INFO  03:12:52,575 - #10 +
+INFO  03:12:52,575 - #6 (
+INFO  03:12:52,575 - #24 Konstante
+INFO  03:12:52,575 - #15 ::
+INFO  03:12:52,575 - #24 pet
+INFO  03:12:52,575 - #18 *
+INFO  03:12:52,575 - #24 a
+INFO  03:12:52,575 - #19 /
+INFO  03:12:52,575 - #23 2
+INFO  03:12:52,575 - #11 -
+INFO  03:12:52,575 - #24 Konstante
+INFO  03:12:52,575 - #15 ::
+INFO  03:12:52,575 - #24 jedan
+INFO  03:12:52,575 - #7 )
+INFO  03:12:52,575 - #18 *
+INFO  03:12:52,576 - #24 bodovi
+INFO  03:12:52,576 - #11 -
+INFO  03:12:52,576 - #6 (
+INFO  03:12:52,576 - #23 3
+INFO  03:12:52,576 - #20 %
+INFO  03:12:52,576 - #23 2
+INFO  03:12:52,577 - #10 +
+INFO  03:12:52,577 - #23 3
+INFO  03:12:52,577 - #18 *
+INFO  03:12:52,577 - #23 2
+INFO  03:12:52,578 - #11 -
+INFO  03:12:52,578 - #23 3
+INFO  03:12:52,578 - #7 )
+INFO  03:12:52,578 - #5 ;
+INFO  03:12:52,578 - #13 print
+INFO  03:12:52,578 - #6 (
+INFO  03:12:52,578 - #24 bodovi
+INFO  03:12:52,578 - #7 )
+INFO  03:12:52,578 - #5 ;
+INFO  03:12:52,578 - #4 }
+INFO  03:12:52,578 - #4 }
+INFO  03:12:52,592 - Program(
+  ProgName(
+   test301
+  ) [ProgName]
+  NamespaceListOpt(
+    NamespaceListOpt(
+      NoNameSpaceList(
+      ) [NoNameSpaceList]
+      NamespaceClass(
+       Konstante
+        DeclOptionsListMany(
+          DeclOptionsListMany(
+            DeclOptionsListMany(
+              NoDeclOptionsList(
+              ) [NoDeclOptionsList]
+              DeclConst(
+                ConstDecll(
+                  TypeBasic(
+                   int
+                  ) [TypeBasic]
+                  ConstDeclOnee(
+                   nula
+                    NumConstOpt(
+                     0
+                    ) [NumConstOpt]
+                  ) [ConstDeclOnee]
+                  NoConstDeclList(
+                  ) [NoConstDeclList]
+                ) [ConstDecll]
+              ) [DeclConst]
+            ) [DeclOptionsListMany]
+            DeclConst(
+              ConstDecll(
+                TypeBasic(
+                 int
+                ) [TypeBasic]
+                ConstDeclOnee(
+                 jedan
+                  NumConstOpt(
+                   1
+                  ) [NumConstOpt]
+                ) [ConstDeclOnee]
+                NoConstDeclList(
+                ) [NoConstDeclList]
+              ) [ConstDecll]
+            ) [DeclConst]
+          ) [DeclOptionsListMany]
+          DeclConst(
+            ConstDecll(
+              TypeBasic(
+               int
+              ) [TypeBasic]
+              ConstDeclOnee(
+               pet
+                NumConstOpt(
+                 5
+                ) [NumConstOpt]
+              ) [ConstDeclOnee]
+              NoConstDeclList(
+              ) [NoConstDeclList]
+            ) [ConstDecll]
+          ) [DeclConst]
+        ) [DeclOptionsListMany]
+        NoMethodDeclList(
+        ) [NoMethodDeclList]
+      ) [NamespaceClass]
+    ) [NamespaceListOpt]
+    NamespaceClass(
+     Nizovi
+      DeclOptionsListMany(
+        DeclOptionsListMany(
+          NoDeclOptionsList(
+          ) [NoDeclOptionsList]
+          DeclVar(
+            VarDecl(
+              TypeBasic(
+               int
+              ) [TypeBasic]
+             niz
+              BracesExists(
+              ) [BracesExists]
+              NoVarDeclPartList(
+              ) [NoVarDeclPartList]
+            ) [VarDecl]
+          ) [DeclVar]
+        ) [DeclOptionsListMany]
+        DeclVar(
+          VarDecl(
+            TypeBasic(
+             char
+            ) [TypeBasic]
+           nizch
+            BracesExists(
+            ) [BracesExists]
+            NoVarDeclPartList(
+            ) [NoVarDeclPartList]
+          ) [VarDecl]
+        ) [DeclVar]
+      ) [DeclOptionsListMany]
+      NoMethodDeclList(
+      ) [NoMethodDeclList]
+    ) [NamespaceClass]
+  ) [NamespaceListOpt]
+  DeclOptionsListMany(
+    NoDeclOptionsList(
+    ) [NoDeclOptionsList]
+    DeclVar(
+      VarDecl(
+        TypeBasic(
+         int
+        ) [TypeBasic]
+       a
+        NoBraces(
+        ) [NoBraces]
+        NoVarDeclPartList(
+        ) [NoVarDeclPartList]
+      ) [VarDecl]
+    ) [DeclVar]
+  ) [DeclOptionsListMany]
+  MethodDeclListMany(
+    NoMethodDeclList(
+    ) [NoMethodDeclList]
+    MethodDecl(
+      MethodDeclOpt2(
+      ) [MethodDeclOpt2]
+     main
+      NoFormPars(
+      ) [NoFormPars]
+      VarListMany(
+        VarListMany(
+          NoVarList(
+          ) [NoVarList]
+          VarDecl(
+            TypeBasic(
+             int
+            ) [TypeBasic]
+           bodovi
+            NoBraces(
+            ) [NoBraces]
+            NoVarDeclPartList(
+            ) [NoVarDeclPartList]
+          ) [VarDecl]
+        ) [VarListMany]
+        VarDecl(
+          TypeBasic(
+           bool
+          ) [TypeBasic]
+         bt
+          NoBraces(
+          ) [NoBraces]
+          NoVarDeclPartList(
+          ) [NoVarDeclPartList]
+        ) [VarDecl]
+      ) [VarListMany]
+      StatementListOpt(
+        StatementListOpt(
+          StatementListOpt(
+            StatementListOpt(
+              StatementListOpt(
+                StatementListOpt(
+                  StatementListOpt(
+                    StatementListOpt(
+                      StatementListOpt(
+                        StatementListOpt(
+                          StatementListOpt(
+                            StatementListOpt(
+                              StatementListOpt(
+                                StatementListOpt(
+                                  StatementListOpt(
+                                    StatementListOpt(
+                                      StatementListOpt(
+                                        StatementListOpt(
+                                          StatementListOpt(
+                                            StatementListOpt(
+                                              StatementListOpt(
+                                                StatementListOpt(
+                                                  StatementListOpt(
+                                                    NoStatementList(
+                                                    ) [NoStatementList]
+                                                    StatementDesignator(
+                                                      DesignatorStatementExpr(
+                                                        DesignatorNoExpr(
+                                                          TypeBasic(
+                                                           bodovi
+                                                          ) [TypeBasic]
+                                                        ) [DesignatorNoExpr]
+                                                        ExprPlain(
+                                                          Term(
+                                                            FactorNum(
+                                                             0
+                                                            ) [FactorNum]
+                                                            NoMulopFactorList(
+                                                            ) [NoMulopFactorList]
+                                                          ) [Term]
+                                                          NoAddopTermList(
+                                                          ) [NoAddopTermList]
+                                                        ) [ExprPlain]
+                                                      ) [DesignatorStatementExpr]
+                                                    ) [StatementDesignator]
+                                                  ) [StatementListOpt]
+                                                  StatementDesignator(
+                                                    DesignatorStatementInc(
+                                                      DesignatorNoExpr(
+                                                        TypeBasic(
+                                                         bodovi
+                                                        ) [TypeBasic]
+                                                      ) [DesignatorNoExpr]
+                                                    ) [DesignatorStatementInc]
+                                                  ) [StatementDesignator]
+                                                ) [StatementListOpt]
+                                                StatementDesignator(
+                                                  DesignatorStatementExpr(
+                                                    DesignatorNoExpr(
+                                                      TypeBasic(
+                                                       bodovi
+                                                      ) [TypeBasic]
+                                                    ) [DesignatorNoExpr]
+                                                    ExprPlain(
+                                                      Term(
+                                                        FactorDesignator(
+                                                          DesignatorNoExpr(
+                                                            TypeBasic(
+                                                             bodovi
+                                                            ) [TypeBasic]
+                                                          ) [DesignatorNoExpr]
+                                                          NoActParsFactor(
+                                                          ) [NoActParsFactor]
+                                                        ) [FactorDesignator]
+                                                        NoMulopFactorList(
+                                                        ) [NoMulopFactorList]
+                                                      ) [Term]
+                                                      AddopTermListExist(
+                                                        NoAddopTermList(
+                                                        ) [NoAddopTermList]
+                                                        Plus(
+                                                        ) [Plus]
+                                                        Term(
+                                                          FactorDesignator(
+                                                            DesignatorNoExpr(
+                                                              TypeScope(
+                                                               Konstante
+                                                               jedan
+                                                              ) [TypeScope]
+                                                            ) [DesignatorNoExpr]
+                                                            NoActParsFactor(
+                                                            ) [NoActParsFactor]
+                                                          ) [FactorDesignator]
+                                                          NoMulopFactorList(
+                                                          ) [NoMulopFactorList]
+                                                        ) [Term]
+                                                      ) [AddopTermListExist]
+                                                    ) [ExprPlain]
+                                                  ) [DesignatorStatementExpr]
+                                                ) [StatementDesignator]
+                                              ) [StatementListOpt]
+                                              StatementDesignator(
+                                                DesignatorStatementExpr(
+                                                  DesignatorNoExpr(
+                                                    TypeBasic(
+                                                     bodovi
+                                                    ) [TypeBasic]
+                                                  ) [DesignatorNoExpr]
+                                                  ExprPlain(
+                                                    Term(
+                                                      FactorDesignator(
+                                                        DesignatorNoExpr(
+                                                          TypeBasic(
+                                                           bodovi
+                                                          ) [TypeBasic]
+                                                        ) [DesignatorNoExpr]
+                                                        NoActParsFactor(
+                                                        ) [NoActParsFactor]
+                                                      ) [FactorDesignator]
+                                                      MulopFactorListExist(
+                                                        NoMulopFactorList(
+                                                        ) [NoMulopFactorList]
+                                                        Mul(
+                                                        ) [Mul]
+                                                        FactorDesignator(
+                                                          DesignatorNoExpr(
+                                                            TypeScope(
+                                                             Konstante
+                                                             pet
+                                                            ) [TypeScope]
+                                                          ) [DesignatorNoExpr]
+                                                          NoActParsFactor(
+                                                          ) [NoActParsFactor]
+                                                        ) [FactorDesignator]
+                                                      ) [MulopFactorListExist]
+                                                    ) [Term]
+                                                    NoAddopTermList(
+                                                    ) [NoAddopTermList]
+                                                  ) [ExprPlain]
+                                                ) [DesignatorStatementExpr]
+                                              ) [StatementDesignator]
+                                            ) [StatementListOpt]
+                                            StatementDesignator(
+                                              DesignatorStatementDec(
+                                                DesignatorNoExpr(
+                                                  TypeBasic(
+                                                   bodovi
+                                                  ) [TypeBasic]
+                                                ) [DesignatorNoExpr]
+                                              ) [DesignatorStatementDec]
+                                            ) [StatementDesignator]
+                                          ) [StatementListOpt]
+                                          StatementPrint(
+                                            ExprPlain(
+                                              Term(
+                                                FactorDesignator(
+                                                  DesignatorNoExpr(
+                                                    TypeBasic(
+                                                     bodovi
+                                                    ) [TypeBasic]
+                                                  ) [DesignatorNoExpr]
+                                                  NoActParsFactor(
+                                                  ) [NoActParsFactor]
+                                                ) [FactorDesignator]
+                                                NoMulopFactorList(
+                                                ) [NoMulopFactorList]
+                                              ) [Term]
+                                              NoAddopTermList(
+                                              ) [NoAddopTermList]
+                                            ) [ExprPlain]
+                                            NoNumConst(
+                                            ) [NoNumConst]
+                                          ) [StatementPrint]
+                                        ) [StatementListOpt]
+                                        StatementDesignator(
+                                          DesignatorStatementExpr(
+                                            DesignatorNoExpr(
+                                              TypeScope(
+                                               Nizovi
+                                               niz
+                                              ) [TypeScope]
+                                            ) [DesignatorNoExpr]
+                                            ExprPlain(
+                                              Term(
+                                                FactorNewType(
+                                                  TypeBasic(
+                                                   int
+                                                  ) [TypeBasic]
+                                                  ExprPlain(
+                                                    Term(
+                                                      FactorNum(
+                                                       3
+                                                      ) [FactorNum]
+                                                      NoMulopFactorList(
+                                                      ) [NoMulopFactorList]
+                                                    ) [Term]
+                                                    NoAddopTermList(
+                                                    ) [NoAddopTermList]
+                                                  ) [ExprPlain]
+                                                ) [FactorNewType]
+                                                NoMulopFactorList(
+                                                ) [NoMulopFactorList]
+                                              ) [Term]
+                                              NoAddopTermList(
+                                              ) [NoAddopTermList]
+                                            ) [ExprPlain]
+                                          ) [DesignatorStatementExpr]
+                                        ) [StatementDesignator]
+                                      ) [StatementListOpt]
+                                      StatementDesignator(
+                                        DesignatorStatementExpr(
+                                          DesignatorExpr(
+                                            TypeScope(
+                                             Nizovi
+                                             niz
+                                            ) [TypeScope]
+                                            ExprPlain(
+                                              Term(
+                                                FactorDesignator(
+                                                  DesignatorNoExpr(
+                                                    TypeScope(
+                                                     Konstante
+                                                     nula
+                                                    ) [TypeScope]
+                                                  ) [DesignatorNoExpr]
+                                                  NoActParsFactor(
+                                                  ) [NoActParsFactor]
+                                                ) [FactorDesignator]
+                                                NoMulopFactorList(
+                                                ) [NoMulopFactorList]
+                                              ) [Term]
+                                              NoAddopTermList(
+                                              ) [NoAddopTermList]
+                                            ) [ExprPlain]
+                                          ) [DesignatorExpr]
+                                          ExprPlain(
+                                            Term(
+                                              FactorDesignator(
+                                                DesignatorNoExpr(
+                                                  TypeScope(
+                                                   Konstante
+                                                   jedan
+                                                  ) [TypeScope]
+                                                ) [DesignatorNoExpr]
+                                                NoActParsFactor(
+                                                ) [NoActParsFactor]
+                                              ) [FactorDesignator]
+                                              NoMulopFactorList(
+                                              ) [NoMulopFactorList]
+                                            ) [Term]
+                                            NoAddopTermList(
+                                            ) [NoAddopTermList]
+                                          ) [ExprPlain]
+                                        ) [DesignatorStatementExpr]
+                                      ) [StatementDesignator]
+                                    ) [StatementListOpt]
+                                    StatementDesignator(
+                                      DesignatorStatementExpr(
+                                        DesignatorExpr(
+                                          TypeScope(
+                                           Nizovi
+                                           niz
+                                          ) [TypeScope]
+                                          ExprPlain(
+                                            Term(
+                                              FactorNum(
+                                               1
+                                              ) [FactorNum]
+                                              NoMulopFactorList(
+                                              ) [NoMulopFactorList]
+                                            ) [Term]
+                                            NoAddopTermList(
+                                            ) [NoAddopTermList]
+                                          ) [ExprPlain]
+                                        ) [DesignatorExpr]
+                                        ExprPlain(
+                                          Term(
+                                            FactorNum(
+                                             2
+                                            ) [FactorNum]
+                                            NoMulopFactorList(
+                                            ) [NoMulopFactorList]
+                                          ) [Term]
+                                          NoAddopTermList(
+                                          ) [NoAddopTermList]
+                                        ) [ExprPlain]
+                                      ) [DesignatorStatementExpr]
+                                    ) [StatementDesignator]
+                                  ) [StatementListOpt]
+                                  StatementDesignator(
+                                    DesignatorStatementExpr(
+                                      DesignatorExpr(
+                                        TypeScope(
+                                         Nizovi
+                                         niz
+                                        ) [TypeScope]
+                                        ExprPlain(
+                                          Term(
+                                            FactorDesignator(
+                                              DesignatorExpr(
+                                                TypeScope(
+                                                 Nizovi
+                                                 niz
+                                                ) [TypeScope]
+                                                ExprPlain(
+                                                  Term(
+                                                    FactorDesignator(
+                                                      DesignatorNoExpr(
+                                                        TypeScope(
+                                                         Konstante
+                                                         jedan
+                                                        ) [TypeScope]
+                                                      ) [DesignatorNoExpr]
+                                                      NoActParsFactor(
+                                                      ) [NoActParsFactor]
+                                                    ) [FactorDesignator]
+                                                    NoMulopFactorList(
+                                                    ) [NoMulopFactorList]
+                                                  ) [Term]
+                                                  NoAddopTermList(
+                                                  ) [NoAddopTermList]
+                                                ) [ExprPlain]
+                                              ) [DesignatorExpr]
+                                              NoActParsFactor(
+                                              ) [NoActParsFactor]
+                                            ) [FactorDesignator]
+                                            NoMulopFactorList(
+                                            ) [NoMulopFactorList]
+                                          ) [Term]
+                                          NoAddopTermList(
+                                          ) [NoAddopTermList]
+                                        ) [ExprPlain]
+                                      ) [DesignatorExpr]
+                                      ExprPlain(
+                                        Term(
+                                          FactorDesignator(
+                                            DesignatorExpr(
+                                              TypeScope(
+                                               Nizovi
+                                               niz
+                                              ) [TypeScope]
+                                              ExprPlain(
+                                                Term(
+                                                  FactorDesignator(
+                                                    DesignatorExpr(
+                                                      TypeScope(
+                                                       Nizovi
+                                                       niz
+                                                      ) [TypeScope]
+                                                      ExprPlain(
+                                                        Term(
+                                                          FactorNum(
+                                                           0
+                                                          ) [FactorNum]
+                                                          NoMulopFactorList(
+                                                          ) [NoMulopFactorList]
+                                                        ) [Term]
+                                                        NoAddopTermList(
+                                                        ) [NoAddopTermList]
+                                                      ) [ExprPlain]
+                                                    ) [DesignatorExpr]
+                                                    NoActParsFactor(
+                                                    ) [NoActParsFactor]
+                                                  ) [FactorDesignator]
+                                                  NoMulopFactorList(
+                                                  ) [NoMulopFactorList]
+                                                ) [Term]
+                                                NoAddopTermList(
+                                                ) [NoAddopTermList]
+                                              ) [ExprPlain]
+                                            ) [DesignatorExpr]
+                                            NoActParsFactor(
+                                            ) [NoActParsFactor]
+                                          ) [FactorDesignator]
+                                          MulopFactorListExist(
+                                            NoMulopFactorList(
+                                            ) [NoMulopFactorList]
+                                            Mul(
+                                            ) [Mul]
+                                            FactorNum(
+                                             3
+                                            ) [FactorNum]
+                                          ) [MulopFactorListExist]
+                                        ) [Term]
+                                        NoAddopTermList(
+                                        ) [NoAddopTermList]
+                                      ) [ExprPlain]
+                                    ) [DesignatorStatementExpr]
+                                  ) [StatementDesignator]
+                                ) [StatementListOpt]
+                                StatementDesignator(
+                                  DesignatorStatementExpr(
+                                    DesignatorNoExpr(
+                                      TypeBasic(
+                                       bodovi
+                                      ) [TypeBasic]
+                                    ) [DesignatorNoExpr]
+                                    ExprPlain(
+                                      Term(
+                                        FactorDesignator(
+                                          DesignatorExpr(
+                                            TypeScope(
+                                             Nizovi
+                                             niz
+                                            ) [TypeScope]
+                                            ExprPlain(
+                                              Term(
+                                                FactorNum(
+                                                 2
+                                                ) [FactorNum]
+                                                NoMulopFactorList(
+                                                ) [NoMulopFactorList]
+                                              ) [Term]
+                                              NoAddopTermList(
+                                              ) [NoAddopTermList]
+                                            ) [ExprPlain]
+                                          ) [DesignatorExpr]
+                                          NoActParsFactor(
+                                          ) [NoActParsFactor]
+                                        ) [FactorDesignator]
+                                        MulopFactorListExist(
+                                          NoMulopFactorList(
+                                          ) [NoMulopFactorList]
+                                          Div(
+                                          ) [Div]
+                                          FactorDesignator(
+                                            DesignatorExpr(
+                                              TypeScope(
+                                               Nizovi
+                                               niz
+                                              ) [TypeScope]
+                                              ExprPlain(
+                                                Term(
+                                                  FactorNum(
+                                                   0
+                                                  ) [FactorNum]
+                                                  NoMulopFactorList(
+                                                  ) [NoMulopFactorList]
+                                                ) [Term]
+                                                NoAddopTermList(
+                                                ) [NoAddopTermList]
+                                              ) [ExprPlain]
+                                            ) [DesignatorExpr]
+                                            NoActParsFactor(
+                                            ) [NoActParsFactor]
+                                          ) [FactorDesignator]
+                                        ) [MulopFactorListExist]
+                                      ) [Term]
+                                      NoAddopTermList(
+                                      ) [NoAddopTermList]
+                                    ) [ExprPlain]
+                                  ) [DesignatorStatementExpr]
+                                ) [StatementDesignator]
+                              ) [StatementListOpt]
+                              StatementPrint(
+                                ExprPlain(
+                                  Term(
+                                    FactorDesignator(
+                                      DesignatorNoExpr(
+                                        TypeBasic(
+                                         bodovi
+                                        ) [TypeBasic]
+                                      ) [DesignatorNoExpr]
+                                      NoActParsFactor(
+                                      ) [NoActParsFactor]
+                                    ) [FactorDesignator]
+                                    NoMulopFactorList(
+                                    ) [NoMulopFactorList]
+                                  ) [Term]
+                                  NoAddopTermList(
+                                  ) [NoAddopTermList]
+                                ) [ExprPlain]
+                                NoNumConst(
+                                ) [NoNumConst]
+                              ) [StatementPrint]
+                            ) [StatementListOpt]
+                            StatementPrint(
+                              ExprPlain(
+                                Term(
+                                  FactorDesignator(
+                                    DesignatorExpr(
+                                      TypeScope(
+                                       Nizovi
+                                       niz
+                                      ) [TypeScope]
+                                      ExprPlain(
+                                        Term(
+                                          FactorNum(
+                                           2
+                                          ) [FactorNum]
+                                          NoMulopFactorList(
+                                          ) [NoMulopFactorList]
+                                        ) [Term]
+                                        NoAddopTermList(
+                                        ) [NoAddopTermList]
+                                      ) [ExprPlain]
+                                    ) [DesignatorExpr]
+                                    NoActParsFactor(
+                                    ) [NoActParsFactor]
+                                  ) [FactorDesignator]
+                                  NoMulopFactorList(
+                                  ) [NoMulopFactorList]
+                                ) [Term]
+                                NoAddopTermList(
+                                ) [NoAddopTermList]
+                              ) [ExprPlain]
+                              NoNumConst(
+                              ) [NoNumConst]
+                            ) [StatementPrint]
+                          ) [StatementListOpt]
+                          StatementDesignator(
+                            DesignatorStatementExpr(
+                              DesignatorNoExpr(
+                                TypeScope(
+                                 Nizovi
+                                 nizch
+                                ) [TypeScope]
+                              ) [DesignatorNoExpr]
+                              ExprPlain(
+                                Term(
+                                  FactorNewType(
+                                    TypeBasic(
+                                     char
+                                    ) [TypeBasic]
+                                    ExprPlain(
+                                      Term(
+                                        FactorNum(
+                                         3
+                                        ) [FactorNum]
+                                        NoMulopFactorList(
+                                        ) [NoMulopFactorList]
+                                      ) [Term]
+                                      NoAddopTermList(
+                                      ) [NoAddopTermList]
+                                    ) [ExprPlain]
+                                  ) [FactorNewType]
+                                  NoMulopFactorList(
+                                  ) [NoMulopFactorList]
+                                ) [Term]
+                                NoAddopTermList(
+                                ) [NoAddopTermList]
+                              ) [ExprPlain]
+                            ) [DesignatorStatementExpr]
+                          ) [StatementDesignator]
+                        ) [StatementListOpt]
+                        StatementDesignator(
+                          DesignatorStatementExpr(
+                            DesignatorExpr(
+                              TypeScope(
+                               Nizovi
+                               nizch
+                              ) [TypeScope]
+                              ExprPlain(
+                                Term(
+                                  FactorNum(
+                                   0
+                                  ) [FactorNum]
+                                  NoMulopFactorList(
+                                  ) [NoMulopFactorList]
+                                ) [Term]
+                                NoAddopTermList(
+                                ) [NoAddopTermList]
+                              ) [ExprPlain]
+                            ) [DesignatorExpr]
+                            ExprPlain(
+                              Term(
+                                FactorChar(
+                                ) [FactorChar]
+                                NoMulopFactorList(
+                                ) [NoMulopFactorList]
+                              ) [Term]
+                              NoAddopTermList(
+                              ) [NoAddopTermList]
+                            ) [ExprPlain]
+                          ) [DesignatorStatementExpr]
+                        ) [StatementDesignator]
+                      ) [StatementListOpt]
+                      StatementDesignator(
+                        DesignatorStatementExpr(
+                          DesignatorExpr(
+                            TypeScope(
+                             Nizovi
+                             nizch
+                            ) [TypeScope]
+                            ExprPlain(
+                              Term(
+                                FactorDesignator(
+                                  DesignatorNoExpr(
+                                    TypeScope(
+                                     Konstante
+                                     jedan
+                                    ) [TypeScope]
+                                  ) [DesignatorNoExpr]
+                                  NoActParsFactor(
+                                  ) [NoActParsFactor]
+                                ) [FactorDesignator]
+                                NoMulopFactorList(
+                                ) [NoMulopFactorList]
+                              ) [Term]
+                              NoAddopTermList(
+                              ) [NoAddopTermList]
+                            ) [ExprPlain]
+                          ) [DesignatorExpr]
+                          ExprPlain(
+                            Term(
+                              FactorChar(
+                              ) [FactorChar]
+                              NoMulopFactorList(
+                              ) [NoMulopFactorList]
+                            ) [Term]
+                            NoAddopTermList(
+                            ) [NoAddopTermList]
+                          ) [ExprPlain]
+                        ) [DesignatorStatementExpr]
+                      ) [StatementDesignator]
+                    ) [StatementListOpt]
+                    StatementDesignator(
+                      DesignatorStatementExpr(
+                        DesignatorExpr(
+                          TypeScope(
+                           Nizovi
+                           nizch
+                          ) [TypeScope]
+                          ExprPlain(
+                            Term(
+                              FactorDesignator(
+                                DesignatorNoExpr(
+                                  TypeScope(
+                                   Konstante
+                                   pet
+                                  ) [TypeScope]
+                                ) [DesignatorNoExpr]
+                                NoActParsFactor(
+                                ) [NoActParsFactor]
+                              ) [FactorDesignator]
+                              NoMulopFactorList(
+                              ) [NoMulopFactorList]
+                            ) [Term]
+                            AddopTermListExist(
+                              NoAddopTermList(
+                              ) [NoAddopTermList]
+                              Minus(
+                              ) [Minus]
+                              Term(
+                                FactorNum(
+                                 3
+                                ) [FactorNum]
+                                NoMulopFactorList(
+                                ) [NoMulopFactorList]
+                              ) [Term]
+                            ) [AddopTermListExist]
+                          ) [ExprPlain]
+                        ) [DesignatorExpr]
+                        ExprPlain(
+                          Term(
+                            FactorChar(
+                            ) [FactorChar]
+                            NoMulopFactorList(
+                            ) [NoMulopFactorList]
+                          ) [Term]
+                          NoAddopTermList(
+                          ) [NoAddopTermList]
+                        ) [ExprPlain]
+                      ) [DesignatorStatementExpr]
+                    ) [StatementDesignator]
+                  ) [StatementListOpt]
+                  StatementPrint(
+                    ExprPlain(
+                      Term(
+                        FactorDesignator(
+                          DesignatorExpr(
+                            TypeScope(
+                             Nizovi
+                             nizch
+                            ) [TypeScope]
+                            ExprPlain(
+                              Term(
+                                FactorNum(
+                                 1
+                                ) [FactorNum]
+                                NoMulopFactorList(
+                                ) [NoMulopFactorList]
+                              ) [Term]
+                              NoAddopTermList(
+                              ) [NoAddopTermList]
+                            ) [ExprPlain]
+                          ) [DesignatorExpr]
+                          NoActParsFactor(
+                          ) [NoActParsFactor]
+                        ) [FactorDesignator]
+                        NoMulopFactorList(
+                        ) [NoMulopFactorList]
+                      ) [Term]
+                      NoAddopTermList(
+                      ) [NoAddopTermList]
+                    ) [ExprPlain]
+                    NoNumConst(
+                    ) [NoNumConst]
+                  ) [StatementPrint]
+                ) [StatementListOpt]
+                StatementPrint(
+                  ExprPlain(
+                    Term(
+                      FactorDesignator(
+                        DesignatorExpr(
+                          TypeScope(
+                           Nizovi
+                           nizch
+                          ) [TypeScope]
+                          ExprPlain(
+                            Term(
+                              FactorDesignator(
+                                DesignatorNoExpr(
+                                  TypeScope(
+                                   Konstante
+                                   jedan
+                                  ) [TypeScope]
+                                ) [DesignatorNoExpr]
+                                NoActParsFactor(
+                                ) [NoActParsFactor]
+                              ) [FactorDesignator]
+                              MulopFactorListExist(
+                                NoMulopFactorList(
+                                ) [NoMulopFactorList]
+                                Mul(
+                                ) [Mul]
+                                FactorNum(
+                                 2
+                                ) [FactorNum]
+                              ) [MulopFactorListExist]
+                            ) [Term]
+                            NoAddopTermList(
+                            ) [NoAddopTermList]
+                          ) [ExprPlain]
+                        ) [DesignatorExpr]
+                        NoActParsFactor(
+                        ) [NoActParsFactor]
+                      ) [FactorDesignator]
+                      NoMulopFactorList(
+                      ) [NoMulopFactorList]
+                    ) [Term]
+                    NoAddopTermList(
+                    ) [NoAddopTermList]
+                  ) [ExprPlain]
+                  NoNumConst(
+                  ) [NoNumConst]
+                ) [StatementPrint]
+              ) [StatementListOpt]
+              StatementDesignator(
+                DesignatorStatementExpr(
+                  DesignatorNoExpr(
+                    TypeBasic(
+                     a
+                    ) [TypeBasic]
+                  ) [DesignatorNoExpr]
+                  ExprPlain(
+                    Term(
+                      FactorNum(
+                       1
+                      ) [FactorNum]
+                      NoMulopFactorList(
+                      ) [NoMulopFactorList]
+                    ) [Term]
+                    NoAddopTermList(
+                    ) [NoAddopTermList]
+                  ) [ExprPlain]
+                ) [DesignatorStatementExpr]
+              ) [StatementDesignator]
+            ) [StatementListOpt]
+            StatementRead(
+              DesignatorNoExpr(
+                TypeBasic(
+                 bodovi
+                ) [TypeBasic]
+              ) [DesignatorNoExpr]
+            ) [StatementRead]
+          ) [StatementListOpt]
+          StatementDesignator(
+            DesignatorStatementExpr(
+              DesignatorNoExpr(
+                TypeBasic(
+                 bodovi
+                ) [TypeBasic]
+              ) [DesignatorNoExpr]
+              ExprMinus(
+                Term(
+                  FactorDesignator(
+                    DesignatorNoExpr(
+                      TypeBasic(
+                       bodovi
+                      ) [TypeBasic]
+                    ) [DesignatorNoExpr]
+                    NoActParsFactor(
+                    ) [NoActParsFactor]
+                  ) [FactorDesignator]
+                  NoMulopFactorList(
+                  ) [NoMulopFactorList]
+                ) [Term]
+                AddopTermListExist(
+                  AddopTermListExist(
+                    NoAddopTermList(
+                    ) [NoAddopTermList]
+                    Plus(
+                    ) [Plus]
+                    Term(
+                      FactorExpr(
+                        ExprPlain(
+                          Term(
+                            FactorDesignator(
+                              DesignatorNoExpr(
+                                TypeScope(
+                                 Konstante
+                                 pet
+                                ) [TypeScope]
+                              ) [DesignatorNoExpr]
+                              NoActParsFactor(
+                              ) [NoActParsFactor]
+                            ) [FactorDesignator]
+                            MulopFactorListExist(
+                              MulopFactorListExist(
+                                NoMulopFactorList(
+                                ) [NoMulopFactorList]
+                                Mul(
+                                ) [Mul]
+                                FactorDesignator(
+                                  DesignatorNoExpr(
+                                    TypeBasic(
+                                     a
+                                    ) [TypeBasic]
+                                  ) [DesignatorNoExpr]
+                                  NoActParsFactor(
+                                  ) [NoActParsFactor]
+                                ) [FactorDesignator]
+                              ) [MulopFactorListExist]
+                              Div(
+                              ) [Div]
+                              FactorNum(
+                               2
+                              ) [FactorNum]
+                            ) [MulopFactorListExist]
+                          ) [Term]
+                          AddopTermListExist(
+                            NoAddopTermList(
+                            ) [NoAddopTermList]
+                            Minus(
+                            ) [Minus]
+                            Term(
+                              FactorDesignator(
+                                DesignatorNoExpr(
+                                  TypeScope(
+                                   Konstante
+                                   jedan
+                                  ) [TypeScope]
+                                ) [DesignatorNoExpr]
+                                NoActParsFactor(
+                                ) [NoActParsFactor]
+                              ) [FactorDesignator]
+                              NoMulopFactorList(
+                              ) [NoMulopFactorList]
+                            ) [Term]
+                          ) [AddopTermListExist]
+                        ) [ExprPlain]
+                      ) [FactorExpr]
+                      MulopFactorListExist(
+                        NoMulopFactorList(
+                        ) [NoMulopFactorList]
+                        Mul(
+                        ) [Mul]
+                        FactorDesignator(
+                          DesignatorNoExpr(
+                            TypeBasic(
+                             bodovi
+                            ) [TypeBasic]
+                          ) [DesignatorNoExpr]
+                          NoActParsFactor(
+                          ) [NoActParsFactor]
+                        ) [FactorDesignator]
+                      ) [MulopFactorListExist]
+                    ) [Term]
+                  ) [AddopTermListExist]
+                  Minus(
+                  ) [Minus]
+                  Term(
+                    FactorExpr(
+                      ExprPlain(
+                        Term(
+                          FactorNum(
+                           3
+                          ) [FactorNum]
+                          MulopFactorListExist(
+                            NoMulopFactorList(
+                            ) [NoMulopFactorList]
+                            Mod(
+                            ) [Mod]
+                            FactorNum(
+                             2
+                            ) [FactorNum]
+                          ) [MulopFactorListExist]
+                        ) [Term]
+                        AddopTermListExist(
+                          AddopTermListExist(
+                            NoAddopTermList(
+                            ) [NoAddopTermList]
+                            Plus(
+                            ) [Plus]
+                            Term(
+                              FactorNum(
+                               3
+                              ) [FactorNum]
+                              MulopFactorListExist(
+                                NoMulopFactorList(
+                                ) [NoMulopFactorList]
+                                Mul(
+                                ) [Mul]
+                                FactorNum(
+                                 2
+                                ) [FactorNum]
+                              ) [MulopFactorListExist]
+                            ) [Term]
+                          ) [AddopTermListExist]
+                          Minus(
+                          ) [Minus]
+                          Term(
+                            FactorNum(
+                             3
+                            ) [FactorNum]
+                            NoMulopFactorList(
+                            ) [NoMulopFactorList]
+                          ) [Term]
+                        ) [AddopTermListExist]
+                      ) [ExprPlain]
+                    ) [FactorExpr]
+                    NoMulopFactorList(
+                    ) [NoMulopFactorList]
+                  ) [Term]
+                ) [AddopTermListExist]
+              ) [ExprMinus]
+            ) [DesignatorStatementExpr]
+          ) [StatementDesignator]
+        ) [StatementListOpt]
+        StatementPrint(
+          ExprPlain(
+            Term(
+              FactorDesignator(
+                DesignatorNoExpr(
+                  TypeBasic(
+                   bodovi
+                  ) [TypeBasic]
+                ) [DesignatorNoExpr]
+                NoActParsFactor(
+                ) [NoActParsFactor]
+              ) [FactorDesignator]
+              NoMulopFactorList(
+              ) [NoMulopFactorList]
+            ) [Term]
+            NoAddopTermList(
+            ) [NoAddopTermList]
+          ) [ExprPlain]
+          NoNumConst(
+          ) [NoNumConst]
+        ) [StatementPrint]
+      ) [StatementListOpt]
+    ) [MethodDecl]
+  ) [MethodDeclListMany]
+) [Program]
+INFO  03:12:52,596 - ===================================
+INFO  03:12:52,600 - Deklarisana promenljiva niz na liniji 14
+INFO  03:12:52,600 - Deklarisana promenljiva nizch na liniji 15
+INFO  03:12:52,600 - Deklarisana promenljiva a na liniji 20
+INFO  03:12:52,600 - Deklarisana promenljiva bodovi na liniji 24
+ERROR 03:12:52,600 - Nije pronadjen tip bool u tabeli simbola! 
+INFO  03:12:52,600 - Deklarisana promenljiva bt na liniji 25
+ERROR 03:12:52,601 - Greska: Ime bodovi ne predstavlja tip! na liniji 27
+ERROR 03:12:52,601 - Greska: Ime bodovi ne predstavlja tip! na liniji 28
+ERROR 03:12:52,601 - Greska: Ime bodovi ne predstavlja tip! na liniji 29
+ERROR 03:12:52,601 - Greska: Ime bodovi ne predstavlja tip! na liniji 29
+ERROR 03:12:52,601 - Greska: Ime bodovi ne predstavlja tip! na liniji 30
+ERROR 03:12:52,601 - Greska: Ime bodovi ne predstavlja tip! na liniji 30
+ERROR 03:12:52,601 - Greska: Ime bodovi ne predstavlja tip! na liniji 31
+ERROR 03:12:52,601 - Greska: Ime bodovi ne predstavlja tip! na liniji 32
+ERROR 03:12:52,601 - Greska: Ime bodovi ne predstavlja tip! na liniji 38
+ERROR 03:12:52,601 - Greska: Ime bodovi ne predstavlja tip! na liniji 39
+ERROR 03:12:52,601 - Greska: Ime a ne predstavlja tip! na liniji 50
+ERROR 03:12:52,602 - Greska: Ime bodovi ne predstavlja tip! na liniji 51
+ERROR 03:12:52,602 - Greska: Ime bodovi ne predstavlja tip! na liniji 52
+ERROR 03:12:52,602 - Greska: Ime bodovi ne predstavlja tip! na liniji 52
+ERROR 03:12:52,602 - Greska: Ime a ne predstavlja tip! na liniji 52
+ERROR 03:12:52,602 - Greska: Ime bodovi ne predstavlja tip! na liniji 52
+ERROR 03:12:52,602 - Greska: Ime bodovi ne predstavlja tip! na liniji 53
+INFO  03:12:52,602 -  Print count calls = 0
+INFO  03:12:52,602 -  Deklarisanih promenljivih ima = 5
+INFO  03:12:52,602 - ===================================
+ERROR 03:12:52,603 - Parsiranje NIJE uspesno zavrseno!

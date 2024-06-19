@@ -41,14 +41,13 @@ import java_cup.runtime.Symbol;
 "print" 	{ return new_symbol(sym.PRINT, yytext()); }
 "return" 	{ return new_symbol(sym.RETURN, yytext()); }
 "void" 		{ return new_symbol(sym.VOID, yytext()); }
-"namespace"	{ return new_symbol(sym.NAMESPACE, yytext()); }
 "new"		{ return new_symbol(sym.NEW, yytext()); }
 "read"		{ return new_symbol(sym.READ, yytext()); }
 "const"		{ return new_symbol(sym.CONST, yytext()); }
 "break"		{ return new_symbol(sym.BREAK, yytext()); }
 "continue"	{ return new_symbol(sym.CONTINUE, yytext()); }
 "for"		{ return new_symbol(sym.FOR, yytext()); }
-
+"range"		{ return new_symbol(sym.RANGE, yytext()); }
 
 
 "+" 		{ return new_symbol(sym.PLUS, yytext()); }
@@ -59,6 +58,7 @@ import java_cup.runtime.Symbol;
 
 "=" 		{ return new_symbol(sym.EQUAL, yytext()); }
 ";" 		{ return new_symbol(sym.SEMI, yytext()); }
+":" 		{ return new_symbol(sym.COLUMN, yytext()); }
 "," 		{ return new_symbol(sym.COMMA, yytext()); }
 "(" 		{ return new_symbol(sym.LPAREN, yytext()); }
 ")" 		{ return new_symbol(sym.RPAREN, yytext()); }
@@ -86,14 +86,13 @@ import java_cup.runtime.Symbol;
 <COMMENT> . {yybegin(COMMENT);}
 <COMMENT> "\r\n" { yybegin(YYINITIAL); }
 
+"true" | "false"		{ return new_symbol(sym.BOOLCONST, yytext());}
 "'"[a-zA-Z]"'" { return new_symbol (sym.CHARCONST, new Character(yytext().charAt(1)) ); } 
-"true" | "false"	{ return new_symbol(sym.BOOLCONST, new Boolean (yytext())); }
 
 [0-9]+  { return new_symbol(sym.NUMBER, new Integer (yytext())); }
-([a-z]|[A-Z])[a-z|A-Z|0-9|_]* 	{return new_symbol (sym.IDENT, yytext()); }
+([a-z]|[A-Z])[a-zA-Z0-9_]* 	{return new_symbol (sym.IDENT, yytext()); }
 
 . { System.err.println("Leksicka greska ("+yytext()+") u liniji "+(yyline+1)); }
-
 
 
 
