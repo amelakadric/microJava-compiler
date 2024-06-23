@@ -1,30 +1,30 @@
 // generated with ast extension for cup
 // version 0.8
-// 19/5/2024 16:51:6
+// 23/5/2024 20:53:34
 
 
 package rs.ac.bg.etf.pp1.ast;
 
 public class VarDeclPartListMany extends VarDeclPartList {
 
-    private String I1;
+    private String varName;
     private SqBracesOption SqBracesOption;
     private VarDeclPartList VarDeclPartList;
 
-    public VarDeclPartListMany (String I1, SqBracesOption SqBracesOption, VarDeclPartList VarDeclPartList) {
-        this.I1=I1;
+    public VarDeclPartListMany (String varName, SqBracesOption SqBracesOption, VarDeclPartList VarDeclPartList) {
+        this.varName=varName;
         this.SqBracesOption=SqBracesOption;
         if(SqBracesOption!=null) SqBracesOption.setParent(this);
         this.VarDeclPartList=VarDeclPartList;
         if(VarDeclPartList!=null) VarDeclPartList.setParent(this);
     }
 
-    public String getI1() {
-        return I1;
+    public String getVarName() {
+        return varName;
     }
 
-    public void setI1(String I1) {
-        this.I1=I1;
+    public void setVarName(String varName) {
+        this.varName=varName;
     }
 
     public SqBracesOption getSqBracesOption() {
@@ -69,7 +69,7 @@ public class VarDeclPartListMany extends VarDeclPartList {
         buffer.append(tab);
         buffer.append("VarDeclPartListMany(\n");
 
-        buffer.append(" "+tab+I1);
+        buffer.append(" "+tab+varName);
         buffer.append("\n");
 
         if(SqBracesOption!=null)

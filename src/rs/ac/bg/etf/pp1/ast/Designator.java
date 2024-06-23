@@ -1,6 +1,6 @@
 // generated with ast extension for cup
 // version 0.8
-// 19/5/2024 16:51:6
+// 23/5/2024 20:53:34
 
 
 package rs.ac.bg.etf.pp1.ast;
@@ -9,6 +9,8 @@ public class Designator implements SyntaxNode {
 
     private SyntaxNode parent;
     private int line;
+    public rs.etf.pp1.symboltable.concepts.Obj obj = null;
+
     private Type Type;
     private DesignatorOptions DesignatorOptions;
 

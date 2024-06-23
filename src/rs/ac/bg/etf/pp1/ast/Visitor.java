@@ -1,6 +1,6 @@
 // generated with ast extension for cup
 // version 0.8
-// 19/5/2024 16:51:6
+// 23/5/2024 20:53:34
 
 
 package rs.ac.bg.etf.pp1.ast;
@@ -17,10 +17,8 @@ public interface Visitor {
     public void visit(Addop Addop);
     public void visit(Factor Factor);
     public void visit(DeclList DeclList);
+    public void visit(DeclOne DeclOne);
     public void visit(VarDeclPartList VarDeclPartList);
-    public void visit(ConstDeclList ConstDeclList);
-    public void visit(MethodDeclListExists MethodDeclListExists);
-    public void visit(FormParsExists FormParsExists);
     public void visit(MulopFactorListExists MulopFactorListExists);
     public void visit(VarDeclPartListExists VarDeclPartListExists);
     public void visit(VarDeclList VarDeclList);
@@ -29,11 +27,9 @@ public interface Visitor {
     public void visit(SqBracesOption SqBracesOption);
     public void visit(Statement Statement);
     public void visit(TypeOptions TypeOptions);
-    public void visit(Type Type);
+    public void visit(VarDecl VarDecl);
     public void visit(ConstOptions ConstOptions);
-    public void visit(MethodDeclList MethodDeclList);
     public void visit(MinusOption MinusOption);
-    public void visit(FormPars FormPars);
     public void visit(ConstDeclOptionsList ConstDeclOptionsList);
     public void visit(AddopTermList AddopTermList);
     public void visit(ModOp ModOp);
@@ -44,13 +40,12 @@ public interface Visitor {
     public void visit(LTEOp LTEOp);
     public void visit(LTOp LTOp);
     public void visit(GTEOp GTEOp);
-    public void visit(GOp GOp);
+    public void visit(GTOp GTOp);
     public void visit(NotEqualOp NotEqualOp);
     public void visit(EqualityOp EqualityOp);
     public void visit(AssignOp AssignOp);
     public void visit(Label Label);
-    public void visit(TypeIdent TypeIdent);
-    public void visit(TypeScope TypeScope);
+    public void visit(Type Type);
     public void visit(RangeFactor RangeFactor);
     public void visit(ExprFactor ExprFactor);
     public void visit(NewFactor NewFactor);
@@ -84,27 +79,20 @@ public interface Visitor {
     public void visit(DesignatorStatementOp DesignatorStatementOp);
     public void visit(NoStatementList NoStatementList);
     public void visit(StatementListMany StatementListMany);
-    public void visit(FormParsOne FormParsOne);
-    public void visit(FormParsMany FormParsMany);
-    public void visit(NoFormPars NoFormPars);
-    public void visit(FormParsExist FormParsExist);
     public void visit(VoidOption VoidOption);
     public void visit(TypeOption TypeOption);
-    public void visit(MethodDecl MethodDecl);
-    public void visit(MethodDeclListOne MethodDeclListOne);
-    public void visit(MethodDeclListMany MethodDeclListMany);
-    public void visit(NoMethodDeclList NoMethodDeclList);
-    public void visit(MethodDeclListExist MethodDeclListExist);
+    public void visit(FunctionMain FunctionMain);
     public void visit(VarDeclPartListOne VarDeclPartListOne);
     public void visit(VarDeclPartListMany VarDeclPartListMany);
     public void visit(NoVarDeclPartList NoVarDeclPartList);
     public void visit(VarDeclPartListExist VarDeclPartListExist);
     public void visit(NoSqBraces NoSqBraces);
     public void visit(SqBraces SqBraces);
-    public void visit(VarDeclListDerived2 VarDeclListDerived2);
-    public void visit(VarDeclListDerived1 VarDeclListDerived1);
+    public void visit(VarErrorSemi VarErrorSemi);
+    public void visit(VarErrorComma VarErrorComma);
+    public void visit(VarDeclOne VarDeclOne);
+    public void visit(NoVarDeclList NoVarDeclList);
     public void visit(VarDeclListMany VarDeclListMany);
-    public void visit(VarDeclListOne VarDeclListOne);
     public void visit(ConstDeclOptionsListOne ConstDeclOptionsListOne);
     public void visit(ConstDeclOptionsListMany ConstDeclOptionsListMany);
     public void visit(NoConstDeclOptions NoConstDeclOptions);
@@ -112,11 +100,12 @@ public interface Visitor {
     public void visit(BoolConst BoolConst);
     public void visit(CharConst CharConst);
     public void visit(NumConst NumConst);
-    public void visit(ConstDeclListMany ConstDeclListMany);
-    public void visit(ConstDeclListOne ConstDeclListOne);
+    public void visit(ConstDecl ConstDecl);
+    public void visit(VarDeclaration VarDeclaration);
+    public void visit(ConstDeclaration ConstDeclaration);
     public void visit(NoDeclList NoDeclList);
-    public void visit(VarDeclarations VarDeclarations);
-    public void visit(ConstDeclarations ConstDeclarations);
+    public void visit(DeclListMore DeclListMore);
+    public void visit(ProgName ProgName);
     public void visit(Program Program);
 
 }

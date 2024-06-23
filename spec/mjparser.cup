@@ -6,11 +6,11 @@ import rs.ac.bg.etf.pp1.ast.*;
 
 parser code {:
 
-	boolean errorDetected;
-	
-	Logger log = Logger.getLogger(getClass());
+    boolean errorDetected;
+    
+    Logger log = Logger.getLogger(getClass());
    
-   
+    
     // slede redefinisani metodi za prijavu gresaka radi izmene teksta poruke
      
     public void report_fatal_error(String message, Object info) throws java.lang.Exception {
@@ -27,9 +27,9 @@ parser code {:
     }
 
     public void report_error(String message, Object info) {
-    	errorDetected = true;
-    	StringBuilder msg = new StringBuilder(message); 
-    	if (info instanceof Symbol)
+        errorDetected = true;
+        StringBuilder msg = new StringBuilder(message); 
+        if (info instanceof Symbol)
             msg.append (" na liniji ").append(((Symbol)info).left);
         log.error(msg.toString());
     }
@@ -38,79 +38,74 @@ parser code {:
 :}
 
 init with {:
-	errorDetected = false;
+    errorDetected = false;
 :}
 
 scan with {:
-	Symbol s = this.getScanner().next_token();
-	if (s != null && s.value != null) 
-		log.info(s.toString() + " " + s.value.toString());
-	return s;
+    Symbol s = this.getScanner().next_token();
+    if (s != null && s.value != null) 
+        log.info(s.toString() + " " + s.value.toString());
+    return s;
 :}
 
 
 terminal PROG, PRINT, RETURN, VOID, NEW, READ, CONST, BREAK, CONTINUE, FOR, RANGE;
 terminal PLUS, MINUS, MUL, DIV, MOD, INC, DEC, OR, AND, EQUALITY, NOTEQUAL, GT, GTE, LT, LTE;
 terminal EQUAL, SEMI, COMMA, COLUMN, LPAREN, RPAREN, LBRACE, RBRACE, LSQBRACE, RSQBRACE, DBLCOL;
-terminal  COMMENT, CHARCONST, BOOLCONST;
+terminal COMMENT, CHARCONST, BOOLCONST;
 terminal Integer NUMBER;
 terminal String IDENT;
 
-nonterminal Program, DeclList, ConstDeclList, ConstOptions, ConstDeclOptionsListExists, ConstDeclOptionsList, VarDeclList, SqBracesOption, VarDeclPartListExists, VarDeclPartList, MethodDeclListExists, MethodDeclList, MethodDecl, TypeOptions, FormParsExists, FormPars, StatementList, Statement, PrintOptions, DesignatorStatement, Designator, DesignatorOptions, Expr, AddopTermListExists, AddopTermList, MinusOption, Term, MulopFactorListExists, MulopFactorList, Factor, Type, Label, AssignOp, Relop, Addop, Mulop;
-Program ::= (Program) PROG IDENT ConstDeclList VarDeclList LBRACE MethodDeclListExists RBRACE;
+nonterminal DeclList, DeclOne, ConstDecl, ConstOptions, ConstDeclOptionsListExists, ConstDeclOptionsList, VarDeclList, VarDecl, SqBracesOption, VarDeclPartListExists, VarDeclPartList, TypeOptions, StatementList, Statement, PrintOptions, DesignatorStatement, DesignatorOptions, AddopTermListExists, AddopTermList, MinusOption, MulopFactorListExists, MulopFactorList, Label, AssignOp, Relop, Addop, Mulop;
 
-DeclList::= (ConstDeclarations) ConstDeclList
-            |(VarDeclarations)   VarDeclList 
-            |(NoDeclList) ;
+nonterminal rs.etf.pp1.symboltable.concepts.Obj ProgName, Program, FunctionMain, Designator;
+nonterminal rs.etf.pp1.symboltable.concepts.Struct Type, Term, Factor, Expr;
 
-ConstDeclList::= (ConstDeclListOne) CONST Type IDENT EQUAL ConstOptions ConstDeclOptionsListExists SEMI
-    | (ConstDeclListMany) CONST Type IDENT EQUAL ConstOptions ConstDeclOptionsListExists SEMI ConstDeclList;
+Program ::= (Program) PROG ProgName:p DeclList LBRACE FunctionMain RBRACE;
 
+ProgName ::= (ProgName) IDENT:progName;
 
-ConstOptions ::= (NumConst) NUMBER 
+DeclList ::= (DeclListMore) DeclList DeclOne
+            | (NoDeclList);
+
+DeclOne ::= (ConstDeclaration) ConstDecl
+            | (VarDeclaration) VarDecl;
+
+ConstDecl ::= (ConstDecl) CONST Type IDENT EQUAL ConstOptions ConstDeclOptionsListExists SEMI;
+
+ConstOptions ::= (NumConst) NUMBER
     | (CharConst) CHARCONST
-    | (BoolConst) BOOLCONST; 
+    | (BoolConst) BOOLCONST;
 
-ConstDeclOptionsListExists ::= (ConstDeclOptionsListExist) ConstDeclOptionsList 
-                            | (NoConstDeclOptions);
+ConstDeclOptionsListExists ::= (ConstDeclOptionsListExist) ConstDeclOptionsList
+    | (NoConstDeclOptions);
 
-ConstDeclOptionsList ::= (ConstDeclOptionsListMany) ConstDeclOptionsList COMMA IDENT EQUAL ConstOptions 
-    | (ConstDeclOptionsListOne)COMMA IDENT EQUAL ConstOptions;
-
-VarDeclList ::= (VarDeclListOne) Type IDENT SqBracesOption VarDeclPartListExists SEMI
-    | (VarDeclListMany) Type IDENT SqBracesOption VarDeclPartListExists SEMI VarDeclList
-    |error COMMA:l
-    {: parser.report_error("Izvrsen oporavak do , u liniji " +lleft, null); :}
-    | error SEMI:l
-    {: parser.report_error("Izvrsen oporavak do ; u liniji " +lleft, null); :};
+ConstDeclOptionsList ::= (ConstDeclOptionsListMany) ConstDeclOptionsList COMMA IDENT EQUAL ConstOptions
+    | (ConstDeclOptionsListOne) COMMA IDENT EQUAL ConstOptions;
 
 
-SqBracesOption ::= (SqBraces) LSQBRACE RSQBRACE 
-        | (NoSqBraces);
+VarDeclList ::= (VarDeclListMany) VarDeclList VarDecl
+    | (NoVarDeclList);
 
-VarDeclPartListExists ::= (VarDeclPartListExist) VarDeclPartList 
-            | (NoVarDeclPartList);
+VarDecl ::= (VarDeclOne) Type:varType IDENT:varName SqBracesOption VarDeclPartListExists SEMI
+    | (VarErrorComma)error COMMA:l
+    {: parser.report_error("Izvrsen oporavak do , u liniji " + lleft, null); :}
+    |(VarErrorSemi) error SEMI:l
+    {: parser.report_error("Izvrsen oporavak do ; u liniji " + lleft, null); :};
 
-VarDeclPartList ::= (VarDeclPartListMany) COMMA IDENT SqBracesOption VarDeclPartList
-    | (VarDeclPartListOne) COMMA IDENT SqBracesOption;
+SqBracesOption ::= (SqBraces) LSQBRACE RSQBRACE
+    | (NoSqBraces);
 
-MethodDeclListExists ::= (MethodDeclListExist) MethodDeclList 
-    | (NoMethodDeclList);
+VarDeclPartListExists ::= (VarDeclPartListExist) VarDeclPartList
+    | (NoVarDeclPartList);
 
-MethodDeclList ::= (MethodDeclListMany) MethodDeclList MethodDecl
-    | (MethodDeclListOne) MethodDecl;
+VarDeclPartList ::= (VarDeclPartListMany) COMMA IDENT:varName SqBracesOption VarDeclPartList
+    | (VarDeclPartListOne) COMMA IDENT:varName SqBracesOption;
 
-MethodDecl ::= (MethodDecl) TypeOptions IDENT LPAREN FormParsExists RPAREN VarDeclList LBRACE StatementList RBRACE;
+FunctionMain ::= (FunctionMain) TypeOptions IDENT:funcName LPAREN RPAREN VarDeclList LBRACE StatementList RBRACE;
 
 TypeOptions ::= (TypeOption) Type 
     | (VoidOption) VOID;
-
-
-FormParsExists ::= (FormParsExist) FormPars 
-    | (NoFormPars);
-
-FormPars ::= (FormParsMany) Type IDENT SqBracesOption FormPars
-    | (FormParsOne) Type IDENT SqBracesOption;
 
 StatementList ::= (StatementListMany) StatementList Statement
     | (NoStatementList);
@@ -120,15 +115,15 @@ Statement ::=
     | (ReadStatement) READ LPAREN Designator RPAREN SEMI 
     | (PrintStatement) PRINT LPAREN Expr PrintOptions RPAREN SEMI
     | error SEMI:l
-    {: parser.report_error("Izvrsen oporavak do ; u liniji " +lleft, null); :};
+    {: parser.report_error("Izvrsen oporavak do ; u liniji " + lleft, null); :};
 
-PrintOptions ::= (PrintOption) COMMA NUMBER
+PrintOptions ::= (PrintOption) COMMA NUMBER:printNumber
     | (NoPrintOptions);
-    
+
 DesignatorStatement ::= 
-    (DesignatorAssignopExpr) Designator AssignOp Expr|
-    (DesignatorInc) Designator INC |
-    (DesignatorDec) Designator DEC;
+    (DesignatorAssignopExpr) Designator AssignOp Expr
+    | (DesignatorInc) Designator INC
+    | (DesignatorDec) Designator DEC;
 
 Designator ::= (Designator) Type DesignatorOptions;
 
@@ -148,39 +143,37 @@ MinusOption ::= (Minus) MINUS
 
 Term ::= (Term) Factor MulopFactorListExists;
 
-MulopFactorListExists::= (MulopFactorListExist) MulopFactorList 
+MulopFactorListExists ::= (MulopFactorListExist) MulopFactorList 
     | (NoMulopFactorList);
 
 MulopFactorList ::= (MulopFactorListMany) Mulop Factor MulopFactorList
     | (MulopFactorListOne) Mulop Factor;
 
-
 Factor ::= 
-    (DesignatorFactor) Designator |
-    (NumConstFactor) NUMBER |
-    (CharConstFactor) CHARCONST |
-    (BoolConstFactor) BOOLCONST |
-    (NewFactor) NEW Type LSQBRACE Expr RSQBRACE|
-    (ExprFactor) LPAREN Expr RPAREN|
-    (RangeFactor) RANGE LPAREN Expr RPAREN;
+    (DesignatorFactor) Designator
+    | (NumConstFactor) NUMBER:value
+    | (CharConstFactor) CHARCONST:value
+    | (BoolConstFactor) BOOLCONST:value
+    | (NewFactor) NEW Type LSQBRACE Expr RSQBRACE
+    | (ExprFactor) LPAREN Expr RPAREN
+    | (RangeFactor) RANGE LPAREN Expr RPAREN;
 
-Type ::= (TypeScope) IDENT DBLCOL IDENT 
-    | (TypeIdent) IDENT;
+Type ::= (Type) IDENT:typeName;
 
 Label ::= (Label) IDENT;
 
-AssignOp ::=  (AssignOp) EQUAL;
+AssignOp ::= (AssignOp) EQUAL;
 Relop ::= 
-        (EqualityOp)EQUALITY 
-        | (NotEqualOp) NOTEQUAL 
-        | (GOp) GT 
-        | (GTEOp) GTE 
-        | (LTOp) LT 
-        | (LTEOp) LTE;
+    (EqualityOp) EQUALITY
+    | (NotEqualOp) NOTEQUAL
+    | (GTOp) GT
+    | (GTEOp) GTE
+    | (LTOp) LT
+    | (LTEOp) LTE;
 
-Addop ::= (PlusOp) PLUS 
-        |(MinusOp) MINUS;
-Mulop ::= (MulOpMul) MUL |  (DivOp) DIV | (ModOp) MOD;
+Addop ::= (PlusOp) PLUS
+    | (MinusOp) MINUS;
 
-
-
+Mulop ::= (MulOpMul) MUL
+    | (DivOp) DIV
+    | (ModOp) MOD;
