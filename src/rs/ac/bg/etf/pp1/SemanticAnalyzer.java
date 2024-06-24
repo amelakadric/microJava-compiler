@@ -15,14 +15,17 @@ public class SemanticAnalyzer extends VisitorAdaptor {
 	boolean errorDetected = false;
 	int nVars;
     Struct currentVarType = null;
+    Struct currentConstType = null;
+    
 
     Struct boolType;
 	
 	Logger log = Logger.getLogger(getClass());
 
     public SemanticAnalyzer() {
-		boolType = Tab.insert(Obj.Type, "bool", new Struct(Struct.Bool)).getType();
-	}
+        boolType = Tab.insert(Obj.Type, "bool", new Struct(Struct.Bool)).getType();
+    }
+
 
 	public void report_error(String message, SyntaxNode info) {
 		errorDetected = true;
@@ -65,6 +68,7 @@ public class SemanticAnalyzer extends VisitorAdaptor {
     	}else{
     		if(Obj.Type == typeNode.getKind()){
     			type.struct = typeNode.getType();
+                currentConstType = typeNode.getType();
     		}else{
     			report_error("Greska: Ime " + type.getTypeName() + " ne predstavlja tip!", type);
     			type.struct = Tab.noType;
@@ -75,6 +79,7 @@ public class SemanticAnalyzer extends VisitorAdaptor {
     public void visit(VarDeclOne varDecl){
         Obj varNode = Tab.find(varDecl.getVarName());
         currentVarType = varDecl.getType().struct;
+        currentConstType=null;
 
         if(varNode != Tab.noObj){
             report_error("Greska na liniji " + varDecl.getLine() + ": Promenljiva " + varDecl.getVarName() + " je vec deklarisana!", null);
@@ -102,24 +107,82 @@ public class SemanticAnalyzer extends VisitorAdaptor {
     public void visit(NoVarDeclPartList noVarDeclPartList){
         currentVarType = null;
     }
+
+
+    //visitor method for NumConst
+    public void visit(NumConst numConst){
+        Obj constNode = Tab.find(numConst.getConstName());
+        if(constNode != Tab.noObj){
+            report_error("Greska na liniji " + numConst.getLine() + ": Konstanta " + numConst.getConstName() + " je vec deklarisana!", null);
+        }else{
+            if(currentConstType.getKind() !=  Struct.Int){
+        		report_error("Greska: Konstanta " + numConst.getConstName() + " nije ispravnog tipa", numConst);	
+    		}
+    		else {
+        		Obj constNumNode = Tab.insert(Obj.Con,  numConst.getConstName(), Tab.intType);
+        		constNumNode.setAdr(numConst.getValue());
+        		report_info("Deklarisana int konstanta: " + numConst.getConstName() + "= " + numConst.getValue(), numConst);
+    		}
+         }
+    }
+
+    //visitor method for BoolConst
+//    public void visit(BoolConstant boolConst) {
+//         Obj constNode = Tab.find(boolConst.getConstName());
+//         if (constNode != Tab.noObj) {
+//             report_error("Greska na liniji " + boolConst.getLine() + ": Konstanta " + boolConst.getConstName() + " je vec deklarisana!", null);
+//         } else {
+//             if (currentConstType.getKind() != Struct.Bool) {
+//                 report_error("Greska: Konstanta " + boolConst.getConstName() + " nije ispravnog tipa", boolConst);
+//             } else {
+//                 Obj constBoolNode = Tab.insert(Obj.Con, boolConst.getConstName(), boolType);
+//                 // constBoolNode.setAdr(boolConst.getValue() ? 1 : 0);
+//                 // report_info("Deklarisana bool konstanta: " + boolConst.getConstName() + "= " + boolConst.getValue(), boolConst);
+//             }
+//         }
+//     }
+
+    //visitor method for CharConst
+    public void visit(CharConstant charConst){
+        Obj constNode = Tab.find(charConst.getConstName());
+        if(constNode != Tab.noObj){
+            report_error("Greska na liniji " + charConst.getLine() + ": Konstanta " + charConst.getConstName() + " je vec deklarisana!", null);
+        }else{
+            if(currentConstType.getKind() !=  Struct.Char){
+        		report_error("Greska: Konstanta " + charConst.getConstName() + " nije ispravnog tipa", charConst);	
+    		}
+    		else {
+        		Obj constCharNode = Tab.insert(Obj.Con,  charConst.getConstName(), Tab.charType);
+        		constCharNode.setAdr(charConst.getValue());
+        		report_info("Deklarisana char konstanta: " + charConst.getConstName() + "= " + charConst.getValue(), charConst);
+    		}
+         }
+    }
+
+    //visitor method for FunctionMain
     
-    // public void visit(MethodTypeName methodTypeName){
-    // 	currentMethod = Tab.insert(Obj.Meth, methodTypeName.getMethName(), methodTypeName.getType().struct);
-    // 	methodTypeName.obj = currentMethod;
-    // 	Tab.openScope();
-	// 	report_info("Obradjuje se funkcija " + methodTypeName.getMethName(), methodTypeName);
-    // }
+
+    // visitor method for FunctionTypeName
+    public void visit(FunctionTypeName functionTypeName){
+        currentMethod = Tab.insert(Obj.Meth, functionTypeName.getFuncName(), Tab.noType);
+        functionTypeName.obj = currentMethod;
+        Tab.openScope();
+        report_info("Obradjuje se funkcija " + functionTypeName.getFuncName(), functionTypeName);
+    }
     
-    // public void visit(MethodDecl methodDecl){
-    // 	if(!returnFound && currentMethod.getType() != Tab.noType){
-	// 		report_error("Semanticka greska na liniji " + methodDecl.getLine() + ": funkcija " + currentMethod.getName() + " nema return iskaz!", null);
-    // 	}
-    // 	Tab.chainLocalSymbols(currentMethod);
-    // 	Tab.closeScope();
-    	
-    // 	returnFound = false;
-    // 	currentMethod = null;
-    // }
+
+    //visitor method for FunctionTypeNameVoid
+    public void visit(FunctionMain functionMain){
+        if(!returnFound && currentMethod != null && currentMethod.getType() != Tab.noType){
+            report_error("Greska na liniji " + functionMain.getLine() + ": funkcija " + currentMethod.getName() + " nema return iskaz!", null);
+        }
+        
+        Tab.chainLocalSymbols(currentMethod);
+        Tab.closeScope();
+        
+        returnFound = false;
+        currentMethod = null;
+    }
     
     // public void visit(Designator designator){
     // 	Obj obj = Tab.find(designator.getName());

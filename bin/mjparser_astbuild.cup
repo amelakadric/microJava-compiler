@@ -52,15 +52,15 @@ scan with {:
 terminal PROG, PRINT, RETURN, VOID, NEW, READ, CONST, BREAK, CONTINUE, FOR, RANGE;
 terminal PLUS, MINUS, MUL, DIV, MOD, INC, DEC, OR, AND, EQUALITY, NOTEQUAL, GT, GTE, LT, LTE;
 terminal EQUAL, SEMI, COMMA, COLUMN, LPAREN, RPAREN, LBRACE, RBRACE, LSQBRACE, RSQBRACE, DBLCOL;
-terminal COMMENT, CHARCONST, BOOLCONST;
+terminal COMMENT, BOOLCONST;
 terminal Integer NUMBER;
+terminal Character CHARCONST;
 terminal String IDENT;
 
 nonterminal DeclList DeclList;
 nonterminal DeclOne DeclOne;
 nonterminal ConstDecl ConstDecl;
 nonterminal ConstOne ConstOne;
-nonterminal ConstOptions ConstOptions;
 nonterminal ConstDeclOptionsListExists ConstDeclOptionsListExists;
 nonterminal ConstDeclOptionsList ConstDeclOptionsList;
 nonterminal VarDeclList VarDeclList;
@@ -70,7 +70,6 @@ nonterminal VarDecl VarDecl;
 nonterminal SqBracesOption SqBracesOption;
 nonterminal VarDeclPartListExists VarDeclPartListExists;
 nonterminal VarDeclPartList VarDeclPartList;
-nonterminal TypeOptions TypeOptions;
 nonterminal StatementList StatementList;
 nonterminal Statement Statement;
 nonterminal PrintOptions PrintOptions;
@@ -87,8 +86,8 @@ nonterminal Relop Relop;
 nonterminal Addop Addop;
 nonterminal Mulop Mulop;
 
-nonterminal rs.etf.pp1.symboltable.concepts.Obj ProgName, Program, FunctionMain, Designator;
-nonterminal rs.etf.pp1.symboltable.concepts.Struct Type, Term, Factor, Expr;
+nonterminal rs.etf.pp1.symboltable.concepts.Obj ProgName, Program, FunctionMain, FunctionTypeName, Designator;
+nonterminal rs.etf.pp1.symboltable.concepts.Struct Type, Term, Factor, Expr, TypeOptions;
 
 Program ::= (Program) PROG ProgName:p DeclList:D1 LBRACE FunctionMain:F2 RBRACE {: RESULT=new Program(p, D1, F2); RESULT.setLine(pleft); :};
 
@@ -102,11 +101,11 @@ DeclOne ::= (ConstDeclaration) ConstDecl:C1 {: RESULT=new ConstDeclaration(C1); 
 
 ConstDecl ::= (ConstDecl) CONST Type:T1 ConstOne:C2 ConstDeclOptionsListExists:C3 SEMI {: RESULT=new ConstDecl(T1, C2, C3); RESULT.setLine(T1left); :};
 
-ConstOne::= (ConstOne) IDENT:constName EQUAL ConstOptions:C1 {: RESULT=new ConstOne(constName, C1); RESULT.setLine(constNameleft); :};
+ConstOne::= (NumConst) IDENT:constName EQUAL NUMBER:value {: RESULT=new NumConst(constName, value); RESULT.setLine(constNameleft); :}
+            | (CharConstant)  IDENT:constName EQUAL CHARCONST:value {: RESULT=new CharConstant(constName, value); RESULT.setLine(constNameleft); :}
+            | (BoolConstant)  IDENT:constName EQUAL BOOLCONST:value {: RESULT=new BoolConstant(constName); RESULT.setLine(constNameleft); :};
 
-ConstOptions ::= (NumConst) NUMBER:value {: RESULT=new NumConst(value); RESULT.setLine(valueleft); :}
-    | (CharConst) CHARCONST:value {: RESULT=new CharConst(); :}
-    | (BoolConst) BOOLCONST:value {: RESULT=new BoolConst(); :};
+
 
 ConstDeclOptionsListExists ::= (ConstDeclOptionsListExist) ConstDeclOptionsList:C1 {: RESULT=new ConstDeclOptionsListExist(C1); RESULT.setLine(C1left); :}
     | (NoConstDeclOptions) {: RESULT=new NoConstDeclOptions(); :};
@@ -137,10 +136,12 @@ VarDeclPartList ::= (VarDeclPartListMany) VarDeclPartOne:V1 VarDeclPartList:V2 {
 
 VarDeclPartOne ::= (VarDeclPartOne) COMMA IDENT:varName SqBracesOption:S1 {: RESULT=new VarDeclPartOne(varName, S1); RESULT.setLine(varNameleft); :};
 
-FunctionMain ::= (FunctionMain) TypeOptions:T1 IDENT:funcName LPAREN RPAREN VarDeclList:V2 LBRACE StatementList:S3 RBRACE {: RESULT=new FunctionMain(T1, funcName, V2, S3); RESULT.setLine(T1left); :};
+FunctionMain ::= (FunctionMain)  FunctionTypeName:F1 LPAREN RPAREN VarDeclList:V2 LBRACE StatementList:S3 RBRACE {: RESULT=new FunctionMain(F1, V2, S3); RESULT.setLine(F1left); :};
 
-TypeOptions ::= (TypeOption) Type:T1 {: RESULT=new TypeOption(T1); RESULT.setLine(T1left); :} 
-    | (VoidOption) VOID {: RESULT=new VoidOption(); :};
+FunctionTypeName ::= (FunctionTypeName) TypeOptions:typeName IDENT:funcName {: RESULT=new FunctionTypeName(typeName, funcName); RESULT.setLine(typeNameleft); :};
+
+TypeOptions ::= (TypeOption) Type:typeName {: RESULT=new TypeOption(typeName); RESULT.setLine(typeNameleft); :}
+    | (VoidOption) VOID:typeName {: RESULT=new VoidOption(); :};
 
 StatementList ::= (StatementListMany) StatementList:S1 Statement:S2 {: RESULT=new StatementListMany(S1, S2); RESULT.setLine(S1left); :}
     | (NoStatementList) {: RESULT=new NoStatementList(); :};
@@ -187,7 +188,7 @@ MulopFactorList ::= (MulopFactorListMany) Mulop:M1 Factor:F2 MulopFactorList:M3 
 Factor ::= 
     (DesignatorFactor) Designator:D1 {: RESULT=new DesignatorFactor(D1); RESULT.setLine(D1left); :}
     | (NumConstFactor) NUMBER:value {: RESULT=new NumConstFactor(value); RESULT.setLine(valueleft); :}
-    | (CharConstFactor) CHARCONST:value {: RESULT=new CharConstFactor(); :}
+    | (CharConstFactor) CHARCONST:value {: RESULT=new CharConstFactor(value); RESULT.setLine(valueleft); :}
     | (BoolConstFactor) BOOLCONST:value {: RESULT=new BoolConstFactor(); :}
     | (NewFactor) NEW Type:T1 LSQBRACE Expr:E2 RSQBRACE {: RESULT=new NewFactor(T1, E2); RESULT.setLine(T1left); :}
     | (ExprFactor) LPAREN Expr:E1 RPAREN {: RESULT=new ExprFactor(E1); RESULT.setLine(E1left); :}

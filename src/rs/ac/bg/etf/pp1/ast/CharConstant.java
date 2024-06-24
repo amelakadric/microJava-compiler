@@ -5,19 +5,29 @@
 
 package rs.ac.bg.etf.pp1.ast;
 
-public class NumConstFactor extends Factor {
+public class CharConstant extends ConstOne {
 
-    private Integer value;
+    private String constName;
+    private Character value;
 
-    public NumConstFactor (Integer value) {
+    public CharConstant (String constName, Character value) {
+        this.constName=constName;
         this.value=value;
     }
 
-    public Integer getValue() {
+    public String getConstName() {
+        return constName;
+    }
+
+    public void setConstName(String constName) {
+        this.constName=constName;
+    }
+
+    public Character getValue() {
         return value;
     }
 
-    public void setValue(Integer value) {
+    public void setValue(Character value) {
         this.value=value;
     }
 
@@ -39,13 +49,16 @@ public class NumConstFactor extends Factor {
     public String toString(String tab) {
         StringBuffer buffer=new StringBuffer();
         buffer.append(tab);
-        buffer.append("NumConstFactor(\n");
+        buffer.append("CharConstant(\n");
+
+        buffer.append(" "+tab+constName);
+        buffer.append("\n");
 
         buffer.append(" "+tab+value);
         buffer.append("\n");
 
         buffer.append(tab);
-        buffer.append(") [NumConstFactor]");
+        buffer.append(") [CharConstant]");
         return buffer.toString();
     }
 }

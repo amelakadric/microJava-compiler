@@ -1,16 +1,26 @@
 // generated with ast extension for cup
 // version 0.8
-// 24/5/2024 2:53:33
+// 24/5/2024 4:23:13
 
 
 package rs.ac.bg.etf.pp1.ast;
 
-public class NumConst extends ConstOptions {
+public class NumConst extends ConstOne {
 
+    private String constName;
     private Integer value;
 
-    public NumConst (Integer value) {
+    public NumConst (String constName, Integer value) {
+        this.constName=constName;
         this.value=value;
+    }
+
+    public String getConstName() {
+        return constName;
+    }
+
+    public void setConstName(String constName) {
+        this.constName=constName;
     }
 
     public Integer getValue() {
@@ -40,6 +50,9 @@ public class NumConst extends ConstOptions {
         StringBuffer buffer=new StringBuffer();
         buffer.append(tab);
         buffer.append("NumConst(\n");
+
+        buffer.append(" "+tab+constName);
+        buffer.append("\n");
 
         buffer.append(" "+tab+value);
         buffer.append("\n");

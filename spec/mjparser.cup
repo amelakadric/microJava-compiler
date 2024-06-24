@@ -52,14 +52,15 @@ scan with {:
 terminal PROG, PRINT, RETURN, VOID, NEW, READ, CONST, BREAK, CONTINUE, FOR, RANGE;
 terminal PLUS, MINUS, MUL, DIV, MOD, INC, DEC, OR, AND, EQUALITY, NOTEQUAL, GT, GTE, LT, LTE;
 terminal EQUAL, SEMI, COMMA, COLUMN, LPAREN, RPAREN, LBRACE, RBRACE, LSQBRACE, RSQBRACE, DBLCOL;
-terminal COMMENT, CHARCONST, BOOLCONST;
+terminal COMMENT, BOOLCONST;
 terminal Integer NUMBER;
+terminal Character CHARCONST;
 terminal String IDENT;
 
-nonterminal DeclList, DeclOne, ConstDecl, ConstOne, ConstOptions, ConstDeclOptionsListExists, ConstDeclOptionsList, VarDeclList, VarDeclPartOne, VarDeclOne, VarDecl, SqBracesOption, VarDeclPartListExists, VarDeclPartList, TypeOptions, StatementList, Statement, PrintOptions, DesignatorStatement, DesignatorOptions, AddopTermListExists, AddopTermList, MinusOption, MulopFactorListExists, MulopFactorList, Label, AssignOp, Relop, Addop, Mulop;
+nonterminal DeclList, DeclOne, ConstDecl, ConstOne, ConstDeclOptionsListExists, ConstDeclOptionsList, VarDeclList, VarDeclPartOne, VarDeclOne, VarDecl, SqBracesOption, VarDeclPartListExists, VarDeclPartList, StatementList, Statement, PrintOptions, DesignatorStatement, DesignatorOptions, AddopTermListExists, AddopTermList, MinusOption, MulopFactorListExists, MulopFactorList, Label, AssignOp, Relop, Addop, Mulop;
 
-nonterminal rs.etf.pp1.symboltable.concepts.Obj ProgName, Program, FunctionMain, Designator;
-nonterminal rs.etf.pp1.symboltable.concepts.Struct Type, Term, Factor, Expr;
+nonterminal rs.etf.pp1.symboltable.concepts.Obj ProgName, Program, FunctionMain, FunctionTypeName, Designator;
+nonterminal rs.etf.pp1.symboltable.concepts.Struct Type, Term, Factor, Expr, TypeOptions;
 
 Program ::= (Program) PROG ProgName:p DeclList LBRACE FunctionMain RBRACE;
 
@@ -73,11 +74,11 @@ DeclOne ::= (ConstDeclaration) ConstDecl
 
 ConstDecl ::= (ConstDecl) CONST Type ConstOne ConstDeclOptionsListExists SEMI;
 
-ConstOne::= (ConstOne) IDENT:constName EQUAL ConstOptions;
+ConstOne::= (NumConst) IDENT:constName EQUAL NUMBER:value
+            | (CharConstant)  IDENT:constName EQUAL CHARCONST:value
+            | (BoolConstant)  IDENT:constName EQUAL BOOLCONST:value;
 
-ConstOptions ::= (NumConst) NUMBER:value
-    | (CharConst) CHARCONST:value
-    | (BoolConst) BOOLCONST:value;
+
 
 ConstDeclOptionsListExists ::= (ConstDeclOptionsListExist) ConstDeclOptionsList
     | (NoConstDeclOptions);
@@ -108,10 +109,12 @@ VarDeclPartList ::= (VarDeclPartListMany) VarDeclPartOne VarDeclPartList
 
 VarDeclPartOne ::= (VarDeclPartOne) COMMA IDENT:varName SqBracesOption;
 
-FunctionMain ::= (FunctionMain) TypeOptions IDENT:funcName LPAREN RPAREN VarDeclList LBRACE StatementList RBRACE;
+FunctionMain ::= (FunctionMain)  FunctionTypeName LPAREN RPAREN VarDeclList LBRACE StatementList RBRACE;
 
-TypeOptions ::= (TypeOption) Type 
-    | (VoidOption) VOID;
+FunctionTypeName ::= (FunctionTypeName) TypeOptions:typeName IDENT:funcName;
+
+TypeOptions ::= (TypeOption) Type:typeName
+    | (VoidOption) VOID:typeName;
 
 StatementList ::= (StatementListMany) StatementList Statement
     | (NoStatementList);

@@ -1,6 +1,6 @@
 // generated with ast extension for cup
 // version 0.8
-// 24/5/2024 2:53:33
+// 24/5/2024 4:23:13
 
 
 package rs.ac.bg.etf.pp1.ast;
@@ -15,6 +15,7 @@ public abstract class VisitorAdaptor implements Visitor {
     public void visit(StatementList StatementList) { }
     public void visit(ConstDeclOptionsListExists ConstDeclOptionsListExists) { }
     public void visit(Addop Addop) { }
+    public void visit(ConstOne ConstOne) { }
     public void visit(Factor Factor) { }
     public void visit(DeclList DeclList) { }
     public void visit(DeclOne DeclOne) { }
@@ -25,10 +26,9 @@ public abstract class VisitorAdaptor implements Visitor {
     public void visit(AddopTermListExists AddopTermListExists) { }
     public void visit(DesignatorStatement DesignatorStatement) { }
     public void visit(SqBracesOption SqBracesOption) { }
-    public void visit(Statement Statement) { }
     public void visit(TypeOptions TypeOptions) { }
+    public void visit(Statement Statement) { }
     public void visit(VarDecl VarDecl) { }
-    public void visit(ConstOptions ConstOptions) { }
     public void visit(MinusOption MinusOption) { }
     public void visit(ConstDeclOptionsList ConstDeclOptionsList) { }
     public void visit(AddopTermList AddopTermList) { }
@@ -81,6 +81,7 @@ public abstract class VisitorAdaptor implements Visitor {
     public void visit(StatementListMany StatementListMany) { visit(); }
     public void visit(VoidOption VoidOption) { visit(); }
     public void visit(TypeOption TypeOption) { visit(); }
+    public void visit(FunctionTypeName FunctionTypeName) { visit(); }
     public void visit(FunctionMain FunctionMain) { visit(); }
     public void visit(VarDeclPartOne VarDeclPartOne) { visit(); }
     public void visit(VarDeclPartListOne VarDeclPartListOne) { visit(); }
@@ -99,10 +100,9 @@ public abstract class VisitorAdaptor implements Visitor {
     public void visit(ConstDeclOptionsListMany ConstDeclOptionsListMany) { visit(); }
     public void visit(NoConstDeclOptions NoConstDeclOptions) { visit(); }
     public void visit(ConstDeclOptionsListExist ConstDeclOptionsListExist) { visit(); }
-    public void visit(BoolConst BoolConst) { visit(); }
-    public void visit(CharConst CharConst) { visit(); }
+    public void visit(BoolConstant BoolConstant) { visit(); }
+    public void visit(CharConstant CharConstant) { visit(); }
     public void visit(NumConst NumConst) { visit(); }
-    public void visit(ConstOne ConstOne) { visit(); }
     public void visit(ConstDecl ConstDecl) { visit(); }
     public void visit(VarDeclaration VarDeclaration) { visit(); }
     public void visit(ConstDeclaration ConstDeclaration) { visit(); }

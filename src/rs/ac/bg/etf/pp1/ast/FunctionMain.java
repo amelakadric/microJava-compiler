@@ -1,6 +1,6 @@
 // generated with ast extension for cup
 // version 0.8
-// 24/5/2024 2:53:33
+// 24/5/2024 4:23:13
 
 
 package rs.ac.bg.etf.pp1.ast;
@@ -11,35 +11,25 @@ public class FunctionMain implements SyntaxNode {
     private int line;
     public rs.etf.pp1.symboltable.concepts.Obj obj = null;
 
-    private TypeOptions TypeOptions;
-    private String funcName;
+    private FunctionTypeName FunctionTypeName;
     private VarDeclList VarDeclList;
     private StatementList StatementList;
 
-    public FunctionMain (TypeOptions TypeOptions, String funcName, VarDeclList VarDeclList, StatementList StatementList) {
-        this.TypeOptions=TypeOptions;
-        if(TypeOptions!=null) TypeOptions.setParent(this);
-        this.funcName=funcName;
+    public FunctionMain (FunctionTypeName FunctionTypeName, VarDeclList VarDeclList, StatementList StatementList) {
+        this.FunctionTypeName=FunctionTypeName;
+        if(FunctionTypeName!=null) FunctionTypeName.setParent(this);
         this.VarDeclList=VarDeclList;
         if(VarDeclList!=null) VarDeclList.setParent(this);
         this.StatementList=StatementList;
         if(StatementList!=null) StatementList.setParent(this);
     }
 
-    public TypeOptions getTypeOptions() {
-        return TypeOptions;
+    public FunctionTypeName getFunctionTypeName() {
+        return FunctionTypeName;
     }
 
-    public void setTypeOptions(TypeOptions TypeOptions) {
-        this.TypeOptions=TypeOptions;
-    }
-
-    public String getFuncName() {
-        return funcName;
-    }
-
-    public void setFuncName(String funcName) {
-        this.funcName=funcName;
+    public void setFunctionTypeName(FunctionTypeName FunctionTypeName) {
+        this.FunctionTypeName=FunctionTypeName;
     }
 
     public VarDeclList getVarDeclList() {
@@ -79,20 +69,20 @@ public class FunctionMain implements SyntaxNode {
     }
 
     public void childrenAccept(Visitor visitor) {
-        if(TypeOptions!=null) TypeOptions.accept(visitor);
+        if(FunctionTypeName!=null) FunctionTypeName.accept(visitor);
         if(VarDeclList!=null) VarDeclList.accept(visitor);
         if(StatementList!=null) StatementList.accept(visitor);
     }
 
     public void traverseTopDown(Visitor visitor) {
         accept(visitor);
-        if(TypeOptions!=null) TypeOptions.traverseTopDown(visitor);
+        if(FunctionTypeName!=null) FunctionTypeName.traverseTopDown(visitor);
         if(VarDeclList!=null) VarDeclList.traverseTopDown(visitor);
         if(StatementList!=null) StatementList.traverseTopDown(visitor);
     }
 
     public void traverseBottomUp(Visitor visitor) {
-        if(TypeOptions!=null) TypeOptions.traverseBottomUp(visitor);
+        if(FunctionTypeName!=null) FunctionTypeName.traverseBottomUp(visitor);
         if(VarDeclList!=null) VarDeclList.traverseBottomUp(visitor);
         if(StatementList!=null) StatementList.traverseBottomUp(visitor);
         accept(visitor);
@@ -103,13 +93,10 @@ public class FunctionMain implements SyntaxNode {
         buffer.append(tab);
         buffer.append("FunctionMain(\n");
 
-        if(TypeOptions!=null)
-            buffer.append(TypeOptions.toString("  "+tab));
+        if(FunctionTypeName!=null)
+            buffer.append(FunctionTypeName.toString("  "+tab));
         else
             buffer.append(tab+"  null");
-        buffer.append("\n");
-
-        buffer.append(" "+tab+funcName);
         buffer.append("\n");
 
         if(VarDeclList!=null)
