@@ -56,7 +56,7 @@ terminal COMMENT, CHARCONST, BOOLCONST;
 terminal Integer NUMBER;
 terminal String IDENT;
 
-nonterminal DeclList, DeclOne, ConstDecl, ConstOptions, ConstDeclOptionsListExists, ConstDeclOptionsList, VarDeclList, VarDecl, SqBracesOption, VarDeclPartListExists, VarDeclPartList, TypeOptions, StatementList, Statement, PrintOptions, DesignatorStatement, DesignatorOptions, AddopTermListExists, AddopTermList, MinusOption, MulopFactorListExists, MulopFactorList, Label, AssignOp, Relop, Addop, Mulop;
+nonterminal DeclList, DeclOne, ConstDecl, ConstOne, ConstOptions, ConstDeclOptionsListExists, ConstDeclOptionsList, VarDeclList, VarDeclPartOne, VarDeclOne, VarDecl, SqBracesOption, VarDeclPartListExists, VarDeclPartList, TypeOptions, StatementList, Statement, PrintOptions, DesignatorStatement, DesignatorOptions, AddopTermListExists, AddopTermList, MinusOption, MulopFactorListExists, MulopFactorList, Label, AssignOp, Relop, Addop, Mulop;
 
 nonterminal rs.etf.pp1.symboltable.concepts.Obj ProgName, Program, FunctionMain, Designator;
 nonterminal rs.etf.pp1.symboltable.concepts.Struct Type, Term, Factor, Expr;
@@ -71,27 +71,31 @@ DeclList ::= (DeclListMore) DeclList DeclOne
 DeclOne ::= (ConstDeclaration) ConstDecl
             | (VarDeclaration) VarDecl;
 
-ConstDecl ::= (ConstDecl) CONST Type IDENT EQUAL ConstOptions ConstDeclOptionsListExists SEMI;
+ConstDecl ::= (ConstDecl) CONST Type ConstOne ConstDeclOptionsListExists SEMI;
 
-ConstOptions ::= (NumConst) NUMBER
-    | (CharConst) CHARCONST
-    | (BoolConst) BOOLCONST;
+ConstOne::= (ConstOne) IDENT:constName EQUAL ConstOptions;
+
+ConstOptions ::= (NumConst) NUMBER:value
+    | (CharConst) CHARCONST:value
+    | (BoolConst) BOOLCONST:value;
 
 ConstDeclOptionsListExists ::= (ConstDeclOptionsListExist) ConstDeclOptionsList
     | (NoConstDeclOptions);
 
-ConstDeclOptionsList ::= (ConstDeclOptionsListMany) ConstDeclOptionsList COMMA IDENT EQUAL ConstOptions
-    | (ConstDeclOptionsListOne) COMMA IDENT EQUAL ConstOptions;
+ConstDeclOptionsList ::= (ConstDeclOptionsListMany) ConstDeclOptionsList COMMA ConstOne
+    | (ConstDeclOptionsListOne) COMMA ConstOne;
 
 
-VarDeclList ::= (VarDeclListMany) VarDeclList VarDecl
+VarDeclList ::= (VarDeclListMany) VarDecl VarDeclList 
     | (NoVarDeclList);
 
-VarDecl ::= (VarDeclOne) Type:varType IDENT:varName SqBracesOption VarDeclPartListExists SEMI
+VarDecl ::= (VarDeclarationOne) VarDeclOne SqBracesOption VarDeclPartListExists SEMI
     | (VarErrorComma)error COMMA:l
     {: parser.report_error("Izvrsen oporavak do , u liniji " + lleft, null); :}
     |(VarErrorSemi) error SEMI:l
     {: parser.report_error("Izvrsen oporavak do ; u liniji " + lleft, null); :};
+
+VarDeclOne ::= (VarDeclOne) Type:varType IDENT:varName;
 
 SqBracesOption ::= (SqBraces) LSQBRACE RSQBRACE
     | (NoSqBraces);
@@ -99,8 +103,10 @@ SqBracesOption ::= (SqBraces) LSQBRACE RSQBRACE
 VarDeclPartListExists ::= (VarDeclPartListExist) VarDeclPartList
     | (NoVarDeclPartList);
 
-VarDeclPartList ::= (VarDeclPartListMany) COMMA IDENT:varName SqBracesOption VarDeclPartList
-    | (VarDeclPartListOne) COMMA IDENT:varName SqBracesOption;
+VarDeclPartList ::= (VarDeclPartListMany) VarDeclPartOne VarDeclPartList
+    | (VarDeclPartListOne) VarDeclPartOne;
+
+VarDeclPartOne ::= (VarDeclPartOne) COMMA IDENT:varName SqBracesOption;
 
 FunctionMain ::= (FunctionMain) TypeOptions IDENT:funcName LPAREN RPAREN VarDeclList LBRACE StatementList RBRACE;
 
@@ -125,7 +131,7 @@ DesignatorStatement ::=
     | (DesignatorInc) Designator INC
     | (DesignatorDec) Designator DEC;
 
-Designator ::= (Designator) Type DesignatorOptions;
+Designator ::= (Designator) IDENT:varName DesignatorOptions;
 
 DesignatorOptions ::= (DesignatorOption) LSQBRACE Expr RSQBRACE
     | (NoDesignatorOptions);

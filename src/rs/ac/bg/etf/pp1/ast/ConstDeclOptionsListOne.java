@@ -1,35 +1,25 @@
 // generated with ast extension for cup
 // version 0.8
-// 23/5/2024 20:53:34
+// 24/5/2024 2:53:33
 
 
 package rs.ac.bg.etf.pp1.ast;
 
 public class ConstDeclOptionsListOne extends ConstDeclOptionsList {
 
-    private String I1;
-    private ConstOptions ConstOptions;
+    private ConstOne ConstOne;
 
-    public ConstDeclOptionsListOne (String I1, ConstOptions ConstOptions) {
-        this.I1=I1;
-        this.ConstOptions=ConstOptions;
-        if(ConstOptions!=null) ConstOptions.setParent(this);
+    public ConstDeclOptionsListOne (ConstOne ConstOne) {
+        this.ConstOne=ConstOne;
+        if(ConstOne!=null) ConstOne.setParent(this);
     }
 
-    public String getI1() {
-        return I1;
+    public ConstOne getConstOne() {
+        return ConstOne;
     }
 
-    public void setI1(String I1) {
-        this.I1=I1;
-    }
-
-    public ConstOptions getConstOptions() {
-        return ConstOptions;
-    }
-
-    public void setConstOptions(ConstOptions ConstOptions) {
-        this.ConstOptions=ConstOptions;
+    public void setConstOne(ConstOne ConstOne) {
+        this.ConstOne=ConstOne;
     }
 
     public void accept(Visitor visitor) {
@@ -37,16 +27,16 @@ public class ConstDeclOptionsListOne extends ConstDeclOptionsList {
     }
 
     public void childrenAccept(Visitor visitor) {
-        if(ConstOptions!=null) ConstOptions.accept(visitor);
+        if(ConstOne!=null) ConstOne.accept(visitor);
     }
 
     public void traverseTopDown(Visitor visitor) {
         accept(visitor);
-        if(ConstOptions!=null) ConstOptions.traverseTopDown(visitor);
+        if(ConstOne!=null) ConstOne.traverseTopDown(visitor);
     }
 
     public void traverseBottomUp(Visitor visitor) {
-        if(ConstOptions!=null) ConstOptions.traverseBottomUp(visitor);
+        if(ConstOne!=null) ConstOne.traverseBottomUp(visitor);
         accept(visitor);
     }
 
@@ -55,11 +45,8 @@ public class ConstDeclOptionsListOne extends ConstDeclOptionsList {
         buffer.append(tab);
         buffer.append("ConstDeclOptionsListOne(\n");
 
-        buffer.append(" "+tab+I1);
-        buffer.append("\n");
-
-        if(ConstOptions!=null)
-            buffer.append(ConstOptions.toString("  "+tab));
+        if(ConstOne!=null)
+            buffer.append(ConstOne.toString("  "+tab));
         else
             buffer.append(tab+"  null");
         buffer.append("\n");

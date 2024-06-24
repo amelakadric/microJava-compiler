@@ -1,6 +1,6 @@
 // generated with ast extension for cup
 // version 0.8
-// 23/5/2024 20:53:34
+// 24/5/2024 2:53:33
 
 
 package rs.ac.bg.etf.pp1.ast;
@@ -8,15 +8,13 @@ package rs.ac.bg.etf.pp1.ast;
 public class ConstDeclOptionsListMany extends ConstDeclOptionsList {
 
     private ConstDeclOptionsList ConstDeclOptionsList;
-    private String I2;
-    private ConstOptions ConstOptions;
+    private ConstOne ConstOne;
 
-    public ConstDeclOptionsListMany (ConstDeclOptionsList ConstDeclOptionsList, String I2, ConstOptions ConstOptions) {
+    public ConstDeclOptionsListMany (ConstDeclOptionsList ConstDeclOptionsList, ConstOne ConstOne) {
         this.ConstDeclOptionsList=ConstDeclOptionsList;
         if(ConstDeclOptionsList!=null) ConstDeclOptionsList.setParent(this);
-        this.I2=I2;
-        this.ConstOptions=ConstOptions;
-        if(ConstOptions!=null) ConstOptions.setParent(this);
+        this.ConstOne=ConstOne;
+        if(ConstOne!=null) ConstOne.setParent(this);
     }
 
     public ConstDeclOptionsList getConstDeclOptionsList() {
@@ -27,20 +25,12 @@ public class ConstDeclOptionsListMany extends ConstDeclOptionsList {
         this.ConstDeclOptionsList=ConstDeclOptionsList;
     }
 
-    public String getI2() {
-        return I2;
+    public ConstOne getConstOne() {
+        return ConstOne;
     }
 
-    public void setI2(String I2) {
-        this.I2=I2;
-    }
-
-    public ConstOptions getConstOptions() {
-        return ConstOptions;
-    }
-
-    public void setConstOptions(ConstOptions ConstOptions) {
-        this.ConstOptions=ConstOptions;
+    public void setConstOne(ConstOne ConstOne) {
+        this.ConstOne=ConstOne;
     }
 
     public void accept(Visitor visitor) {
@@ -49,18 +39,18 @@ public class ConstDeclOptionsListMany extends ConstDeclOptionsList {
 
     public void childrenAccept(Visitor visitor) {
         if(ConstDeclOptionsList!=null) ConstDeclOptionsList.accept(visitor);
-        if(ConstOptions!=null) ConstOptions.accept(visitor);
+        if(ConstOne!=null) ConstOne.accept(visitor);
     }
 
     public void traverseTopDown(Visitor visitor) {
         accept(visitor);
         if(ConstDeclOptionsList!=null) ConstDeclOptionsList.traverseTopDown(visitor);
-        if(ConstOptions!=null) ConstOptions.traverseTopDown(visitor);
+        if(ConstOne!=null) ConstOne.traverseTopDown(visitor);
     }
 
     public void traverseBottomUp(Visitor visitor) {
         if(ConstDeclOptionsList!=null) ConstDeclOptionsList.traverseBottomUp(visitor);
-        if(ConstOptions!=null) ConstOptions.traverseBottomUp(visitor);
+        if(ConstOne!=null) ConstOne.traverseBottomUp(visitor);
         accept(visitor);
     }
 
@@ -75,11 +65,8 @@ public class ConstDeclOptionsListMany extends ConstDeclOptionsList {
             buffer.append(tab+"  null");
         buffer.append("\n");
 
-        buffer.append(" "+tab+I2);
-        buffer.append("\n");
-
-        if(ConstOptions!=null)
-            buffer.append(ConstOptions.toString("  "+tab));
+        if(ConstOne!=null)
+            buffer.append(ConstOne.toString("  "+tab));
         else
             buffer.append(tab+"  null");
         buffer.append("\n");

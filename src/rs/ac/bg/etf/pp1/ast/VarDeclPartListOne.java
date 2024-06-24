@@ -1,35 +1,25 @@
 // generated with ast extension for cup
 // version 0.8
-// 23/5/2024 20:53:34
+// 24/5/2024 2:53:33
 
 
 package rs.ac.bg.etf.pp1.ast;
 
 public class VarDeclPartListOne extends VarDeclPartList {
 
-    private String varName;
-    private SqBracesOption SqBracesOption;
+    private VarDeclPartOne VarDeclPartOne;
 
-    public VarDeclPartListOne (String varName, SqBracesOption SqBracesOption) {
-        this.varName=varName;
-        this.SqBracesOption=SqBracesOption;
-        if(SqBracesOption!=null) SqBracesOption.setParent(this);
+    public VarDeclPartListOne (VarDeclPartOne VarDeclPartOne) {
+        this.VarDeclPartOne=VarDeclPartOne;
+        if(VarDeclPartOne!=null) VarDeclPartOne.setParent(this);
     }
 
-    public String getVarName() {
-        return varName;
+    public VarDeclPartOne getVarDeclPartOne() {
+        return VarDeclPartOne;
     }
 
-    public void setVarName(String varName) {
-        this.varName=varName;
-    }
-
-    public SqBracesOption getSqBracesOption() {
-        return SqBracesOption;
-    }
-
-    public void setSqBracesOption(SqBracesOption SqBracesOption) {
-        this.SqBracesOption=SqBracesOption;
+    public void setVarDeclPartOne(VarDeclPartOne VarDeclPartOne) {
+        this.VarDeclPartOne=VarDeclPartOne;
     }
 
     public void accept(Visitor visitor) {
@@ -37,16 +27,16 @@ public class VarDeclPartListOne extends VarDeclPartList {
     }
 
     public void childrenAccept(Visitor visitor) {
-        if(SqBracesOption!=null) SqBracesOption.accept(visitor);
+        if(VarDeclPartOne!=null) VarDeclPartOne.accept(visitor);
     }
 
     public void traverseTopDown(Visitor visitor) {
         accept(visitor);
-        if(SqBracesOption!=null) SqBracesOption.traverseTopDown(visitor);
+        if(VarDeclPartOne!=null) VarDeclPartOne.traverseTopDown(visitor);
     }
 
     public void traverseBottomUp(Visitor visitor) {
-        if(SqBracesOption!=null) SqBracesOption.traverseBottomUp(visitor);
+        if(VarDeclPartOne!=null) VarDeclPartOne.traverseBottomUp(visitor);
         accept(visitor);
     }
 
@@ -55,11 +45,8 @@ public class VarDeclPartListOne extends VarDeclPartList {
         buffer.append(tab);
         buffer.append("VarDeclPartListOne(\n");
 
-        buffer.append(" "+tab+varName);
-        buffer.append("\n");
-
-        if(SqBracesOption!=null)
-            buffer.append(SqBracesOption.toString("  "+tab));
+        if(VarDeclPartOne!=null)
+            buffer.append(VarDeclPartOne.toString("  "+tab));
         else
             buffer.append(tab+"  null");
         buffer.append("\n");

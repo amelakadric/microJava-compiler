@@ -1,9 +1,0 @@
-INFO  03:05:38,210 - Compiling source file: C:\Users\sejo9\Desktop\noviProjekat\Izvorni kod\MJCompiler\test\program.mj
-INFO  03:05:38,295 - #2 program
-INFO  03:05:38,296 - #24 test301
-INFO  03:05:38,296 - #24 namespace
-INFO  03:05:38,300 - #24 Konstante
-INFO  03:05:38,300 - #3 {
-ERROR 03:05:38,300 - 
-Sintaksna greska na liniji 5
-ERROR 03:05:38,301 - Fatalna greska, parsiranje se ne moze nastaviti na liniji 5

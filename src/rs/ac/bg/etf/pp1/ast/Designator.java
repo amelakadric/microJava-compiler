@@ -1,6 +1,6 @@
 // generated with ast extension for cup
 // version 0.8
-// 23/5/2024 20:53:34
+// 24/5/2024 2:53:33
 
 
 package rs.ac.bg.etf.pp1.ast;
@@ -11,22 +11,21 @@ public class Designator implements SyntaxNode {
     private int line;
     public rs.etf.pp1.symboltable.concepts.Obj obj = null;
 
-    private Type Type;
+    private String varName;
     private DesignatorOptions DesignatorOptions;
 
-    public Designator (Type Type, DesignatorOptions DesignatorOptions) {
-        this.Type=Type;
-        if(Type!=null) Type.setParent(this);
+    public Designator (String varName, DesignatorOptions DesignatorOptions) {
+        this.varName=varName;
         this.DesignatorOptions=DesignatorOptions;
         if(DesignatorOptions!=null) DesignatorOptions.setParent(this);
     }
 
-    public Type getType() {
-        return Type;
+    public String getVarName() {
+        return varName;
     }
 
-    public void setType(Type Type) {
-        this.Type=Type;
+    public void setVarName(String varName) {
+        this.varName=varName;
     }
 
     public DesignatorOptions getDesignatorOptions() {
@@ -58,18 +57,15 @@ public class Designator implements SyntaxNode {
     }
 
     public void childrenAccept(Visitor visitor) {
-        if(Type!=null) Type.accept(visitor);
         if(DesignatorOptions!=null) DesignatorOptions.accept(visitor);
     }
 
     public void traverseTopDown(Visitor visitor) {
         accept(visitor);
-        if(Type!=null) Type.traverseTopDown(visitor);
         if(DesignatorOptions!=null) DesignatorOptions.traverseTopDown(visitor);
     }
 
     public void traverseBottomUp(Visitor visitor) {
-        if(Type!=null) Type.traverseBottomUp(visitor);
         if(DesignatorOptions!=null) DesignatorOptions.traverseBottomUp(visitor);
         accept(visitor);
     }
@@ -79,10 +75,7 @@ public class Designator implements SyntaxNode {
         buffer.append(tab);
         buffer.append("Designator(\n");
 
-        if(Type!=null)
-            buffer.append(Type.toString("  "+tab));
-        else
-            buffer.append(tab+"  null");
+        buffer.append(" "+tab+varName);
         buffer.append("\n");
 
         if(DesignatorOptions!=null)

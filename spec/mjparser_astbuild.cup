@@ -59,10 +59,13 @@ terminal String IDENT;
 nonterminal DeclList DeclList;
 nonterminal DeclOne DeclOne;
 nonterminal ConstDecl ConstDecl;
+nonterminal ConstOne ConstOne;
 nonterminal ConstOptions ConstOptions;
 nonterminal ConstDeclOptionsListExists ConstDeclOptionsListExists;
 nonterminal ConstDeclOptionsList ConstDeclOptionsList;
 nonterminal VarDeclList VarDeclList;
+nonterminal VarDeclPartOne VarDeclPartOne;
+nonterminal VarDeclOne VarDeclOne;
 nonterminal VarDecl VarDecl;
 nonterminal SqBracesOption SqBracesOption;
 nonterminal VarDeclPartListExists VarDeclPartListExists;
@@ -97,27 +100,31 @@ DeclList ::= (DeclListMore) DeclList:D1 DeclOne:D2 {: RESULT=new DeclListMore(D1
 DeclOne ::= (ConstDeclaration) ConstDecl:C1 {: RESULT=new ConstDeclaration(C1); RESULT.setLine(C1left); :}
             | (VarDeclaration) VarDecl:V1 {: RESULT=new VarDeclaration(V1); RESULT.setLine(V1left); :};
 
-ConstDecl ::= (ConstDecl) CONST Type:T1 IDENT:I2 EQUAL ConstOptions:C3 ConstDeclOptionsListExists:C4 SEMI {: RESULT=new ConstDecl(T1, I2, C3, C4); RESULT.setLine(T1left); :};
+ConstDecl ::= (ConstDecl) CONST Type:T1 ConstOne:C2 ConstDeclOptionsListExists:C3 SEMI {: RESULT=new ConstDecl(T1, C2, C3); RESULT.setLine(T1left); :};
 
-ConstOptions ::= (NumConst) NUMBER:N1 {: RESULT=new NumConst(N1); RESULT.setLine(N1left); :}
-    | (CharConst) CHARCONST {: RESULT=new CharConst(); :}
-    | (BoolConst) BOOLCONST {: RESULT=new BoolConst(); :};
+ConstOne::= (ConstOne) IDENT:constName EQUAL ConstOptions:C1 {: RESULT=new ConstOne(constName, C1); RESULT.setLine(constNameleft); :};
+
+ConstOptions ::= (NumConst) NUMBER:value {: RESULT=new NumConst(value); RESULT.setLine(valueleft); :}
+    | (CharConst) CHARCONST:value {: RESULT=new CharConst(); :}
+    | (BoolConst) BOOLCONST:value {: RESULT=new BoolConst(); :};
 
 ConstDeclOptionsListExists ::= (ConstDeclOptionsListExist) ConstDeclOptionsList:C1 {: RESULT=new ConstDeclOptionsListExist(C1); RESULT.setLine(C1left); :}
     | (NoConstDeclOptions) {: RESULT=new NoConstDeclOptions(); :};
 
-ConstDeclOptionsList ::= (ConstDeclOptionsListMany) ConstDeclOptionsList:C1 COMMA IDENT:I2 EQUAL ConstOptions:C3 {: RESULT=new ConstDeclOptionsListMany(C1, I2, C3); RESULT.setLine(C1left); :}
-    | (ConstDeclOptionsListOne) COMMA IDENT:I1 EQUAL ConstOptions:C2 {: RESULT=new ConstDeclOptionsListOne(I1, C2); RESULT.setLine(I1left); :};
+ConstDeclOptionsList ::= (ConstDeclOptionsListMany) ConstDeclOptionsList:C1 COMMA ConstOne:C2 {: RESULT=new ConstDeclOptionsListMany(C1, C2); RESULT.setLine(C1left); :}
+    | (ConstDeclOptionsListOne) COMMA ConstOne:C1 {: RESULT=new ConstDeclOptionsListOne(C1); RESULT.setLine(C1left); :};
 
 
-VarDeclList ::= (VarDeclListMany) VarDeclList:V1 VarDecl:V2 {: RESULT=new VarDeclListMany(V1, V2); RESULT.setLine(V1left); :}
+VarDeclList ::= (VarDeclListMany) VarDecl:V1 VarDeclList:V2 {: RESULT=new VarDeclListMany(V1, V2); RESULT.setLine(V1left); :} 
     | (NoVarDeclList) {: RESULT=new NoVarDeclList(); :};
 
-VarDecl ::= (VarDeclOne) Type:varType IDENT:varName SqBracesOption:S1 VarDeclPartListExists:V2 SEMI {: RESULT=new VarDeclOne(varType, varName, S1, V2); RESULT.setLine(varTypeleft); :}
+VarDecl ::= (VarDeclarationOne) VarDeclOne:V1 SqBracesOption:S2 VarDeclPartListExists:V3 SEMI {: RESULT=new VarDeclarationOne(V1, S2, V3); RESULT.setLine(V1left); :}
     | (VarErrorComma)error COMMA:l
     {: parser.report_error("Izvrsen oporavak do , u liniji " + lleft, null); :} {: RESULT=new VarErrorComma(); :}
     |(VarErrorSemi) error SEMI:l
     {: parser.report_error("Izvrsen oporavak do ; u liniji " + lleft, null); :} {: RESULT=new VarErrorSemi(); :};
+
+VarDeclOne ::= (VarDeclOne) Type:varType IDENT:varName {: RESULT=new VarDeclOne(varType, varName); RESULT.setLine(varTypeleft); :};
 
 SqBracesOption ::= (SqBraces) LSQBRACE RSQBRACE {: RESULT=new SqBraces(); :}
     | (NoSqBraces) {: RESULT=new NoSqBraces(); :};
@@ -125,8 +132,10 @@ SqBracesOption ::= (SqBraces) LSQBRACE RSQBRACE {: RESULT=new SqBraces(); :}
 VarDeclPartListExists ::= (VarDeclPartListExist) VarDeclPartList:V1 {: RESULT=new VarDeclPartListExist(V1); RESULT.setLine(V1left); :}
     | (NoVarDeclPartList) {: RESULT=new NoVarDeclPartList(); :};
 
-VarDeclPartList ::= (VarDeclPartListMany) COMMA IDENT:varName SqBracesOption:S1 VarDeclPartList:V2 {: RESULT=new VarDeclPartListMany(varName, S1, V2); RESULT.setLine(varNameleft); :}
-    | (VarDeclPartListOne) COMMA IDENT:varName SqBracesOption:S1 {: RESULT=new VarDeclPartListOne(varName, S1); RESULT.setLine(varNameleft); :};
+VarDeclPartList ::= (VarDeclPartListMany) VarDeclPartOne:V1 VarDeclPartList:V2 {: RESULT=new VarDeclPartListMany(V1, V2); RESULT.setLine(V1left); :}
+    | (VarDeclPartListOne) VarDeclPartOne:V1 {: RESULT=new VarDeclPartListOne(V1); RESULT.setLine(V1left); :};
+
+VarDeclPartOne ::= (VarDeclPartOne) COMMA IDENT:varName SqBracesOption:S1 {: RESULT=new VarDeclPartOne(varName, S1); RESULT.setLine(varNameleft); :};
 
 FunctionMain ::= (FunctionMain) TypeOptions:T1 IDENT:funcName LPAREN RPAREN VarDeclList:V2 LBRACE StatementList:S3 RBRACE {: RESULT=new FunctionMain(T1, funcName, V2, S3); RESULT.setLine(T1left); :};
 
@@ -151,7 +160,7 @@ DesignatorStatement ::=
     | (DesignatorInc) Designator:D1 INC {: RESULT=new DesignatorInc(D1); RESULT.setLine(D1left); :}
     | (DesignatorDec) Designator:D1 DEC {: RESULT=new DesignatorDec(D1); RESULT.setLine(D1left); :};
 
-Designator ::= (Designator) Type:T1 DesignatorOptions:D2 {: RESULT=new Designator(T1, D2); RESULT.setLine(T1left); :};
+Designator ::= (Designator) IDENT:varName DesignatorOptions:D1 {: RESULT=new Designator(varName, D1); RESULT.setLine(varNameleft); :};
 
 DesignatorOptions ::= (DesignatorOption) LSQBRACE Expr:E1 RSQBRACE {: RESULT=new DesignatorOption(E1); RESULT.setLine(E1left); :}
     | (NoDesignatorOptions) {: RESULT=new NoDesignatorOptions(); :};
