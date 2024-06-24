@@ -1,28 +1,20 @@
 // generated with ast extension for cup
 // version 0.8
-// 24/5/2024 4:23:13
+// 24/5/2024 16:18:9
 
 
 package rs.ac.bg.etf.pp1.ast;
 
 public class StatementListMany extends StatementList {
 
-    private StatementList StatementList;
     private Statement Statement;
+    private StatementList StatementList;
 
-    public StatementListMany (StatementList StatementList, Statement Statement) {
-        this.StatementList=StatementList;
-        if(StatementList!=null) StatementList.setParent(this);
+    public StatementListMany (Statement Statement, StatementList StatementList) {
         this.Statement=Statement;
         if(Statement!=null) Statement.setParent(this);
-    }
-
-    public StatementList getStatementList() {
-        return StatementList;
-    }
-
-    public void setStatementList(StatementList StatementList) {
         this.StatementList=StatementList;
+        if(StatementList!=null) StatementList.setParent(this);
     }
 
     public Statement getStatement() {
@@ -33,24 +25,32 @@ public class StatementListMany extends StatementList {
         this.Statement=Statement;
     }
 
+    public StatementList getStatementList() {
+        return StatementList;
+    }
+
+    public void setStatementList(StatementList StatementList) {
+        this.StatementList=StatementList;
+    }
+
     public void accept(Visitor visitor) {
         visitor.visit(this);
     }
 
     public void childrenAccept(Visitor visitor) {
-        if(StatementList!=null) StatementList.accept(visitor);
         if(Statement!=null) Statement.accept(visitor);
+        if(StatementList!=null) StatementList.accept(visitor);
     }
 
     public void traverseTopDown(Visitor visitor) {
         accept(visitor);
-        if(StatementList!=null) StatementList.traverseTopDown(visitor);
         if(Statement!=null) Statement.traverseTopDown(visitor);
+        if(StatementList!=null) StatementList.traverseTopDown(visitor);
     }
 
     public void traverseBottomUp(Visitor visitor) {
-        if(StatementList!=null) StatementList.traverseBottomUp(visitor);
         if(Statement!=null) Statement.traverseBottomUp(visitor);
+        if(StatementList!=null) StatementList.traverseBottomUp(visitor);
         accept(visitor);
     }
 
@@ -59,14 +59,14 @@ public class StatementListMany extends StatementList {
         buffer.append(tab);
         buffer.append("StatementListMany(\n");
 
-        if(StatementList!=null)
-            buffer.append(StatementList.toString("  "+tab));
+        if(Statement!=null)
+            buffer.append(Statement.toString("  "+tab));
         else
             buffer.append(tab+"  null");
         buffer.append("\n");
 
-        if(Statement!=null)
-            buffer.append(Statement.toString("  "+tab));
+        if(StatementList!=null)
+            buffer.append(StatementList.toString("  "+tab));
         else
             buffer.append(tab+"  null");
         buffer.append("\n");

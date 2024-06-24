@@ -52,8 +52,9 @@ scan with {:
 terminal PROG, PRINT, RETURN, VOID, NEW, READ, CONST, BREAK, CONTINUE, FOR, RANGE;
 terminal PLUS, MINUS, MUL, DIV, MOD, INC, DEC, OR, AND, EQUALITY, NOTEQUAL, GT, GTE, LT, LTE;
 terminal EQUAL, SEMI, COMMA, COLUMN, LPAREN, RPAREN, LBRACE, RBRACE, LSQBRACE, RSQBRACE, DBLCOL;
-terminal COMMENT, BOOLCONST;
+terminal COMMENT;
 terminal Integer NUMBER;
+terminal Integer BOOLCONST;
 terminal Character CHARCONST;
 terminal String IDENT;
 
@@ -103,7 +104,7 @@ ConstDecl ::= (ConstDecl) CONST Type:T1 ConstOne:C2 ConstDeclOptionsListExists:C
 
 ConstOne::= (NumConst) IDENT:constName EQUAL NUMBER:value {: RESULT=new NumConst(constName, value); RESULT.setLine(constNameleft); :}
             | (CharConstant)  IDENT:constName EQUAL CHARCONST:value {: RESULT=new CharConstant(constName, value); RESULT.setLine(constNameleft); :}
-            | (BoolConstant)  IDENT:constName EQUAL BOOLCONST:value {: RESULT=new BoolConstant(constName); RESULT.setLine(constNameleft); :};
+            | (BoolConstant)  IDENT:constName EQUAL BOOLCONST:value {: RESULT=new BoolConstant(constName, value); RESULT.setLine(constNameleft); :};
 
 
 
@@ -143,7 +144,7 @@ FunctionTypeName ::= (FunctionTypeName) TypeOptions:typeName IDENT:funcName {: R
 TypeOptions ::= (TypeOption) Type:typeName {: RESULT=new TypeOption(typeName); RESULT.setLine(typeNameleft); :}
     | (VoidOption) VOID:typeName {: RESULT=new VoidOption(); :};
 
-StatementList ::= (StatementListMany) StatementList:S1 Statement:S2 {: RESULT=new StatementListMany(S1, S2); RESULT.setLine(S1left); :}
+StatementList ::= (StatementListMany)  Statement:S1 StatementList:S2 {: RESULT=new StatementListMany(S1, S2); RESULT.setLine(S1left); :}
     | (NoStatementList) {: RESULT=new NoStatementList(); :};
 
 Statement ::= 
@@ -157,9 +158,9 @@ PrintOptions ::= (PrintOption) COMMA NUMBER:printNumber {: RESULT=new PrintOptio
     | (NoPrintOptions) {: RESULT=new NoPrintOptions(); :};
 
 DesignatorStatement ::= 
-    (DesignatorAssignopExpr) Designator:D1 AssignOp:A2 Expr:E3 {: RESULT=new DesignatorAssignopExpr(D1, A2, E3); RESULT.setLine(D1left); :}
-    | (DesignatorInc) Designator:D1 INC {: RESULT=new DesignatorInc(D1); RESULT.setLine(D1left); :}
-    | (DesignatorDec) Designator:D1 DEC {: RESULT=new DesignatorDec(D1); RESULT.setLine(D1left); :};
+    (DesignatorAssignopExpr) Designator:desig AssignOp:A1 Expr:E2 {: RESULT=new DesignatorAssignopExpr(desig, A1, E2); RESULT.setLine(desigleft); :}
+    | (DesignatorInc) Designator:desig INC {: RESULT=new DesignatorInc(desig); RESULT.setLine(desigleft); :}
+    | (DesignatorDec) Designator:desig DEC {: RESULT=new DesignatorDec(desig); RESULT.setLine(desigleft); :};
 
 Designator ::= (Designator) IDENT:varName DesignatorOptions:D1 {: RESULT=new Designator(varName, D1); RESULT.setLine(varNameleft); :};
 
@@ -189,7 +190,7 @@ Factor ::=
     (DesignatorFactor) Designator:D1 {: RESULT=new DesignatorFactor(D1); RESULT.setLine(D1left); :}
     | (NumConstFactor) NUMBER:value {: RESULT=new NumConstFactor(value); RESULT.setLine(valueleft); :}
     | (CharConstFactor) CHARCONST:value {: RESULT=new CharConstFactor(value); RESULT.setLine(valueleft); :}
-    | (BoolConstFactor) BOOLCONST:value {: RESULT=new BoolConstFactor(); :}
+    | (BoolConstFactor) BOOLCONST:value {: RESULT=new BoolConstFactor(value); RESULT.setLine(valueleft); :}
     | (NewFactor) NEW Type:T1 LSQBRACE Expr:E2 RSQBRACE {: RESULT=new NewFactor(T1, E2); RESULT.setLine(T1left); :}
     | (ExprFactor) LPAREN Expr:E1 RPAREN {: RESULT=new ExprFactor(E1); RESULT.setLine(E1left); :}
     | (RangeFactor) RANGE LPAREN Expr:E1 RPAREN {: RESULT=new RangeFactor(E1); RESULT.setLine(E1left); :};

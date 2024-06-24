@@ -49,8 +49,6 @@ import java_cup.runtime.Symbol;
 "for"		{ return new_symbol(sym.FOR, yytext()); }
 "range"		{ return new_symbol(sym.RANGE, yytext()); }
 
-"true" 		{ return new_symbol(sym.BOOLCONST, true); }
-"false" 	{ return new_symbol(sym.BOOLCONST, false); }
 
 
 "+" 		{ return new_symbol(sym.PLUS, yytext()); }
@@ -93,6 +91,7 @@ import java_cup.runtime.Symbol;
 
 "'"[a-zA-Z]"'" { return new_symbol (sym.CHARCONST, new Character(yytext().charAt(1)) ); } 
 
+("true"|"false")    		{ return new_symbol(sym.BOOLCONST, new Integer(yytext().equals("true") ? 1 : 0)); }
 [0-9]+  { return new_symbol(sym.NUMBER, new Integer (yytext())); }
 ([a-z]|[A-Z])[a-zA-Z0-9_]* 	{return new_symbol (sym.IDENT, yytext()); }
 

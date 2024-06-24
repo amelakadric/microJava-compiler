@@ -1,249 +1,249 @@
-INFO  04:24:51,904 - Compiling source file: C:\Users\sejo9\Desktop\pp1\TVOJ PROJEKAT\Izvorni kod\MJCompiler\test\program.mj
-INFO  04:24:51,980 - #2 program
-INFO  04:24:51,981 - #43 test301
-INFO  04:24:51,981 - #8 const
-INFO  04:24:51,984 - #43 int
-INFO  04:24:51,985 - #43 nula
-INFO  04:24:51,987 - #28 =
-INFO  04:24:51,988 - #41 0
-INFO  04:24:51,989 - #29 ;
-INFO  04:24:51,990 - #8 const
-INFO  04:24:51,993 - #43 int
-INFO  04:24:51,993 - #43 jedan
-INFO  04:24:51,994 - #28 =
-INFO  04:24:51,994 - #41 1
-INFO  04:24:51,995 - #29 ;
-INFO  04:24:51,995 - #8 const
-INFO  04:24:51,996 - #43 int
-INFO  04:24:51,997 - #43 pet
-INFO  04:24:51,997 - #28 =
-INFO  04:24:51,998 - #41 5
-INFO  04:24:51,998 - #29 ;
-INFO  04:24:51,999 - #43 int
-INFO  04:24:52,014 - #43 niz
-INFO  04:24:52,014 - #36 [
-INFO  04:24:52,017 - #37 ]
-INFO  04:24:52,017 - #30 ,
-INFO  04:24:52,020 - #43 niz2
-INFO  04:24:52,021 - #36 [
-INFO  04:24:52,021 - #37 ]
-INFO  04:24:52,022 - #29 ;
-INFO  04:24:52,024 - #43 char
-INFO  04:24:52,025 - #43 nizch
-INFO  04:24:52,025 - #36 [
-INFO  04:24:52,026 - #37 ]
-INFO  04:24:52,027 - #29 ;
-INFO  04:24:52,028 - #34 {
-INFO  04:24:52,029 - #5 void
-INFO  04:24:52,029 - #43 main
-INFO  04:24:52,032 - #32 (
-INFO  04:24:52,033 - #33 )
-INFO  04:24:52,034 - #43 int
-INFO  04:24:52,035 - #43 bodovi
-INFO  04:24:52,035 - #29 ;
-INFO  04:24:52,037 - #43 bool
-INFO  04:24:52,038 - #43 bt
-INFO  04:24:52,039 - #29 ;
-INFO  04:24:52,040 - #34 {
-INFO  04:24:52,042 - #43 bodovi
-INFO  04:24:52,044 - #28 =
-INFO  04:24:52,047 - #41 0
-INFO  04:24:52,051 - #29 ;
-INFO  04:24:52,057 - #43 bodovi
-INFO  04:24:52,057 - #18 ++
-INFO  04:24:52,058 - #29 ;
-INFO  04:24:52,059 - #43 bodovi
-INFO  04:24:52,059 - #28 =
-INFO  04:24:52,060 - #43 bodovi
-INFO  04:24:52,060 - #13 +
-INFO  04:24:52,061 - #43 jedan
-INFO  04:24:52,063 - #29 ;
-INFO  04:24:52,063 - #43 bodovi
-INFO  04:24:52,064 - #28 =
-INFO  04:24:52,064 - #43 bodovi
-INFO  04:24:52,065 - #15 *
-INFO  04:24:52,065 - #43 pet
-INFO  04:24:52,068 - #29 ;
-INFO  04:24:52,069 - #43 bodovi
-INFO  04:24:52,070 - #19 --
-INFO  04:24:52,070 - #29 ;
-INFO  04:24:52,071 - #3 print
-INFO  04:24:52,071 - #32 (
-INFO  04:24:52,072 - #43 bodovi
-INFO  04:24:52,072 - #33 )
-INFO  04:24:52,074 - #29 ;
-INFO  04:24:52,074 - #43 niz
-INFO  04:24:52,075 - #28 =
-INFO  04:24:52,076 - #6 new
-INFO  04:24:52,078 - #43 int
-INFO  04:24:52,078 - #36 [
-INFO  04:24:52,079 - #41 3
-INFO  04:24:52,080 - #37 ]
-INFO  04:24:52,081 - #29 ;
-INFO  04:24:52,082 - #43 niz
-INFO  04:24:52,083 - #36 [
-INFO  04:24:52,084 - #43 nula
-INFO  04:24:52,084 - #37 ]
-INFO  04:24:52,085 - #28 =
-INFO  04:24:52,086 - #43 jedan
-INFO  04:24:52,086 - #29 ;
-INFO  04:24:52,087 - #43 niz
-INFO  04:24:52,088 - #36 [
-INFO  04:24:52,088 - #41 1
-INFO  04:24:52,089 - #37 ]
-INFO  04:24:52,089 - #28 =
-INFO  04:24:52,090 - #41 2
-INFO  04:24:52,090 - #29 ;
-INFO  04:24:52,091 - #43 niz
-INFO  04:24:52,092 - #36 [
-INFO  04:24:52,094 - #43 niz
-INFO  04:24:52,095 - #36 [
-INFO  04:24:52,096 - #43 jedan
-INFO  04:24:52,097 - #37 ]
-INFO  04:24:52,098 - #37 ]
-INFO  04:24:52,099 - #28 =
-INFO  04:24:52,100 - #43 niz
-INFO  04:24:52,100 - #36 [
-INFO  04:24:52,101 - #43 niz
-INFO  04:24:52,101 - #36 [
-INFO  04:24:52,102 - #41 0
-INFO  04:24:52,103 - #37 ]
-INFO  04:24:52,103 - #37 ]
-INFO  04:24:52,104 - #15 *
-INFO  04:24:52,106 - #41 3
-INFO  04:24:52,106 - #29 ;
-INFO  04:24:52,107 - #43 bodovi
-INFO  04:24:52,109 - #28 =
-INFO  04:24:52,109 - #43 niz
-INFO  04:24:52,110 - #36 [
-INFO  04:24:52,110 - #41 2
-INFO  04:24:52,111 - #37 ]
-INFO  04:24:52,112 - #16 /
-INFO  04:24:52,112 - #43 niz
-INFO  04:24:52,113 - #36 [
-INFO  04:24:52,114 - #41 0
-INFO  04:24:52,115 - #37 ]
-INFO  04:24:52,115 - #29 ;
-INFO  04:24:52,116 - #3 print
-INFO  04:24:52,117 - #32 (
-INFO  04:24:52,118 - #43 bodovi
-INFO  04:24:52,119 - #33 )
-INFO  04:24:52,119 - #29 ;
-INFO  04:24:52,120 - #3 print
-INFO  04:24:52,121 - #32 (
-INFO  04:24:52,121 - #43 niz
-INFO  04:24:52,122 - #36 [
-INFO  04:24:52,122 - #41 2
-INFO  04:24:52,123 - #37 ]
-INFO  04:24:52,124 - #33 )
-INFO  04:24:52,124 - #29 ;
-INFO  04:24:52,125 - #43 nizch
-INFO  04:24:52,126 - #28 =
-INFO  04:24:52,127 - #6 new
-INFO  04:24:52,127 - #43 char
-INFO  04:24:52,128 - #36 [
-INFO  04:24:52,129 - #41 3
-INFO  04:24:52,129 - #37 ]
-INFO  04:24:52,130 - #29 ;
-INFO  04:24:52,131 - #43 nizch
-INFO  04:24:52,132 - #36 [
-INFO  04:24:52,133 - #41 0
-INFO  04:24:52,134 - #37 ]
-INFO  04:24:52,135 - #28 =
-INFO  04:24:52,135 - #42 a
-INFO  04:24:52,136 - #29 ;
-INFO  04:24:52,137 - #43 nizch
-INFO  04:24:52,139 - #36 [
-INFO  04:24:52,142 - #43 jedan
-INFO  04:24:52,143 - #37 ]
-INFO  04:24:52,144 - #28 =
-INFO  04:24:52,145 - #42 b
-INFO  04:24:52,145 - #29 ;
-INFO  04:24:52,146 - #43 nizch
-INFO  04:24:52,146 - #36 [
-INFO  04:24:52,146 - #43 pet
-INFO  04:24:52,147 - #14 -
-INFO  04:24:52,147 - #41 3
-INFO  04:24:52,149 - #37 ]
-INFO  04:24:52,150 - #28 =
-INFO  04:24:52,151 - #42 c
-INFO  04:24:52,151 - #29 ;
-INFO  04:24:52,152 - #3 print
-INFO  04:24:52,152 - #32 (
-INFO  04:24:52,153 - #43 nizch
-INFO  04:24:52,153 - #36 [
-INFO  04:24:52,154 - #41 1
-INFO  04:24:52,154 - #37 ]
-INFO  04:24:52,155 - #33 )
-INFO  04:24:52,156 - #29 ;
-INFO  04:24:52,158 - #3 print
-INFO  04:24:52,161 - #32 (
-INFO  04:24:52,162 - #43 nizch
-INFO  04:24:52,162 - #36 [
-INFO  04:24:52,163 - #43 jedan
-INFO  04:24:52,163 - #15 *
-INFO  04:24:52,164 - #41 2
-INFO  04:24:52,164 - #37 ]
-INFO  04:24:52,164 - #33 )
-INFO  04:24:52,165 - #29 ;
-INFO  04:24:52,165 - #43 bodovi
-INFO  04:24:52,165 - #28 =
-INFO  04:24:52,166 - #43 bodovi
-INFO  04:24:52,167 - #13 +
-INFO  04:24:52,167 - #32 (
-INFO  04:24:52,168 - #43 pet
-INFO  04:24:52,168 - #15 *
-INFO  04:24:52,169 - #43 jedan
-INFO  04:24:52,169 - #14 -
-INFO  04:24:52,169 - #41 1
-INFO  04:24:52,170 - #33 )
-INFO  04:24:52,170 - #15 *
-INFO  04:24:52,171 - #43 bodovi
-INFO  04:24:52,171 - #14 -
-INFO  04:24:52,173 - #32 (
-INFO  04:24:52,173 - #41 3
-INFO  04:24:52,174 - #17 %
-INFO  04:24:52,175 - #41 2
-INFO  04:24:52,176 - #13 +
-INFO  04:24:52,177 - #41 3
-INFO  04:24:52,178 - #15 *
-INFO  04:24:52,178 - #41 2
-INFO  04:24:52,179 - #14 -
-INFO  04:24:52,179 - #41 3
-INFO  04:24:52,179 - #33 )
-INFO  04:24:52,180 - #29 ;
-INFO  04:24:52,181 - #3 print
-INFO  04:24:52,181 - #32 (
-INFO  04:24:52,181 - #43 bodovi
-INFO  04:24:52,182 - #33 )
-INFO  04:24:52,182 - #29 ;
-INFO  04:24:52,184 - #7 read
-INFO  04:24:52,184 - #32 (
-INFO  04:24:52,185 - #43 bodovi
-INFO  04:24:52,185 - #33 )
-INFO  04:24:52,186 - #29 ;
-INFO  04:24:52,186 - #3 print
-INFO  04:24:52,187 - #32 (
-INFO  04:24:52,188 - #43 bodovi
-INFO  04:24:52,188 - #33 )
-INFO  04:24:52,189 - #29 ;
-INFO  04:24:52,189 - #43 niz2
-INFO  04:24:52,190 - #28 =
-INFO  04:24:52,190 - #12 range
-INFO  04:24:52,191 - #32 (
-INFO  04:24:52,191 - #43 bodovi
-INFO  04:24:52,193 - #13 +
-INFO  04:24:52,194 - #41 1
-INFO  04:24:52,194 - #33 )
-INFO  04:24:52,195 - #29 ;
-INFO  04:24:52,195 - #3 print
-INFO  04:24:52,196 - #32 (
-INFO  04:24:52,196 - #43 niz2
-INFO  04:24:52,196 - #33 )
-INFO  04:24:52,197 - #29 ;
-INFO  04:24:52,197 - #35 }
-INFO  04:24:52,198 - #35 }
-INFO  04:24:52,257 - Program(
+INFO  16:23:15,644 - Compiling source file: C:\Users\sejo9\Desktop\pp1\TVOJ PROJEKAT\Izvorni kod\MJCompiler\test\program.mj
+INFO  16:23:15,745 - #2 program
+INFO  16:23:15,746 - #43 test301
+INFO  16:23:15,747 - #8 const
+INFO  16:23:15,749 - #43 int
+INFO  16:23:15,750 - #43 nula
+INFO  16:23:15,752 - #28 =
+INFO  16:23:15,754 - #40 0
+INFO  16:23:15,755 - #29 ;
+INFO  16:23:15,758 - #8 const
+INFO  16:23:15,760 - #43 int
+INFO  16:23:15,761 - #43 jedan
+INFO  16:23:15,762 - #28 =
+INFO  16:23:15,762 - #40 1
+INFO  16:23:15,763 - #29 ;
+INFO  16:23:15,763 - #8 const
+INFO  16:23:15,764 - #43 int
+INFO  16:23:15,765 - #43 pet
+INFO  16:23:15,766 - #28 =
+INFO  16:23:15,766 - #40 5
+INFO  16:23:15,767 - #29 ;
+INFO  16:23:15,768 - #43 int
+INFO  16:23:15,769 - #43 niz
+INFO  16:23:15,771 - #36 [
+INFO  16:23:15,774 - #37 ]
+INFO  16:23:15,775 - #30 ,
+INFO  16:23:15,778 - #43 niz2
+INFO  16:23:15,779 - #36 [
+INFO  16:23:15,780 - #37 ]
+INFO  16:23:15,781 - #29 ;
+INFO  16:23:15,783 - #43 char
+INFO  16:23:15,784 - #43 nizch
+INFO  16:23:15,785 - #36 [
+INFO  16:23:15,785 - #37 ]
+INFO  16:23:15,786 - #29 ;
+INFO  16:23:15,787 - #34 {
+INFO  16:23:15,788 - #5 void
+INFO  16:23:15,789 - #43 main
+INFO  16:23:15,792 - #32 (
+INFO  16:23:15,795 - #33 )
+INFO  16:23:15,796 - #43 int
+INFO  16:23:15,797 - #43 bodovi
+INFO  16:23:15,799 - #29 ;
+INFO  16:23:15,802 - #43 bool
+INFO  16:23:15,803 - #43 bt
+INFO  16:23:15,804 - #29 ;
+INFO  16:23:15,805 - #34 {
+INFO  16:23:15,808 - #43 bodovi
+INFO  16:23:15,809 - #28 =
+INFO  16:23:15,813 - #40 0
+INFO  16:23:15,819 - #29 ;
+INFO  16:23:15,828 - #43 bodovi
+INFO  16:23:15,829 - #18 ++
+INFO  16:23:15,830 - #29 ;
+INFO  16:23:15,831 - #43 bodovi
+INFO  16:23:15,832 - #28 =
+INFO  16:23:15,832 - #43 bodovi
+INFO  16:23:15,832 - #13 +
+INFO  16:23:15,833 - #43 jedan
+INFO  16:23:15,835 - #29 ;
+INFO  16:23:15,837 - #43 bodovi
+INFO  16:23:15,838 - #28 =
+INFO  16:23:15,839 - #43 bodovi
+INFO  16:23:15,842 - #15 *
+INFO  16:23:15,843 - #43 pet
+INFO  16:23:15,847 - #29 ;
+INFO  16:23:15,849 - #43 bodovi
+INFO  16:23:15,850 - #19 --
+INFO  16:23:15,851 - #29 ;
+INFO  16:23:15,852 - #3 print
+INFO  16:23:15,853 - #32 (
+INFO  16:23:15,854 - #43 bodovi
+INFO  16:23:15,855 - #33 )
+INFO  16:23:15,858 - #29 ;
+INFO  16:23:15,860 - #43 niz
+INFO  16:23:15,862 - #28 =
+INFO  16:23:15,863 - #6 new
+INFO  16:23:15,864 - #43 int
+INFO  16:23:15,865 - #36 [
+INFO  16:23:15,866 - #40 3
+INFO  16:23:15,867 - #37 ]
+INFO  16:23:15,867 - #29 ;
+INFO  16:23:15,868 - #43 niz
+INFO  16:23:15,869 - #36 [
+INFO  16:23:15,870 - #43 nula
+INFO  16:23:15,871 - #37 ]
+INFO  16:23:15,873 - #28 =
+INFO  16:23:15,876 - #43 jedan
+INFO  16:23:15,877 - #29 ;
+INFO  16:23:15,878 - #43 niz
+INFO  16:23:15,878 - #36 [
+INFO  16:23:15,880 - #40 1
+INFO  16:23:15,880 - #37 ]
+INFO  16:23:15,881 - #28 =
+INFO  16:23:15,882 - #40 2
+INFO  16:23:15,882 - #29 ;
+INFO  16:23:15,883 - #43 niz
+INFO  16:23:15,884 - #36 [
+INFO  16:23:15,885 - #43 niz
+INFO  16:23:15,886 - #36 [
+INFO  16:23:15,886 - #43 jedan
+INFO  16:23:15,888 - #37 ]
+INFO  16:23:15,889 - #37 ]
+INFO  16:23:15,891 - #28 =
+INFO  16:23:15,892 - #43 niz
+INFO  16:23:15,893 - #36 [
+INFO  16:23:15,894 - #43 niz
+INFO  16:23:15,895 - #36 [
+INFO  16:23:15,896 - #40 0
+INFO  16:23:15,897 - #37 ]
+INFO  16:23:15,898 - #37 ]
+INFO  16:23:15,899 - #15 *
+INFO  16:23:15,899 - #40 3
+INFO  16:23:15,900 - #29 ;
+INFO  16:23:15,901 - #43 bodovi
+INFO  16:23:15,902 - #28 =
+INFO  16:23:15,903 - #43 niz
+INFO  16:23:15,904 - #36 [
+INFO  16:23:15,906 - #40 2
+INFO  16:23:15,908 - #37 ]
+INFO  16:23:15,909 - #16 /
+INFO  16:23:15,910 - #43 niz
+INFO  16:23:15,913 - #36 [
+INFO  16:23:15,914 - #40 0
+INFO  16:23:15,914 - #37 ]
+INFO  16:23:15,915 - #29 ;
+INFO  16:23:15,916 - #3 print
+INFO  16:23:15,917 - #32 (
+INFO  16:23:15,920 - #43 bodovi
+INFO  16:23:15,921 - #33 )
+INFO  16:23:15,924 - #29 ;
+INFO  16:23:15,925 - #3 print
+INFO  16:23:15,926 - #32 (
+INFO  16:23:15,927 - #43 niz
+INFO  16:23:15,927 - #36 [
+INFO  16:23:15,928 - #40 2
+INFO  16:23:15,928 - #37 ]
+INFO  16:23:15,929 - #33 )
+INFO  16:23:15,929 - #29 ;
+INFO  16:23:15,930 - #43 nizch
+INFO  16:23:15,931 - #28 =
+INFO  16:23:15,932 - #6 new
+INFO  16:23:15,933 - #43 char
+INFO  16:23:15,933 - #36 [
+INFO  16:23:15,934 - #40 3
+INFO  16:23:15,934 - #37 ]
+INFO  16:23:15,935 - #29 ;
+INFO  16:23:15,935 - #43 nizch
+INFO  16:23:15,936 - #36 [
+INFO  16:23:15,936 - #40 0
+INFO  16:23:15,937 - #37 ]
+INFO  16:23:15,937 - #28 =
+INFO  16:23:15,939 - #42 a
+INFO  16:23:15,940 - #29 ;
+INFO  16:23:15,942 - #43 nizch
+INFO  16:23:15,943 - #36 [
+INFO  16:23:15,944 - #43 jedan
+INFO  16:23:15,945 - #37 ]
+INFO  16:23:15,945 - #28 =
+INFO  16:23:15,946 - #42 b
+INFO  16:23:15,947 - #29 ;
+INFO  16:23:15,948 - #43 nizch
+INFO  16:23:15,948 - #36 [
+INFO  16:23:15,948 - #43 pet
+INFO  16:23:15,949 - #14 -
+INFO  16:23:15,949 - #40 3
+INFO  16:23:15,951 - #37 ]
+INFO  16:23:15,952 - #28 =
+INFO  16:23:15,953 - #42 c
+INFO  16:23:15,953 - #29 ;
+INFO  16:23:15,955 - #3 print
+INFO  16:23:15,956 - #32 (
+INFO  16:23:15,957 - #43 nizch
+INFO  16:23:15,958 - #36 [
+INFO  16:23:15,959 - #40 1
+INFO  16:23:15,961 - #37 ]
+INFO  16:23:15,961 - #33 )
+INFO  16:23:15,962 - #29 ;
+INFO  16:23:15,962 - #3 print
+INFO  16:23:15,963 - #32 (
+INFO  16:23:15,963 - #43 nizch
+INFO  16:23:15,963 - #36 [
+INFO  16:23:15,964 - #43 jedan
+INFO  16:23:15,964 - #15 *
+INFO  16:23:15,964 - #40 2
+INFO  16:23:15,965 - #37 ]
+INFO  16:23:15,965 - #33 )
+INFO  16:23:15,965 - #29 ;
+INFO  16:23:15,966 - #43 bodovi
+INFO  16:23:15,966 - #28 =
+INFO  16:23:15,967 - #43 bodovi
+INFO  16:23:15,968 - #13 +
+INFO  16:23:15,969 - #32 (
+INFO  16:23:15,969 - #43 pet
+INFO  16:23:15,971 - #15 *
+INFO  16:23:15,972 - #43 jedan
+INFO  16:23:15,974 - #14 -
+INFO  16:23:15,975 - #40 1
+INFO  16:23:15,977 - #33 )
+INFO  16:23:15,978 - #15 *
+INFO  16:23:15,979 - #43 bodovi
+INFO  16:23:15,980 - #14 -
+INFO  16:23:15,980 - #32 (
+INFO  16:23:15,980 - #40 3
+INFO  16:23:15,981 - #17 %
+INFO  16:23:15,981 - #40 2
+INFO  16:23:15,982 - #13 +
+INFO  16:23:15,983 - #40 3
+INFO  16:23:15,984 - #15 *
+INFO  16:23:15,984 - #40 2
+INFO  16:23:15,985 - #14 -
+INFO  16:23:15,985 - #40 3
+INFO  16:23:15,986 - #33 )
+INFO  16:23:15,987 - #29 ;
+INFO  16:23:15,988 - #3 print
+INFO  16:23:15,990 - #32 (
+INFO  16:23:15,991 - #43 bodovi
+INFO  16:23:15,992 - #33 )
+INFO  16:23:15,994 - #29 ;
+INFO  16:23:15,995 - #7 read
+INFO  16:23:15,995 - #32 (
+INFO  16:23:15,996 - #43 bodovi
+INFO  16:23:15,996 - #33 )
+INFO  16:23:15,997 - #29 ;
+INFO  16:23:15,997 - #3 print
+INFO  16:23:15,998 - #32 (
+INFO  16:23:15,998 - #43 bodovi
+INFO  16:23:15,998 - #33 )
+INFO  16:23:15,999 - #29 ;
+INFO  16:23:15,999 - #43 niz2
+INFO  16:23:15,999 - #28 =
+INFO  16:23:16,000 - #12 range
+INFO  16:23:16,001 - #32 (
+INFO  16:23:16,001 - #43 bodovi
+INFO  16:23:16,002 - #13 +
+INFO  16:23:16,003 - #40 1
+INFO  16:23:16,005 - #33 )
+INFO  16:23:16,006 - #29 ;
+INFO  16:23:16,007 - #3 print
+INFO  16:23:16,008 - #32 (
+INFO  16:23:16,009 - #43 niz2
+INFO  16:23:16,010 - #33 )
+INFO  16:23:16,012 - #29 ;
+INFO  16:23:16,013 - #35 }
+INFO  16:23:16,015 - #35 }
+INFO  16:23:16,102 - Program(
   ProgName(
    test301
   ) [ProgName]
@@ -370,416 +370,332 @@ INFO  04:24:52,257 - Program(
       ) [VarDeclListMany]
     ) [VarDeclListMany]
     StatementListMany(
+      DesignatorStatementOp(
+        DesignatorAssignopExpr(
+          Designator(
+           bodovi
+            NoDesignatorOptions(
+            ) [NoDesignatorOptions]
+          ) [Designator]
+          AssignOp(
+          ) [AssignOp]
+          Expr(
+            NoMinus(
+            ) [NoMinus]
+            Term(
+              NumConstFactor(
+               0
+              ) [NumConstFactor]
+              NoMulopFactorList(
+              ) [NoMulopFactorList]
+            ) [Term]
+            NoAddopTermList(
+            ) [NoAddopTermList]
+          ) [Expr]
+        ) [DesignatorAssignopExpr]
+      ) [DesignatorStatementOp]
       StatementListMany(
+        DesignatorStatementOp(
+          DesignatorInc(
+            Designator(
+             bodovi
+              NoDesignatorOptions(
+              ) [NoDesignatorOptions]
+            ) [Designator]
+          ) [DesignatorInc]
+        ) [DesignatorStatementOp]
         StatementListMany(
+          DesignatorStatementOp(
+            DesignatorAssignopExpr(
+              Designator(
+               bodovi
+                NoDesignatorOptions(
+                ) [NoDesignatorOptions]
+              ) [Designator]
+              AssignOp(
+              ) [AssignOp]
+              Expr(
+                NoMinus(
+                ) [NoMinus]
+                Term(
+                  DesignatorFactor(
+                    Designator(
+                     bodovi
+                      NoDesignatorOptions(
+                      ) [NoDesignatorOptions]
+                    ) [Designator]
+                  ) [DesignatorFactor]
+                  NoMulopFactorList(
+                  ) [NoMulopFactorList]
+                ) [Term]
+                AddopTermListExist(
+                  AddopTermListOne(
+                    PlusOp(
+                    ) [PlusOp]
+                    Term(
+                      DesignatorFactor(
+                        Designator(
+                         jedan
+                          NoDesignatorOptions(
+                          ) [NoDesignatorOptions]
+                        ) [Designator]
+                      ) [DesignatorFactor]
+                      NoMulopFactorList(
+                      ) [NoMulopFactorList]
+                    ) [Term]
+                  ) [AddopTermListOne]
+                ) [AddopTermListExist]
+              ) [Expr]
+            ) [DesignatorAssignopExpr]
+          ) [DesignatorStatementOp]
           StatementListMany(
+            DesignatorStatementOp(
+              DesignatorAssignopExpr(
+                Designator(
+                 bodovi
+                  NoDesignatorOptions(
+                  ) [NoDesignatorOptions]
+                ) [Designator]
+                AssignOp(
+                ) [AssignOp]
+                Expr(
+                  NoMinus(
+                  ) [NoMinus]
+                  Term(
+                    DesignatorFactor(
+                      Designator(
+                       bodovi
+                        NoDesignatorOptions(
+                        ) [NoDesignatorOptions]
+                      ) [Designator]
+                    ) [DesignatorFactor]
+                    MulopFactorListExist(
+                      MulopFactorListOne(
+                        MulOpMul(
+                        ) [MulOpMul]
+                        DesignatorFactor(
+                          Designator(
+                           pet
+                            NoDesignatorOptions(
+                            ) [NoDesignatorOptions]
+                          ) [Designator]
+                        ) [DesignatorFactor]
+                      ) [MulopFactorListOne]
+                    ) [MulopFactorListExist]
+                  ) [Term]
+                  NoAddopTermList(
+                  ) [NoAddopTermList]
+                ) [Expr]
+              ) [DesignatorAssignopExpr]
+            ) [DesignatorStatementOp]
             StatementListMany(
+              DesignatorStatementOp(
+                DesignatorDec(
+                  Designator(
+                   bodovi
+                    NoDesignatorOptions(
+                    ) [NoDesignatorOptions]
+                  ) [Designator]
+                ) [DesignatorDec]
+              ) [DesignatorStatementOp]
               StatementListMany(
+                PrintStatement(
+                  Expr(
+                    NoMinus(
+                    ) [NoMinus]
+                    Term(
+                      DesignatorFactor(
+                        Designator(
+                         bodovi
+                          NoDesignatorOptions(
+                          ) [NoDesignatorOptions]
+                        ) [Designator]
+                      ) [DesignatorFactor]
+                      NoMulopFactorList(
+                      ) [NoMulopFactorList]
+                    ) [Term]
+                    NoAddopTermList(
+                    ) [NoAddopTermList]
+                  ) [Expr]
+                  NoPrintOptions(
+                  ) [NoPrintOptions]
+                ) [PrintStatement]
                 StatementListMany(
+                  DesignatorStatementOp(
+                    DesignatorAssignopExpr(
+                      Designator(
+                       niz
+                        NoDesignatorOptions(
+                        ) [NoDesignatorOptions]
+                      ) [Designator]
+                      AssignOp(
+                      ) [AssignOp]
+                      Expr(
+                        NoMinus(
+                        ) [NoMinus]
+                        Term(
+                          NewFactor(
+                            Type(
+                             int
+                            ) [Type]
+                            Expr(
+                              NoMinus(
+                              ) [NoMinus]
+                              Term(
+                                NumConstFactor(
+                                 3
+                                ) [NumConstFactor]
+                                NoMulopFactorList(
+                                ) [NoMulopFactorList]
+                              ) [Term]
+                              NoAddopTermList(
+                              ) [NoAddopTermList]
+                            ) [Expr]
+                          ) [NewFactor]
+                          NoMulopFactorList(
+                          ) [NoMulopFactorList]
+                        ) [Term]
+                        NoAddopTermList(
+                        ) [NoAddopTermList]
+                      ) [Expr]
+                    ) [DesignatorAssignopExpr]
+                  ) [DesignatorStatementOp]
                   StatementListMany(
+                    DesignatorStatementOp(
+                      DesignatorAssignopExpr(
+                        Designator(
+                         niz
+                          DesignatorOption(
+                            Expr(
+                              NoMinus(
+                              ) [NoMinus]
+                              Term(
+                                DesignatorFactor(
+                                  Designator(
+                                   nula
+                                    NoDesignatorOptions(
+                                    ) [NoDesignatorOptions]
+                                  ) [Designator]
+                                ) [DesignatorFactor]
+                                NoMulopFactorList(
+                                ) [NoMulopFactorList]
+                              ) [Term]
+                              NoAddopTermList(
+                              ) [NoAddopTermList]
+                            ) [Expr]
+                          ) [DesignatorOption]
+                        ) [Designator]
+                        AssignOp(
+                        ) [AssignOp]
+                        Expr(
+                          NoMinus(
+                          ) [NoMinus]
+                          Term(
+                            DesignatorFactor(
+                              Designator(
+                               jedan
+                                NoDesignatorOptions(
+                                ) [NoDesignatorOptions]
+                              ) [Designator]
+                            ) [DesignatorFactor]
+                            NoMulopFactorList(
+                            ) [NoMulopFactorList]
+                          ) [Term]
+                          NoAddopTermList(
+                          ) [NoAddopTermList]
+                        ) [Expr]
+                      ) [DesignatorAssignopExpr]
+                    ) [DesignatorStatementOp]
                     StatementListMany(
+                      DesignatorStatementOp(
+                        DesignatorAssignopExpr(
+                          Designator(
+                           niz
+                            DesignatorOption(
+                              Expr(
+                                NoMinus(
+                                ) [NoMinus]
+                                Term(
+                                  NumConstFactor(
+                                   1
+                                  ) [NumConstFactor]
+                                  NoMulopFactorList(
+                                  ) [NoMulopFactorList]
+                                ) [Term]
+                                NoAddopTermList(
+                                ) [NoAddopTermList]
+                              ) [Expr]
+                            ) [DesignatorOption]
+                          ) [Designator]
+                          AssignOp(
+                          ) [AssignOp]
+                          Expr(
+                            NoMinus(
+                            ) [NoMinus]
+                            Term(
+                              NumConstFactor(
+                               2
+                              ) [NumConstFactor]
+                              NoMulopFactorList(
+                              ) [NoMulopFactorList]
+                            ) [Term]
+                            NoAddopTermList(
+                            ) [NoAddopTermList]
+                          ) [Expr]
+                        ) [DesignatorAssignopExpr]
+                      ) [DesignatorStatementOp]
                       StatementListMany(
-                        StatementListMany(
-                          StatementListMany(
-                            StatementListMany(
-                              StatementListMany(
-                                StatementListMany(
-                                  StatementListMany(
-                                    StatementListMany(
-                                      StatementListMany(
-                                        StatementListMany(
-                                          StatementListMany(
-                                            StatementListMany(
-                                              StatementListMany(
-                                                StatementListMany(
-                                                  StatementListMany(
-                                                    StatementListMany(
-                                                      NoStatementList(
-                                                      ) [NoStatementList]
-                                                      DesignatorStatementOp(
-                                                        DesignatorAssignopExpr(
-                                                          Designator(
-                                                           bodovi
-                                                            NoDesignatorOptions(
-                                                            ) [NoDesignatorOptions]
-                                                          ) [Designator]
-                                                          AssignOp(
-                                                          ) [AssignOp]
-                                                          Expr(
-                                                            NoMinus(
-                                                            ) [NoMinus]
-                                                            Term(
-                                                              NumConstFactor(
-                                                               0
-                                                              ) [NumConstFactor]
-                                                              NoMulopFactorList(
-                                                              ) [NoMulopFactorList]
-                                                            ) [Term]
-                                                            NoAddopTermList(
-                                                            ) [NoAddopTermList]
-                                                          ) [Expr]
-                                                        ) [DesignatorAssignopExpr]
-                                                      ) [DesignatorStatementOp]
-                                                    ) [StatementListMany]
-                                                    DesignatorStatementOp(
-                                                      DesignatorInc(
-                                                        Designator(
-                                                         bodovi
-                                                          NoDesignatorOptions(
-                                                          ) [NoDesignatorOptions]
-                                                        ) [Designator]
-                                                      ) [DesignatorInc]
-                                                    ) [DesignatorStatementOp]
-                                                  ) [StatementListMany]
-                                                  DesignatorStatementOp(
-                                                    DesignatorAssignopExpr(
-                                                      Designator(
-                                                       bodovi
-                                                        NoDesignatorOptions(
-                                                        ) [NoDesignatorOptions]
-                                                      ) [Designator]
-                                                      AssignOp(
-                                                      ) [AssignOp]
-                                                      Expr(
-                                                        NoMinus(
-                                                        ) [NoMinus]
-                                                        Term(
-                                                          DesignatorFactor(
-                                                            Designator(
-                                                             bodovi
-                                                              NoDesignatorOptions(
-                                                              ) [NoDesignatorOptions]
-                                                            ) [Designator]
-                                                          ) [DesignatorFactor]
-                                                          NoMulopFactorList(
-                                                          ) [NoMulopFactorList]
-                                                        ) [Term]
-                                                        AddopTermListExist(
-                                                          AddopTermListOne(
-                                                            PlusOp(
-                                                            ) [PlusOp]
-                                                            Term(
-                                                              DesignatorFactor(
-                                                                Designator(
-                                                                 jedan
-                                                                  NoDesignatorOptions(
-                                                                  ) [NoDesignatorOptions]
-                                                                ) [Designator]
-                                                              ) [DesignatorFactor]
-                                                              NoMulopFactorList(
-                                                              ) [NoMulopFactorList]
-                                                            ) [Term]
-                                                          ) [AddopTermListOne]
-                                                        ) [AddopTermListExist]
-                                                      ) [Expr]
-                                                    ) [DesignatorAssignopExpr]
-                                                  ) [DesignatorStatementOp]
-                                                ) [StatementListMany]
-                                                DesignatorStatementOp(
-                                                  DesignatorAssignopExpr(
-                                                    Designator(
-                                                     bodovi
-                                                      NoDesignatorOptions(
-                                                      ) [NoDesignatorOptions]
-                                                    ) [Designator]
-                                                    AssignOp(
-                                                    ) [AssignOp]
-                                                    Expr(
-                                                      NoMinus(
-                                                      ) [NoMinus]
-                                                      Term(
-                                                        DesignatorFactor(
-                                                          Designator(
-                                                           bodovi
-                                                            NoDesignatorOptions(
-                                                            ) [NoDesignatorOptions]
-                                                          ) [Designator]
-                                                        ) [DesignatorFactor]
-                                                        MulopFactorListExist(
-                                                          MulopFactorListOne(
-                                                            MulOpMul(
-                                                            ) [MulOpMul]
-                                                            DesignatorFactor(
-                                                              Designator(
-                                                               pet
-                                                                NoDesignatorOptions(
-                                                                ) [NoDesignatorOptions]
-                                                              ) [Designator]
-                                                            ) [DesignatorFactor]
-                                                          ) [MulopFactorListOne]
-                                                        ) [MulopFactorListExist]
-                                                      ) [Term]
-                                                      NoAddopTermList(
-                                                      ) [NoAddopTermList]
-                                                    ) [Expr]
-                                                  ) [DesignatorAssignopExpr]
-                                                ) [DesignatorStatementOp]
-                                              ) [StatementListMany]
-                                              DesignatorStatementOp(
-                                                DesignatorDec(
-                                                  Designator(
-                                                   bodovi
-                                                    NoDesignatorOptions(
-                                                    ) [NoDesignatorOptions]
-                                                  ) [Designator]
-                                                ) [DesignatorDec]
-                                              ) [DesignatorStatementOp]
-                                            ) [StatementListMany]
-                                            PrintStatement(
-                                              Expr(
-                                                NoMinus(
-                                                ) [NoMinus]
-                                                Term(
-                                                  DesignatorFactor(
-                                                    Designator(
-                                                     bodovi
-                                                      NoDesignatorOptions(
-                                                      ) [NoDesignatorOptions]
-                                                    ) [Designator]
-                                                  ) [DesignatorFactor]
-                                                  NoMulopFactorList(
-                                                  ) [NoMulopFactorList]
-                                                ) [Term]
-                                                NoAddopTermList(
-                                                ) [NoAddopTermList]
-                                              ) [Expr]
-                                              NoPrintOptions(
-                                              ) [NoPrintOptions]
-                                            ) [PrintStatement]
-                                          ) [StatementListMany]
-                                          DesignatorStatementOp(
-                                            DesignatorAssignopExpr(
-                                              Designator(
-                                               niz
-                                                NoDesignatorOptions(
-                                                ) [NoDesignatorOptions]
-                                              ) [Designator]
-                                              AssignOp(
-                                              ) [AssignOp]
-                                              Expr(
-                                                NoMinus(
-                                                ) [NoMinus]
-                                                Term(
-                                                  NewFactor(
-                                                    Type(
-                                                     int
-                                                    ) [Type]
-                                                    Expr(
-                                                      NoMinus(
-                                                      ) [NoMinus]
-                                                      Term(
-                                                        NumConstFactor(
-                                                         3
-                                                        ) [NumConstFactor]
-                                                        NoMulopFactorList(
-                                                        ) [NoMulopFactorList]
-                                                      ) [Term]
-                                                      NoAddopTermList(
-                                                      ) [NoAddopTermList]
-                                                    ) [Expr]
-                                                  ) [NewFactor]
-                                                  NoMulopFactorList(
-                                                  ) [NoMulopFactorList]
-                                                ) [Term]
-                                                NoAddopTermList(
-                                                ) [NoAddopTermList]
-                                              ) [Expr]
-                                            ) [DesignatorAssignopExpr]
-                                          ) [DesignatorStatementOp]
-                                        ) [StatementListMany]
-                                        DesignatorStatementOp(
-                                          DesignatorAssignopExpr(
-                                            Designator(
-                                             niz
-                                              DesignatorOption(
-                                                Expr(
-                                                  NoMinus(
-                                                  ) [NoMinus]
-                                                  Term(
-                                                    DesignatorFactor(
-                                                      Designator(
-                                                       nula
-                                                        NoDesignatorOptions(
-                                                        ) [NoDesignatorOptions]
-                                                      ) [Designator]
-                                                    ) [DesignatorFactor]
-                                                    NoMulopFactorList(
-                                                    ) [NoMulopFactorList]
-                                                  ) [Term]
-                                                  NoAddopTermList(
-                                                  ) [NoAddopTermList]
-                                                ) [Expr]
-                                              ) [DesignatorOption]
-                                            ) [Designator]
-                                            AssignOp(
-                                            ) [AssignOp]
-                                            Expr(
-                                              NoMinus(
-                                              ) [NoMinus]
-                                              Term(
-                                                DesignatorFactor(
-                                                  Designator(
-                                                   jedan
-                                                    NoDesignatorOptions(
-                                                    ) [NoDesignatorOptions]
-                                                  ) [Designator]
-                                                ) [DesignatorFactor]
-                                                NoMulopFactorList(
-                                                ) [NoMulopFactorList]
-                                              ) [Term]
-                                              NoAddopTermList(
-                                              ) [NoAddopTermList]
-                                            ) [Expr]
-                                          ) [DesignatorAssignopExpr]
-                                        ) [DesignatorStatementOp]
-                                      ) [StatementListMany]
-                                      DesignatorStatementOp(
-                                        DesignatorAssignopExpr(
-                                          Designator(
-                                           niz
-                                            DesignatorOption(
-                                              Expr(
-                                                NoMinus(
-                                                ) [NoMinus]
-                                                Term(
-                                                  NumConstFactor(
-                                                   1
-                                                  ) [NumConstFactor]
-                                                  NoMulopFactorList(
-                                                  ) [NoMulopFactorList]
-                                                ) [Term]
-                                                NoAddopTermList(
-                                                ) [NoAddopTermList]
-                                              ) [Expr]
-                                            ) [DesignatorOption]
-                                          ) [Designator]
-                                          AssignOp(
-                                          ) [AssignOp]
+                        DesignatorStatementOp(
+                          DesignatorAssignopExpr(
+                            Designator(
+                             niz
+                              DesignatorOption(
+                                Expr(
+                                  NoMinus(
+                                  ) [NoMinus]
+                                  Term(
+                                    DesignatorFactor(
+                                      Designator(
+                                       niz
+                                        DesignatorOption(
                                           Expr(
                                             NoMinus(
                                             ) [NoMinus]
                                             Term(
-                                              NumConstFactor(
-                                               2
-                                              ) [NumConstFactor]
+                                              DesignatorFactor(
+                                                Designator(
+                                                 jedan
+                                                  NoDesignatorOptions(
+                                                  ) [NoDesignatorOptions]
+                                                ) [Designator]
+                                              ) [DesignatorFactor]
                                               NoMulopFactorList(
                                               ) [NoMulopFactorList]
                                             ) [Term]
                                             NoAddopTermList(
                                             ) [NoAddopTermList]
                                           ) [Expr]
-                                        ) [DesignatorAssignopExpr]
-                                      ) [DesignatorStatementOp]
-                                    ) [StatementListMany]
-                                    DesignatorStatementOp(
-                                      DesignatorAssignopExpr(
-                                        Designator(
-                                         niz
-                                          DesignatorOption(
-                                            Expr(
-                                              NoMinus(
-                                              ) [NoMinus]
-                                              Term(
-                                                DesignatorFactor(
-                                                  Designator(
-                                                   niz
-                                                    DesignatorOption(
-                                                      Expr(
-                                                        NoMinus(
-                                                        ) [NoMinus]
-                                                        Term(
-                                                          DesignatorFactor(
-                                                            Designator(
-                                                             jedan
-                                                              NoDesignatorOptions(
-                                                              ) [NoDesignatorOptions]
-                                                            ) [Designator]
-                                                          ) [DesignatorFactor]
-                                                          NoMulopFactorList(
-                                                          ) [NoMulopFactorList]
-                                                        ) [Term]
-                                                        NoAddopTermList(
-                                                        ) [NoAddopTermList]
-                                                      ) [Expr]
-                                                    ) [DesignatorOption]
-                                                  ) [Designator]
-                                                ) [DesignatorFactor]
-                                                NoMulopFactorList(
-                                                ) [NoMulopFactorList]
-                                              ) [Term]
-                                              NoAddopTermList(
-                                              ) [NoAddopTermList]
-                                            ) [Expr]
-                                          ) [DesignatorOption]
-                                        ) [Designator]
-                                        AssignOp(
-                                        ) [AssignOp]
-                                        Expr(
-                                          NoMinus(
-                                          ) [NoMinus]
-                                          Term(
-                                            DesignatorFactor(
-                                              Designator(
-                                               niz
-                                                DesignatorOption(
-                                                  Expr(
-                                                    NoMinus(
-                                                    ) [NoMinus]
-                                                    Term(
-                                                      DesignatorFactor(
-                                                        Designator(
-                                                         niz
-                                                          DesignatorOption(
-                                                            Expr(
-                                                              NoMinus(
-                                                              ) [NoMinus]
-                                                              Term(
-                                                                NumConstFactor(
-                                                                 0
-                                                                ) [NumConstFactor]
-                                                                NoMulopFactorList(
-                                                                ) [NoMulopFactorList]
-                                                              ) [Term]
-                                                              NoAddopTermList(
-                                                              ) [NoAddopTermList]
-                                                            ) [Expr]
-                                                          ) [DesignatorOption]
-                                                        ) [Designator]
-                                                      ) [DesignatorFactor]
-                                                      NoMulopFactorList(
-                                                      ) [NoMulopFactorList]
-                                                    ) [Term]
-                                                    NoAddopTermList(
-                                                    ) [NoAddopTermList]
-                                                  ) [Expr]
-                                                ) [DesignatorOption]
-                                              ) [Designator]
-                                            ) [DesignatorFactor]
-                                            MulopFactorListExist(
-                                              MulopFactorListOne(
-                                                MulOpMul(
-                                                ) [MulOpMul]
-                                                NumConstFactor(
-                                                 3
-                                                ) [NumConstFactor]
-                                              ) [MulopFactorListOne]
-                                            ) [MulopFactorListExist]
-                                          ) [Term]
-                                          NoAddopTermList(
-                                          ) [NoAddopTermList]
-                                        ) [Expr]
-                                      ) [DesignatorAssignopExpr]
-                                    ) [DesignatorStatementOp]
-                                  ) [StatementListMany]
-                                  DesignatorStatementOp(
-                                    DesignatorAssignopExpr(
-                                      Designator(
-                                       bodovi
-                                        NoDesignatorOptions(
-                                        ) [NoDesignatorOptions]
+                                        ) [DesignatorOption]
                                       ) [Designator]
-                                      AssignOp(
-                                      ) [AssignOp]
+                                    ) [DesignatorFactor]
+                                    NoMulopFactorList(
+                                    ) [NoMulopFactorList]
+                                  ) [Term]
+                                  NoAddopTermList(
+                                  ) [NoAddopTermList]
+                                ) [Expr]
+                              ) [DesignatorOption]
+                            ) [Designator]
+                            AssignOp(
+                            ) [AssignOp]
+                            Expr(
+                              NoMinus(
+                              ) [NoMinus]
+                              Term(
+                                DesignatorFactor(
+                                  Designator(
+                                   niz
+                                    DesignatorOption(
                                       Expr(
                                         NoMinus(
                                         ) [NoMinus]
@@ -793,7 +709,7 @@ INFO  04:24:52,257 - Program(
                                                   ) [NoMinus]
                                                   Term(
                                                     NumConstFactor(
-                                                     2
+                                                     0
                                                     ) [NumConstFactor]
                                                     NoMulopFactorList(
                                                     ) [NoMulopFactorList]
@@ -804,61 +720,119 @@ INFO  04:24:52,257 - Program(
                                               ) [DesignatorOption]
                                             ) [Designator]
                                           ) [DesignatorFactor]
-                                          MulopFactorListExist(
-                                            MulopFactorListOne(
-                                              DivOp(
-                                              ) [DivOp]
-                                              DesignatorFactor(
-                                                Designator(
-                                                 niz
-                                                  DesignatorOption(
-                                                    Expr(
-                                                      NoMinus(
-                                                      ) [NoMinus]
-                                                      Term(
-                                                        NumConstFactor(
-                                                         0
-                                                        ) [NumConstFactor]
-                                                        NoMulopFactorList(
-                                                        ) [NoMulopFactorList]
-                                                      ) [Term]
-                                                      NoAddopTermList(
-                                                      ) [NoAddopTermList]
-                                                    ) [Expr]
-                                                  ) [DesignatorOption]
-                                                ) [Designator]
-                                              ) [DesignatorFactor]
-                                            ) [MulopFactorListOne]
-                                          ) [MulopFactorListExist]
+                                          NoMulopFactorList(
+                                          ) [NoMulopFactorList]
                                         ) [Term]
                                         NoAddopTermList(
                                         ) [NoAddopTermList]
                                       ) [Expr]
-                                    ) [DesignatorAssignopExpr]
-                                  ) [DesignatorStatementOp]
-                                ) [StatementListMany]
-                                PrintStatement(
-                                  Expr(
-                                    NoMinus(
-                                    ) [NoMinus]
-                                    Term(
+                                    ) [DesignatorOption]
+                                  ) [Designator]
+                                ) [DesignatorFactor]
+                                MulopFactorListExist(
+                                  MulopFactorListOne(
+                                    MulOpMul(
+                                    ) [MulOpMul]
+                                    NumConstFactor(
+                                     3
+                                    ) [NumConstFactor]
+                                  ) [MulopFactorListOne]
+                                ) [MulopFactorListExist]
+                              ) [Term]
+                              NoAddopTermList(
+                              ) [NoAddopTermList]
+                            ) [Expr]
+                          ) [DesignatorAssignopExpr]
+                        ) [DesignatorStatementOp]
+                        StatementListMany(
+                          DesignatorStatementOp(
+                            DesignatorAssignopExpr(
+                              Designator(
+                               bodovi
+                                NoDesignatorOptions(
+                                ) [NoDesignatorOptions]
+                              ) [Designator]
+                              AssignOp(
+                              ) [AssignOp]
+                              Expr(
+                                NoMinus(
+                                ) [NoMinus]
+                                Term(
+                                  DesignatorFactor(
+                                    Designator(
+                                     niz
+                                      DesignatorOption(
+                                        Expr(
+                                          NoMinus(
+                                          ) [NoMinus]
+                                          Term(
+                                            NumConstFactor(
+                                             2
+                                            ) [NumConstFactor]
+                                            NoMulopFactorList(
+                                            ) [NoMulopFactorList]
+                                          ) [Term]
+                                          NoAddopTermList(
+                                          ) [NoAddopTermList]
+                                        ) [Expr]
+                                      ) [DesignatorOption]
+                                    ) [Designator]
+                                  ) [DesignatorFactor]
+                                  MulopFactorListExist(
+                                    MulopFactorListOne(
+                                      DivOp(
+                                      ) [DivOp]
                                       DesignatorFactor(
                                         Designator(
-                                         bodovi
-                                          NoDesignatorOptions(
-                                          ) [NoDesignatorOptions]
+                                         niz
+                                          DesignatorOption(
+                                            Expr(
+                                              NoMinus(
+                                              ) [NoMinus]
+                                              Term(
+                                                NumConstFactor(
+                                                 0
+                                                ) [NumConstFactor]
+                                                NoMulopFactorList(
+                                                ) [NoMulopFactorList]
+                                              ) [Term]
+                                              NoAddopTermList(
+                                              ) [NoAddopTermList]
+                                            ) [Expr]
+                                          ) [DesignatorOption]
                                         ) [Designator]
                                       ) [DesignatorFactor]
-                                      NoMulopFactorList(
-                                      ) [NoMulopFactorList]
-                                    ) [Term]
-                                    NoAddopTermList(
-                                    ) [NoAddopTermList]
-                                  ) [Expr]
-                                  NoPrintOptions(
-                                  ) [NoPrintOptions]
-                                ) [PrintStatement]
-                              ) [StatementListMany]
+                                    ) [MulopFactorListOne]
+                                  ) [MulopFactorListExist]
+                                ) [Term]
+                                NoAddopTermList(
+                                ) [NoAddopTermList]
+                              ) [Expr]
+                            ) [DesignatorAssignopExpr]
+                          ) [DesignatorStatementOp]
+                          StatementListMany(
+                            PrintStatement(
+                              Expr(
+                                NoMinus(
+                                ) [NoMinus]
+                                Term(
+                                  DesignatorFactor(
+                                    Designator(
+                                     bodovi
+                                      NoDesignatorOptions(
+                                      ) [NoDesignatorOptions]
+                                    ) [Designator]
+                                  ) [DesignatorFactor]
+                                  NoMulopFactorList(
+                                  ) [NoMulopFactorList]
+                                ) [Term]
+                                NoAddopTermList(
+                                ) [NoAddopTermList]
+                              ) [Expr]
+                              NoPrintOptions(
+                              ) [NoPrintOptions]
+                            ) [PrintStatement]
+                            StatementListMany(
                               PrintStatement(
                                 Expr(
                                   NoMinus(
@@ -893,548 +867,575 @@ INFO  04:24:52,257 - Program(
                                 NoPrintOptions(
                                 ) [NoPrintOptions]
                               ) [PrintStatement]
-                            ) [StatementListMany]
-                            DesignatorStatementOp(
-                              DesignatorAssignopExpr(
-                                Designator(
-                                 nizch
-                                  NoDesignatorOptions(
-                                  ) [NoDesignatorOptions]
-                                ) [Designator]
-                                AssignOp(
-                                ) [AssignOp]
-                                Expr(
-                                  NoMinus(
-                                  ) [NoMinus]
-                                  Term(
-                                    NewFactor(
-                                      Type(
-                                       char
-                                      ) [Type]
+                              StatementListMany(
+                                DesignatorStatementOp(
+                                  DesignatorAssignopExpr(
+                                    Designator(
+                                     nizch
+                                      NoDesignatorOptions(
+                                      ) [NoDesignatorOptions]
+                                    ) [Designator]
+                                    AssignOp(
+                                    ) [AssignOp]
+                                    Expr(
+                                      NoMinus(
+                                      ) [NoMinus]
+                                      Term(
+                                        NewFactor(
+                                          Type(
+                                           char
+                                          ) [Type]
+                                          Expr(
+                                            NoMinus(
+                                            ) [NoMinus]
+                                            Term(
+                                              NumConstFactor(
+                                               3
+                                              ) [NumConstFactor]
+                                              NoMulopFactorList(
+                                              ) [NoMulopFactorList]
+                                            ) [Term]
+                                            NoAddopTermList(
+                                            ) [NoAddopTermList]
+                                          ) [Expr]
+                                        ) [NewFactor]
+                                        NoMulopFactorList(
+                                        ) [NoMulopFactorList]
+                                      ) [Term]
+                                      NoAddopTermList(
+                                      ) [NoAddopTermList]
+                                    ) [Expr]
+                                  ) [DesignatorAssignopExpr]
+                                ) [DesignatorStatementOp]
+                                StatementListMany(
+                                  DesignatorStatementOp(
+                                    DesignatorAssignopExpr(
+                                      Designator(
+                                       nizch
+                                        DesignatorOption(
+                                          Expr(
+                                            NoMinus(
+                                            ) [NoMinus]
+                                            Term(
+                                              NumConstFactor(
+                                               0
+                                              ) [NumConstFactor]
+                                              NoMulopFactorList(
+                                              ) [NoMulopFactorList]
+                                            ) [Term]
+                                            NoAddopTermList(
+                                            ) [NoAddopTermList]
+                                          ) [Expr]
+                                        ) [DesignatorOption]
+                                      ) [Designator]
+                                      AssignOp(
+                                      ) [AssignOp]
                                       Expr(
                                         NoMinus(
                                         ) [NoMinus]
                                         Term(
-                                          NumConstFactor(
-                                           3
-                                          ) [NumConstFactor]
+                                          CharConstFactor(
+                                           a
+                                          ) [CharConstFactor]
                                           NoMulopFactorList(
                                           ) [NoMulopFactorList]
                                         ) [Term]
                                         NoAddopTermList(
                                         ) [NoAddopTermList]
                                       ) [Expr]
-                                    ) [NewFactor]
-                                    NoMulopFactorList(
-                                    ) [NoMulopFactorList]
-                                  ) [Term]
-                                  NoAddopTermList(
-                                  ) [NoAddopTermList]
-                                ) [Expr]
-                              ) [DesignatorAssignopExpr]
-                            ) [DesignatorStatementOp]
-                          ) [StatementListMany]
-                          DesignatorStatementOp(
-                            DesignatorAssignopExpr(
-                              Designator(
-                               nizch
-                                DesignatorOption(
-                                  Expr(
-                                    NoMinus(
-                                    ) [NoMinus]
-                                    Term(
-                                      NumConstFactor(
-                                       0
-                                      ) [NumConstFactor]
-                                      NoMulopFactorList(
-                                      ) [NoMulopFactorList]
-                                    ) [Term]
-                                    NoAddopTermList(
-                                    ) [NoAddopTermList]
-                                  ) [Expr]
-                                ) [DesignatorOption]
-                              ) [Designator]
-                              AssignOp(
-                              ) [AssignOp]
-                              Expr(
-                                NoMinus(
-                                ) [NoMinus]
-                                Term(
-                                  CharConstFactor(
-                                   a
-                                  ) [CharConstFactor]
-                                  NoMulopFactorList(
-                                  ) [NoMulopFactorList]
-                                ) [Term]
-                                NoAddopTermList(
-                                ) [NoAddopTermList]
-                              ) [Expr]
-                            ) [DesignatorAssignopExpr]
-                          ) [DesignatorStatementOp]
-                        ) [StatementListMany]
-                        DesignatorStatementOp(
-                          DesignatorAssignopExpr(
-                            Designator(
-                             nizch
-                              DesignatorOption(
-                                Expr(
-                                  NoMinus(
-                                  ) [NoMinus]
-                                  Term(
-                                    DesignatorFactor(
-                                      Designator(
-                                       jedan
-                                        NoDesignatorOptions(
-                                        ) [NoDesignatorOptions]
-                                      ) [Designator]
-                                    ) [DesignatorFactor]
-                                    NoMulopFactorList(
-                                    ) [NoMulopFactorList]
-                                  ) [Term]
-                                  NoAddopTermList(
-                                  ) [NoAddopTermList]
-                                ) [Expr]
-                              ) [DesignatorOption]
-                            ) [Designator]
-                            AssignOp(
-                            ) [AssignOp]
-                            Expr(
-                              NoMinus(
-                              ) [NoMinus]
-                              Term(
-                                CharConstFactor(
-                                 b
-                                ) [CharConstFactor]
-                                NoMulopFactorList(
-                                ) [NoMulopFactorList]
-                              ) [Term]
-                              NoAddopTermList(
-                              ) [NoAddopTermList]
-                            ) [Expr]
-                          ) [DesignatorAssignopExpr]
-                        ) [DesignatorStatementOp]
-                      ) [StatementListMany]
-                      DesignatorStatementOp(
-                        DesignatorAssignopExpr(
-                          Designator(
-                           nizch
-                            DesignatorOption(
-                              Expr(
-                                NoMinus(
-                                ) [NoMinus]
-                                Term(
-                                  DesignatorFactor(
-                                    Designator(
-                                     pet
-                                      NoDesignatorOptions(
-                                      ) [NoDesignatorOptions]
-                                    ) [Designator]
-                                  ) [DesignatorFactor]
-                                  NoMulopFactorList(
-                                  ) [NoMulopFactorList]
-                                ) [Term]
-                                AddopTermListExist(
-                                  AddopTermListOne(
-                                    MinusOp(
-                                    ) [MinusOp]
-                                    Term(
-                                      NumConstFactor(
-                                       3
-                                      ) [NumConstFactor]
-                                      NoMulopFactorList(
-                                      ) [NoMulopFactorList]
-                                    ) [Term]
-                                  ) [AddopTermListOne]
-                                ) [AddopTermListExist]
-                              ) [Expr]
-                            ) [DesignatorOption]
-                          ) [Designator]
-                          AssignOp(
-                          ) [AssignOp]
-                          Expr(
-                            NoMinus(
-                            ) [NoMinus]
-                            Term(
-                              CharConstFactor(
-                               c
-                              ) [CharConstFactor]
-                              NoMulopFactorList(
-                              ) [NoMulopFactorList]
-                            ) [Term]
-                            NoAddopTermList(
-                            ) [NoAddopTermList]
-                          ) [Expr]
-                        ) [DesignatorAssignopExpr]
-                      ) [DesignatorStatementOp]
-                    ) [StatementListMany]
-                    PrintStatement(
-                      Expr(
-                        NoMinus(
-                        ) [NoMinus]
-                        Term(
-                          DesignatorFactor(
-                            Designator(
-                             nizch
-                              DesignatorOption(
-                                Expr(
-                                  NoMinus(
-                                  ) [NoMinus]
-                                  Term(
-                                    NumConstFactor(
-                                     1
-                                    ) [NumConstFactor]
-                                    NoMulopFactorList(
-                                    ) [NoMulopFactorList]
-                                  ) [Term]
-                                  NoAddopTermList(
-                                  ) [NoAddopTermList]
-                                ) [Expr]
-                              ) [DesignatorOption]
-                            ) [Designator]
-                          ) [DesignatorFactor]
-                          NoMulopFactorList(
-                          ) [NoMulopFactorList]
-                        ) [Term]
-                        NoAddopTermList(
-                        ) [NoAddopTermList]
-                      ) [Expr]
-                      NoPrintOptions(
-                      ) [NoPrintOptions]
-                    ) [PrintStatement]
-                  ) [StatementListMany]
-                  PrintStatement(
-                    Expr(
-                      NoMinus(
-                      ) [NoMinus]
-                      Term(
-                        DesignatorFactor(
-                          Designator(
-                           nizch
-                            DesignatorOption(
-                              Expr(
-                                NoMinus(
-                                ) [NoMinus]
-                                Term(
-                                  DesignatorFactor(
-                                    Designator(
-                                     jedan
-                                      NoDesignatorOptions(
-                                      ) [NoDesignatorOptions]
-                                    ) [Designator]
-                                  ) [DesignatorFactor]
-                                  MulopFactorListExist(
-                                    MulopFactorListOne(
-                                      MulOpMul(
-                                      ) [MulOpMul]
-                                      NumConstFactor(
-                                       2
-                                      ) [NumConstFactor]
-                                    ) [MulopFactorListOne]
-                                  ) [MulopFactorListExist]
-                                ) [Term]
-                                NoAddopTermList(
-                                ) [NoAddopTermList]
-                              ) [Expr]
-                            ) [DesignatorOption]
-                          ) [Designator]
-                        ) [DesignatorFactor]
-                        NoMulopFactorList(
-                        ) [NoMulopFactorList]
-                      ) [Term]
-                      NoAddopTermList(
-                      ) [NoAddopTermList]
-                    ) [Expr]
-                    NoPrintOptions(
-                    ) [NoPrintOptions]
-                  ) [PrintStatement]
-                ) [StatementListMany]
-                DesignatorStatementOp(
-                  DesignatorAssignopExpr(
-                    Designator(
-                     bodovi
-                      NoDesignatorOptions(
-                      ) [NoDesignatorOptions]
-                    ) [Designator]
-                    AssignOp(
-                    ) [AssignOp]
-                    Expr(
-                      NoMinus(
-                      ) [NoMinus]
-                      Term(
-                        DesignatorFactor(
-                          Designator(
-                           bodovi
-                            NoDesignatorOptions(
-                            ) [NoDesignatorOptions]
-                          ) [Designator]
-                        ) [DesignatorFactor]
-                        NoMulopFactorList(
-                        ) [NoMulopFactorList]
-                      ) [Term]
-                      AddopTermListExist(
-                        AddopTermListMany(
-                          PlusOp(
-                          ) [PlusOp]
-                          Term(
-                            ExprFactor(
-                              Expr(
-                                NoMinus(
-                                ) [NoMinus]
-                                Term(
-                                  DesignatorFactor(
-                                    Designator(
-                                     pet
-                                      NoDesignatorOptions(
-                                      ) [NoDesignatorOptions]
-                                    ) [Designator]
-                                  ) [DesignatorFactor]
-                                  MulopFactorListExist(
-                                    MulopFactorListOne(
-                                      MulOpMul(
-                                      ) [MulOpMul]
-                                      DesignatorFactor(
+                                    ) [DesignatorAssignopExpr]
+                                  ) [DesignatorStatementOp]
+                                  StatementListMany(
+                                    DesignatorStatementOp(
+                                      DesignatorAssignopExpr(
                                         Designator(
-                                         jedan
-                                          NoDesignatorOptions(
-                                          ) [NoDesignatorOptions]
+                                         nizch
+                                          DesignatorOption(
+                                            Expr(
+                                              NoMinus(
+                                              ) [NoMinus]
+                                              Term(
+                                                DesignatorFactor(
+                                                  Designator(
+                                                   jedan
+                                                    NoDesignatorOptions(
+                                                    ) [NoDesignatorOptions]
+                                                  ) [Designator]
+                                                ) [DesignatorFactor]
+                                                NoMulopFactorList(
+                                                ) [NoMulopFactorList]
+                                              ) [Term]
+                                              NoAddopTermList(
+                                              ) [NoAddopTermList]
+                                            ) [Expr]
+                                          ) [DesignatorOption]
                                         ) [Designator]
-                                      ) [DesignatorFactor]
-                                    ) [MulopFactorListOne]
-                                  ) [MulopFactorListExist]
-                                ) [Term]
-                                AddopTermListExist(
-                                  AddopTermListOne(
-                                    MinusOp(
-                                    ) [MinusOp]
-                                    Term(
-                                      NumConstFactor(
-                                       1
-                                      ) [NumConstFactor]
-                                      NoMulopFactorList(
-                                      ) [NoMulopFactorList]
-                                    ) [Term]
-                                  ) [AddopTermListOne]
-                                ) [AddopTermListExist]
-                              ) [Expr]
-                            ) [ExprFactor]
-                            MulopFactorListExist(
-                              MulopFactorListOne(
-                                MulOpMul(
-                                ) [MulOpMul]
-                                DesignatorFactor(
-                                  Designator(
-                                   bodovi
-                                    NoDesignatorOptions(
-                                    ) [NoDesignatorOptions]
-                                  ) [Designator]
-                                ) [DesignatorFactor]
-                              ) [MulopFactorListOne]
-                            ) [MulopFactorListExist]
-                          ) [Term]
-                          AddopTermListOne(
-                            MinusOp(
-                            ) [MinusOp]
-                            Term(
-                              ExprFactor(
-                                Expr(
-                                  NoMinus(
-                                  ) [NoMinus]
-                                  Term(
-                                    NumConstFactor(
-                                     3
-                                    ) [NumConstFactor]
-                                    MulopFactorListExist(
-                                      MulopFactorListOne(
-                                        ModOp(
-                                        ) [ModOp]
-                                        NumConstFactor(
-                                         2
-                                        ) [NumConstFactor]
-                                      ) [MulopFactorListOne]
-                                    ) [MulopFactorListExist]
-                                  ) [Term]
-                                  AddopTermListExist(
-                                    AddopTermListMany(
-                                      PlusOp(
-                                      ) [PlusOp]
-                                      Term(
-                                        NumConstFactor(
-                                         3
-                                        ) [NumConstFactor]
-                                        MulopFactorListExist(
-                                          MulopFactorListOne(
-                                            MulOpMul(
-                                            ) [MulOpMul]
-                                            NumConstFactor(
-                                             2
-                                            ) [NumConstFactor]
-                                          ) [MulopFactorListOne]
-                                        ) [MulopFactorListExist]
-                                      ) [Term]
-                                      AddopTermListOne(
-                                        MinusOp(
-                                        ) [MinusOp]
-                                        Term(
-                                          NumConstFactor(
-                                           3
-                                          ) [NumConstFactor]
-                                          NoMulopFactorList(
-                                          ) [NoMulopFactorList]
-                                        ) [Term]
-                                      ) [AddopTermListOne]
-                                    ) [AddopTermListMany]
-                                  ) [AddopTermListExist]
-                                ) [Expr]
-                              ) [ExprFactor]
-                              NoMulopFactorList(
-                              ) [NoMulopFactorList]
-                            ) [Term]
-                          ) [AddopTermListOne]
-                        ) [AddopTermListMany]
-                      ) [AddopTermListExist]
-                    ) [Expr]
-                  ) [DesignatorAssignopExpr]
-                ) [DesignatorStatementOp]
+                                        AssignOp(
+                                        ) [AssignOp]
+                                        Expr(
+                                          NoMinus(
+                                          ) [NoMinus]
+                                          Term(
+                                            CharConstFactor(
+                                             b
+                                            ) [CharConstFactor]
+                                            NoMulopFactorList(
+                                            ) [NoMulopFactorList]
+                                          ) [Term]
+                                          NoAddopTermList(
+                                          ) [NoAddopTermList]
+                                        ) [Expr]
+                                      ) [DesignatorAssignopExpr]
+                                    ) [DesignatorStatementOp]
+                                    StatementListMany(
+                                      DesignatorStatementOp(
+                                        DesignatorAssignopExpr(
+                                          Designator(
+                                           nizch
+                                            DesignatorOption(
+                                              Expr(
+                                                NoMinus(
+                                                ) [NoMinus]
+                                                Term(
+                                                  DesignatorFactor(
+                                                    Designator(
+                                                     pet
+                                                      NoDesignatorOptions(
+                                                      ) [NoDesignatorOptions]
+                                                    ) [Designator]
+                                                  ) [DesignatorFactor]
+                                                  NoMulopFactorList(
+                                                  ) [NoMulopFactorList]
+                                                ) [Term]
+                                                AddopTermListExist(
+                                                  AddopTermListOne(
+                                                    MinusOp(
+                                                    ) [MinusOp]
+                                                    Term(
+                                                      NumConstFactor(
+                                                       3
+                                                      ) [NumConstFactor]
+                                                      NoMulopFactorList(
+                                                      ) [NoMulopFactorList]
+                                                    ) [Term]
+                                                  ) [AddopTermListOne]
+                                                ) [AddopTermListExist]
+                                              ) [Expr]
+                                            ) [DesignatorOption]
+                                          ) [Designator]
+                                          AssignOp(
+                                          ) [AssignOp]
+                                          Expr(
+                                            NoMinus(
+                                            ) [NoMinus]
+                                            Term(
+                                              CharConstFactor(
+                                               c
+                                              ) [CharConstFactor]
+                                              NoMulopFactorList(
+                                              ) [NoMulopFactorList]
+                                            ) [Term]
+                                            NoAddopTermList(
+                                            ) [NoAddopTermList]
+                                          ) [Expr]
+                                        ) [DesignatorAssignopExpr]
+                                      ) [DesignatorStatementOp]
+                                      StatementListMany(
+                                        PrintStatement(
+                                          Expr(
+                                            NoMinus(
+                                            ) [NoMinus]
+                                            Term(
+                                              DesignatorFactor(
+                                                Designator(
+                                                 nizch
+                                                  DesignatorOption(
+                                                    Expr(
+                                                      NoMinus(
+                                                      ) [NoMinus]
+                                                      Term(
+                                                        NumConstFactor(
+                                                         1
+                                                        ) [NumConstFactor]
+                                                        NoMulopFactorList(
+                                                        ) [NoMulopFactorList]
+                                                      ) [Term]
+                                                      NoAddopTermList(
+                                                      ) [NoAddopTermList]
+                                                    ) [Expr]
+                                                  ) [DesignatorOption]
+                                                ) [Designator]
+                                              ) [DesignatorFactor]
+                                              NoMulopFactorList(
+                                              ) [NoMulopFactorList]
+                                            ) [Term]
+                                            NoAddopTermList(
+                                            ) [NoAddopTermList]
+                                          ) [Expr]
+                                          NoPrintOptions(
+                                          ) [NoPrintOptions]
+                                        ) [PrintStatement]
+                                        StatementListMany(
+                                          PrintStatement(
+                                            Expr(
+                                              NoMinus(
+                                              ) [NoMinus]
+                                              Term(
+                                                DesignatorFactor(
+                                                  Designator(
+                                                   nizch
+                                                    DesignatorOption(
+                                                      Expr(
+                                                        NoMinus(
+                                                        ) [NoMinus]
+                                                        Term(
+                                                          DesignatorFactor(
+                                                            Designator(
+                                                             jedan
+                                                              NoDesignatorOptions(
+                                                              ) [NoDesignatorOptions]
+                                                            ) [Designator]
+                                                          ) [DesignatorFactor]
+                                                          MulopFactorListExist(
+                                                            MulopFactorListOne(
+                                                              MulOpMul(
+                                                              ) [MulOpMul]
+                                                              NumConstFactor(
+                                                               2
+                                                              ) [NumConstFactor]
+                                                            ) [MulopFactorListOne]
+                                                          ) [MulopFactorListExist]
+                                                        ) [Term]
+                                                        NoAddopTermList(
+                                                        ) [NoAddopTermList]
+                                                      ) [Expr]
+                                                    ) [DesignatorOption]
+                                                  ) [Designator]
+                                                ) [DesignatorFactor]
+                                                NoMulopFactorList(
+                                                ) [NoMulopFactorList]
+                                              ) [Term]
+                                              NoAddopTermList(
+                                              ) [NoAddopTermList]
+                                            ) [Expr]
+                                            NoPrintOptions(
+                                            ) [NoPrintOptions]
+                                          ) [PrintStatement]
+                                          StatementListMany(
+                                            DesignatorStatementOp(
+                                              DesignatorAssignopExpr(
+                                                Designator(
+                                                 bodovi
+                                                  NoDesignatorOptions(
+                                                  ) [NoDesignatorOptions]
+                                                ) [Designator]
+                                                AssignOp(
+                                                ) [AssignOp]
+                                                Expr(
+                                                  NoMinus(
+                                                  ) [NoMinus]
+                                                  Term(
+                                                    DesignatorFactor(
+                                                      Designator(
+                                                       bodovi
+                                                        NoDesignatorOptions(
+                                                        ) [NoDesignatorOptions]
+                                                      ) [Designator]
+                                                    ) [DesignatorFactor]
+                                                    NoMulopFactorList(
+                                                    ) [NoMulopFactorList]
+                                                  ) [Term]
+                                                  AddopTermListExist(
+                                                    AddopTermListMany(
+                                                      PlusOp(
+                                                      ) [PlusOp]
+                                                      Term(
+                                                        ExprFactor(
+                                                          Expr(
+                                                            NoMinus(
+                                                            ) [NoMinus]
+                                                            Term(
+                                                              DesignatorFactor(
+                                                                Designator(
+                                                                 pet
+                                                                  NoDesignatorOptions(
+                                                                  ) [NoDesignatorOptions]
+                                                                ) [Designator]
+                                                              ) [DesignatorFactor]
+                                                              MulopFactorListExist(
+                                                                MulopFactorListOne(
+                                                                  MulOpMul(
+                                                                  ) [MulOpMul]
+                                                                  DesignatorFactor(
+                                                                    Designator(
+                                                                     jedan
+                                                                      NoDesignatorOptions(
+                                                                      ) [NoDesignatorOptions]
+                                                                    ) [Designator]
+                                                                  ) [DesignatorFactor]
+                                                                ) [MulopFactorListOne]
+                                                              ) [MulopFactorListExist]
+                                                            ) [Term]
+                                                            AddopTermListExist(
+                                                              AddopTermListOne(
+                                                                MinusOp(
+                                                                ) [MinusOp]
+                                                                Term(
+                                                                  NumConstFactor(
+                                                                   1
+                                                                  ) [NumConstFactor]
+                                                                  NoMulopFactorList(
+                                                                  ) [NoMulopFactorList]
+                                                                ) [Term]
+                                                              ) [AddopTermListOne]
+                                                            ) [AddopTermListExist]
+                                                          ) [Expr]
+                                                        ) [ExprFactor]
+                                                        MulopFactorListExist(
+                                                          MulopFactorListOne(
+                                                            MulOpMul(
+                                                            ) [MulOpMul]
+                                                            DesignatorFactor(
+                                                              Designator(
+                                                               bodovi
+                                                                NoDesignatorOptions(
+                                                                ) [NoDesignatorOptions]
+                                                              ) [Designator]
+                                                            ) [DesignatorFactor]
+                                                          ) [MulopFactorListOne]
+                                                        ) [MulopFactorListExist]
+                                                      ) [Term]
+                                                      AddopTermListOne(
+                                                        MinusOp(
+                                                        ) [MinusOp]
+                                                        Term(
+                                                          ExprFactor(
+                                                            Expr(
+                                                              NoMinus(
+                                                              ) [NoMinus]
+                                                              Term(
+                                                                NumConstFactor(
+                                                                 3
+                                                                ) [NumConstFactor]
+                                                                MulopFactorListExist(
+                                                                  MulopFactorListOne(
+                                                                    ModOp(
+                                                                    ) [ModOp]
+                                                                    NumConstFactor(
+                                                                     2
+                                                                    ) [NumConstFactor]
+                                                                  ) [MulopFactorListOne]
+                                                                ) [MulopFactorListExist]
+                                                              ) [Term]
+                                                              AddopTermListExist(
+                                                                AddopTermListMany(
+                                                                  PlusOp(
+                                                                  ) [PlusOp]
+                                                                  Term(
+                                                                    NumConstFactor(
+                                                                     3
+                                                                    ) [NumConstFactor]
+                                                                    MulopFactorListExist(
+                                                                      MulopFactorListOne(
+                                                                        MulOpMul(
+                                                                        ) [MulOpMul]
+                                                                        NumConstFactor(
+                                                                         2
+                                                                        ) [NumConstFactor]
+                                                                      ) [MulopFactorListOne]
+                                                                    ) [MulopFactorListExist]
+                                                                  ) [Term]
+                                                                  AddopTermListOne(
+                                                                    MinusOp(
+                                                                    ) [MinusOp]
+                                                                    Term(
+                                                                      NumConstFactor(
+                                                                       3
+                                                                      ) [NumConstFactor]
+                                                                      NoMulopFactorList(
+                                                                      ) [NoMulopFactorList]
+                                                                    ) [Term]
+                                                                  ) [AddopTermListOne]
+                                                                ) [AddopTermListMany]
+                                                              ) [AddopTermListExist]
+                                                            ) [Expr]
+                                                          ) [ExprFactor]
+                                                          NoMulopFactorList(
+                                                          ) [NoMulopFactorList]
+                                                        ) [Term]
+                                                      ) [AddopTermListOne]
+                                                    ) [AddopTermListMany]
+                                                  ) [AddopTermListExist]
+                                                ) [Expr]
+                                              ) [DesignatorAssignopExpr]
+                                            ) [DesignatorStatementOp]
+                                            StatementListMany(
+                                              PrintStatement(
+                                                Expr(
+                                                  NoMinus(
+                                                  ) [NoMinus]
+                                                  Term(
+                                                    DesignatorFactor(
+                                                      Designator(
+                                                       bodovi
+                                                        NoDesignatorOptions(
+                                                        ) [NoDesignatorOptions]
+                                                      ) [Designator]
+                                                    ) [DesignatorFactor]
+                                                    NoMulopFactorList(
+                                                    ) [NoMulopFactorList]
+                                                  ) [Term]
+                                                  NoAddopTermList(
+                                                  ) [NoAddopTermList]
+                                                ) [Expr]
+                                                NoPrintOptions(
+                                                ) [NoPrintOptions]
+                                              ) [PrintStatement]
+                                              StatementListMany(
+                                                ReadStatement(
+                                                  Designator(
+                                                   bodovi
+                                                    NoDesignatorOptions(
+                                                    ) [NoDesignatorOptions]
+                                                  ) [Designator]
+                                                ) [ReadStatement]
+                                                StatementListMany(
+                                                  PrintStatement(
+                                                    Expr(
+                                                      NoMinus(
+                                                      ) [NoMinus]
+                                                      Term(
+                                                        DesignatorFactor(
+                                                          Designator(
+                                                           bodovi
+                                                            NoDesignatorOptions(
+                                                            ) [NoDesignatorOptions]
+                                                          ) [Designator]
+                                                        ) [DesignatorFactor]
+                                                        NoMulopFactorList(
+                                                        ) [NoMulopFactorList]
+                                                      ) [Term]
+                                                      NoAddopTermList(
+                                                      ) [NoAddopTermList]
+                                                    ) [Expr]
+                                                    NoPrintOptions(
+                                                    ) [NoPrintOptions]
+                                                  ) [PrintStatement]
+                                                  StatementListMany(
+                                                    DesignatorStatementOp(
+                                                      DesignatorAssignopExpr(
+                                                        Designator(
+                                                         niz2
+                                                          NoDesignatorOptions(
+                                                          ) [NoDesignatorOptions]
+                                                        ) [Designator]
+                                                        AssignOp(
+                                                        ) [AssignOp]
+                                                        Expr(
+                                                          NoMinus(
+                                                          ) [NoMinus]
+                                                          Term(
+                                                            RangeFactor(
+                                                              Expr(
+                                                                NoMinus(
+                                                                ) [NoMinus]
+                                                                Term(
+                                                                  DesignatorFactor(
+                                                                    Designator(
+                                                                     bodovi
+                                                                      NoDesignatorOptions(
+                                                                      ) [NoDesignatorOptions]
+                                                                    ) [Designator]
+                                                                  ) [DesignatorFactor]
+                                                                  NoMulopFactorList(
+                                                                  ) [NoMulopFactorList]
+                                                                ) [Term]
+                                                                AddopTermListExist(
+                                                                  AddopTermListOne(
+                                                                    PlusOp(
+                                                                    ) [PlusOp]
+                                                                    Term(
+                                                                      NumConstFactor(
+                                                                       1
+                                                                      ) [NumConstFactor]
+                                                                      NoMulopFactorList(
+                                                                      ) [NoMulopFactorList]
+                                                                    ) [Term]
+                                                                  ) [AddopTermListOne]
+                                                                ) [AddopTermListExist]
+                                                              ) [Expr]
+                                                            ) [RangeFactor]
+                                                            NoMulopFactorList(
+                                                            ) [NoMulopFactorList]
+                                                          ) [Term]
+                                                          NoAddopTermList(
+                                                          ) [NoAddopTermList]
+                                                        ) [Expr]
+                                                      ) [DesignatorAssignopExpr]
+                                                    ) [DesignatorStatementOp]
+                                                    StatementListMany(
+                                                      PrintStatement(
+                                                        Expr(
+                                                          NoMinus(
+                                                          ) [NoMinus]
+                                                          Term(
+                                                            DesignatorFactor(
+                                                              Designator(
+                                                               niz2
+                                                                NoDesignatorOptions(
+                                                                ) [NoDesignatorOptions]
+                                                              ) [Designator]
+                                                            ) [DesignatorFactor]
+                                                            NoMulopFactorList(
+                                                            ) [NoMulopFactorList]
+                                                          ) [Term]
+                                                          NoAddopTermList(
+                                                          ) [NoAddopTermList]
+                                                        ) [Expr]
+                                                        NoPrintOptions(
+                                                        ) [NoPrintOptions]
+                                                      ) [PrintStatement]
+                                                      NoStatementList(
+                                                      ) [NoStatementList]
+                                                    ) [StatementListMany]
+                                                  ) [StatementListMany]
+                                                ) [StatementListMany]
+                                              ) [StatementListMany]
+                                            ) [StatementListMany]
+                                          ) [StatementListMany]
+                                        ) [StatementListMany]
+                                      ) [StatementListMany]
+                                    ) [StatementListMany]
+                                  ) [StatementListMany]
+                                ) [StatementListMany]
+                              ) [StatementListMany]
+                            ) [StatementListMany]
+                          ) [StatementListMany]
+                        ) [StatementListMany]
+                      ) [StatementListMany]
+                    ) [StatementListMany]
+                  ) [StatementListMany]
+                ) [StatementListMany]
               ) [StatementListMany]
-              PrintStatement(
-                Expr(
-                  NoMinus(
-                  ) [NoMinus]
-                  Term(
-                    DesignatorFactor(
-                      Designator(
-                       bodovi
-                        NoDesignatorOptions(
-                        ) [NoDesignatorOptions]
-                      ) [Designator]
-                    ) [DesignatorFactor]
-                    NoMulopFactorList(
-                    ) [NoMulopFactorList]
-                  ) [Term]
-                  NoAddopTermList(
-                  ) [NoAddopTermList]
-                ) [Expr]
-                NoPrintOptions(
-                ) [NoPrintOptions]
-              ) [PrintStatement]
             ) [StatementListMany]
-            ReadStatement(
-              Designator(
-               bodovi
-                NoDesignatorOptions(
-                ) [NoDesignatorOptions]
-              ) [Designator]
-            ) [ReadStatement]
           ) [StatementListMany]
-          PrintStatement(
-            Expr(
-              NoMinus(
-              ) [NoMinus]
-              Term(
-                DesignatorFactor(
-                  Designator(
-                   bodovi
-                    NoDesignatorOptions(
-                    ) [NoDesignatorOptions]
-                  ) [Designator]
-                ) [DesignatorFactor]
-                NoMulopFactorList(
-                ) [NoMulopFactorList]
-              ) [Term]
-              NoAddopTermList(
-              ) [NoAddopTermList]
-            ) [Expr]
-            NoPrintOptions(
-            ) [NoPrintOptions]
-          ) [PrintStatement]
         ) [StatementListMany]
-        DesignatorStatementOp(
-          DesignatorAssignopExpr(
-            Designator(
-             niz2
-              NoDesignatorOptions(
-              ) [NoDesignatorOptions]
-            ) [Designator]
-            AssignOp(
-            ) [AssignOp]
-            Expr(
-              NoMinus(
-              ) [NoMinus]
-              Term(
-                RangeFactor(
-                  Expr(
-                    NoMinus(
-                    ) [NoMinus]
-                    Term(
-                      DesignatorFactor(
-                        Designator(
-                         bodovi
-                          NoDesignatorOptions(
-                          ) [NoDesignatorOptions]
-                        ) [Designator]
-                      ) [DesignatorFactor]
-                      NoMulopFactorList(
-                      ) [NoMulopFactorList]
-                    ) [Term]
-                    AddopTermListExist(
-                      AddopTermListOne(
-                        PlusOp(
-                        ) [PlusOp]
-                        Term(
-                          NumConstFactor(
-                           1
-                          ) [NumConstFactor]
-                          NoMulopFactorList(
-                          ) [NoMulopFactorList]
-                        ) [Term]
-                      ) [AddopTermListOne]
-                    ) [AddopTermListExist]
-                  ) [Expr]
-                ) [RangeFactor]
-                NoMulopFactorList(
-                ) [NoMulopFactorList]
-              ) [Term]
-              NoAddopTermList(
-              ) [NoAddopTermList]
-            ) [Expr]
-          ) [DesignatorAssignopExpr]
-        ) [DesignatorStatementOp]
       ) [StatementListMany]
-      PrintStatement(
-        Expr(
-          NoMinus(
-          ) [NoMinus]
-          Term(
-            DesignatorFactor(
-              Designator(
-               niz2
-                NoDesignatorOptions(
-                ) [NoDesignatorOptions]
-              ) [Designator]
-            ) [DesignatorFactor]
-            NoMulopFactorList(
-            ) [NoMulopFactorList]
-          ) [Term]
-          NoAddopTermList(
-          ) [NoAddopTermList]
-        ) [Expr]
-        NoPrintOptions(
-        ) [NoPrintOptions]
-      ) [PrintStatement]
     ) [StatementListMany]
   ) [FunctionMain]
 ) [Program]
-INFO  04:24:52,476 - ===================================
-INFO  04:24:52,496 - Deklarisana int konstanta: nula= 0 na liniji 5
-INFO  04:24:52,497 - Deklarisana int konstanta: jedan= 1 na liniji 6
-INFO  04:24:52,498 - Deklarisana int konstanta: pet= 5 na liniji 7
-INFO  04:24:52,499 - Deklarisana promenljiva niz na liniji 9
-INFO  04:24:52,500 - Deklarisana promenljiva niz2 na liniji 9
-INFO  04:24:52,501 - Deklarisana promenljiva nizch na liniji 10
-INFO  04:24:52,502 - Obradjuje se funkcija main na liniji 13
-INFO  04:24:52,503 - Deklarisana promenljiva bodovi na liniji 14
-INFO  04:24:52,503 - Deklarisana promenljiva bt na liniji 15
-INFO  04:24:52,509 -  Print count calls = 8
-INFO  04:24:52,510 -  Deklarisanih promenljivih ima = 5
-INFO  04:24:52,511 - ===================================
-INFO  04:24:52,518 - Parsiranje uspesno zavrseno!
+INFO  16:23:16,292 - ===================================
+INFO  16:23:16,319 - Deklarisana int konstanta: nula= 0 na liniji 5
+INFO  16:23:16,321 - Deklarisana int konstanta: jedan= 1 na liniji 6
+INFO  16:23:16,321 - Deklarisana int konstanta: pet= 5 na liniji 7
+INFO  16:23:16,322 - Deklarisana promenljiva niz na liniji 9
+INFO  16:23:16,323 - Deklarisana promenljiva niz2 na liniji 9
+INFO  16:23:16,324 - Deklarisana promenljiva nizch na liniji 10
+INFO  16:23:16,325 - Obradjuje se funkcija main na liniji 13
+INFO  16:23:16,326 - Deklarisana promenljiva bodovi na liniji 14
+INFO  16:23:16,327 - Deklarisana promenljiva bt na liniji 15
+INFO  16:23:16,331 - Kraj funkcije main na liniji 13
+INFO  16:23:16,342 -  Print count calls = 8
+INFO  16:23:16,343 -  Deklarisanih promenljivih ima = 5
+INFO  16:23:16,344 - ===================================
+INFO  16:23:16,350 - Parsiranje uspesno zavrseno!
