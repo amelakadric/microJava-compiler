@@ -9,6 +9,7 @@ import rs.etf.pp1.symboltable.concepts.*;
 public class SemanticAnalyzer extends VisitorAdaptor {
 
 	int printCallCount = 0;
+    int readCallCount = 0;
 	int varDeclCount = 0;
 	Obj currentMethod = null;
 	boolean returnFound = false;
@@ -46,8 +47,50 @@ public class SemanticAnalyzer extends VisitorAdaptor {
 	
 	
     public void visit(PrintStatement print) {
-		printCallCount++;
+        printCallCount++;
+        if (print.getExpr().struct.getKind() == Struct.Array) {
+            // Check if the array is of type int
+            if (print.getExpr().struct.getElemType().getKind() == Struct.Int) {
+                report_info("Poziv funkcije print za niz tipa int", print);
+            } else  if (print.getExpr().struct.getElemType().getKind() == Struct.Char){
+                report_info("Poziv funkcije print za niz tipa char", print);
+            } else {
+                report_error("Greska: Poziv funkcije print za niz koji nije tipa int ili char", print);
+            }
+        }
+        else if (print.getExpr().struct.getKind() == Struct.Int) {
+            report_info("Poziv funkcije print za int", print);
+        } else if (print.getExpr().struct.getKind() == Struct.Char) {
+            report_info("Poziv funkcije print za char", print);
+        } else if (print.getExpr().struct.getKind() == Struct.Bool) {
+            report_info("Poziv funkcije print za bool", print);
+        } else {
+            report_error("Greska: Poziv funkcije print za tip koji nije int, char ili bool", print);
+        }
 	}
+
+    public void visit(ReadStatement read) {
+        readCallCount++;
+        if (read.getDesignator().obj.getType().getKind() == Struct.Array) {
+            // Check if the array is of type int
+            if (read.getDesignator().obj.getType().getElemType().getKind() == Struct.Int) {
+                report_info("Poziv funkcije read za niz tipa int", read);
+            } else  if (read.getDesignator().obj.getType().getElemType().getKind() == Struct.Char){
+                report_info("Poziv funkcije read za niz tipa char", read);
+            } else {
+                report_error("Greska: Poziv funkcije read za niz koji nije tipa int ili char", read);
+            }
+        }
+        else if (read.getDesignator().obj.getType().getKind() == Struct.Int) {
+            report_info("Poziv funkcije read za int", read);
+        } else if (read.getDesignator().obj.getType().getKind() == Struct.Char) {
+            report_info("Poziv funkcije read za char", read);
+        } else if (read.getDesignator().obj.getType().getKind() == Struct.Bool) {
+            report_info("Poziv funkcije read za bool", read);
+        } else {
+            report_error("Greska: Poziv funkcije read za tip koji nije int, char ili bool", read);
+        }
+    }
     
     public void visit(ProgName progName){
     	progName.obj = Tab.insert(Obj.Prog, progName.getProgName(), Tab.noType);
@@ -207,7 +250,17 @@ public class SemanticAnalyzer extends VisitorAdaptor {
         if(obj == Tab.noObj){
             report_error("Greska na liniji " + designator.getLine()+ " : ime "+designator.getVarName()+" nije deklarisano! ", null);
         }
-        designator.obj = obj;
+        if( designator.getDesignatorOptions() instanceof DesignatorOption){
+            if(obj.getType().getKind() != Struct.Array){
+                report_error("Greska na liniji " + designator.getLine() + " : " + "promenljiva " + designator.getVarName() + " nije niz! ", null);
+            }
+            else{
+                designator.obj = new Obj(Obj.Elem, designator.getVarName(), obj.getType().getElemType());
+            }
+        }
+        else{
+            designator.obj = obj;
+        }
     }
 
     //visitor method for DesignatorAssignopExpr
@@ -237,6 +290,10 @@ public class SemanticAnalyzer extends VisitorAdaptor {
 
     //visitor method for Term
     public void visit(Term term){
+        //check if getFactor is int
+        // if(term.getFactor().struct != Tab.intType){
+        //     report_error("Greska na liniji " + term.getLine() + " : " + "nekompatibilni tipovi u dodeli vrednosti! ", null);
+        // }
         term.struct = term.getFactor().struct;
     }
 
@@ -261,13 +318,50 @@ public class SemanticAnalyzer extends VisitorAdaptor {
     }
 
     //visitor method for NewFactor
-    public void visit(NewFactor newFactor){
-        newFactor.struct = newFactor.getType().struct;
+    public void visit(NewFactor newFactor){ 
+        if(!newFactor.getExpr().struct.equals(Tab.intType)) {
+            report_error("Greska: Izraz unutar [] mora biti tipa int", newFactor);    
+            newFactor.struct = Tab.noType;
+        }
+        else {
+            newFactor.struct = new Struct(Struct.Array,  newFactor.getType().struct);
+        }
     }
-
     //visitor method for ExprFactor
     public void visit(ExprFactor exprFactor){
         exprFactor.struct = exprFactor.getExpr().struct;
+    }
+
+    //visitor method for AddopTermListOne
+    public void visit(AddopTermListOne addopTermListOne){
+        if(addopTermListOne.getTerm().struct != Tab.intType){
+            report_error("Greska na liniji " + addopTermListOne.getLine() + " : " + "nekompatibilni tipovi u dodeli vrednosti! ", null);
+        }
+        // addopTermListOne.struct = addopTermListOne.getTerm().struct;
+    }
+
+    //visitor method for AddopTermListMany
+    public void visit(AddopTermListMany addopTermListMany){
+        if(addopTermListMany.getTerm().struct != Tab.intType){
+            report_error("Greska na liniji " + addopTermListMany.getLine() + " : " + "nekompatibilni tipovi u dodeli vrednosti! ", null);
+        }
+        // addopTermListMany.struct = addopTermListMany.getTerm().struct;
+    }
+
+    //visitor method for MulopFactorListOne
+    public void visit(MulopFactorListOne mulopFactorListOne){
+        if(mulopFactorListOne.getFactor().struct != Tab.intType){
+            report_error("Greska na liniji " + mulopFactorListOne.getLine() + " : " + "nekompatibilni tipovi u dodeli vrednosti! ", null);
+        }
+        // mulopFactorListOne.struct = mulopFactorListOne.getFactor().struct;
+    }
+
+    //visitor method for MulopFactorListMany
+    public void visit(MulopFactorListMany mulopFactorListMany){
+        if(mulopFactorListMany.getFactor().struct != Tab.intType){
+            report_error("Greska na liniji " + mulopFactorListMany.getLine() + " : " + "nekompatibilni tipovi u dodeli vrednosti! ", null);
+        }
+        // mulopFactorListMany.struct = mulopFactorListMany.getFactor().struct;
     }
 
     //visitor method for RangeFactor
@@ -275,20 +369,9 @@ public class SemanticAnalyzer extends VisitorAdaptor {
         if(rangeFactor.getExpr().struct != Tab.intType || rangeFactor.getExpr().struct != Tab.intType){
             report_error("Greska na liniji " + rangeFactor.getLine() + " : " + "nekompatibilni tipovi u dodeli vrednosti! ", null);
         }
-        rangeFactor.struct = Tab.intType;
+        rangeFactor.struct = new Struct(Struct.Array, rangeFactor.getExpr().struct);
     }
    
-
-
-    // public void visit(Designator designator){
-    // 	Obj obj = Tab.find(designator.getName());
-    // 	if(obj == Tab.noObj){
-	// 		report_error("Greska na liniji " + designator.getLine()+ " : ime "+designator.getName()+" nije deklarisano! ", null);
-    // 	}
-    // 	designator.obj = obj;
-    // }
-    
-
 
     
     // public void visit(AddExpr addExpr){
@@ -302,19 +385,7 @@ public class SemanticAnalyzer extends VisitorAdaptor {
     // 	}
     // }
     
-    
-    // public void visit(ReturnExpr returnExpr){
-    // 	returnFound = true;
-    // 	Struct currMethType = currentMethod.getType();
-    // 	if(!currMethType.compatibleWith(returnExpr.getExpr().struct)){
-	// 		report_error("Greska na liniji " + returnExpr.getLine() + " : " + "tip izraza u return naredbi ne slaze se sa tipom povratne vrednosti funkcije " + currentMethod.getName(), null);
-    // 	}
-    // }
-    
-    // public void visit(Assignment assignment){
-    // 	if(!assignment.getExpr().struct.assignableTo(assignment.getDesignator().obj.getType()))
-    // 		report_error("Greska na liniji " + assignment.getLine() + " : " + "nekompatibilni tipovi u dodeli vrednosti! ", null);
-    // }
+ 
     
     
     public boolean passed(){
