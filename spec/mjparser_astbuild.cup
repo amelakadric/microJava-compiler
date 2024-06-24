@@ -118,13 +118,13 @@ ConstDeclOptionsList ::= (ConstDeclOptionsListMany) ConstDeclOptionsList:C1 COMM
 VarDeclList ::= (VarDeclListMany) VarDecl:V1 VarDeclList:V2 {: RESULT=new VarDeclListMany(V1, V2); RESULT.setLine(V1left); :} 
     | (NoVarDeclList) {: RESULT=new NoVarDeclList(); :};
 
-VarDecl ::= (VarDeclarationOne) VarDeclOne:V1 SqBracesOption:S2 VarDeclPartListExists:V3 SEMI {: RESULT=new VarDeclarationOne(V1, S2, V3); RESULT.setLine(V1left); :}
+VarDecl ::= (VarDeclarationOne) VarDeclOne:V1  VarDeclPartListExists:V2 SEMI {: RESULT=new VarDeclarationOne(V1, V2); RESULT.setLine(V1left); :}
     | (VarErrorComma)error COMMA:l
     {: parser.report_error("Izvrsen oporavak do , u liniji " + lleft, null); :} {: RESULT=new VarErrorComma(); :}
     |(VarErrorSemi) error SEMI:l
     {: parser.report_error("Izvrsen oporavak do ; u liniji " + lleft, null); :} {: RESULT=new VarErrorSemi(); :};
 
-VarDeclOne ::= (VarDeclOne) Type:varType IDENT:varName {: RESULT=new VarDeclOne(varType, varName); RESULT.setLine(varTypeleft); :};
+VarDeclOne ::= (VarDeclOne) Type:varType IDENT:varName SqBracesOption:isArray {: RESULT=new VarDeclOne(varType, varName, isArray); RESULT.setLine(varTypeleft); :};
 
 SqBracesOption ::= (SqBraces) LSQBRACE RSQBRACE {: RESULT=new SqBraces(); :}
     | (NoSqBraces) {: RESULT=new NoSqBraces(); :};
@@ -135,7 +135,7 @@ VarDeclPartListExists ::= (VarDeclPartListExist) VarDeclPartList:V1 {: RESULT=ne
 VarDeclPartList ::= (VarDeclPartListMany) VarDeclPartOne:V1 VarDeclPartList:V2 {: RESULT=new VarDeclPartListMany(V1, V2); RESULT.setLine(V1left); :}
     | (VarDeclPartListOne) VarDeclPartOne:V1 {: RESULT=new VarDeclPartListOne(V1); RESULT.setLine(V1left); :};
 
-VarDeclPartOne ::= (VarDeclPartOne) COMMA IDENT:varName SqBracesOption:S1 {: RESULT=new VarDeclPartOne(varName, S1); RESULT.setLine(varNameleft); :};
+VarDeclPartOne ::= (VarDeclPartOne) COMMA IDENT:varName SqBracesOption:isArray {: RESULT=new VarDeclPartOne(varName, isArray); RESULT.setLine(varNameleft); :};
 
 FunctionMain ::= (FunctionMain)  FunctionTypeName:F1 LPAREN RPAREN VarDeclList:V2 LBRACE StatementList:S3 RBRACE {: RESULT=new FunctionMain(F1, V2, S3); RESULT.setLine(F1left); :};
 

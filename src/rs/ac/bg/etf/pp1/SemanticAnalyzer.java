@@ -76,20 +76,28 @@ public class SemanticAnalyzer extends VisitorAdaptor {
     	}
     }
 
-    public void visit(VarDeclOne varDecl){
-        Obj varNode = Tab.find(varDecl.getVarName());
-        currentVarType = varDecl.getType().struct;
-        currentConstType=null;
-
-        if(varNode != Tab.noObj){
-            report_error("Greska na liniji " + varDecl.getLine() + ": Promenljiva " + varDecl.getVarName() + " je vec deklarisana!", null);
+    //visitor method for VarDeclOne with case for array declaration
+    public void visit(VarDeclOne varDeclOne){
+        currentVarType = varDeclOne.getType().struct;
+        currentConstType=null;;
+        Obj varNode = Tab.find(varDeclOne.getVarName());
+        if(varNode != Tab.noObj || currentVarType == null){
+            report_error("Greska na liniji " + varDeclOne.getLine() + ": Promenljiva " + varDeclOne.getVarName() + " je vec deklarisana!", null);
         }else{
-            Tab.insert(Obj.Var, varDecl.getVarName(), varDecl.getType().struct);
-            report_info("Deklarisana promenljiva "+ varDecl.getVarName(), varDecl);
-            varDeclCount++;
+
+            //check if isArray is instance
+            if(varDeclOne.getSqBracesOption() instanceof SqBraces){
+                Struct arrayType = new Struct(Struct.Array, currentVarType);
+                Tab.insert(Obj.Var, varDeclOne.getVarName(), arrayType);
+                report_info("Deklarisana promenljiva "+ varDeclOne.getVarName() + " tipa niz", varDeclOne);
+                varDeclCount++;
+            }else{
+                Tab.insert(Obj.Var, varDeclOne.getVarName(), currentVarType);
+                report_info("Deklarisana promenljiva "+ varDeclOne.getVarName(), varDeclOne);
+                varDeclCount++;
+            }
         }
-		
-	}
+    }
 
     //visitor method for VarDeclPartOne
     public void visit(VarDeclPartOne varDeclPartOne){
@@ -97,9 +105,18 @@ public class SemanticAnalyzer extends VisitorAdaptor {
         if(varNode != Tab.noObj || currentVarType == null){
             report_error("Greska na liniji " + varDeclPartOne.getLine() + ": Promenljiva " + varDeclPartOne.getVarName() + " je vec deklarisana!", null);
         }else{
-            Tab.insert(Obj.Var, varDeclPartOne.getVarName(), currentVarType);
-            report_info("Deklarisana promenljiva "+ varDeclPartOne.getVarName(), varDeclPartOne);
-            varDeclCount++;
+             //check if isArray is instance
+             if(varDeclPartOne.getSqBracesOption() instanceof SqBraces){
+                Struct arrayType = new Struct(Struct.Array, currentVarType);
+                Tab.insert(Obj.Var, varDeclPartOne.getVarName(), arrayType);
+                report_info("Deklarisana promenljiva "+ varDeclPartOne.getVarName() + " tipa niz", varDeclPartOne);
+                varDeclCount++;
+            }else{
+                Tab.insert(Obj.Var, varDeclPartOne.getVarName(), currentVarType);
+                report_info("Deklarisana promenljiva "+ varDeclPartOne.getVarName(), varDeclPartOne);
+                varDeclCount++;
+            }
+        
         }
     }
 

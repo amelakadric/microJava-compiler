@@ -91,13 +91,13 @@ ConstDeclOptionsList ::= (ConstDeclOptionsListMany) ConstDeclOptionsList COMMA C
 VarDeclList ::= (VarDeclListMany) VarDecl VarDeclList 
     | (NoVarDeclList);
 
-VarDecl ::= (VarDeclarationOne) VarDeclOne SqBracesOption VarDeclPartListExists SEMI
+VarDecl ::= (VarDeclarationOne) VarDeclOne  VarDeclPartListExists SEMI
     | (VarErrorComma)error COMMA:l
     {: parser.report_error("Izvrsen oporavak do , u liniji " + lleft, null); :}
     |(VarErrorSemi) error SEMI:l
     {: parser.report_error("Izvrsen oporavak do ; u liniji " + lleft, null); :};
 
-VarDeclOne ::= (VarDeclOne) Type:varType IDENT:varName;
+VarDeclOne ::= (VarDeclOne) Type:varType IDENT:varName SqBracesOption:isArray;
 
 SqBracesOption ::= (SqBraces) LSQBRACE RSQBRACE
     | (NoSqBraces);
@@ -108,7 +108,7 @@ VarDeclPartListExists ::= (VarDeclPartListExist) VarDeclPartList
 VarDeclPartList ::= (VarDeclPartListMany) VarDeclPartOne VarDeclPartList
     | (VarDeclPartListOne) VarDeclPartOne;
 
-VarDeclPartOne ::= (VarDeclPartOne) COMMA IDENT:varName SqBracesOption;
+VarDeclPartOne ::= (VarDeclPartOne) COMMA IDENT:varName SqBracesOption:isArray;
 
 FunctionMain ::= (FunctionMain)  FunctionTypeName LPAREN RPAREN VarDeclList LBRACE StatementList RBRACE;
 
