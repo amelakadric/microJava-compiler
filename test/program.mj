@@ -12,8 +12,8 @@ program test301
 		int bodovi;
 		bool bt;
 	{	
-		
-		print('a');
+		bodovi = 3;
+		print(bodovi);
 
 	}
 }

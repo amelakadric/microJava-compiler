@@ -35,36 +35,7 @@ public class CodeGenerator extends VisitorAdaptor {
 		}
 	}
 
-	//visit method for Designator
-	public void visit(Designator designator){
-		Code.load(designator.obj);
-	}
-	
-	public void visit(NumConstFactor cnst){
-		Obj con = Tab.insert(Obj.Con, "$", cnst.struct);
-		con.setLevel(0);
-		con.setAdr(cnst.getValue());
-		
-		Code.load(con);
-	}
 
-    //visitor method for CharConstFactor
-    public void visit(CharConstFactor cnst){
-        Obj con = Tab.insert(Obj.Con, "$", cnst.struct);
-        con.setLevel(0);
-        con.setAdr(cnst.getValue());
-        
-        Code.load(con);
-    }
-    
-    //visitor method for BoolConstFactor
-    public void visit(BoolConstFactor cnst){
-        Obj con = Tab.insert(Obj.Con, "$", cnst.struct);
-        con.setLevel(0);
-        con.setAdr(cnst.getValue());
-        
-        Code.load(con);
-    }
 	
 	public void visit(FunctionTypeName functionTypeName){
 		
@@ -105,7 +76,84 @@ public class CodeGenerator extends VisitorAdaptor {
 	public void visit(DesignatorAssignopExpr assignop){
 		Code.store(assignop.getDesignator().obj);
 	}
-	//visit 
+	//visit DesignatorInc
+	public void visit(DesignatorInc inc){
+		Code.load(inc.getDesignator().obj);
+		Code.loadConst(1);
+		Code.put(Code.add);
+		Code.store(inc.getDesignator().obj);
+	}
+
+	//visit DesignatorDec
+	public void visit(DesignatorDec dec){
+		Code.load(dec.getDesignator().obj);
+		Code.loadConst(1);
+		Code.put(Code.sub);
+		Code.store(dec.getDesignator().obj);
+	}
+
+
+	//visit method for Designator 
+	public void visit(Designator designator){
+		Code.load(designator.obj);
+	}
+
+	//visit method for Minus
+	public void visit(Minus minus){
+		Code.put(Code.neg);
+	}
+
+	//visit method for NumConstFactor
+	public void visit(NumConstFactor cnst){
+		Obj con = Tab.insert(Obj.Con, "$", cnst.struct);
+		con.setLevel(0);
+		con.setAdr(cnst.getValue());
+		
+		Code.load(con);
+	}
+
+    //visitor method for CharConstFactor
+    public void visit(CharConstFactor cnst){
+        Obj con = Tab.insert(Obj.Con, "$", cnst.struct);
+        con.setLevel(0);
+        con.setAdr(cnst.getValue());
+        
+        Code.load(con);
+    }
+    
+    //visitor method for BoolConstFactor
+    public void visit(BoolConstFactor cnst){
+        Obj con = Tab.insert(Obj.Con, "$", cnst.struct);
+        con.setLevel(0);
+        con.setAdr(cnst.getValue());
+        
+        Code.load(con);
+    }
+
+	//visit method for NewFactor
+	public void visit(NewFactor newFactor){
+		Code.put(Code.newarray);
+		if(newFactor.getType().struct == Tab.intType){
+			Code.put(1);
+		}else{
+			Code.put(0);
+		}
+	}
+
+	//visit method for RangeFactor
+	public void visit(RangeFactor rangeFactor){
+		Code.put(Code.newarray);
+		Code.put(Code.const_);
+		// Code.put(rangeFactor.getExpr());
+		Code.put(Code.newarray);
+		Code.put(1);
+	}
+	
+
+
+
+
+	
 
 
 	// public void visit(Assignment assignment){
