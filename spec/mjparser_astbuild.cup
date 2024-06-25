@@ -183,7 +183,7 @@ Term ::= (Term) Factor:F1 MulopFactorListExists:M2 {: RESULT=new Term(F1, M2); R
 MulopFactorListExists ::= (MulopFactorListExist) MulopFactorList:M1 {: RESULT=new MulopFactorListExist(M1); RESULT.setLine(M1left); :} 
     | (NoMulopFactorList) {: RESULT=new NoMulopFactorList(); :};
 
-MulopFactorList ::= (MulopFactorListMany) Mulop:M1 Factor:F2 MulopFactorList:M3 {: RESULT=new MulopFactorListMany(M1, F2, M3); RESULT.setLine(M1left); :}
+MulopFactorList ::= (MulopFactorListMany) MulopFactorList:M1 Mulop:M2 Factor:F3 {: RESULT=new MulopFactorListMany(M1, M2, F3); RESULT.setLine(M1left); :} 
     | (MulopFactorListOne) Mulop:M1 Factor:F2 {: RESULT=new MulopFactorListOne(M1, F2); RESULT.setLine(M1left); :};
 
 Factor ::= 

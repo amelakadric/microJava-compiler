@@ -12,7 +12,9 @@ program test301
 		int bodovi;
 		bool bt;
 	{	
-		bodovi = 3;
+		bodovi = 4;
+		bodovi = 4 + 2 + 2 * 2 / 2 + 5 * 4 / 10; 
+		bt=true;
 		print(bodovi);
 
 	}
