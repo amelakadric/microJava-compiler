@@ -87,8 +87,8 @@ nonterminal Relop Relop;
 nonterminal Addop Addop;
 nonterminal Mulop Mulop;
 
-nonterminal rs.etf.pp1.symboltable.concepts.Obj ProgName, Program, FunctionMain, FunctionTypeName, Designator;
-nonterminal rs.etf.pp1.symboltable.concepts.Struct Type, Term, Factor, Expr, TypeOptions;
+nonterminal rs.etf.pp1.symboltable.concepts.Obj ProgName, Program, FunctionMain, FunctionTypeName, Designator, Expr;
+nonterminal rs.etf.pp1.symboltable.concepts.Struct Type, Term, Factor, TypeOptions;
 
 Program ::= (Program) PROG ProgName:p DeclList:D1 LBRACE FunctionMain:F2 RBRACE {: RESULT=new Program(p, D1, F2); RESULT.setLine(pleft); :};
 

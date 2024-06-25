@@ -48,21 +48,21 @@ public class SemanticAnalyzer extends VisitorAdaptor {
 	
     public void visit(PrintStatement print) {
         printCallCount++;
-        if (print.getExpr().struct.getKind() == Struct.Array) {
+        if (print.getExpr().obj.getType().getKind() == Struct.Array) {
             // Check if the array is of type int
-            if (print.getExpr().struct.getElemType().getKind() == Struct.Int) {
+            if (print.getExpr().obj.getType().getElemType().getKind() == Struct.Int) {
                 report_info("Poziv funkcije print za niz tipa int", print);
-            } else  if (print.getExpr().struct.getElemType().getKind() == Struct.Char){
+            } else  if (print.getExpr().obj.getType().getElemType().getKind() == Struct.Char){
                 report_info("Poziv funkcije print za niz tipa char", print);
             } else {
                 report_error("Greska: Poziv funkcije print za niz koji nije tipa int ili char", print);
             }
         }
-        else if (print.getExpr().struct.getKind() == Struct.Int) {
+        else if (print.getExpr().obj.getType().getKind() == Struct.Int) {
             report_info("Poziv funkcije print za int", print);
-        } else if (print.getExpr().struct.getKind() == Struct.Char) {
+        } else if (print.getExpr().obj.getType().getKind() == Struct.Char) {
             report_info("Poziv funkcije print za char", print);
-        } else if (print.getExpr().struct.getKind() == Struct.Bool) {
+        } else if (print.getExpr().obj.getType().getKind() == Struct.Bool) {
             report_info("Poziv funkcije print za bool", print);
         } else {
             report_error("Greska: Poziv funkcije print za tip koji nije int, char ili bool", print);
@@ -265,7 +265,7 @@ public class SemanticAnalyzer extends VisitorAdaptor {
 
     //visitor method for DesignatorAssignopExpr
     public void visit(DesignatorAssignopExpr designatorAssignopExpr){
-        if(!designatorAssignopExpr.getExpr().struct.assignableTo(designatorAssignopExpr.getDesignator().obj.getType()))
+        if(!designatorAssignopExpr.getExpr().obj.getType().assignableTo(designatorAssignopExpr.getDesignator().obj.getType()))
             report_error("Greska na liniji " + designatorAssignopExpr.getLine() + " : " + "nekompatibilni tipovi u dodeli vrednosti! ", null);
     }
 
@@ -285,7 +285,11 @@ public class SemanticAnalyzer extends VisitorAdaptor {
 
     //visitor method for Expr
     public void visit(Expr expr){
-        expr.struct = expr.getTerm().struct;
+        //check if getTerm is int
+        // if(expr.getTerm().struct != Tab.intType){
+        //     report_error("Greska na liniji " + expr.getLine() + " : " + "nekompatibilni tipovi u dodeli vrednosti! ", null);
+        // }
+        expr.obj = new Obj(Obj.Con, "", expr.getTerm().struct);
     }
 
     //visitor method for Term
@@ -319,7 +323,7 @@ public class SemanticAnalyzer extends VisitorAdaptor {
 
     //visitor method for NewFactor
     public void visit(NewFactor newFactor){ 
-        if(!newFactor.getExpr().struct.equals(Tab.intType)) {
+        if(!newFactor.getExpr().obj.getType().equals(Tab.intType)) {
             report_error("Greska: Izraz unutar [] mora biti tipa int", newFactor);    
             newFactor.struct = Tab.noType;
         }
@@ -329,7 +333,7 @@ public class SemanticAnalyzer extends VisitorAdaptor {
     }
     //visitor method for ExprFactor
     public void visit(ExprFactor exprFactor){
-        exprFactor.struct = exprFactor.getExpr().struct;
+        exprFactor.struct = exprFactor.getExpr().obj.getType();
     }
 
     //visitor method for AddopTermListOne
@@ -366,10 +370,10 @@ public class SemanticAnalyzer extends VisitorAdaptor {
 
     //visitor method for RangeFactor
     public void visit(RangeFactor rangeFactor){
-        if(rangeFactor.getExpr().struct != Tab.intType){
+        if(rangeFactor.getExpr().obj.getType() != Tab.intType){
             report_error("Greska na liniji " + rangeFactor.getLine() + " : " + "nekompatibilni tipovi u dodeli vrednosti! ", null);
         }
-        rangeFactor.struct = new Struct(Struct.Array, rangeFactor.getExpr().struct);
+        rangeFactor.struct = new Struct(Struct.Array, rangeFactor.getExpr().obj.getType());
     }
    
 

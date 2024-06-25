@@ -1,48 +1,48 @@
-INFO  21:25:51,538 - Compiling source file: C:\Users\sejo9\Desktop\pp1\TVOJ PROJEKAT\Izvorni kod\MJCompiler\test\program.mj
-INFO  21:25:51,597 - #2 program
-INFO  21:25:51,598 - #43 test301
-INFO  21:25:51,598 - #8 const
-INFO  21:25:51,600 - #43 int
-INFO  21:25:51,601 - #43 nula
-INFO  21:25:51,602 - #28 =
-INFO  21:25:51,603 - #40 0
-INFO  21:25:51,603 - #29 ;
-INFO  21:25:51,605 - #8 const
-INFO  21:25:51,607 - #43 int
-INFO  21:25:51,607 - #43 jedan
-INFO  21:25:51,607 - #28 =
-INFO  21:25:51,608 - #40 1
-INFO  21:25:51,608 - #29 ;
-INFO  21:25:51,609 - #8 const
-INFO  21:25:51,609 - #43 int
-INFO  21:25:51,609 - #43 pet
-INFO  21:25:51,610 - #28 =
-INFO  21:25:51,610 - #40 5
-INFO  21:25:51,611 - #29 ;
-INFO  21:25:51,612 - #34 {
-INFO  21:25:51,630 - #5 void
-INFO  21:25:51,630 - #43 main
-INFO  21:25:51,632 - #32 (
-INFO  21:25:51,634 - #33 )
-INFO  21:25:51,635 - #43 int
-INFO  21:25:51,635 - #43 bodovi
-INFO  21:25:51,636 - #29 ;
-INFO  21:25:51,639 - #43 bool
-INFO  21:25:51,640 - #43 bt
-INFO  21:25:51,640 - #29 ;
-INFO  21:25:51,641 - #34 {
-INFO  21:25:51,642 - #43 bodovi
-INFO  21:25:51,643 - #28 =
-INFO  21:25:51,646 - #40 3
-INFO  21:25:51,649 - #29 ;
-INFO  21:25:51,653 - #3 print
-INFO  21:25:51,653 - #32 (
-INFO  21:25:51,654 - #43 bodovi
-INFO  21:25:51,654 - #33 )
-INFO  21:25:51,656 - #29 ;
-INFO  21:25:51,656 - #35 }
-INFO  21:25:51,658 - #35 }
-INFO  21:25:51,688 - Program(
+INFO  22:19:30,121 - Compiling source file: C:\Users\sejo9\Desktop\pp1\TVOJ PROJEKAT\Izvorni kod\MJCompiler\test\program.mj
+INFO  22:19:30,201 - #2 program
+INFO  22:19:30,202 - #43 test301
+INFO  22:19:30,203 - #8 const
+INFO  22:19:30,205 - #43 int
+INFO  22:19:30,206 - #43 nula
+INFO  22:19:30,207 - #28 =
+INFO  22:19:30,208 - #40 0
+INFO  22:19:30,209 - #29 ;
+INFO  22:19:30,211 - #8 const
+INFO  22:19:30,213 - #43 int
+INFO  22:19:30,213 - #43 jedan
+INFO  22:19:30,214 - #28 =
+INFO  22:19:30,214 - #40 1
+INFO  22:19:30,215 - #29 ;
+INFO  22:19:30,215 - #8 const
+INFO  22:19:30,216 - #43 int
+INFO  22:19:30,216 - #43 pet
+INFO  22:19:30,217 - #28 =
+INFO  22:19:30,217 - #40 5
+INFO  22:19:30,218 - #29 ;
+INFO  22:19:30,218 - #34 {
+INFO  22:19:30,219 - #5 void
+INFO  22:19:30,219 - #43 main
+INFO  22:19:30,221 - #32 (
+INFO  22:19:30,223 - #33 )
+INFO  22:19:30,224 - #43 int
+INFO  22:19:30,224 - #43 bodovi
+INFO  22:19:30,225 - #29 ;
+INFO  22:19:30,230 - #43 bool
+INFO  22:19:30,230 - #43 bt
+INFO  22:19:30,231 - #29 ;
+INFO  22:19:30,232 - #34 {
+INFO  22:19:30,234 - #43 bodovi
+INFO  22:19:30,234 - #28 =
+INFO  22:19:30,237 - #40 3
+INFO  22:19:30,242 - #29 ;
+INFO  22:19:30,248 - #3 print
+INFO  22:19:30,250 - #32 (
+INFO  22:19:30,251 - #43 bodovi
+INFO  22:19:30,252 - #33 )
+INFO  22:19:30,256 - #29 ;
+INFO  22:19:30,256 - #35 }
+INFO  22:19:30,260 - #35 }
+INFO  22:19:30,318 - Program(
   ProgName(
    test301
   ) [ProgName]
@@ -182,16 +182,16 @@ INFO  21:25:51,688 - Program(
     ) [StatementListMany]
   ) [FunctionMain]
 ) [Program]
-INFO  21:25:51,706 - ===================================
-INFO  21:25:51,720 - Deklarisana int konstanta: nula= 0 na liniji 5
-INFO  21:25:51,721 - Deklarisana int konstanta: jedan= 1 na liniji 6
-INFO  21:25:51,721 - Deklarisana int konstanta: pet= 5 na liniji 7
-INFO  21:25:51,722 - Obradjuje se funkcija main na liniji 11
-INFO  21:25:51,724 - Deklarisana promenljiva bodovi na liniji 12
-INFO  21:25:51,725 - Deklarisana promenljiva bt na liniji 13
-INFO  21:25:51,726 - Poziv funkcije print za int na liniji 7
-INFO  21:25:51,726 - Kraj funkcije main na liniji 11
-INFO  21:25:51,731 -  Print count calls = 1
-INFO  21:25:51,732 -  Deklarisanih promenljivih ima = 2
-INFO  21:25:51,733 - ===================================
-INFO  21:25:51,744 - Parsiranje uspesno zavrseno!
+INFO  22:19:30,348 - ===================================
+INFO  22:19:30,370 - Deklarisana int konstanta: nula= 0 na liniji 5
+INFO  22:19:30,371 - Deklarisana int konstanta: jedan= 1 na liniji 6
+INFO  22:19:30,372 - Deklarisana int konstanta: pet= 5 na liniji 7
+INFO  22:19:30,374 - Obradjuje se funkcija main na liniji 11
+INFO  22:19:30,376 - Deklarisana promenljiva bodovi na liniji 12
+INFO  22:19:30,377 - Deklarisana promenljiva bt na liniji 13
+INFO  22:19:30,378 - Poziv funkcije print za int na liniji 7
+INFO  22:19:30,380 - Kraj funkcije main na liniji 11
+INFO  22:19:30,388 -  Print count calls = 1
+INFO  22:19:30,391 -  Deklarisanih promenljivih ima = 2
+INFO  22:19:30,391 - ===================================
+INFO  22:19:30,404 - Parsiranje uspesno zavrseno!

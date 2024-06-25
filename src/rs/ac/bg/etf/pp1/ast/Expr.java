@@ -1,6 +1,6 @@
 // generated with ast extension for cup
 // version 0.8
-// 25/5/2024 18:19:4
+// 25/5/2024 22:18:33
 
 
 package rs.ac.bg.etf.pp1.ast;
@@ -9,7 +9,7 @@ public class Expr implements SyntaxNode {
 
     private SyntaxNode parent;
     private int line;
-    public rs.etf.pp1.symboltable.concepts.Struct struct = null;
+    public rs.etf.pp1.symboltable.concepts.Obj obj = null;
 
     private MinusOption MinusOption;
     private Term Term;

@@ -21,7 +21,7 @@ public class CodeGenerator extends VisitorAdaptor {
 	}
 	
 	public void visit(PrintStatement printStmt){
-		if(printStmt.getExpr().struct == Tab.intType || printStmt.getExpr().struct == boolType){
+		if(printStmt.getExpr().obj.getType() == Tab.intType || printStmt.getExpr().obj.getType() == boolType){
 			if(printStmt.getPrintOptions() instanceof PrintOption){
 				Code.loadConst(((PrintOption)printStmt.getPrintOptions()).getPrintNumber());
 			}
