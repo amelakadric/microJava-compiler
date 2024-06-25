@@ -366,7 +366,7 @@ public class SemanticAnalyzer extends VisitorAdaptor {
 
     //visitor method for RangeFactor
     public void visit(RangeFactor rangeFactor){
-        if(rangeFactor.getExpr().struct != Tab.intType || rangeFactor.getExpr().struct != Tab.intType){
+        if(rangeFactor.getExpr().struct != Tab.intType){
             report_error("Greska na liniji " + rangeFactor.getLine() + " : " + "nekompatibilni tipovi u dodeli vrednosti! ", null);
         }
         rangeFactor.struct = new Struct(Struct.Array, rangeFactor.getExpr().struct);
