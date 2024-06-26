@@ -25,31 +25,49 @@ public class CodeGenerator extends VisitorAdaptor {
 	
 	public void visit(PrintStatement printStmt){
 		if( printStmt.getExpr().obj.getType().getKind() == Struct.Array){
+			int num=5;
+			if (printStmt.getExpr().obj.getType().getElemType()==Tab.charType){
+				num=1;
+			}
 			// Get the length of the array
+			Code.put(Code.dup);
 			Code.put(Code.arraylength);
 			// Store the length in a temporary variable
 			Obj n = Tab.find("n");
 			// Code.store(n);
 			n.setAdr(0);
+			Code.loadConst(0);
+			Code.store(n);
 			
 			// Loop start
 			// Code.l(0); // Initialize the loop counter
 			int loopStart = Code.pc;
 			Code.put(Code.dup);
 			Code.load(n); // Load the array length
-			Code.putFalseJump(Code.lt, 10); // Jump out of the loop if the counter >= length
+			Code.putFalseJump(Code.ne, 10); // Jump out of the loop if the counter >= length
 			
 			int jumpAddr = Code.pc - 2; // Save the address of the jump instruction
 			
 			// Loop body
 			Code.put(Code.dup2);
 			Code.put(Code.pop);	
-			Code.load(n);
 			// Load the array reference
+			Code.load(n);
 			// Load the loop counter
-		
-			Code.put(Code.aload); // Load the element at the current index
-			Code.put(Code.print); // Print the element
+
+			if(printStmt.getExpr().obj.getType().getElemType().getKind() == Struct.Char){
+				Code.put(Code.baload); // Load the element at the current index
+				Code.loadConst(1);
+				Code.put(Code.bprint); // Print the element
+
+
+			}else{
+				Code.put(Code.aload); // Load the element at the current index
+				Code.loadConst(5);
+				Code.put(Code.print); // Print the element
+
+
+			}
 			
 			// Increment the loop counter
 			Code.load(n); // Load the loop counter
@@ -125,7 +143,12 @@ public class CodeGenerator extends VisitorAdaptor {
 	//visit DesignatorAssignopExpr
 	public void visit(DesignatorAssignopExpr assignop){
 		if(assignop.getDesignator().obj.getKind() == Obj.Elem){
-			Code.put(Code.astore);
+			if(assignop.getDesignator().obj.getType().getKind() == Struct.Char){
+				Code.put(Code.bastore);
+			}
+			else{
+				Code.put(Code.astore);
+			}
 			Code.put(Code.pop);
 		}else{
 			Obj a = Tab.find(assignop.getDesignator().obj.getName());
@@ -176,6 +199,10 @@ public class CodeGenerator extends VisitorAdaptor {
 			// else if(designator.getParent() instanceof DesignatorInc || designator.getParent() instanceof DesignatorDec){
 			// 	Code.load(designator.obj);
 			// }	
+		}
+		else if (designator.getParent().getParent().getParent().getParent() instanceof PrintStatement){
+			Obj o = Tab.find(designator.getVarName());
+			Code.load(o);
 		}
 		else{
 			Code.load(designator.obj);
@@ -255,7 +282,6 @@ public class CodeGenerator extends VisitorAdaptor {
 		Code.load(n);
 		Code.load(n);
 		Code.put(Code.astore);
-		// Your loop body code goes here
 		
 		// // Increment i
 		Code.load(n);

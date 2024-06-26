@@ -24,6 +24,14 @@ program test301
 
 		print(niz);
 
+		nizch = new char[3];
+		nizch[0]='a';
+		nizch[1]='b';
+		nizch[2]='c';
+
+		print(nizch);
+		print('a');
+
 					
 
 	}
