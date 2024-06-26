@@ -123,8 +123,10 @@ public class CodeGenerator extends VisitorAdaptor {
 	public void visit(DesignatorAssignopExpr assignop){
 		if(assignop.getDesignator().obj.getKind() == Obj.Elem){
 			Code.put(Code.astore);
+			Code.put(Code.pop);
 		}else{
-			Code.store(assignop.getDesignator().obj);
+			Obj o = Tab.find(assignop.getDesignator().obj.getName());
+			Code.store(o);
 		}
 	}
 	//visit DesignatorInc
@@ -154,13 +156,25 @@ public class CodeGenerator extends VisitorAdaptor {
 
 	//visit method for Designator 
 	public void visit(Designator designator){	
-		Code.load(designator.obj);
+		if(designator.getParent() instanceof DesignatorAssignopExpr || designator.getParent() instanceof DesignatorInc || designator.getParent() instanceof DesignatorDec){
+			if (designator.getDesignatorOptions() instanceof DesignatorOption) {
+				Obj niz = Tab.find(designator.getVarName());
+				Code.load(niz);
+				Code.put(Code.dup2);
+				Code.put(Code.pop);
+			}
+		}
+		
+		else{
+			Code.load(designator.obj);
+		}	
 
 	}
 
 	//DesignatorOption
 	public void visit(DesignatorOption designatorOption){
-		Code.loadConst(designatorOption.getExpr().obj.getAdr());
+		// Code.loadConst(designatorOption.getExpr().obj.getAdr());
+		// Code.loadConst(8);
 	}
 
 	//visit method for Minus
