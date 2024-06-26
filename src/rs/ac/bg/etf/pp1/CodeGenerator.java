@@ -25,10 +25,6 @@ public class CodeGenerator extends VisitorAdaptor {
 	
 	public void visit(PrintStatement printStmt){
 		if( printStmt.getExpr().obj.getType().getKind() == Struct.Array){
-			int num=5;
-			if (printStmt.getExpr().obj.getType().getElemType()==Tab.charType){
-				num=1;
-			}
 			// Get the length of the array
 			Code.put(Code.dup);
 			Code.put(Code.arraylength);
@@ -151,7 +147,6 @@ public class CodeGenerator extends VisitorAdaptor {
 			}
 			Code.put(Code.pop);
 		}else{
-			Obj a = Tab.find(assignop.getDesignator().obj.getName());
 			if(assignop.getDesignator().obj.getType().getKind() == Struct.Array){
 				Obj o = Tab.find(assignop.getDesignator().obj.getName());
 				Code.store(o);
@@ -204,6 +199,13 @@ public class CodeGenerator extends VisitorAdaptor {
 			Obj o = Tab.find(designator.getVarName());
 			Code.load(o);
 		}
+		else if(designator.obj.getKind() == Obj.Elem){
+			Obj niz = Tab.find(designator.getVarName());
+				Code.load(niz);
+				Code.put(Code.dup2);
+				Code.put(Code.pop);
+		}
+		
 		else{
 			Code.load(designator.obj);
 		}	
