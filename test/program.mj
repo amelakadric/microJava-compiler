@@ -6,17 +6,22 @@ program test301
 	const int jedan = 1;
 	const int pet = 5;
 
+	int niz[], niz2[];
+	char nizch[];
 	
 {
 	void main()	
 		int bodovi;
 		bool bt;
-	{	
-		bodovi = 4;
-		bodovi = 4 + 2 + 2 * 2 / 2 + 5 * 4 / 10; 
-		bt=true;
-		print(bodovi);
+	{
+		bodovi = 0;
+		bodovi++;
+		bodovi = bodovi + jedan;
+		
+		print(bodovi); 
+			
 
+		niz2 = range(3);
 	}
 }
 

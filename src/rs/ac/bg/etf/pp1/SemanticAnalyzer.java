@@ -290,6 +290,8 @@ public class SemanticAnalyzer extends VisitorAdaptor {
         //     report_error("Greska na liniji " + expr.getLine() + " : " + "nekompatibilni tipovi u dodeli vrednosti! ", null);
         // }
         expr.obj = new Obj(Obj.Con, "", expr.getTerm().struct);
+		Obj n = Tab.insert(Obj.Var, "n", Tab.intType);
+
     }
 
     //visitor method for Term

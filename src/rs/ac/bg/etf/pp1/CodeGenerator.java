@@ -33,16 +33,45 @@ public class CodeGenerator extends VisitorAdaptor {
 			Code.loadConst(1);
 			Code.put(Code.bprint);
 		}
-		// if(printStmt.getExpr().obj.getType().getKind() == Struct.Array){
-		// 	if(printStmt.getExpr().obj.getType().getElemType() == Tab.intType || printStmt.getExpr().obj.getType().getElemType() == boolType){
-		// 		Code.put(Code.print);
-		// 	}else if(printStmt.getExpr().obj.getType().getElemType() == Tab.charType){
-		// 		Code.put(Code.bprint);
-		// 	}
-		// } else {
-			// Code for handling non-array type
-			// Add your logic here
-		// }
+		else if( printStmt.getExpr().obj.getKind() == Struct.Array){
+			// Get the length of the array
+			Code.put(Code.arraylength);
+			// Store the length in a temporary variable
+			Code.store(Tab.noObj);
+			
+			// Loop start
+			Code.loadConst(0); // Initialize the loop counter
+			Code.load(Tab.noObj); // Load the array length
+			Code.putFalseJump(Code.ge, 10); // Jump out of the loop if the counter >= length
+			
+			int jumpAddr = Code.pc - 2; // Save the address of the jump instruction
+			
+			// Loop body
+			Code.load(Tab.noObj); // Load the array length
+			Code.loadConst(0); // Load the array reference
+			Code.loadConst(0); // Load the loop counter
+			Code.put(Code.aload); // Load the element at the current index
+			Code.put(Code.print); // Print the element
+			
+			// Increment the loop counter
+			Code.loadConst(0); // Load the loop counter
+			Code.loadConst(1); // Load the increment value
+			Code.put(Code.add); // Add the increment value to the loop counter
+			// Code.store(Code.loadConst(0)); // Store the updated loop counter
+			
+			// Jump back to the loop start
+			Code.putJump(jumpAddr);
+			
+			// Update the jump address
+			Code.fixup(jumpAddr);
+			
+			Code.put(Code.pop); // Pop the array length from the stack
+		}
+		else{
+			Code.loadConst(5);
+			Code.put(Code.print);
+		}
+	
 		
 	}
 
@@ -84,11 +113,16 @@ public class CodeGenerator extends VisitorAdaptor {
 
 	//visit DesignatorAssignopExpr
 	public void visit(DesignatorAssignopExpr assignop){
+		
 		Code.store(assignop.getDesignator().obj);
 	}
 	//visit DesignatorInc
 	public void visit(DesignatorInc inc){
 		Code.load(inc.getDesignator().obj);
+
+		if(inc.getDesignator().obj.getKind() == Obj.Elem){
+			Code.put(Code.dup2);
+		}
 		Code.loadConst(1);
 		Code.put(Code.add);
 		Code.store(inc.getDesignator().obj);
@@ -97,6 +131,10 @@ public class CodeGenerator extends VisitorAdaptor {
 	//visit DesignatorDec
 	public void visit(DesignatorDec dec){
 		Code.load(dec.getDesignator().obj);
+
+		if(dec.getDesignator().obj.getKind() == Obj.Elem){
+			Code.put(Code.dup2);
+		}
 		Code.loadConst(1);
 		Code.put(Code.sub);
 		Code.store(dec.getDesignator().obj);
@@ -105,17 +143,7 @@ public class CodeGenerator extends VisitorAdaptor {
 
 	//visit method for Designator 
 	public void visit(Designator designator){
-		// if(designator.getParent() instanceof DesignatorAssignopExpr 
-		// || designator.getParent() instanceof DesignatorInc 
-		// || designator.getParent() instanceof DesignatorDec){
-		// 	return;
-		// }
-		// if(designator.getParent() instanceof DesignatorFactor){
-		// 	Code.put(Code.dup);
-		// }
-		// else{
-		// 	Code.load(designator.obj);
-		// }
+		
 		Code.load(designator.obj);
 
 	}
@@ -156,7 +184,7 @@ public class CodeGenerator extends VisitorAdaptor {
 	//visit method for NewFactor
 	public void visit(NewFactor newFactor){
 		Code.put(Code.newarray);
-		if(newFactor.getType().struct == Tab.intType){
+		if(newFactor.getType().struct == Tab.intType || newFactor.getType().struct == boolType){
 			Code.put(1);
 		}else{
 			Code.put(0);
@@ -165,7 +193,47 @@ public class CodeGenerator extends VisitorAdaptor {
 
 	//visit method for RangeFactor
 	public void visit(RangeFactor rangeFactor){
-	
+		//generate code for range factor
+		Code.put(Code.dup);
+		Code.put(Code.newarray);
+		Code.put(1);
+				
+		
+		// Loop start
+		Obj n = Tab.find("n");
+		n.setAdr(0);
+		int loopStart = Code.pc;
+		Code.put(Code.dup2);
+		Code.put(Code.pop);
+		Code.load(n);
+		Code.putFalseJump(Code.ne, 10); // Jump out of the loop if i == n
+		
+		int jumpAddr = Code.pc - 2; // Save the address of the jump instruction
+		
+		// Loop body
+		Code.put(Code.dup);
+		Code.load(n);
+		Code.load(n);
+		Code.put(Code.astore);
+		// Your loop body code goes here
+		
+		// // Increment i
+		Code.load(n);
+		Code.loadConst(1);
+		Code.put(Code.add);
+		Code.store(n); //nece da storuje u n
+
+		// // Jump back to the loop start
+		Code.putJump( loopStart);
+		
+		// // Update the jump address
+		Code.fixup(jumpAddr);
+
+		Code.put(Code.pop);
+		
+		
+
+		
 	}
 
 
