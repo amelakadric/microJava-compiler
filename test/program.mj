@@ -17,10 +17,13 @@ program test301
 		bodovi = 0;
 		bodovi++;
 		bodovi = bodovi + jedan;
+		niz = new int[3];
+		niz[0]=7;
 					
 
-		niz2 = range(3);
+		niz2 = range(bodovi + 3);
 		print(niz2);
+		print(niz);
 	}
 }
 

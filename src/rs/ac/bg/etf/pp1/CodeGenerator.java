@@ -21,19 +21,7 @@ public class CodeGenerator extends VisitorAdaptor {
 	}
 	
 	public void visit(PrintStatement printStmt){
-		if(printStmt.getExpr().obj.getType() == Tab.intType || printStmt.getExpr().obj.getType() == boolType){
-			if(printStmt.getPrintOptions() instanceof PrintOption){
-				Code.loadConst(((PrintOption)printStmt.getPrintOptions()).getPrintNumber());
-			}
-			else{
-				Code.loadConst(5);
-			}
-			Code.put(Code.print);
-		}else if(printStmt.getExpr().obj.getType() == Tab.charType){
-			Code.loadConst(1);
-			Code.put(Code.bprint);
-		}
-		else if( printStmt.getExpr().obj.getKind() == Struct.Array){
+		if( printStmt.getExpr().obj.getKind() == Struct.Array){
 			// Get the length of the array
 			Code.put(Code.arraylength);
 			// Store the length in a temporary variable
@@ -74,6 +62,19 @@ public class CodeGenerator extends VisitorAdaptor {
 			
 			Code.put(Code.pop); // Pop the array length from the stack
 		}
+		else if(printStmt.getExpr().obj.getType() == Tab.intType || printStmt.getExpr().obj.getType() == boolType){
+			if(printStmt.getPrintOptions() instanceof PrintOption){
+				Code.loadConst(((PrintOption)printStmt.getPrintOptions()).getPrintNumber());
+			}
+			else{
+				Code.loadConst(5);
+			}
+			Code.put(Code.print);
+		}else if(printStmt.getExpr().obj.getType() == Tab.charType){
+			Code.loadConst(1);
+			Code.put(Code.bprint);
+		}
+		 
 		else{
 			Code.loadConst(5);
 			Code.put(Code.print);
@@ -120,8 +121,11 @@ public class CodeGenerator extends VisitorAdaptor {
 
 	//visit DesignatorAssignopExpr
 	public void visit(DesignatorAssignopExpr assignop){
-		
-		Code.store(assignop.getDesignator().obj);
+		if(assignop.getDesignator().obj.getKind() == Obj.Elem){
+			Code.put(Code.astore);
+		}else{
+			Code.store(assignop.getDesignator().obj);
+		}
 	}
 	//visit DesignatorInc
 	public void visit(DesignatorInc inc){
@@ -149,12 +153,15 @@ public class CodeGenerator extends VisitorAdaptor {
 
 
 	//visit method for Designator 
-	public void visit(Designator designator){
-		
+	public void visit(Designator designator){	
 		Code.load(designator.obj);
 
 	}
 
+	//DesignatorOption
+	public void visit(DesignatorOption designatorOption){
+		Code.loadConst(designatorOption.getExpr().obj.getAdr());
+	}
 
 	//visit method for Minus
 	public void visit(Minus minus){
