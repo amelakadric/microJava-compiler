@@ -17,11 +17,10 @@ program test301
 		bodovi = 0;
 		bodovi++;
 		bodovi = bodovi + jedan;
-		
-		print(bodovi); 
-			
+					
 
 		niz2 = range(3);
+		print(niz2);
 	}
 }
 

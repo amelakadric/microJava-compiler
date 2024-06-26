@@ -37,30 +37,37 @@ public class CodeGenerator extends VisitorAdaptor {
 			// Get the length of the array
 			Code.put(Code.arraylength);
 			// Store the length in a temporary variable
-			Code.store(Tab.noObj);
+			Obj n = Tab.find("n");
+			// Code.store(n);
+			n.setAdr(0);
 			
 			// Loop start
-			Code.loadConst(0); // Initialize the loop counter
-			Code.load(Tab.noObj); // Load the array length
-			Code.putFalseJump(Code.ge, 10); // Jump out of the loop if the counter >= length
+			// Code.l(0); // Initialize the loop counter
+			int loopStart = Code.pc;
+			Code.put(Code.dup);
+			Code.load(n); // Load the array length
+			Code.putFalseJump(Code.lt, 10); // Jump out of the loop if the counter >= length
 			
 			int jumpAddr = Code.pc - 2; // Save the address of the jump instruction
 			
 			// Loop body
-			Code.load(Tab.noObj); // Load the array length
-			Code.loadConst(0); // Load the array reference
-			Code.loadConst(0); // Load the loop counter
+			Code.put(Code.dup2);
+			Code.put(Code.pop);	
+			Code.load(n);
+			// Load the array reference
+			// Load the loop counter
+		
 			Code.put(Code.aload); // Load the element at the current index
 			Code.put(Code.print); // Print the element
 			
 			// Increment the loop counter
-			Code.loadConst(0); // Load the loop counter
+			Code.load(n); // Load the loop counter
 			Code.loadConst(1); // Load the increment value
 			Code.put(Code.add); // Add the increment value to the loop counter
-			// Code.store(Code.loadConst(0)); // Store the updated loop counter
+			Code.store(n); // Store the updated loop counter
 			
 			// Jump back to the loop start
-			Code.putJump(jumpAddr);
+			Code.putJump(loopStart);
 			
 			// Update the jump address
 			Code.fixup(jumpAddr);
@@ -228,8 +235,9 @@ public class CodeGenerator extends VisitorAdaptor {
 		
 		// // Update the jump address
 		Code.fixup(jumpAddr);
-
+		Code.store(n);
 		Code.put(Code.pop);
+		Code.load(n);
 		
 		
 
