@@ -10,10 +10,13 @@ public class CodeGenerator extends VisitorAdaptor {
 
 	private int mainPc;
     Struct boolType;
+    Struct arrayType;
+
 
 
     public CodeGenerator(){
         boolType = Tab.find("bool").getType();
+		// arrayType = Tab.find("array").getType();
     }
 	
 	public int getMainPc(){
@@ -21,7 +24,7 @@ public class CodeGenerator extends VisitorAdaptor {
 	}
 	
 	public void visit(PrintStatement printStmt){
-		if( printStmt.getExpr().obj.getKind() == Struct.Array){
+		if( printStmt.getExpr().obj.getType().getKind() == Struct.Array){
 			// Get the length of the array
 			Code.put(Code.arraylength);
 			// Store the length in a temporary variable
@@ -125,8 +128,15 @@ public class CodeGenerator extends VisitorAdaptor {
 			Code.put(Code.astore);
 			Code.put(Code.pop);
 		}else{
-			Obj o = Tab.find(assignop.getDesignator().obj.getName());
-			Code.store(o);
+			Obj a = Tab.find(assignop.getDesignator().obj.getName());
+			if(assignop.getDesignator().obj.getType().getKind() == Struct.Array){
+				Obj o = Tab.find(assignop.getDesignator().obj.getName());
+				Code.store(o);
+			}else{	
+				
+				Code.store(assignop.getDesignator().obj);
+			}
+			
 		}
 	}
 	//visit DesignatorInc
@@ -163,8 +173,10 @@ public class CodeGenerator extends VisitorAdaptor {
 				Code.put(Code.dup2);
 				Code.put(Code.pop);
 			}
+			// else if(designator.getParent() instanceof DesignatorInc || designator.getParent() instanceof DesignatorDec){
+			// 	Code.load(designator.obj);
+			// }	
 		}
-		
 		else{
 			Code.load(designator.obj);
 		}	

@@ -25,6 +25,7 @@ public class SemanticAnalyzer extends VisitorAdaptor {
 
     public SemanticAnalyzer() {
         boolType = Tab.insert(Obj.Type, "bool", new Struct(Struct.Bool)).getType();
+        
     }
 
 

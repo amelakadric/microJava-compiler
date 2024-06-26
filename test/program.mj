@@ -16,13 +16,14 @@ program test301
 	{
 		bodovi = 0;
 		bodovi++;
-		bodovi = bodovi + jedan;
+		bodovi = bodovi + 2;
 		niz = new int[3];
 		niz[2]=7;
-		niz[0]=1;
 		niz[1]=3;
+		niz[0]=4;
 
 		print(niz);
+
 					
 
 	}
