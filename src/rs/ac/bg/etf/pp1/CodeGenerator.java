@@ -184,37 +184,6 @@ public class CodeGenerator extends VisitorAdaptor {
 		Code.store(dec.getDesignator().obj);
 	}
 
-
-	//visit method for Designator 
-	// public void visit(Designator designator){	
-	// 	if(designator.getParent() instanceof DesignatorAssignopExpr || designator.getParent() instanceof DesignatorInc || designator.getParent() instanceof DesignatorDec){
-			// if (designator.getDesignatorOptions() instanceof DesignatorOption) {
-			// 	Obj niz = Tab.find(designator.getVarName());
-			// 	Code.load(niz);
-			// 	Code.put(Code.dup2);
-			// 	Code.put(Code.pop);
-			// }
-			// else if(designator.getParent() instanceof DesignatorInc || designator.getParent() instanceof DesignatorDec){
-			// 	Code.load(designator.obj);
-			// }	
-		// }
-		// else if (designator.getParent().getParent().getParent().getParent() instanceof PrintStatement){
-		// 	Obj o = Tab.find(designator.getVarName());
-		// 	Code.load(o);
-		// }
-		// else if(designator.obj.getKind() == Obj.Elem){
-		// 	Obj niz = Tab.find(designator.getVarName());
-		// 		Code.load(niz);
-		// 		Code.put(Code.dup2);
-		// 		Code.put(Code.pop);
-		// }
-		
-		// else{
-		// 	Code.load(designator.obj);
-		// }	
-
-	// }
-
 	//visit method for DesignatorSingle
 	public void visit(DesignatorSingle designatorSingle){
 		if(!(designatorSingle.getParent() instanceof DesignatorAssignopExpr)
@@ -253,11 +222,6 @@ public class CodeGenerator extends VisitorAdaptor {
 		Code.load(niz);
 	}
 
-	//DesignatorOption
-	public void visit(DesignatorOption designatorOption){
-		// Code.loadConst(designatorOption.getExpr().obj.getAdr());
-		// Code.loadConst(8);
-	}
 
 	//visit method for Minus
 	public void visit(Minus minus){
