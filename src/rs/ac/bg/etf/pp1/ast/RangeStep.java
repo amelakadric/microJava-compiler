@@ -1,20 +1,23 @@
 // generated with ast extension for cup
 // version 0.8
-// 27/5/2024 22:44:29
+// 27/5/2024 22:44:30
 
 
 package rs.ac.bg.etf.pp1.ast;
 
-public class PrintStatement extends Statement {
+public class RangeStep extends Factor {
 
     private Expr Expr;
-    private PrintOptions PrintOptions;
+    private Expr Expr1;
+    private Expr Expr2;
 
-    public PrintStatement (Expr Expr, PrintOptions PrintOptions) {
+    public RangeStep (Expr Expr, Expr Expr1, Expr Expr2) {
         this.Expr=Expr;
         if(Expr!=null) Expr.setParent(this);
-        this.PrintOptions=PrintOptions;
-        if(PrintOptions!=null) PrintOptions.setParent(this);
+        this.Expr1=Expr1;
+        if(Expr1!=null) Expr1.setParent(this);
+        this.Expr2=Expr2;
+        if(Expr2!=null) Expr2.setParent(this);
     }
 
     public Expr getExpr() {
@@ -25,12 +28,20 @@ public class PrintStatement extends Statement {
         this.Expr=Expr;
     }
 
-    public PrintOptions getPrintOptions() {
-        return PrintOptions;
+    public Expr getExpr1() {
+        return Expr1;
     }
 
-    public void setPrintOptions(PrintOptions PrintOptions) {
-        this.PrintOptions=PrintOptions;
+    public void setExpr1(Expr Expr1) {
+        this.Expr1=Expr1;
+    }
+
+    public Expr getExpr2() {
+        return Expr2;
+    }
+
+    public void setExpr2(Expr Expr2) {
+        this.Expr2=Expr2;
     }
 
     public void accept(Visitor visitor) {
@@ -39,25 +50,28 @@ public class PrintStatement extends Statement {
 
     public void childrenAccept(Visitor visitor) {
         if(Expr!=null) Expr.accept(visitor);
-        if(PrintOptions!=null) PrintOptions.accept(visitor);
+        if(Expr1!=null) Expr1.accept(visitor);
+        if(Expr2!=null) Expr2.accept(visitor);
     }
 
     public void traverseTopDown(Visitor visitor) {
         accept(visitor);
         if(Expr!=null) Expr.traverseTopDown(visitor);
-        if(PrintOptions!=null) PrintOptions.traverseTopDown(visitor);
+        if(Expr1!=null) Expr1.traverseTopDown(visitor);
+        if(Expr2!=null) Expr2.traverseTopDown(visitor);
     }
 
     public void traverseBottomUp(Visitor visitor) {
         if(Expr!=null) Expr.traverseBottomUp(visitor);
-        if(PrintOptions!=null) PrintOptions.traverseBottomUp(visitor);
+        if(Expr1!=null) Expr1.traverseBottomUp(visitor);
+        if(Expr2!=null) Expr2.traverseBottomUp(visitor);
         accept(visitor);
     }
 
     public String toString(String tab) {
         StringBuffer buffer=new StringBuffer();
         buffer.append(tab);
-        buffer.append("PrintStatement(\n");
+        buffer.append("RangeStep(\n");
 
         if(Expr!=null)
             buffer.append(Expr.toString("  "+tab));
@@ -65,14 +79,20 @@ public class PrintStatement extends Statement {
             buffer.append(tab+"  null");
         buffer.append("\n");
 
-        if(PrintOptions!=null)
-            buffer.append(PrintOptions.toString("  "+tab));
+        if(Expr1!=null)
+            buffer.append(Expr1.toString("  "+tab));
+        else
+            buffer.append(tab+"  null");
+        buffer.append("\n");
+
+        if(Expr2!=null)
+            buffer.append(Expr2.toString("  "+tab));
         else
             buffer.append(tab+"  null");
         buffer.append("\n");
 
         buffer.append(tab);
-        buffer.append(") [PrintStatement]");
+        buffer.append(") [RangeStep]");
         return buffer.toString();
     }
 }

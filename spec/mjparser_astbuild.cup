@@ -201,7 +201,8 @@ Factor ::=
     | (BoolConstFactor) BOOLCONST:value {: RESULT=new BoolConstFactor(value); RESULT.setLine(valueleft); :}
     | (NewFactor) NEW Type:T1 LSQBRACE Expr:E2 RSQBRACE {: RESULT=new NewFactor(T1, E2); RESULT.setLine(T1left); :}
     | (ExprFactor) LPAREN Expr:E1 RPAREN {: RESULT=new ExprFactor(E1); RESULT.setLine(E1left); :}
-    | (RangeFactor) RANGE LPAREN Expr:E1 RPAREN {: RESULT=new RangeFactor(E1); RESULT.setLine(E1left); :};
+    | (RangeFactor) RANGE LPAREN Expr:E1 RPAREN {: RESULT=new RangeFactor(E1); RESULT.setLine(E1left); :}
+    | (RangeStep)RANGE LPAREN Expr:st COMMA Expr:end COMMA Expr:inc RPAREN {: RESULT=new RangeStep(st, end, inc); RESULT.setLine(stleft); :};
 
 Type ::= (Type) IDENT:typeName {: RESULT=new Type(typeName); RESULT.setLine(typeNameleft); :};
 

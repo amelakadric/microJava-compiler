@@ -348,6 +348,87 @@ public class CodeGenerator extends VisitorAdaptor {
 		}
 	}
 
+	//RangeStep
+	public void visit(RangeStep rangeStep){
+
+		Obj st = Tab.insert(Obj.Var, "st", Tab.intType);
+		Obj en = Tab.insert(Obj.Var, "en", Tab.intType);
+		Obj i = Tab.insert(Obj.Var, "i", Tab.intType);
+		Obj arrLen = Tab.insert(Obj.Var, "arrLen", Tab.intType);
+		Obj n =	Tab.insert(Obj.Var, "n", Tab.intType);
+		Obj arrAdr = Tab.insert(Obj.Var, "arrAdr", Tab.intType);
+		Obj l = Tab.insert(Obj.Var, "l", Tab.intType);
+
+
+		st.setAdr(95);
+		en.setAdr(96);
+		i.setAdr(97);
+		arrLen.setAdr(98);
+		n.setAdr(99);
+
+		Code.store(i);
+		Code.store(en);
+		Code.store(st);
+
+		Code.load(en);
+		Code.load(st);
+		Code.put(Code.sub); 
+		Code.store(l); 
+
+		Code.load(l);
+		Code.load(i);
+		Code.put(Code.div);
+		Code.load(l);		
+		Code.load(i);		  
+		Code.put(Code.rem); 
+
+
+		Code.loadConst(0); 
+
+		Code.putFalseJump(Code.ne, 0);
+		int jumpAddr = Code.pc - 2; 
+		Code.loadConst(1); 
+		Code.put(Code.add); 
+		
+		Code.fixup(jumpAddr);
+
+		Code.store(arrLen); 
+		Code.load(arrLen);
+		
+		Code.put(Code.newarray);
+		Code.put(1);
+		Code.store(arrAdr);
+
+		int startLoop = Code.pc;
+		Code.load(n);
+		Code.load(arrLen);
+		Code.putFalseJump(Code.ne, 0);
+		int jumpAddr2 = Code.pc - 2;
+
+		Code.load(arrAdr);
+		Code.load(n);
+		Code.load(st);
+		Code.put(Code.astore);
+
+		Code.load(i);
+		Code.load(st);
+		Code.put(Code.add);
+		Code.store(st);
+
+		Code.load(n);
+		Code.loadConst(1);
+		Code.put(Code.add);
+		Code.store(n);
+		Code.putJump(startLoop);
+
+		Code.fixup(jumpAddr2);
+
+		Code.load(arrAdr);
+
+		
+
+	}
+
 	//visit method for RangeFactor
 	public void visit(RangeFactor rangeFactor){
 		//generate code for range factor

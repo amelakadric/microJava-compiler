@@ -416,6 +416,15 @@ public class SemanticAnalyzer extends VisitorAdaptor {
         }
         rangeFactor.struct = new Struct(Struct.Array, rangeFactor.getExpr().obj.getType());
     }
+
+    //RangeStep
+    public void visit( RangeStep rangeStep){
+        if(rangeStep.getExpr().obj.getType() != Tab.intType || rangeStep.getExpr1().obj.getType() != Tab.intType || rangeStep.getExpr2().obj.getType() != Tab.intType){
+            report_error("Greska na liniji " + rangeStep.getLine() + " : " + "nekompatibilni tipovi u dodeli vrednosti! ", null);
+        }
+        rangeStep.struct = new Struct(Struct.Array, rangeStep.getExpr().obj.getType());
+    }
+
    
 
     

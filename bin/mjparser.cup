@@ -173,7 +173,8 @@ Factor ::=
     | (BoolConstFactor) BOOLCONST:value
     | (NewFactor) NEW Type LSQBRACE Expr RSQBRACE
     | (ExprFactor) LPAREN Expr RPAREN
-    | (RangeFactor) RANGE LPAREN Expr RPAREN;
+    | (RangeFactor) RANGE LPAREN Expr RPAREN
+    | (RangeStep)RANGE LPAREN Expr:st COMMA Expr:end COMMA Expr:inc RPAREN;
 
 Type ::= (Type) IDENT:typeName;
 
