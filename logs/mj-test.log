@@ -1,253 +1,254 @@
-INFO  04:37:15,337 - Compiling source file: C:\Users\sejo9\Desktop\pp1\TVOJ PROJEKAT\Izvorni kod\MJCompiler\test\program.mj
-INFO  04:37:15,464 - #2 program
-INFO  04:37:15,464 - #43 test301
-INFO  04:37:15,465 - #8 const
-INFO  04:37:15,468 - #43 int
-INFO  04:37:15,469 - #43 nula
-INFO  04:37:15,471 - #28 =
-INFO  04:37:15,472 - #40 0
-INFO  04:37:15,473 - #29 ;
-INFO  04:37:15,476 - #8 const
-INFO  04:37:15,479 - #43 int
-INFO  04:37:15,481 - #43 jedan
-INFO  04:37:15,482 - #28 =
-INFO  04:37:15,483 - #40 1
-INFO  04:37:15,484 - #29 ;
-INFO  04:37:15,484 - #8 const
-INFO  04:37:15,484 - #43 int
-INFO  04:37:15,485 - #43 pet
-INFO  04:37:15,486 - #28 =
-INFO  04:37:15,486 - #40 5
-INFO  04:37:15,487 - #29 ;
-INFO  04:37:15,488 - #43 int
-INFO  04:37:15,489 - #43 niz
-INFO  04:37:15,490 - #36 [
-INFO  04:37:15,490 - #37 ]
-INFO  04:37:15,492 - #30 ,
-INFO  04:37:15,497 - #43 niz2
-INFO  04:37:15,498 - #36 [
-INFO  04:37:15,499 - #37 ]
-INFO  04:37:15,500 - #29 ;
-INFO  04:37:15,502 - #43 char
-INFO  04:37:15,504 - #43 nizch
-INFO  04:37:15,505 - #36 [
-INFO  04:37:15,505 - #37 ]
-INFO  04:37:15,506 - #29 ;
-INFO  04:37:15,508 - #34 {
-INFO  04:37:15,509 - #5 void
-INFO  04:37:15,510 - #43 main
-INFO  04:37:15,514 - #32 (
-INFO  04:37:15,516 - #33 )
-INFO  04:37:15,517 - #43 int
-INFO  04:37:15,517 - #43 bodovi
-INFO  04:37:15,518 - #29 ;
-INFO  04:37:15,519 - #43 bool
-INFO  04:37:15,520 - #43 bt
-INFO  04:37:15,521 - #29 ;
-INFO  04:37:15,522 - #34 {
-INFO  04:37:15,524 - #43 bodovi
-INFO  04:37:15,524 - #28 =
-INFO  04:37:15,525 - #40 0
-INFO  04:37:15,529 - #29 ;
-INFO  04:37:15,536 - #43 bodovi
-INFO  04:37:15,537 - #18 ++
-INFO  04:37:15,537 - #29 ;
-INFO  04:37:15,538 - #43 bodovi
-INFO  04:37:15,538 - #28 =
-INFO  04:37:15,538 - #43 bodovi
-INFO  04:37:15,539 - #13 +
-INFO  04:37:15,539 - #43 jedan
-INFO  04:37:15,542 - #29 ;
-INFO  04:37:15,543 - #43 bodovi
-INFO  04:37:15,544 - #28 =
-INFO  04:37:15,545 - #43 bodovi
-INFO  04:37:15,545 - #15 *
-INFO  04:37:15,546 - #43 pet
-INFO  04:37:15,549 - #29 ;
-INFO  04:37:15,550 - #43 bodovi
-INFO  04:37:15,550 - #19 --
-INFO  04:37:15,550 - #29 ;
-INFO  04:37:15,551 - #3 print
-INFO  04:37:15,552 - #32 (
-INFO  04:37:15,553 - #43 bodovi
-INFO  04:37:15,554 - #33 )
-INFO  04:37:15,555 - #29 ;
-INFO  04:37:15,556 - #43 niz
-INFO  04:37:15,557 - #28 =
-INFO  04:37:15,557 - #6 new
-INFO  04:37:15,558 - #43 int
-INFO  04:37:15,558 - #36 [
-INFO  04:37:15,558 - #40 3
-INFO  04:37:15,559 - #37 ]
-INFO  04:37:15,559 - #29 ;
-INFO  04:37:15,560 - #43 niz
-INFO  04:37:15,560 - #36 [
-INFO  04:37:15,562 - #43 nula
-INFO  04:37:15,563 - #37 ]
-INFO  04:37:15,563 - #28 =
-INFO  04:37:15,564 - #43 jedan
-INFO  04:37:15,564 - #29 ;
-INFO  04:37:15,564 - #43 niz
-INFO  04:37:15,565 - #36 [
-INFO  04:37:15,566 - #40 1
-INFO  04:37:15,566 - #37 ]
-INFO  04:37:15,567 - #28 =
-INFO  04:37:15,568 - #40 2
-INFO  04:37:15,569 - #29 ;
-INFO  04:37:15,569 - #43 niz
-INFO  04:37:15,570 - #36 [
-INFO  04:37:15,570 - #43 niz
-INFO  04:37:15,571 - #36 [
-INFO  04:37:15,571 - #43 jedan
-INFO  04:37:15,572 - #37 ]
-INFO  04:37:15,572 - #37 ]
-INFO  04:37:15,573 - #28 =
-INFO  04:37:15,574 - #43 niz
-INFO  04:37:15,574 - #36 [
-INFO  04:37:15,575 - #43 niz
-INFO  04:37:15,576 - #36 [
-INFO  04:37:15,577 - #40 0
-INFO  04:37:15,577 - #37 ]
-INFO  04:37:15,578 - #37 ]
-INFO  04:37:15,578 - #15 *
-INFO  04:37:15,579 - #40 3
-INFO  04:37:15,580 - #29 ;
-INFO  04:37:15,581 - #43 bodovi
-INFO  04:37:15,581 - #28 =
-INFO  04:37:15,582 - #43 niz
-INFO  04:37:15,583 - #36 [
-INFO  04:37:15,583 - #40 2
-INFO  04:37:15,584 - #37 ]
-INFO  04:37:15,585 - #16 /
-INFO  04:37:15,586 - #43 niz
-INFO  04:37:15,589 - #36 [
-INFO  04:37:15,590 - #40 0
-INFO  04:37:15,591 - #37 ]
-INFO  04:37:15,591 - #29 ;
-INFO  04:37:15,592 - #3 print
-INFO  04:37:15,593 - #32 (
-INFO  04:37:15,593 - #43 bodovi
-INFO  04:37:15,594 - #33 )
-INFO  04:37:15,595 - #29 ;
-INFO  04:37:15,596 - #3 print
-INFO  04:37:15,596 - #32 (
-INFO  04:37:15,597 - #43 niz
-INFO  04:37:15,598 - #36 [
-INFO  04:37:15,599 - #40 2
-INFO  04:37:15,600 - #37 ]
-INFO  04:37:15,601 - #33 )
-INFO  04:37:15,602 - #29 ;
-INFO  04:37:15,603 - #43 nizch
-INFO  04:37:15,604 - #28 =
-INFO  04:37:15,604 - #6 new
-INFO  04:37:15,605 - #43 char
-INFO  04:37:15,605 - #36 [
-INFO  04:37:15,606 - #40 3
-INFO  04:37:15,606 - #37 ]
-INFO  04:37:15,606 - #29 ;
-INFO  04:37:15,607 - #43 nizch
-INFO  04:37:15,608 - #36 [
-INFO  04:37:15,608 - #40 0
-INFO  04:37:15,609 - #37 ]
-INFO  04:37:15,610 - #28 =
-INFO  04:37:15,611 - #42 a
-INFO  04:37:15,612 - #29 ;
-INFO  04:37:15,613 - #43 nizch
-INFO  04:37:15,615 - #36 [
-INFO  04:37:15,617 - #43 jedan
-INFO  04:37:15,617 - #37 ]
-INFO  04:37:15,618 - #28 =
-INFO  04:37:15,619 - #42 b
-INFO  04:37:15,619 - #29 ;
-INFO  04:37:15,620 - #43 nizch
-INFO  04:37:15,621 - #36 [
-INFO  04:37:15,622 - #43 pet
-INFO  04:37:15,624 - #14 -
-INFO  04:37:15,625 - #40 3
-INFO  04:37:15,627 - #37 ]
-INFO  04:37:15,630 - #28 =
-INFO  04:37:15,631 - #42 c
-INFO  04:37:15,632 - #29 ;
-INFO  04:37:15,633 - #3 print
-INFO  04:37:15,634 - #32 (
-INFO  04:37:15,634 - #43 nizch
-INFO  04:37:15,635 - #36 [
-INFO  04:37:15,636 - #40 1
-INFO  04:37:15,637 - #37 ]
-INFO  04:37:15,638 - #33 )
-INFO  04:37:15,639 - #29 ;
-INFO  04:37:15,640 - #3 print
-INFO  04:37:15,640 - #32 (
-INFO  04:37:15,641 - #43 nizch
-INFO  04:37:15,642 - #36 [
-INFO  04:37:15,643 - #43 jedan
-INFO  04:37:15,644 - #15 *
-INFO  04:37:15,645 - #40 2
-INFO  04:37:15,646 - #37 ]
-INFO  04:37:15,647 - #33 )
-INFO  04:37:15,647 - #29 ;
-INFO  04:37:15,648 - #43 bodovi
-INFO  04:37:15,649 - #28 =
-INFO  04:37:15,649 - #43 bodovi
-INFO  04:37:15,650 - #13 +
-INFO  04:37:15,651 - #32 (
-INFO  04:37:15,652 - #43 pet
-INFO  04:37:15,653 - #15 *
-INFO  04:37:15,654 - #43 jedan
-INFO  04:37:15,654 - #14 -
-INFO  04:37:15,655 - #40 1
-INFO  04:37:15,656 - #33 )
-INFO  04:37:15,657 - #15 *
-INFO  04:37:15,658 - #43 bodovi
-INFO  04:37:15,658 - #14 -
-INFO  04:37:15,659 - #32 (
-INFO  04:37:15,661 - #40 3
-INFO  04:37:15,662 - #17 %
-INFO  04:37:15,663 - #40 2
-INFO  04:37:15,666 - #13 +
-INFO  04:37:15,666 - #40 3
-INFO  04:37:15,667 - #15 *
-INFO  04:37:15,667 - #40 2
-INFO  04:37:15,668 - #14 -
-INFO  04:37:15,669 - #40 3
-INFO  04:37:15,669 - #33 )
-INFO  04:37:15,670 - #29 ;
-INFO  04:37:15,671 - #3 print
-INFO  04:37:15,671 - #32 (
-INFO  04:37:15,672 - #43 bodovi
-INFO  04:37:15,672 - #33 )
-INFO  04:37:15,673 - #29 ;
-INFO  04:37:15,673 - #7 read
-INFO  04:37:15,674 - #32 (
-INFO  04:37:15,674 - #43 bodovi
-INFO  04:37:15,674 - #33 )
-INFO  04:37:15,675 - #29 ;
-INFO  04:37:15,675 - #3 print
-INFO  04:37:15,677 - #32 (
-INFO  04:37:15,678 - #43 bodovi
-INFO  04:37:15,678 - #33 )
-INFO  04:37:15,681 - #29 ;
-INFO  04:37:15,681 - #43 bodovi
-INFO  04:37:15,682 - #28 =
-INFO  04:37:15,683 - #40 3
-INFO  04:37:15,684 - #29 ;
-INFO  04:37:15,685 - #43 niz2
-INFO  04:37:15,686 - #28 =
-INFO  04:37:15,686 - #12 range
-INFO  04:37:15,687 - #32 (
-INFO  04:37:15,688 - #43 bodovi
-INFO  04:37:15,689 - #13 +
-INFO  04:37:15,690 - #40 1
-INFO  04:37:15,690 - #33 )
-INFO  04:37:15,692 - #29 ;
-INFO  04:37:15,693 - #3 print
-INFO  04:37:15,694 - #32 (
-INFO  04:37:15,696 - #43 niz2
-INFO  04:37:15,697 - #33 )
-INFO  04:37:15,697 - #29 ;
-INFO  04:37:15,698 - #35 }
-INFO  04:37:15,700 - #35 }
-INFO  04:37:15,770 - Program(
+INFO  17:15:26,102 - Compiling source file: C:\Users\sejo9\Desktop\pp1\TVOJ PROJEKAT\Izvorni kod\MJCompiler\test\program.mj
+INFO  17:15:26,253 - #2 program
+INFO  17:15:26,255 - #43 test301
+INFO  17:15:26,257 - #8 const
+INFO  17:15:26,262 - #43 int
+INFO  17:15:26,265 - #43 nula
+INFO  17:15:26,267 - #28 =
+INFO  17:15:26,268 - #40 0
+INFO  17:15:26,269 - #29 ;
+INFO  17:15:26,272 - #8 const
+INFO  17:15:26,277 - #43 int
+INFO  17:15:26,278 - #43 jedan
+INFO  17:15:26,279 - #28 =
+INFO  17:15:26,280 - #40 1
+INFO  17:15:26,280 - #29 ;
+INFO  17:15:26,281 - #8 const
+INFO  17:15:26,281 - #43 int
+INFO  17:15:26,282 - #43 pet
+INFO  17:15:26,284 - #28 =
+INFO  17:15:26,290 - #40 5
+INFO  17:15:26,292 - #29 ;
+INFO  17:15:26,300 - #43 int
+INFO  17:15:26,302 - #43 niz
+INFO  17:15:26,303 - #36 [
+INFO  17:15:26,303 - #37 ]
+INFO  17:15:26,304 - #30 ,
+INFO  17:15:26,308 - #43 niz2
+INFO  17:15:26,309 - #36 [
+INFO  17:15:26,313 - #37 ]
+INFO  17:15:26,314 - #29 ;
+INFO  17:15:26,317 - #43 char
+INFO  17:15:26,318 - #43 nizch
+INFO  17:15:26,319 - #36 [
+INFO  17:15:26,320 - #37 ]
+INFO  17:15:26,320 - #29 ;
+INFO  17:15:26,322 - #34 {
+INFO  17:15:26,324 - #5 void
+INFO  17:15:26,325 - #43 main
+INFO  17:15:26,332 - #32 (
+INFO  17:15:26,336 - #33 )
+INFO  17:15:26,340 - #43 int
+INFO  17:15:26,341 - #43 bodovi
+INFO  17:15:26,342 - #29 ;
+INFO  17:15:26,351 - #43 bool
+INFO  17:15:26,352 - #43 bt
+INFO  17:15:26,353 - #29 ;
+INFO  17:15:26,355 - #34 {
+INFO  17:15:26,358 - #43 bodovi
+INFO  17:15:26,359 - #28 =
+INFO  17:15:26,362 - #40 0
+INFO  17:15:26,375 - #29 ;
+INFO  17:15:26,387 - #43 bodovi
+INFO  17:15:26,388 - #18 ++
+INFO  17:15:26,388 - #29 ;
+INFO  17:15:26,389 - #43 bodovi
+INFO  17:15:26,390 - #28 =
+INFO  17:15:26,390 - #43 bodovi
+INFO  17:15:26,391 - #13 +
+INFO  17:15:26,391 - #43 jedan
+INFO  17:15:26,395 - #29 ;
+INFO  17:15:26,397 - #43 bodovi
+INFO  17:15:26,399 - #28 =
+INFO  17:15:26,401 - #43 bodovi
+INFO  17:15:26,404 - #15 *
+INFO  17:15:26,407 - #43 pet
+INFO  17:15:26,418 - #29 ;
+INFO  17:15:26,420 - #43 bodovi
+INFO  17:15:26,421 - #19 --
+INFO  17:15:26,422 - #29 ;
+INFO  17:15:26,423 - #3 print
+INFO  17:15:26,425 - #32 (
+INFO  17:15:26,429 - #43 bodovi
+INFO  17:15:26,430 - #33 )
+INFO  17:15:26,433 - #29 ;
+INFO  17:15:26,436 - #43 niz
+INFO  17:15:26,440 - #28 =
+INFO  17:15:26,447 - #6 new
+INFO  17:15:26,449 - #43 int
+INFO  17:15:26,450 - #36 [
+INFO  17:15:26,452 - #40 3
+INFO  17:15:26,454 - #37 ]
+INFO  17:15:26,455 - #29 ;
+INFO  17:15:26,458 - #43 niz
+INFO  17:15:26,458 - #36 [
+INFO  17:15:26,461 - #43 nula
+INFO  17:15:26,462 - #37 ]
+INFO  17:15:26,464 - #28 =
+INFO  17:15:26,465 - #43 jedan
+INFO  17:15:26,466 - #29 ;
+INFO  17:15:26,467 - #43 niz
+INFO  17:15:26,467 - #36 [
+INFO  17:15:26,469 - #40 1
+INFO  17:15:26,471 - #37 ]
+INFO  17:15:26,473 - #28 =
+INFO  17:15:26,474 - #40 2
+INFO  17:15:26,475 - #29 ;
+INFO  17:15:26,478 - #43 niz
+INFO  17:15:26,479 - #36 [
+INFO  17:15:26,481 - #43 niz
+INFO  17:15:26,483 - #36 [
+INFO  17:15:26,485 - #43 jedan
+INFO  17:15:26,486 - #37 ]
+INFO  17:15:26,487 - #37 ]
+INFO  17:15:26,489 - #28 =
+INFO  17:15:26,490 - #43 niz
+INFO  17:15:26,491 - #36 [
+INFO  17:15:26,491 - #43 niz
+INFO  17:15:26,493 - #36 [
+INFO  17:15:26,496 - #40 0
+INFO  17:15:26,497 - #37 ]
+INFO  17:15:26,498 - #37 ]
+INFO  17:15:26,499 - #15 *
+INFO  17:15:26,503 - #40 3
+INFO  17:15:26,504 - #29 ;
+INFO  17:15:26,505 - #43 bodovi
+INFO  17:15:26,506 - #28 =
+INFO  17:15:26,507 - #43 niz
+INFO  17:15:26,508 - #36 [
+INFO  17:15:26,514 - #40 2
+INFO  17:15:26,516 - #37 ]
+INFO  17:15:26,518 - #16 /
+INFO  17:15:26,520 - #43 niz
+INFO  17:15:26,523 - #36 [
+INFO  17:15:26,524 - #40 0
+INFO  17:15:26,526 - #37 ]
+INFO  17:15:26,529 - #29 ;
+INFO  17:15:26,531 - #3 print
+INFO  17:15:26,533 - #32 (
+INFO  17:15:26,536 - #43 bodovi
+INFO  17:15:26,537 - #33 )
+INFO  17:15:26,538 - #29 ;
+INFO  17:15:26,539 - #3 print
+INFO  17:15:26,540 - #32 (
+INFO  17:15:26,541 - #43 niz
+INFO  17:15:26,542 - #36 [
+INFO  17:15:26,544 - #40 2
+INFO  17:15:26,547 - #37 ]
+INFO  17:15:26,549 - #33 )
+INFO  17:15:26,552 - #29 ;
+INFO  17:15:26,554 - #43 nizch
+INFO  17:15:26,557 - #28 =
+INFO  17:15:26,557 - #6 new
+INFO  17:15:26,558 - #43 char
+INFO  17:15:26,559 - #36 [
+INFO  17:15:26,561 - #40 3
+INFO  17:15:26,562 - #37 ]
+INFO  17:15:26,563 - #29 ;
+INFO  17:15:26,565 - #43 nizch
+INFO  17:15:26,566 - #36 [
+INFO  17:15:26,567 - #40 0
+INFO  17:15:26,568 - #37 ]
+INFO  17:15:26,569 - #28 =
+INFO  17:15:26,570 - #42 a
+INFO  17:15:26,571 - #29 ;
+INFO  17:15:26,573 - #43 nizch
+INFO  17:15:26,574 - #36 [
+INFO  17:15:26,575 - #43 jedan
+INFO  17:15:26,576 - #37 ]
+INFO  17:15:26,577 - #28 =
+INFO  17:15:26,580 - #42 b
+INFO  17:15:26,582 - #29 ;
+INFO  17:15:26,584 - #43 nizch
+INFO  17:15:26,585 - #36 [
+INFO  17:15:26,587 - #43 pet
+INFO  17:15:26,587 - #14 -
+INFO  17:15:26,588 - #40 3
+INFO  17:15:26,590 - #37 ]
+INFO  17:15:26,591 - #28 =
+INFO  17:15:26,592 - #42 c
+INFO  17:15:26,594 - #29 ;
+INFO  17:15:26,595 - #3 print
+INFO  17:15:26,596 - #32 (
+INFO  17:15:26,597 - #43 nizch
+INFO  17:15:26,598 - #36 [
+INFO  17:15:26,601 - #40 1
+INFO  17:15:26,602 - #37 ]
+INFO  17:15:26,602 - #33 )
+INFO  17:15:26,603 - #29 ;
+INFO  17:15:26,604 - #3 print
+INFO  17:15:26,604 - #32 (
+INFO  17:15:26,605 - #43 nizch
+INFO  17:15:26,605 - #36 [
+INFO  17:15:26,606 - #43 jedan
+INFO  17:15:26,606 - #15 *
+INFO  17:15:26,607 - #40 2
+INFO  17:15:26,607 - #37 ]
+INFO  17:15:26,608 - #33 )
+INFO  17:15:26,608 - #29 ;
+INFO  17:15:26,609 - #43 bodovi
+INFO  17:15:26,610 - #28 =
+INFO  17:15:26,611 - #43 bodovi
+INFO  17:15:26,613 - #13 +
+INFO  17:15:26,616 - #32 (
+INFO  17:15:26,618 - #43 pet
+INFO  17:15:26,619 - #15 *
+INFO  17:15:26,621 - #43 jedan
+INFO  17:15:26,622 - #14 -
+INFO  17:15:26,622 - #40 1
+INFO  17:15:26,623 - #33 )
+INFO  17:15:26,624 - #15 *
+INFO  17:15:26,626 - #43 bodovi
+INFO  17:15:26,627 - #14 -
+INFO  17:15:26,628 - #32 (
+INFO  17:15:26,629 - #40 3
+INFO  17:15:26,630 - #17 %
+INFO  17:15:26,633 - #40 2
+INFO  17:15:26,636 - #13 +
+INFO  17:15:26,636 - #40 3
+INFO  17:15:26,637 - #15 *
+INFO  17:15:26,639 - #40 2
+INFO  17:15:26,639 - #14 -
+INFO  17:15:26,640 - #40 3
+INFO  17:15:26,640 - #33 )
+INFO  17:15:26,642 - #29 ;
+INFO  17:15:26,643 - #3 print
+INFO  17:15:26,645 - #32 (
+INFO  17:15:26,646 - #43 bodovi
+INFO  17:15:26,647 - #33 )
+INFO  17:15:26,649 - #29 ;
+INFO  17:15:26,650 - #7 read
+INFO  17:15:26,651 - #32 (
+INFO  17:15:26,652 - #43 bodovi
+INFO  17:15:26,653 - #33 )
+INFO  17:15:26,653 - #29 ;
+INFO  17:15:26,653 - #3 print
+INFO  17:15:26,654 - #32 (
+INFO  17:15:26,655 - #43 bodovi
+INFO  17:15:26,657 - #33 )
+INFO  17:15:26,657 - #29 ;
+INFO  17:15:26,658 - #43 niz2
+INFO  17:15:26,658 - #28 =
+INFO  17:15:26,660 - #12 range
+INFO  17:15:26,661 - #32 (
+INFO  17:15:26,662 - #43 bodovi
+INFO  17:15:26,663 - #13 +
+INFO  17:15:26,665 - #40 1
+INFO  17:15:26,666 - #33 )
+INFO  17:15:26,668 - #29 ;
+INFO  17:15:26,669 - #3 print
+INFO  17:15:26,669 - #32 (
+INFO  17:15:26,669 - #43 niz2
+INFO  17:15:26,670 - #33 )
+INFO  17:15:26,671 - #29 ;
+INFO  17:15:26,671 - #3 print
+INFO  17:15:26,672 - #32 (
+INFO  17:15:26,673 - #43 niz
+INFO  17:15:26,675 - #33 )
+INFO  17:15:26,676 - #29 ;
+INFO  17:15:26,678 - #35 }
+INFO  17:15:26,685 - #35 }
+INFO  17:15:26,826 - Program(
   ProgName(
    test301
   ) [ProgName]
@@ -1273,7 +1274,7 @@ INFO  04:37:15,770 - Program(
                                                     DesignatorStatementOp(
                                                       DesignatorAssignopExpr(
                                                         DesignatorSingle(
-                                                         bodovi
+                                                         niz2
                                                         ) [DesignatorSingle]
                                                         AssignOp(
                                                         ) [AssignOp]
@@ -1281,9 +1282,34 @@ INFO  04:37:15,770 - Program(
                                                           NoMinus(
                                                           ) [NoMinus]
                                                           Term(
-                                                            NumConstFactor(
-                                                             3
-                                                            ) [NumConstFactor]
+                                                            RangeFactor(
+                                                              Expr(
+                                                                NoMinus(
+                                                                ) [NoMinus]
+                                                                Term(
+                                                                  DesignatorFactor(
+                                                                    DesignatorSingle(
+                                                                     bodovi
+                                                                    ) [DesignatorSingle]
+                                                                  ) [DesignatorFactor]
+                                                                  NoMulopFactorList(
+                                                                  ) [NoMulopFactorList]
+                                                                ) [Term]
+                                                                AddopTermListExist(
+                                                                  AddopTermListOne(
+                                                                    PlusOp(
+                                                                    ) [PlusOp]
+                                                                    Term(
+                                                                      NumConstFactor(
+                                                                       1
+                                                                      ) [NumConstFactor]
+                                                                      NoMulopFactorList(
+                                                                      ) [NoMulopFactorList]
+                                                                    ) [Term]
+                                                                  ) [AddopTermListOne]
+                                                                ) [AddopTermListExist]
+                                                              ) [Expr]
+                                                            ) [RangeFactor]
                                                             NoMulopFactorList(
                                                             ) [NoMulopFactorList]
                                                           ) [Term]
@@ -1293,53 +1319,25 @@ INFO  04:37:15,770 - Program(
                                                       ) [DesignatorAssignopExpr]
                                                     ) [DesignatorStatementOp]
                                                     StatementListMany(
-                                                      DesignatorStatementOp(
-                                                        DesignatorAssignopExpr(
-                                                          DesignatorSingle(
-                                                           niz2
-                                                          ) [DesignatorSingle]
-                                                          AssignOp(
-                                                          ) [AssignOp]
-                                                          Expr(
-                                                            NoMinus(
-                                                            ) [NoMinus]
-                                                            Term(
-                                                              RangeFactor(
-                                                                Expr(
-                                                                  NoMinus(
-                                                                  ) [NoMinus]
-                                                                  Term(
-                                                                    DesignatorFactor(
-                                                                      DesignatorSingle(
-                                                                       bodovi
-                                                                      ) [DesignatorSingle]
-                                                                    ) [DesignatorFactor]
-                                                                    NoMulopFactorList(
-                                                                    ) [NoMulopFactorList]
-                                                                  ) [Term]
-                                                                  AddopTermListExist(
-                                                                    AddopTermListOne(
-                                                                      PlusOp(
-                                                                      ) [PlusOp]
-                                                                      Term(
-                                                                        NumConstFactor(
-                                                                         1
-                                                                        ) [NumConstFactor]
-                                                                        NoMulopFactorList(
-                                                                        ) [NoMulopFactorList]
-                                                                      ) [Term]
-                                                                    ) [AddopTermListOne]
-                                                                  ) [AddopTermListExist]
-                                                                ) [Expr]
-                                                              ) [RangeFactor]
-                                                              NoMulopFactorList(
-                                                              ) [NoMulopFactorList]
-                                                            ) [Term]
-                                                            NoAddopTermList(
-                                                            ) [NoAddopTermList]
-                                                          ) [Expr]
-                                                        ) [DesignatorAssignopExpr]
-                                                      ) [DesignatorStatementOp]
+                                                      PrintStatement(
+                                                        Expr(
+                                                          NoMinus(
+                                                          ) [NoMinus]
+                                                          Term(
+                                                            DesignatorFactor(
+                                                              DesignatorSingle(
+                                                               niz2
+                                                              ) [DesignatorSingle]
+                                                            ) [DesignatorFactor]
+                                                            NoMulopFactorList(
+                                                            ) [NoMulopFactorList]
+                                                          ) [Term]
+                                                          NoAddopTermList(
+                                                          ) [NoAddopTermList]
+                                                        ) [Expr]
+                                                        NoPrintOptions(
+                                                        ) [NoPrintOptions]
+                                                      ) [PrintStatement]
                                                       StatementListMany(
                                                         PrintStatement(
                                                           Expr(
@@ -1348,7 +1346,7 @@ INFO  04:37:15,770 - Program(
                                                             Term(
                                                               DesignatorFactor(
                                                                 DesignatorSingle(
-                                                                 niz2
+                                                                 niz
                                                                 ) [DesignatorSingle]
                                                               ) [DesignatorFactor]
                                                               NoMulopFactorList(
@@ -1390,27 +1388,28 @@ INFO  04:37:15,770 - Program(
     ) [StatementListMany]
   ) [FunctionMain]
 ) [Program]
-INFO  04:37:15,984 - ===================================
-INFO  04:37:16,002 - Deklarisana int konstanta: nula= 0 na liniji 5
-INFO  04:37:16,003 - Deklarisana int konstanta: jedan= 1 na liniji 6
-INFO  04:37:16,003 - Deklarisana int konstanta: pet= 5 na liniji 7
-INFO  04:37:16,014 - Deklarisana promenljiva niz tipa niz na liniji 9
-INFO  04:37:16,016 - Deklarisana promenljiva niz2 tipa niz na liniji 9
-INFO  04:37:16,016 - Deklarisana promenljiva nizch tipa niz na liniji 10
-INFO  04:37:16,017 - Obradjuje se funkcija main na liniji 13
-INFO  04:37:16,018 - Deklarisana promenljiva bodovi na liniji 14
-INFO  04:37:16,019 - Deklarisana promenljiva bt na liniji 15
-INFO  04:37:16,020 - Poziv funkcije print za int na liniji 7
-INFO  04:37:16,020 - Poziv funkcije print za int na liniji 7
-INFO  04:37:16,021 - Poziv funkcije print za int na liniji 7
-INFO  04:37:16,021 - Poziv funkcije print za char na liniji 7
-INFO  04:37:16,022 - Poziv funkcije print za char na liniji 7
-INFO  04:37:16,023 - Poziv funkcije print za int na liniji 7
-INFO  04:37:16,024 - Poziv funkcije read za int na liniji 45
-INFO  04:37:16,025 - Poziv funkcije print za int na liniji 7
-INFO  04:37:16,025 - Poziv funkcije print za niz tipa int na liniji 7
-INFO  04:37:16,026 - Kraj funkcije main na liniji 13
-INFO  04:37:16,033 -  Print count calls = 8
-INFO  04:37:16,034 -  Deklarisanih promenljivih ima = 5
-INFO  04:37:16,035 - ===================================
-INFO  04:37:16,051 - Parsiranje uspesno zavrseno!
+INFO  17:15:27,081 - ===================================
+INFO  17:15:27,106 - Deklarisana int konstanta: nula= 0 na liniji 5
+INFO  17:15:27,107 - Deklarisana int konstanta: jedan= 1 na liniji 6
+INFO  17:15:27,107 - Deklarisana int konstanta: pet= 5 na liniji 7
+INFO  17:15:27,122 - Deklarisana promenljiva niz tipa niz na liniji 9
+INFO  17:15:27,124 - Deklarisana promenljiva niz2 tipa niz na liniji 9
+INFO  17:15:27,125 - Deklarisana promenljiva nizch tipa niz na liniji 10
+INFO  17:15:27,128 - Obradjuje se funkcija main na liniji 13
+INFO  17:15:27,131 - Deklarisana promenljiva bodovi na liniji 14
+INFO  17:15:27,133 - Deklarisana promenljiva bt na liniji 15
+INFO  17:15:27,135 - Poziv funkcije print za int na liniji 7
+INFO  17:15:27,136 - Poziv funkcije print za int na liniji 7
+INFO  17:15:27,137 - Poziv funkcije print za int na liniji 7
+INFO  17:15:27,138 - Poziv funkcije print za char na liniji 7
+INFO  17:15:27,138 - Poziv funkcije print za char na liniji 7
+INFO  17:15:27,139 - Poziv funkcije print za int na liniji 7
+INFO  17:15:27,140 - Poziv funkcije read za int na liniji 45
+INFO  17:15:27,141 - Poziv funkcije print za int na liniji 7
+INFO  17:15:27,142 - Poziv funkcije print za niz tipa int na liniji 7
+INFO  17:15:27,143 - Poziv funkcije print za niz tipa int na liniji 7
+INFO  17:15:27,145 - Kraj funkcije main na liniji 13
+INFO  17:15:27,153 -  Print count calls = 9
+INFO  17:15:27,154 -  Deklarisanih promenljivih ima = 5
+INFO  17:15:27,154 - ===================================
+INFO  17:15:27,239 - Parsiranje uspesno zavrseno!

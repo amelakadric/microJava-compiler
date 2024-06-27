@@ -44,10 +44,10 @@ program test301
 			
 		read(bodovi);
 		print(bodovi);
-		bodovi = 3;
 
 		niz2 = range(bodovi + 1);
 		print(niz2);
+		print(niz);
 	}
 }
 

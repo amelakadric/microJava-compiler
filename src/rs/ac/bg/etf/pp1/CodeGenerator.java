@@ -1,4 +1,7 @@
 package rs.ac.bg.etf.pp1;
+import java.util.Collection;
+import java.util.List;
+
 import rs.ac.bg.etf.pp1.CounterVisitor.VarCounter;
 import rs.ac.bg.etf.pp1.ast.*;
 import rs.etf.pp1.mj.runtime.Code;
@@ -17,7 +20,43 @@ public class CodeGenerator extends VisitorAdaptor {
     public CodeGenerator(){
         boolType = Tab.find("bool").getType();
 		// arrayType = Tab.find("array").getType();
+		Obj n = Tab.insert(Obj.Var, "amela", Tab.intType);
+		Obj r = Tab.insert(Obj.Var, "rrr", Tab.intType);
+
+
     }
+
+	public Obj findProgramObject() {
+		Collection<Obj> symbols = Tab.currentScope().getLocals().symbols();
+		return symbols.stream()
+					  .filter(obj -> obj.getType() == Tab.noType)
+					  .findFirst()
+					  .orElse(Tab.noObj);
+	}
+	
+	public Obj findObjectInProgram(String name) {
+		Obj programObj = findProgramObject();
+		if (programObj != Tab.noObj) {
+			return programObj.getLocalSymbols().stream()
+							 .filter(local -> name.equals(local.getName()))
+							 .findFirst()
+							 .orElse(Tab.noObj);
+		}
+		return Tab.noObj;
+	}
+	
+	public Obj findObjectInMain(String name) {
+		Obj mainObj = findObjectInProgram("main");
+		if (mainObj != Tab.noObj) {
+			return mainObj.getLocalSymbols().stream()
+						  .filter(local -> name.equals(local.getName()))
+						  .findFirst()
+						  .orElse(Tab.noObj);
+		}
+		return Tab.noObj;
+	}
+	
+
 	
 	public int getMainPc(){
 		return mainPc;
@@ -26,20 +65,23 @@ public class CodeGenerator extends VisitorAdaptor {
 	public void visit(PrintStatement printStmt){
 		if( printStmt.getExpr().obj.getType().getKind() == Struct.Array){
 			// Get the length of the array
+			Obj n = Tab.insert(Obj.Var, "amela", Tab.intType);
+			// Obj n = Tab.find("amela");
+			n.setAdr(100);
+
+			// n.setAdr(0);
+			Code.loadConst(0);
+			Code.store(n);
+			
 			Code.put(Code.dup);
 			Code.put(Code.arraylength);
 			// Store the length in a temporary variable
-			Obj n = Tab.find("n");
-			// Code.store(n);
-			n.setAdr(0);
-			Code.loadConst(0);
-			Code.store(n);
 			
 			// Loop start
 			// Code.l(0); // Initialize the loop counter
 			int loopStart = Code.pc;
-			Code.put(Code.dup);
-			Code.load(n); // Load the array length
+			Code.put(Code.dup); // load the array length
+			Code.load(n); // Load the loop iterator
 			Code.putFalseJump(Code.ne, 10); // Jump out of the loop if the counter >= length
 			
 			int jumpAddr = Code.pc - 2; // Save the address of the jump instruction
@@ -79,6 +121,7 @@ public class CodeGenerator extends VisitorAdaptor {
 			
 			Code.put(Code.pop); // Pop the array length from the stack
 			Code.put(Code.pop);	
+			// Code.store(printStmt); // Store the array reference in the variable
 
 		}
 		else if(printStmt.getExpr().obj.getType() == Tab.intType || printStmt.getExpr().obj.getType() == boolType
@@ -151,8 +194,17 @@ public class CodeGenerator extends VisitorAdaptor {
 			// Code.put(Code.pop);
 		}else{
 			if(assignop.getDesignator().obj.getType().getKind() == Struct.Array){
-				Obj o = Tab.find(assignop.getDesignator().obj.getName());
+				// Obj o = Tab.find( ((DesignatorSingle)assignop.getDesignator()).getVarName());
+				// Code.store(o);
+				Obj o =findObjectInMain(((DesignatorSingle)assignop.getDesignator()).getVarName());
+				if(o == Tab.noObj){
+					o=findObjectInProgram(((DesignatorSingle)assignop.getDesignator()).getVarName());
+					// if(o==Tab.noObj){
+					// 	Code.store(assignop.getDesignator().obj);
+					// }
+				}
 				Code.store(o);
+
 			}else{	
 				
 				Code.store(assignop.getDesignator().obj);
@@ -191,13 +243,18 @@ public class CodeGenerator extends VisitorAdaptor {
 				&& !(designatorSingle.getParent() instanceof  DesignatorDec)
 				&& !(designatorSingle.getParent().getParent() instanceof ReadStatement)) {
 
-					if(designatorSingle.obj.getType().getKind() == Struct.Array){
-						Obj niz = Tab.find(designatorSingle.getVarName());
-						Code.load(niz);
-					}
-					else{
+					// // if(designatorSingle.obj.getType().getKind() == Struct.Array){
+					// 	Obj o =findFromMain(designatorSingle.getVarName());
+					// 	if(o == Tab.noObj){
+					// 		o =findFromProg(designatorSingle.getVarName());
+					// 	}
+					// 	Code.load(o);
+	
+						
+					// }
+					// else{
 						Code.load(designatorSingle.obj);
-					}
+					// }
 			
 
 		}
@@ -209,17 +266,23 @@ public class CodeGenerator extends VisitorAdaptor {
 				&& !( designatorArray.getParent() instanceof DesignatorInc)
 				&& !(designatorArray.getParent() instanceof  DesignatorDec)
 				&& !(designatorArray.getParent().getParent() instanceof ReadStatement)) {
-			Code.load(designatorArray.obj);
-			// Obj niz = Tab.find(designatorArray.getDesignatorName().getVarName());
-			// Code.load(niz);
-		}
 		
+			Code.load(designatorArray.obj);
+
+			}
+			
 	}
+		
+	
 
 	//DesignatorName
 	public void visit(DesignatorName designatorName){
-		Obj niz = Tab.find(designatorName.getVarName());
-		Code.load(niz);
+		Obj arrayVar = findObjectInMain(designatorName.getVarName());
+            if (arrayVar == Tab.noObj) {
+                arrayVar = findObjectInProgram(designatorName.getVarName());
+            }
+            Code.load(arrayVar);
+	
 	}
 
 
@@ -268,11 +331,14 @@ public class CodeGenerator extends VisitorAdaptor {
 	//visit method for RangeFactor
 	public void visit(RangeFactor rangeFactor){
 		//generate code for range factor
+		// Obj n = Tab.insert(Obj.Var, "rrr", Tab.intType);
+		Obj n = Tab.find("rrr");
+		n.setAdr(102);
+
 		Code.put(Code.dup);
 		Code.put(Code.newarray);
 		Code.put(1);
-		Obj n = Tab.find("n");
-		n.setAdr(0);
+		// n.setAdr(0);
 				
 		Code.loadConst(0);
 		Code.store(n);
