@@ -25,6 +25,7 @@ public class SemanticAnalyzer extends VisitorAdaptor {
 
     public SemanticAnalyzer() {
         boolType = Tab.insert(Obj.Type, "bool", new Struct(Struct.Bool)).getType();
+		Obj n = Tab.insert(Obj.Var, "n", Tab.intType);
         
     }
 
@@ -247,16 +248,16 @@ public class SemanticAnalyzer extends VisitorAdaptor {
 
     //visitor method for Designator
     public void visit(Designator designator){
-        Obj obj = Tab.find(designator.getVarName());
+        Obj obj = Tab.find(designator.getDesignatorName().getVarName());
         if(obj == Tab.noObj){
-            report_error("Greska na liniji " + designator.getLine()+ " : ime "+designator.getVarName()+" nije deklarisano! ", null);
+            report_error("Greska na liniji " + designator.getLine()+ " : ime "+designator.getDesignatorName().getVarName()+" nije deklarisano! ", null);
         }
         if( designator.getDesignatorOptions() instanceof DesignatorOption){
             if(obj.getType().getKind() != Struct.Array){
-                report_error("Greska na liniji " + designator.getLine() + " : " + "promenljiva " + designator.getVarName() + " nije niz! ", null);
+                report_error("Greska na liniji " + designator.getLine() + " : " + "promenljiva " + designator.getDesignatorName().getVarName() + " nije niz! ", null);
             }
             else{
-                designator.obj = new Obj(Obj.Elem, designator.getVarName(), obj.getType().getElemType());
+                designator.obj = new Obj(Obj.Elem, designator.getDesignatorName().getVarName(), obj.getType().getElemType());
             }
         }
         else{
@@ -291,7 +292,6 @@ public class SemanticAnalyzer extends VisitorAdaptor {
         //     report_error("Greska na liniji " + expr.getLine() + " : " + "nekompatibilni tipovi u dodeli vrednosti! ", null);
         // }
         expr.obj = new Obj(Obj.Con, "", expr.getTerm().struct);
-		Obj n = Tab.insert(Obj.Var, "n", Tab.intType);
 
     }
 

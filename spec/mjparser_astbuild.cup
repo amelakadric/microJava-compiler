@@ -86,7 +86,7 @@ nonterminal AssignOp AssignOp;
 nonterminal Relop Relop;
 nonterminal Addop Addop;
 nonterminal Mulop Mulop;
-
+nonterminal DesignatorName DesignatorName;
 nonterminal rs.etf.pp1.symboltable.concepts.Obj ProgName, Program, FunctionMain, FunctionTypeName, Designator, Expr;
 nonterminal rs.etf.pp1.symboltable.concepts.Struct Type, Term, Factor, TypeOptions;
 
@@ -162,7 +162,9 @@ DesignatorStatement ::=
     | (DesignatorInc) Designator:desig INC {: RESULT=new DesignatorInc(desig); RESULT.setLine(desigleft); :}
     | (DesignatorDec) Designator:desig DEC {: RESULT=new DesignatorDec(desig); RESULT.setLine(desigleft); :};
 
-Designator ::= (Designator) IDENT:varName DesignatorOptions:D1 {: RESULT=new Designator(varName, D1); RESULT.setLine(varNameleft); :};
+Designator ::= (Designator) DesignatorName:varName DesignatorOptions:D1 {: RESULT=new Designator(varName, D1); RESULT.setLine(varNameleft); :};
+
+DesignatorName ::= (DesignatorName) IDENT:varName {: RESULT=new DesignatorName(varName); RESULT.setLine(varNameleft); :};
 
 DesignatorOptions ::= (DesignatorOption) LSQBRACE Expr:E1 RSQBRACE {: RESULT=new DesignatorOption(E1); RESULT.setLine(E1left); :}
     | (NoDesignatorOptions) {: RESULT=new NoDesignatorOptions(); :};

@@ -16,6 +16,7 @@ public class CodeGenerator extends VisitorAdaptor {
 
     public CodeGenerator(){
         boolType = Tab.find("bool").getType();
+
 		// arrayType = Tab.find("array").getType();
     }
 	
@@ -25,30 +26,35 @@ public class CodeGenerator extends VisitorAdaptor {
 	
 	public void visit(PrintStatement printStmt){
 		if( printStmt.getExpr().obj.getType().getKind() == Struct.Array){
+			Obj b = Tab.find("n");
+			// b.setAdr(8);
+			Obj l = Tab.insert(Obj.Var, "arrLen", Tab.intType);
+			// l.setAdr(9);
+			Code.loadConst(0);
+			Code.store(b);
 			// Get the length of the array
 			Code.put(Code.dup);
 			Code.put(Code.arraylength);
 			// Store the length in a temporary variable
-			Obj n = Tab.find("n");
 			// Code.store(n);
-			n.setAdr(0);
-			Code.loadConst(0);
-			Code.store(n);
+			Code.store(l);
+			
 			
 			// Loop start
 			// Code.l(0); // Initialize the loop counter
 			int loopStart = Code.pc;
-			Code.put(Code.dup);
-			Code.load(n); // Load the array length
+			// Code.put(Code.dup);
+			Code.load(l);
+			Code.load(b); // Load the array length
 			Code.putFalseJump(Code.ne, 10); // Jump out of the loop if the counter >= length
 			
 			int jumpAddr = Code.pc - 2; // Save the address of the jump instruction
 			
 			// Loop body
-			Code.put(Code.dup2);
-			Code.put(Code.pop);	
+			Code.put(Code.dup);
+			// Code.put(Code.pop);	
 			// Load the array reference
-			Code.load(n);
+			Code.load(b);
 			// Load the loop counter
 
 			if(printStmt.getExpr().obj.getType().getElemType().getKind() == Struct.Char){
@@ -66,10 +72,10 @@ public class CodeGenerator extends VisitorAdaptor {
 			}
 			
 			// Increment the loop counter
-			Code.load(n); // Load the loop counter
+			Code.load(b); // Load the loop counter
 			Code.loadConst(1); // Load the increment value
 			Code.put(Code.add); // Add the increment value to the loop counter
-			Code.store(n); // Store the updated loop counter
+			Code.store(b); // Store the updated loop counter
 			
 			// Jump back to the loop start
 			Code.putJump(loopStart);
@@ -78,6 +84,7 @@ public class CodeGenerator extends VisitorAdaptor {
 			Code.fixup(jumpAddr);
 			
 			Code.put(Code.pop); // Pop the array length from the stack
+			// Code.put(Code.pop); // Pop the array length from the stack
 		}
 		else if(printStmt.getExpr().obj.getType() == Tab.intType || printStmt.getExpr().obj.getType() == boolType){
 			if(printStmt.getPrintOptions() instanceof PrintOption){
@@ -96,6 +103,7 @@ public class CodeGenerator extends VisitorAdaptor {
 			Code.loadConst(5);
 			Code.put(Code.print);
 		}
+
 	
 		
 	}
@@ -145,11 +153,11 @@ public class CodeGenerator extends VisitorAdaptor {
 			else{
 				Code.put(Code.astore);
 			}
-			Code.put(Code.pop);
 		}else{
 			if(assignop.getDesignator().obj.getType().getKind() == Struct.Array){
 				Obj o = Tab.find(assignop.getDesignator().obj.getName());
 				Code.store(o);
+				// Code.put(Code.pop);
 			}else{	
 				
 				Code.store(assignop.getDesignator().obj);
@@ -157,6 +165,17 @@ public class CodeGenerator extends VisitorAdaptor {
 			
 		}
 	}
+
+	// Expr 
+	// public void visit(Expr expr){
+	// 	if(expr.getParent() instanceof PrintStatement){
+	// 		if(expr.obj.getType().getKind()==Struct.Array){
+	// 			// Code.put(Code.pop);
+	// 		Code.load(expr.obj);
+				
+	// 		}
+	// 	}
+	// }
 	//visit DesignatorInc
 	public void visit(DesignatorInc inc){
 		Code.load(inc.getDesignator().obj);
@@ -184,38 +203,64 @@ public class CodeGenerator extends VisitorAdaptor {
 
 	//visit method for Designator 
 	public void visit(Designator designator){	
-		if(designator.getParent() instanceof DesignatorAssignopExpr || designator.getParent() instanceof DesignatorInc || designator.getParent() instanceof DesignatorDec){
-			if (designator.getDesignatorOptions() instanceof DesignatorOption) {
-				Obj niz = Tab.find(designator.getVarName());
-				Code.load(niz);
-				Code.put(Code.dup2);
-				Code.put(Code.pop);
-			}
-			// else if(designator.getParent() instanceof DesignatorInc || designator.getParent() instanceof DesignatorDec){
+		// if( designator.getParent() instanceof DesignatorInc || designator.getParent() instanceof DesignatorDec){
+			// if (designator.getDesignatorOptions() instanceof DesignatorOption) {
+				// Obj niz = Tab.find(designator.getDesignatorName().getVarName());
+				// Code.load(niz);
+			// 	Code.put(Code.dup2);
+			// 	Code.put(Code.pop);
+			// }
+			// else
+			//  if(designator.getParent() instanceof DesignatorInc || designator.getParent() instanceof DesignatorDec){
 			// 	Code.load(designator.obj);
 			// }	
-		}
-		else if (designator.getParent().getParent().getParent().getParent() instanceof PrintStatement){
-			Obj o = Tab.find(designator.getVarName());
-			Code.load(o);
-		}
-		else if(designator.obj.getKind() == Obj.Elem){
-			Obj niz = Tab.find(designator.getVarName());
-				Code.load(niz);
-				Code.put(Code.dup2);
-				Code.put(Code.pop);
-		}
-		
-		else{
-			Code.load(designator.obj);
+		// }
+		// else
+		// if(designator.getDesignatorOptions() instanceof DesignatorOption){
+	
+		// }
+		 if (designator.getParent().getParent().getParent().getParent() instanceof PrintStatement){
+			if(designator.obj.getType().getKind() == Struct.Array){
+				Obj o = Tab.find(designator.getDesignatorName().getVarName());
+				Code.load(o);
+				// Code.put(Code.pop);
+			}else{	
+				Code.load(designator.obj);
+			}
 		}	
 
+
+		// System.err.println(Tab.currentLevel);
+		// else{
+		// 	Code.load(designator.obj);
+		// }	
+
+	}
+	//DesignatorName
+	public void visit(DesignatorName designatorName){
+			// if(!(designatorName.getParent().getParent() instanceof DesignatorDec )
+			// && !(designatorName.getParent().getParent() instanceof DesignatorInc)
+			// && 
+			if(!(designatorName.getParent().getParent().getParent().getParent().getParent() instanceof PrintStatement)){
+				Obj o = Tab.find(designatorName.getVarName());
+				Code.load(o);
+			}
+			
 	}
 
 	//DesignatorOption
 	public void visit(DesignatorOption designatorOption){
 		// Code.loadConst(designatorOption.getExpr().obj.getAdr());
 		// Code.loadConst(8);
+		// Code.put(Code.pop);
+	}
+	//NoDesignatorOption
+	public void visit(NoDesignatorOptions noDesignatorOption){
+		if(!(noDesignatorOption.getParent().getParent().getParent().getParent().getParent() instanceof PrintStatement)
+		||!(noDesignatorOption.getParent().getParent().getParent().getParent() instanceof Expr)){
+			Code.put(Code.pop);
+
+		}
 	}
 
 	//visit method for Minus
@@ -262,6 +307,9 @@ public class CodeGenerator extends VisitorAdaptor {
 
 	//visit method for RangeFactor
 	public void visit(RangeFactor rangeFactor){
+		Obj n = Tab.insert(Obj.Var, "$$$", Tab.intType);
+		// n.setAdr(7);
+
 		//generate code for range factor
 		Code.put(Code.dup);
 		Code.put(Code.newarray);
@@ -269,8 +317,8 @@ public class CodeGenerator extends VisitorAdaptor {
 				
 		
 		// Loop start
-		Obj n = Tab.find("n");
-		n.setAdr(0);
+		Code.loadConst(0);
+		Code.store(n);
 		int loopStart = Code.pc;
 		Code.put(Code.dup2);
 		Code.put(Code.pop);
@@ -296,12 +344,11 @@ public class CodeGenerator extends VisitorAdaptor {
 		
 		// // Update the jump address
 		Code.fixup(jumpAddr);
+
 		Code.store(n);
 		Code.put(Code.pop);
 		Code.load(n);
 		
-		
-
 		
 	}
 

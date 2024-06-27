@@ -1,6 +1,6 @@
 // generated with ast extension for cup
 // version 0.8
-// 26/5/2024 21:54:25
+// 26/5/2024 23:36:8
 
 
 package rs.ac.bg.etf.pp1.ast;
@@ -11,21 +11,22 @@ public class Designator implements SyntaxNode {
     private int line;
     public rs.etf.pp1.symboltable.concepts.Obj obj = null;
 
-    private String varName;
+    private DesignatorName DesignatorName;
     private DesignatorOptions DesignatorOptions;
 
-    public Designator (String varName, DesignatorOptions DesignatorOptions) {
-        this.varName=varName;
+    public Designator (DesignatorName DesignatorName, DesignatorOptions DesignatorOptions) {
+        this.DesignatorName=DesignatorName;
+        if(DesignatorName!=null) DesignatorName.setParent(this);
         this.DesignatorOptions=DesignatorOptions;
         if(DesignatorOptions!=null) DesignatorOptions.setParent(this);
     }
 
-    public String getVarName() {
-        return varName;
+    public DesignatorName getDesignatorName() {
+        return DesignatorName;
     }
 
-    public void setVarName(String varName) {
-        this.varName=varName;
+    public void setDesignatorName(DesignatorName DesignatorName) {
+        this.DesignatorName=DesignatorName;
     }
 
     public DesignatorOptions getDesignatorOptions() {
@@ -57,15 +58,18 @@ public class Designator implements SyntaxNode {
     }
 
     public void childrenAccept(Visitor visitor) {
+        if(DesignatorName!=null) DesignatorName.accept(visitor);
         if(DesignatorOptions!=null) DesignatorOptions.accept(visitor);
     }
 
     public void traverseTopDown(Visitor visitor) {
         accept(visitor);
+        if(DesignatorName!=null) DesignatorName.traverseTopDown(visitor);
         if(DesignatorOptions!=null) DesignatorOptions.traverseTopDown(visitor);
     }
 
     public void traverseBottomUp(Visitor visitor) {
+        if(DesignatorName!=null) DesignatorName.traverseBottomUp(visitor);
         if(DesignatorOptions!=null) DesignatorOptions.traverseBottomUp(visitor);
         accept(visitor);
     }
@@ -75,7 +79,10 @@ public class Designator implements SyntaxNode {
         buffer.append(tab);
         buffer.append("Designator(\n");
 
-        buffer.append(" "+tab+varName);
+        if(DesignatorName!=null)
+            buffer.append(DesignatorName.toString("  "+tab));
+        else
+            buffer.append(tab+"  null");
         buffer.append("\n");
 
         if(DesignatorOptions!=null)

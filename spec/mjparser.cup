@@ -59,7 +59,7 @@ terminal Character CHARCONST;
 terminal String IDENT;
 
 nonterminal DeclList, DeclOne, ConstDecl, ConstOne, ConstDeclOptionsListExists, ConstDeclOptionsList, VarDeclList, VarDeclPartOne, VarDeclOne, VarDecl, SqBracesOption, VarDeclPartListExists, VarDeclPartList, StatementList, Statement, PrintOptions, DesignatorStatement, DesignatorOptions, AddopTermListExists, AddopTermList, MinusOption, MulopFactorListExists, MulopFactorList, Label, AssignOp, Relop, Addop, Mulop;
-
+nonterminal DesignatorName;
 nonterminal rs.etf.pp1.symboltable.concepts.Obj ProgName, Program, FunctionMain, FunctionTypeName, Designator, Expr;
 nonterminal rs.etf.pp1.symboltable.concepts.Struct Type, Term, Factor, TypeOptions;
 
@@ -135,7 +135,9 @@ DesignatorStatement ::=
     | (DesignatorInc) Designator:desig INC
     | (DesignatorDec) Designator:desig DEC;
 
-Designator ::= (Designator) IDENT:varName DesignatorOptions;
+Designator ::= (Designator) DesignatorName:varName DesignatorOptions;
+
+DesignatorName ::= (DesignatorName) IDENT:varName;
 
 DesignatorOptions ::= (DesignatorOption) LSQBRACE Expr RSQBRACE
     | (NoDesignatorOptions);
