@@ -189,7 +189,17 @@ public class CodeGenerator extends VisitorAdaptor {
 				Code.put(Code.bastore);
 			}
 			else{
-				Code.put(Code.astore);
+				if(assignop.getDesignator().obj.getFpPos()==1){
+					assignop.getDesignator().obj.setFpPos(2);
+					Code.put(Code.astore);
+				}
+				else if(assignop.getDesignator().obj.getFpPos()==0){
+					Code.put(Code.astore);
+				}
+				else{
+					//baca se greska neka;
+				}
+
 			}
 			// Code.put(Code.pop);
 		}else{
@@ -203,7 +213,17 @@ public class CodeGenerator extends VisitorAdaptor {
 					// 	Code.store(assignop.getDesignator().obj);
 					// }
 				}
-				Code.store(o);
+				if(o.getFpPos()==1){
+					o.setFpPos(2);
+					Code.store(o);
+				}
+				else if(o.getFpPos()==0){
+					Code.store(o);
+				}
+				else{
+					Code.put(Code.pop);
+					Code.loadConst(88);
+				}
 
 			}else{	
 				

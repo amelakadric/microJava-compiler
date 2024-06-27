@@ -53,13 +53,14 @@ terminal PROG, PRINT, RETURN, VOID, NEW, READ, CONST, BREAK, CONTINUE, FOR, RANG
 terminal PLUS, MINUS, MUL, DIV, MOD, INC, DEC, OR, AND, EQUALITY, NOTEQUAL, GT, GTE, LT, LTE;
 terminal EQUAL, SEMI, COMMA, COLUMN, LPAREN, RPAREN, LBRACE, RBRACE, LSQBRACE, RSQBRACE, DBLCOL;
 terminal COMMENT;
+terminal FINAL;
 terminal Integer NUMBER;
 terminal Integer BOOLCONST;
 terminal Character CHARCONST;
 terminal String IDENT;
 
 nonterminal DeclList, DeclOne, ConstDecl, ConstOne, ConstDeclOptionsListExists, ConstDeclOptionsList, VarDeclList, VarDeclPartOne, VarDeclOne, VarDecl, SqBracesOption, VarDeclPartListExists, VarDeclPartList, StatementList, Statement, PrintOptions, DesignatorStatement, DesignatorOptions, AddopTermListExists, AddopTermList, MinusOption, MulopFactorListExists, MulopFactorList, Label, AssignOp, Relop, Addop, Mulop;
-nonterminal DesignatorName;
+nonterminal DesignatorName, VarOneOptions;
 nonterminal rs.etf.pp1.symboltable.concepts.Obj ProgName, Program, FunctionMain, FunctionTypeName, Designator, Expr;
 nonterminal rs.etf.pp1.symboltable.concepts.Struct Type, Term, Factor, TypeOptions;
 
@@ -91,11 +92,14 @@ ConstDeclOptionsList ::= (ConstDeclOptionsListMany) ConstDeclOptionsList COMMA C
 VarDeclList ::= (VarDeclListMany) VarDecl VarDeclList 
     | (NoVarDeclList);
 
-VarDecl ::= (VarDeclarationOne) VarDeclOne  VarDeclPartListExists SEMI
+VarDecl ::= (VarDeclarationOne) VarOneOptions  VarDeclPartListExists SEMI
     | (VarErrorComma)error COMMA:l
     {: parser.report_error("Izvrsen oporavak do , u liniji " + lleft, null); :}
     |(VarErrorSemi) error SEMI:l
     {: parser.report_error("Izvrsen oporavak do ; u liniji " + lleft, null); :};
+
+VarOneOptions ::= (VarDeclPlain) VarDeclOne
+    | (VarDeclFinal) FINAL VarDeclOne;
 
 VarDeclOne ::= (VarDeclOne) Type:varType IDENT:varName SqBracesOption:isArray;
 

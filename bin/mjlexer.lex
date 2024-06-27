@@ -48,6 +48,7 @@ import java_cup.runtime.Symbol;
 "continue"	{ return new_symbol(sym.CONTINUE, yytext()); }
 "for"		{ return new_symbol(sym.FOR, yytext()); }
 "range"		{ return new_symbol(sym.RANGE, yytext()); }
+"final"  	{ return new_symbol(sym.FINAL, yytext()); }
 
 
 

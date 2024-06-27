@@ -17,6 +17,7 @@ public class SemanticAnalyzer extends VisitorAdaptor {
 	int nVars;
     Struct currentVarType = null;
     Struct currentConstType = null;
+    boolean isFinal = false;
     
 
     Struct boolType;
@@ -132,15 +133,34 @@ public class SemanticAnalyzer extends VisitorAdaptor {
             //check if isArray is instance
             if(varDeclOne.getSqBracesOption() instanceof SqBraces){
                 Struct arrayType = new Struct(Struct.Array, currentVarType);
-                Tab.insert(Obj.Var, varDeclOne.getVarName(), arrayType);
+                Obj obj =Tab.insert(Obj.Var, varDeclOne.getVarName(), arrayType);
+                if(varDeclOne.getParent() instanceof VarDeclFinal){
+                    isFinal = true;
+                    obj.setFpPos(1);
+                }
+                else{
+                    obj.setFpPos(0);
+                }
                 report_info("Deklarisana promenljiva "+ varDeclOne.getVarName() + " tipa niz", varDeclOne);
                 varDeclCount++;
             }else{
-                Tab.insert(Obj.Var, varDeclOne.getVarName(), currentVarType);
+                Obj obj = Tab.insert(Obj.Var, varDeclOne.getVarName(), currentVarType);
+                if(varDeclOne.getParent() instanceof VarDeclFinal){
+                    isFinal = true;
+                    obj.setFpPos(1);
+                }
+                else{
+                    obj.setFpPos(0);
+                }
                 report_info("Deklarisana promenljiva "+ varDeclOne.getVarName(), varDeclOne);
                 varDeclCount++;
             }
         }
+    }
+
+    //VarDecl
+    public void visit(VarDeclFinal varDeclFinal){
+        isFinal = false;
     }
 
     //visitor method for VarDeclPartOne
@@ -152,11 +172,23 @@ public class SemanticAnalyzer extends VisitorAdaptor {
              //check if isArray is instance
              if(varDeclPartOne.getSqBracesOption() instanceof SqBraces){
                 Struct arrayType = new Struct(Struct.Array, currentVarType);
-                Tab.insert(Obj.Var, varDeclPartOne.getVarName(), arrayType);
+                Obj obj =Tab.insert(Obj.Var, varDeclPartOne.getVarName(), arrayType);
+                if(isFinal){
+                    obj.setFpPos(1);
+                }
+                else{
+                    obj.setFpPos(0);
+                }
                 report_info("Deklarisana promenljiva "+ varDeclPartOne.getVarName() + " tipa niz", varDeclPartOne);
                 varDeclCount++;
             }else{
-                Tab.insert(Obj.Var, varDeclPartOne.getVarName(), currentVarType);
+                Obj obj=Tab.insert(Obj.Var, varDeclPartOne.getVarName(), currentVarType);
+                if(isFinal){
+                    obj.setFpPos(1);
+                }
+                else{
+                    obj.setFpPos(0);
+                }
                 report_info("Deklarisana promenljiva "+ varDeclPartOne.getVarName(), varDeclPartOne);
                 varDeclCount++;
             }

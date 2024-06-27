@@ -53,6 +53,7 @@ terminal PROG, PRINT, RETURN, VOID, NEW, READ, CONST, BREAK, CONTINUE, FOR, RANG
 terminal PLUS, MINUS, MUL, DIV, MOD, INC, DEC, OR, AND, EQUALITY, NOTEQUAL, GT, GTE, LT, LTE;
 terminal EQUAL, SEMI, COMMA, COLUMN, LPAREN, RPAREN, LBRACE, RBRACE, LSQBRACE, RSQBRACE, DBLCOL;
 terminal COMMENT;
+terminal FINAL;
 terminal Integer NUMBER;
 terminal Integer BOOLCONST;
 terminal Character CHARCONST;
@@ -87,6 +88,7 @@ nonterminal Relop Relop;
 nonterminal Addop Addop;
 nonterminal Mulop Mulop;
 nonterminal DesignatorName DesignatorName;
+nonterminal VarOneOptions VarOneOptions;
 nonterminal rs.etf.pp1.symboltable.concepts.Obj ProgName, Program, FunctionMain, FunctionTypeName, Designator, Expr;
 nonterminal rs.etf.pp1.symboltable.concepts.Struct Type, Term, Factor, TypeOptions;
 
@@ -118,11 +120,14 @@ ConstDeclOptionsList ::= (ConstDeclOptionsListMany) ConstDeclOptionsList:C1 COMM
 VarDeclList ::= (VarDeclListMany) VarDecl:V1 VarDeclList:V2 {: RESULT=new VarDeclListMany(V1, V2); RESULT.setLine(V1left); :} 
     | (NoVarDeclList) {: RESULT=new NoVarDeclList(); :};
 
-VarDecl ::= (VarDeclarationOne) VarDeclOne:V1  VarDeclPartListExists:V2 SEMI {: RESULT=new VarDeclarationOne(V1, V2); RESULT.setLine(V1left); :}
+VarDecl ::= (VarDeclarationOne) VarOneOptions:V1  VarDeclPartListExists:V2 SEMI {: RESULT=new VarDeclarationOne(V1, V2); RESULT.setLine(V1left); :}
     | (VarErrorComma)error COMMA:l
     {: parser.report_error("Izvrsen oporavak do , u liniji " + lleft, null); :} {: RESULT=new VarErrorComma(); :}
     |(VarErrorSemi) error SEMI:l
     {: parser.report_error("Izvrsen oporavak do ; u liniji " + lleft, null); :} {: RESULT=new VarErrorSemi(); :};
+
+VarOneOptions ::= (VarDeclPlain) VarDeclOne:V1 {: RESULT=new VarDeclPlain(V1); RESULT.setLine(V1left); :}
+    | (VarDeclFinal) FINAL VarDeclOne:V1 {: RESULT=new VarDeclFinal(V1); RESULT.setLine(V1left); :};
 
 VarDeclOne ::= (VarDeclOne) Type:varType IDENT:varName SqBracesOption:isArray {: RESULT=new VarDeclOne(varType, varName, isArray); RESULT.setLine(varTypeleft); :};
 

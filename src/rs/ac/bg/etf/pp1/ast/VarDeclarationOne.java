@@ -1,28 +1,28 @@
 // generated with ast extension for cup
 // version 0.8
-// 27/5/2024 3:27:41
+// 27/5/2024 21:43:18
 
 
 package rs.ac.bg.etf.pp1.ast;
 
 public class VarDeclarationOne extends VarDecl {
 
-    private VarDeclOne VarDeclOne;
+    private VarOneOptions VarOneOptions;
     private VarDeclPartListExists VarDeclPartListExists;
 
-    public VarDeclarationOne (VarDeclOne VarDeclOne, VarDeclPartListExists VarDeclPartListExists) {
-        this.VarDeclOne=VarDeclOne;
-        if(VarDeclOne!=null) VarDeclOne.setParent(this);
+    public VarDeclarationOne (VarOneOptions VarOneOptions, VarDeclPartListExists VarDeclPartListExists) {
+        this.VarOneOptions=VarOneOptions;
+        if(VarOneOptions!=null) VarOneOptions.setParent(this);
         this.VarDeclPartListExists=VarDeclPartListExists;
         if(VarDeclPartListExists!=null) VarDeclPartListExists.setParent(this);
     }
 
-    public VarDeclOne getVarDeclOne() {
-        return VarDeclOne;
+    public VarOneOptions getVarOneOptions() {
+        return VarOneOptions;
     }
 
-    public void setVarDeclOne(VarDeclOne VarDeclOne) {
-        this.VarDeclOne=VarDeclOne;
+    public void setVarOneOptions(VarOneOptions VarOneOptions) {
+        this.VarOneOptions=VarOneOptions;
     }
 
     public VarDeclPartListExists getVarDeclPartListExists() {
@@ -38,18 +38,18 @@ public class VarDeclarationOne extends VarDecl {
     }
 
     public void childrenAccept(Visitor visitor) {
-        if(VarDeclOne!=null) VarDeclOne.accept(visitor);
+        if(VarOneOptions!=null) VarOneOptions.accept(visitor);
         if(VarDeclPartListExists!=null) VarDeclPartListExists.accept(visitor);
     }
 
     public void traverseTopDown(Visitor visitor) {
         accept(visitor);
-        if(VarDeclOne!=null) VarDeclOne.traverseTopDown(visitor);
+        if(VarOneOptions!=null) VarOneOptions.traverseTopDown(visitor);
         if(VarDeclPartListExists!=null) VarDeclPartListExists.traverseTopDown(visitor);
     }
 
     public void traverseBottomUp(Visitor visitor) {
-        if(VarDeclOne!=null) VarDeclOne.traverseBottomUp(visitor);
+        if(VarOneOptions!=null) VarOneOptions.traverseBottomUp(visitor);
         if(VarDeclPartListExists!=null) VarDeclPartListExists.traverseBottomUp(visitor);
         accept(visitor);
     }
@@ -59,8 +59,8 @@ public class VarDeclarationOne extends VarDecl {
         buffer.append(tab);
         buffer.append("VarDeclarationOne(\n");
 
-        if(VarDeclOne!=null)
-            buffer.append(VarDeclOne.toString("  "+tab));
+        if(VarOneOptions!=null)
+            buffer.append(VarOneOptions.toString("  "+tab));
         else
             buffer.append(tab+"  null");
         buffer.append("\n");
