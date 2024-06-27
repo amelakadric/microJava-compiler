@@ -5,24 +5,24 @@
 
 package rs.ac.bg.etf.pp1.ast;
 
-public class NewFactor extends Factor {
+public class DesignatorArray extends Designator {
 
-    private Type Type;
+    private DesignatorName DesignatorName;
     private Expr Expr;
 
-    public NewFactor (Type Type, Expr Expr) {
-        this.Type=Type;
-        if(Type!=null) Type.setParent(this);
+    public DesignatorArray (DesignatorName DesignatorName, Expr Expr) {
+        this.DesignatorName=DesignatorName;
+        if(DesignatorName!=null) DesignatorName.setParent(this);
         this.Expr=Expr;
         if(Expr!=null) Expr.setParent(this);
     }
 
-    public Type getType() {
-        return Type;
+    public DesignatorName getDesignatorName() {
+        return DesignatorName;
     }
 
-    public void setType(Type Type) {
-        this.Type=Type;
+    public void setDesignatorName(DesignatorName DesignatorName) {
+        this.DesignatorName=DesignatorName;
     }
 
     public Expr getExpr() {
@@ -38,18 +38,18 @@ public class NewFactor extends Factor {
     }
 
     public void childrenAccept(Visitor visitor) {
-        if(Type!=null) Type.accept(visitor);
+        if(DesignatorName!=null) DesignatorName.accept(visitor);
         if(Expr!=null) Expr.accept(visitor);
     }
 
     public void traverseTopDown(Visitor visitor) {
         accept(visitor);
-        if(Type!=null) Type.traverseTopDown(visitor);
+        if(DesignatorName!=null) DesignatorName.traverseTopDown(visitor);
         if(Expr!=null) Expr.traverseTopDown(visitor);
     }
 
     public void traverseBottomUp(Visitor visitor) {
-        if(Type!=null) Type.traverseBottomUp(visitor);
+        if(DesignatorName!=null) DesignatorName.traverseBottomUp(visitor);
         if(Expr!=null) Expr.traverseBottomUp(visitor);
         accept(visitor);
     }
@@ -57,10 +57,10 @@ public class NewFactor extends Factor {
     public String toString(String tab) {
         StringBuffer buffer=new StringBuffer();
         buffer.append(tab);
-        buffer.append("NewFactor(\n");
+        buffer.append("DesignatorArray(\n");
 
-        if(Type!=null)
-            buffer.append(Type.toString("  "+tab));
+        if(DesignatorName!=null)
+            buffer.append(DesignatorName.toString("  "+tab));
         else
             buffer.append(tab+"  null");
         buffer.append("\n");
@@ -72,7 +72,7 @@ public class NewFactor extends Factor {
         buffer.append("\n");
 
         buffer.append(tab);
-        buffer.append(") [NewFactor]");
+        buffer.append(") [DesignatorArray]");
         return buffer.toString();
     }
 }

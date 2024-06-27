@@ -5,27 +5,20 @@
 
 package rs.ac.bg.etf.pp1.ast;
 
-public class AssignOp implements SyntaxNode {
+public class DesignatorSingle extends Designator {
 
-    private SyntaxNode parent;
-    private int line;
-    public AssignOp () {
+    private String varName;
+
+    public DesignatorSingle (String varName) {
+        this.varName=varName;
     }
 
-    public SyntaxNode getParent() {
-        return parent;
+    public String getVarName() {
+        return varName;
     }
 
-    public void setParent(SyntaxNode parent) {
-        this.parent=parent;
-    }
-
-    public int getLine() {
-        return line;
-    }
-
-    public void setLine(int line) {
-        this.line=line;
+    public void setVarName(String varName) {
+        this.varName=varName;
     }
 
     public void accept(Visitor visitor) {
@@ -46,10 +39,13 @@ public class AssignOp implements SyntaxNode {
     public String toString(String tab) {
         StringBuffer buffer=new StringBuffer();
         buffer.append(tab);
-        buffer.append("AssignOp(\n");
+        buffer.append("DesignatorSingle(\n");
+
+        buffer.append(" "+tab+varName);
+        buffer.append("\n");
 
         buffer.append(tab);
-        buffer.append(") [AssignOp]");
+        buffer.append(") [DesignatorSingle]");
         return buffer.toString();
     }
 }

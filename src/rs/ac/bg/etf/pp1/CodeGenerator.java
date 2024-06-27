@@ -78,8 +78,11 @@ public class CodeGenerator extends VisitorAdaptor {
 			Code.fixup(jumpAddr);
 			
 			Code.put(Code.pop); // Pop the array length from the stack
+			Code.put(Code.pop);	
+
 		}
-		else if(printStmt.getExpr().obj.getType() == Tab.intType || printStmt.getExpr().obj.getType() == boolType){
+		else if(printStmt.getExpr().obj.getType() == Tab.intType || printStmt.getExpr().obj.getType() == boolType
+				|| printStmt.getExpr().obj.getType().getKind() == Struct.Int || printStmt.getExpr().obj.getType().getKind() == Struct.Bool){
 			if(printStmt.getPrintOptions() instanceof PrintOption){
 				Code.loadConst(((PrintOption)printStmt.getPrintOptions()).getPrintNumber());
 			}
@@ -87,7 +90,7 @@ public class CodeGenerator extends VisitorAdaptor {
 				Code.loadConst(5);
 			}
 			Code.put(Code.print);
-		}else if(printStmt.getExpr().obj.getType() == Tab.charType){
+		}else if(printStmt.getExpr().obj.getType() == Tab.charType || printStmt.getExpr().obj.getType().getElemType().getKind() == Struct.Char){
 			Code.loadConst(1);
 			Code.put(Code.bprint);
 		}
@@ -145,7 +148,7 @@ public class CodeGenerator extends VisitorAdaptor {
 			else{
 				Code.put(Code.astore);
 			}
-			Code.put(Code.pop);
+			// Code.put(Code.pop);
 		}else{
 			if(assignop.getDesignator().obj.getType().getKind() == Struct.Array){
 				Obj o = Tab.find(assignop.getDesignator().obj.getName());
@@ -183,33 +186,71 @@ public class CodeGenerator extends VisitorAdaptor {
 
 
 	//visit method for Designator 
-	public void visit(Designator designator){	
-		if(designator.getParent() instanceof DesignatorAssignopExpr || designator.getParent() instanceof DesignatorInc || designator.getParent() instanceof DesignatorDec){
-			if (designator.getDesignatorOptions() instanceof DesignatorOption) {
-				Obj niz = Tab.find(designator.getVarName());
-				Code.load(niz);
-				Code.put(Code.dup2);
-				Code.put(Code.pop);
-			}
+	// public void visit(Designator designator){	
+	// 	if(designator.getParent() instanceof DesignatorAssignopExpr || designator.getParent() instanceof DesignatorInc || designator.getParent() instanceof DesignatorDec){
+			// if (designator.getDesignatorOptions() instanceof DesignatorOption) {
+			// 	Obj niz = Tab.find(designator.getVarName());
+			// 	Code.load(niz);
+			// 	Code.put(Code.dup2);
+			// 	Code.put(Code.pop);
+			// }
 			// else if(designator.getParent() instanceof DesignatorInc || designator.getParent() instanceof DesignatorDec){
 			// 	Code.load(designator.obj);
 			// }	
+		// }
+		// else if (designator.getParent().getParent().getParent().getParent() instanceof PrintStatement){
+		// 	Obj o = Tab.find(designator.getVarName());
+		// 	Code.load(o);
+		// }
+		// else if(designator.obj.getKind() == Obj.Elem){
+		// 	Obj niz = Tab.find(designator.getVarName());
+		// 		Code.load(niz);
+		// 		Code.put(Code.dup2);
+		// 		Code.put(Code.pop);
+		// }
+		
+		// else{
+		// 	Code.load(designator.obj);
+		// }	
+
+	// }
+
+	//visit method for DesignatorSingle
+	public void visit(DesignatorSingle designatorSingle){
+		if(!(designatorSingle.getParent() instanceof DesignatorAssignopExpr)
+				&& !( designatorSingle.getParent() instanceof DesignatorInc)
+				&& !(designatorSingle.getParent() instanceof  DesignatorDec)
+				&& !(designatorSingle.getParent().getParent() instanceof ReadStatement)) {
+
+					if(designatorSingle.obj.getType().getKind() == Struct.Array){
+						Obj niz = Tab.find(designatorSingle.getVarName());
+						Code.load(niz);
+					}
+					else{
+						Code.load(designatorSingle.obj);
+					}
+			
+
 		}
-		else if (designator.getParent().getParent().getParent().getParent() instanceof PrintStatement){
-			Obj o = Tab.find(designator.getVarName());
-			Code.load(o);
-		}
-		else if(designator.obj.getKind() == Obj.Elem){
-			Obj niz = Tab.find(designator.getVarName());
-				Code.load(niz);
-				Code.put(Code.dup2);
-				Code.put(Code.pop);
+	}
+
+	//visit method for DesignatorArray
+	public void visit(DesignatorArray designatorArray){
+		if(!(designatorArray.getParent() instanceof DesignatorAssignopExpr)
+				&& !( designatorArray.getParent() instanceof DesignatorInc)
+				&& !(designatorArray.getParent() instanceof  DesignatorDec)
+				&& !(designatorArray.getParent().getParent() instanceof ReadStatement)) {
+			Code.load(designatorArray.obj);
+			// Obj niz = Tab.find(designatorArray.getDesignatorName().getVarName());
+			// Code.load(niz);
 		}
 		
-		else{
-			Code.load(designator.obj);
-		}	
+	}
 
+	//DesignatorName
+	public void visit(DesignatorName designatorName){
+		Obj niz = Tab.find(designatorName.getVarName());
+		Code.load(niz);
 	}
 
 	//DesignatorOption
@@ -266,11 +307,12 @@ public class CodeGenerator extends VisitorAdaptor {
 		Code.put(Code.dup);
 		Code.put(Code.newarray);
 		Code.put(1);
-				
-		
-		// Loop start
 		Obj n = Tab.find("n");
 		n.setAdr(0);
+				
+		Code.loadConst(0);
+		Code.store(n);
+		// Loop start
 		int loopStart = Code.pc;
 		Code.put(Code.dup2);
 		Code.put(Code.pop);
@@ -299,12 +341,8 @@ public class CodeGenerator extends VisitorAdaptor {
 		Code.store(n);
 		Code.put(Code.pop);
 		Code.load(n);
-		
-		
 
-		
 	}
-
 
 	//visit method for MulopFactorListOne
 	public void visit(MulopFactorListOne mulopFactorListOne){
@@ -345,59 +383,6 @@ public class CodeGenerator extends VisitorAdaptor {
 			Code.put(Code.sub);
 		}
 	}
-
-
-
-
-	
-
-
-
-
-	
-
-
-	// public void visit(Assignment assignment){
-	// 	Code.store(assignment.getDesignator().obj);
-	// }
-	
-	// public void visit(Designator designator){
-	// 	SyntaxNode parent = designator.getParent();
 		
-	// 	if(Assignment.class != parent.getClass() && FuncCall.class != parent.getClass() && ProcCall.class != parent.getClass()){
-	// 		Code.load(designator.obj);
-	// 	}
-	// }
-	
-	// public void visit(FuncCall funcCall){
-	// 	Obj functionObj = funcCall.getDesignator().obj;
-	// 	int offset = functionObj.getAdr() - Code.pc;
-	// 	Code.put(Code.call);
-		
-	// 	Code.put2(offset);
-	// }
-	
-	// public void visit(ProcCall procCall){
-	// 	Obj functionObj = procCall.getDesignator().obj;
-	// 	int offset = functionObj.getAdr() - Code.pc;
-	// 	Code.put(Code.call);
-	// 	Code.put2(offset);
-	// 	if(procCall.getDesignator().obj.getType() != Tab.noType){
-	// 		Code.put(Code.pop);
-	// 	}
-	// }
-	
-	// public void visit(ReturnExpr returnExpr){
-	// 	Code.put(Code.exit);
-	// 	Code.put(Code.return_);
-	// }
-	
-	// public void visit(ReturnNoExpr returnNoExpr){
-	// 	Code.put(Code.exit);
-	// 	Code.put(Code.return_);
-	// }
-	
-	// public void visit(AddExpr addExpr){
-	// 	Code.put(Code.add);
-	// }
+
 }

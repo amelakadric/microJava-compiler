@@ -246,21 +246,27 @@ public class SemanticAnalyzer extends VisitorAdaptor {
     
 
     //visitor method for Designator
-    public void visit(Designator designator){
+    public void visit(DesignatorSingle designator){
         Obj obj = Tab.find(designator.getVarName());
         if(obj == Tab.noObj){
             report_error("Greska na liniji " + designator.getLine()+ " : ime "+designator.getVarName()+" nije deklarisano! ", null);
         }
-        if( designator.getDesignatorOptions() instanceof DesignatorOption){
-            if(obj.getType().getKind() != Struct.Array){
-                report_error("Greska na liniji " + designator.getLine() + " : " + "promenljiva " + designator.getVarName() + " nije niz! ", null);
-            }
-            else{
-                designator.obj = new Obj(Obj.Elem, designator.getVarName(), obj.getType().getElemType());
-            }
-        }
         else{
             designator.obj = obj;
+        }
+    }
+
+    //visitor method for DesignatorArray
+    public void visit(DesignatorArray designatorArray){
+        Obj obj = Tab.find(designatorArray.getDesignatorName().getVarName());
+        if(obj == Tab.noObj){
+            report_error("Greska na liniji " + designatorArray.getLine()+ " : ime "+designatorArray.getDesignatorName().getVarName()+" nije deklarisano! ", null);
+        }
+        if(obj.getType().getKind() != Struct.Array){
+            report_error("Greska na liniji " + designatorArray.getLine() + " : " + "promenljiva " + designatorArray.getDesignatorName().getVarName() + " nije niz! ", null);
+        }
+        else{
+            designatorArray.obj = new Obj(Obj.Elem, designatorArray.getDesignatorName().getVarName(), obj.getType().getElemType());
         }
     }
 

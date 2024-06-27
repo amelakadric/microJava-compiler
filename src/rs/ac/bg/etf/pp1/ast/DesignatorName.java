@@ -5,11 +5,22 @@
 
 package rs.ac.bg.etf.pp1.ast;
 
-public class AssignOp implements SyntaxNode {
+public class DesignatorName implements SyntaxNode {
 
     private SyntaxNode parent;
     private int line;
-    public AssignOp () {
+    private String varName;
+
+    public DesignatorName (String varName) {
+        this.varName=varName;
+    }
+
+    public String getVarName() {
+        return varName;
+    }
+
+    public void setVarName(String varName) {
+        this.varName=varName;
     }
 
     public SyntaxNode getParent() {
@@ -46,10 +57,13 @@ public class AssignOp implements SyntaxNode {
     public String toString(String tab) {
         StringBuffer buffer=new StringBuffer();
         buffer.append(tab);
-        buffer.append("AssignOp(\n");
+        buffer.append("DesignatorName(\n");
+
+        buffer.append(" "+tab+varName);
+        buffer.append("\n");
 
         buffer.append(tab);
-        buffer.append(") [AssignOp]");
+        buffer.append(") [DesignatorName]");
         return buffer.toString();
     }
 }
